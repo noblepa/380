@@ -1,0 +1,2455 @@
+\chapter {Plasma Fluid Theory}\label{s3}
+\section{Introduction}\label{s3.1}
+In plasma fluid theory, a plasma is characterized by a few local parameters---such as the particle density, the kinetic temperature, and the flow
+velocity---the time evolution of which are determined by means of {\em fluid
+equations}. These equations are analogous to, but generally more complicated
+than, the equations of hydrodynamics.
+
+Plasma physics can be viewed formally as a closure of Maxwell's equations
+by means of {\em constitutive relations}: {\em i.e.}, expressions
+for the charge density, $\rho_c$, and the current density, ${\bf j}$, in terms of
+the electric and magnetic fields, ${\bf E}$ and ${\bf B}$. Such relations are
+easily expressed in terms of the microscopic distribution functions,
+${\cal F}_s$, for each plasma species. In fact,
+\begin{eqnarray}\label{e3.1a}
+\rho_c &=& \sum_s e_s \int\! {\cal F}_s({\bf r}, {\bf v}, t)\,d^3{\bf v},\\[0.5ex]
+{\bf j} &=& \sum_s e_s \int {\bf v}\,{\cal F}_s({\bf r}, {\bf v}, t)\,d^3
+{\bf v}.\label{e3.1b}
+\end{eqnarray}
+Here, ${\cal F}_s({\bf r}, {\bf v}, t)$ is the exact, ``microscopic'' phase-space
+density of plasma species $s$ (charge $e_s$, mass $m_s$) near
+point $({\bf r}, {\bf v})$  at time $t$. The distribution
+function ${\cal F}_s$ is normalized such that its velocity integral is equal to the
+particle density in coordinate space. Thus,
+\begin{equation}
+\int \!{\cal F}_s({\bf r}, {\bf v}, t)\,d^3
+{\bf v} = n_s({\bf r}, t),
+\end{equation}
+where $n_s({\bf r},t)$ is the number (per unit volume) of species-$s$ particles
+near point ${\bf r}$ at time $t$. 
+
+If we could determine each ${\cal F}_s({\bf r},{\bf v}, t)$ in terms of the
+electromagnetic fields, then Eqs.~(\ref{e3.1a})--(\ref{e3.1b}) would immediately give us the
+desired constitutive relations. Furthermore, it is easy to see, in principle,
+how each distribution function evolves. Phase-space conservation
+requires that
+\begin{equation}\label{e3.3}
+\frac{\partial{\cal F}_s}{\partial t} + {\bf v}\cdot\nabla{\cal F}_s
++ {\bf a}_s\cdot\nabla_v{\cal F}_s = 0,
+\end{equation}
+where $\nabla_v$ is the velocity space grad-operator, and
+\begin{equation}
+{\bf a}_s = \frac{e_s}{m_s}\,({\bf E} + {\bf v}\times{\bf B})
+\end{equation}
+is the species-$s$ particle acceleration under the influence of the ${\bf E}$ and
+${\bf B}$ fields. 
+
+It would appear that the distribution functions for the various plasma
+species, from which
+the constitutive relations are trivially obtained, are determined by a set of
+rather harmless looking first-order partial differential equations. At this
+stage, we might wonder why, 
+if plasma dynamics is apparently so  simple when written in terms
+of distribution functions, we need a fluid description of plasma dynamics
+at all. It is not at all obvious that fluid theory represents an advance. 
+
+The above argument is misleading for several reasons. However, by far the
+most serious flaw is the view of Eq.~(\ref{e3.3}) as a tractable equation.
+Note that this equation is easy to derive, because it is exact, taking into
+account all scales from the microscopic to the macroscopic. Note, in
+particular, that there is {\em no}\/ statistical averaging involved in Eq.~(\ref{e3.3}). 
+It follows that the microscopic distribution function ${\cal F}_s$ is
+essentially a sum of Dirac delta-functions, each following the
+detailed trajectory of a single particle. Furthermore, the electromagnetic
+fields in Eq.~(\ref{e3.3}) are horribly spiky and chaotic on microscopic scales. In other words, solving Eq.~(\ref{e3.3}) amounts to nothing less than solving the classical
+electromagnetic many-body problem---a completely hopeless task. 
+
+A much more useful and tractable equation can be extracted from Eq.~(\ref{e3.3})
+by ensemble averaging. The average distribution function,
+\begin{equation}
+\bar{\cal F}_s \equiv \langle {\cal F}_s\rangle_{\rm ensemble},
+\end{equation}
+is sensibly smooth, and is closely related to actual experimental measurements.
+Similarly, the ensemble averaged electromagnetic fields are also smooth.
+Unfortunately, the extraction of an ensemble averaged
+equation from Eq.~(\ref{e3.3}) is a mathematically challenging exercise, and always
+requires severe approximation. The problem is that, since the
+exact electromagnetic fields depend on particle trajectories, ${\bf E}$ and
+${\bf B}$ are {\em not}\/ statistically independent of ${\cal F}_s$. In other
+words, the nonlinear acceleration term in Eq.~(\ref{e3.3}),
+\begin{equation}
+\left\langle{\bf a}_s\cdot\nabla_v {\cal F}_s\right\rangle_{\rm ensemble}
+\neq \bar{\bf a}_s\cdot\nabla_v \bar{{\cal F}}_s,
+\end{equation}
+involves {\em correlations}\/ which need to be evaluated explicitly.
+In the following, we introduce the short-hand
+\begin{equation}
+f_s\equiv \bar{{\cal F}}_s.
+\end{equation}
+
+The traditional goal of kinetic theory is to analyze the correlations,
+using approximations tailored to the parameter regime of interest, and
+thereby express the average  acceleration term in terms of 
+$f_s$ and
+the average electromagnetic fields alone. Let us assume that this ambitious
+task has already been completed, giving an expression of the form
+\begin{equation}
+\left\langle{\bf a}_s\cdot\nabla_v {\cal F}_s\right\rangle_{\rm ensemble}
+= \bar{\bf a}_s\cdot\nabla_v \bar{{\cal F}}_s -C_s(f),
+\end{equation}
+where $C_s$ is a generally extremely complicated operator which
+accounts for the correlations. Since the most important correlations result from
+close encounters between particles, $C_s$ is called the {\em collision operator}\/
+(for species $s$). 
+It is not necessarily a linear operator, and usually involves the distribution
+functions of both species (the subscript in the
+argument of $C_s$ is omitted for this reason). Hence, the ensemble averaged
+version of Eq.~(\ref{e3.3}) is written
+\begin{equation}\label{e3.9}
+\frac{\partial{f_s}}{\partial t} + {\bf v}\cdot\nabla f_s
++ \bar{{\bf a}}_s\cdot\nabla_vf_s = C_s(f).
+\end{equation}
+
+In general, the above equation is very difficult to solve, because of the
+complexity of the collision operator. However, there are some situations
+where collisions can be completely neglected. In this case, the
+apparent simplicity of Eq.~(\ref{e3.3}) is not deceptive. A useful kinetic
+description is obtained by just  ensemble averaging this equation to
+give
+\begin{equation}
+\frac{\partial{f_s}}{\partial t} + {\bf v}\cdot\nabla f_s
++ \bar{{\bf a}}_s\cdot\nabla_vf_s = 0.
+\end{equation}
+The above equation, which is known as the {\em Vlasov equation}, is tractable
+in sufficiently simple geometry. Nevertheless, the fluid approach
+has much
+to offer even in the Vlasov limit: it has intrinsic advantages that
+weigh decisively in its favour in almost every situation.
+
+Firstly, fluid equations possess the key simplicity of involving
+fewer dimensions: three spatial dimensions instead of six phase-space
+dimensions. This advantage is especially important in computer simulations.
+
+Secondly, the fluid description is intuitively appealing. We 
+immediately understand the
+significance of fluid quantities such as density and temperature, whereas
+the significance of distribution functions is far less obvious.
+Moreover, fluid variables are relatively easy to measure in experiments,
+whereas, in most cases, it is extraordinarily difficult to measure a
+distribution function accurately. There seems
+remarkably  little point in centering our
+theoretical description of plasmas on something that we cannot
+generally measure. 
+
+Finally, the kinetic approach to plasma physics is spectacularly
+inefficient. The species distribution functions $f_s$ provide vastly more
+information than is needed to obtain the constitutive relations.
+After all, these relations only depend on the two lowest moments
+of the species distribution functions. Admittedly, fluid theory cannot
+generally compute $\rho_c$ and ${\bf j}$ without  reference to other
+higher moments of the distribution functions, but it can be regarded as
+an attempt to impose some efficiency on the task of dynamical closure. 
+
+\section{Moments of the Distribution Function}
+The $k$th moment of the (ensemble averaged) distribution function
+$f_s({\bf r}, {\bf v}, t)$ is written
+\begin{equation}
+{\bf M}_k({\bf r}, t) = \int {\bf v v\cdots v}\,f_s({\bf r},{\bf v}, t)\,d^3{\bf v},
+\end{equation}
+with $k$ factors of ${\bf v}$. Clearly, ${\bf M}_k$ is a tensor of rank $k$.
+
+The set $\{{\bf M}_k, k=0,1,2,\cdots\}$
+can be viewed as an alternative description of the distribution function, which,
+indeed, uniquely specifies $f_s$ when the latter is sufficiently smooth. For example,
+a (displaced) Gaussian distribution is uniquely specified by three
+moments: $M_0$, the vector ${\bf M}_1$, and the scalar formed by contracting
+${\bf M}_2$. 
+
+The low-order moments all have names and simple physical interpretations.
+First, we have the (particle) {\em density},
+\begin{equation}
+n_s({\bf r},t) = \int f_s({\bf r}, {\bf v},t)\,d^3{\bf v},
+\end{equation}
+and the particle {\em flux density}, 
+\begin{equation}
+n_s\,{\bf V}_s({\bf r}, t) = \int 
+{\bf v}\,f_s({\bf r}, {\bf v},t)\,d^3{\bf v}.
+\end{equation}
+The quantity ${\bf V}_s$ is, of course, the {\em flow velocity}. Note that
+the electromagnetic sources, (\ref{e3.1a})--(\ref{e3.1b}), are determined by these lowest
+moments:
+\begin{eqnarray}
+\rho_c &=& \sum_s e_s n_s,\\[0.5ex]
+{\bf j} &=& \sum_s e_s n_s\,{\bf V}_s.
+\end{eqnarray}
+
+The second-order moment, describing the flow of momentum in the
+laboratory frame, is called the {\em stress tensor}, and denoted by
+\begin{equation}
+{\bf P}_s({\bf r}, t) =  \int
+m_s\,{\bf v}{\bf v}\, f_s({\bf r}, {\bf v},t)\,d^3{\bf v}.
+\end{equation}
+Finally, there is an important third-order moment
+measuring the {\em energy flux density},
+\begin{equation}
+{\bf Q}_s({\bf r}, t) =  \int
+\frac{1}{2}\,m_s\,v^2\,{\bf v}\, f_s({\bf r}, {\bf v},t)\,d^3{\bf v}.
+\end{equation}
+
+
+It is often convenient to measure the second- and third-order moments in the rest-frame of the species under consideration. In this case, the
+moments assume different names: the stress tensor measured in the rest-frame
+is called the {\em pressure tensor}, ${\bf p}_s$, whereas the energy flux
+density becomes the {\em heat flux density}, ${\bf q}_s$. We introduce the
+relative velocity,
+\begin{equation}
+{\bf w}_s\equiv {\bf v} - {\bf V}_s,
+\end{equation}
+in order to write
+\begin{equation}
+{\bf p}_s({\bf r}, t) =  \int
+m_s\,{\bf w}_s{\bf w}_s\, f_s({\bf r}, {\bf v},t)\,d^3{\bf v},
+\end{equation}
+and
+\begin{equation}
+{\bf q}_s({\bf r}, t) =  \int
+\frac{1}{2}\,m_s\,w_s^{~2}\,{\bf w}_s\, f_s({\bf r}, {\bf v},t)\,d^3{\bf v}.
+\end{equation}
+
+The trace of the pressure tensor measures the ordinary (or ``scalar'') pressure,
+\begin{equation}
+p_s\equiv \frac{1}{3}\,{\rm Tr}\,({\bf p}_s).
+\end{equation}
+Note that $(3/2)\,p_s$ is the kinetic energy density of species $s$:
+\begin{equation}\label{e3.21}
+\frac{3}{2}\,p_s = \int \frac{1}{2}\,m_s\,w_s^{~2} \,f_s\,d^3{\bf v}.
+\end{equation}
+In thermodynamic equilibrium, the distribution function becomes a Maxwellian
+characterized by some temperature $T$, and Eq.~(\ref{e3.21}) yields $p=n\,T$. It
+is, therefore, natural to define the (kinetic) temperature as
+\begin{equation}
+T_s \equiv \frac{p_s}{n_s}.
+\end{equation}
+
+Of course, the moments measured in the two different frames are related.
+By direct substitution, it is easily verified that
+\begin{eqnarray}\label{e3.23a}
+{\bf P}_s &=& {\bf p}_s + m_s n_s\,{\bf V}_s{\bf V}_s,\\[0.5ex]
+{\bf Q}_s &=& {\bf q}_s + {\bf p}_s\cdot{\bf V}_s + \frac{3}{2}\,p_s\,{\bf V}_s
++\frac{1}{2}\,m_s n_s\,V_s^{~2}\, {\bf V}_s.\label{e3.23b}
+\end{eqnarray}
+ 
+\section{Moments of the Collision Operator}\label{s3.3}
+Boltzmann's famous collision operator for a neutral gas considers only
+binary collisions, and is, therefore, bilinear in the distribution functions
+of the two colliding species:
+\begin{equation}
+C_s(f) =\sum_{s'} C_{ss'}(f_s, f_{s'}),
+\end{equation}
+where $C_{ss'}$ is linear in each of its arguments. Unfortunately, such bilinearity
+is not strictly valid for the case of Coulomb collisions in a plasma. 
+Because of the long-range nature of the Coulomb interaction, the closest analogue
+to ordinary two-particle interaction is mediated by Debye shielding, an intrinsically
+many-body effect. Fortunately, the departure from bilinearity is {\em logarithmic}\/
+in a weakly coupled plasma, and can, therefore,  be neglected to a fairly good approximation
+(since a logarithm is a comparatively weakly varying function). 
+Thus, from now
+on, $C_{ss'}$ is presumed to be bilinear. 
+
+It is important to realize that there is no simple relationship between
+the quantity 
+$C_{ss'}$, which describes the effect {\em on}\/ species $s$ of
+collisions {\em with}\/ species $s'$, and the quantity $C_{s's}$. The two operators
+can have quite different mathematical forms (for example, where the masses
+$m_s$ and $m_{s'}$ are disparate), and they appear in different equations. 
+
+Neutral particle collisions are characterized by Boltzmann's collisional
+conservation laws: the collisional process conserves particles, momentum,
+and energy at each point. We expect the same {\em local}\/ conservation
+laws to hold for Coulomb collisions in a plasma: the maximum range of the
+Coulomb force in a plasma is the Debye length, which is assumed to
+be vanishingly small.
+
+Collisional {\em particle conservation}\/ is expressed by
+\begin{equation}
+\int C_{ss'} \,d^3{\bf v} =0.
+\end{equation}
+
+Collisional {\em momentum conservation} requires that
+\begin{equation}
+\int m_s\,{\bf v}\,C_{ss'}\,d^3{\bf v} = - \int m_{s'}\,{\bf v}\,C_{s's}\,d^3{\bf v}.
+\end{equation}
+That is, the net momentum exchanged between species $s$ and $s'$ must vanish.
+It is useful to introduce the rate of collisional momentum exchange, called the
+collisional friction force, or simply the {\em friction force}:
+\begin{equation}
+{\bf F}_{ss'}\equiv \int m_s\,{\bf v}\,C_{ss'}\,d^3{\bf v}.
+\end{equation}
+Clearly, ${\bf F}_{ss'}$ is the momentum-moment of the collision operator. 
+The total friction force experienced by species $s$ is
+\begin{equation}
+{\bf F}_s \equiv \sum_{s'} {\bf F}_{ss'}.
+\end{equation}
+Momentum conservation is expressed in detailed form as
+\begin{equation}
+{\bf F}_{ss'} = -{\bf F}_{s's},
+\end{equation}
+and in non-detailed form as
+\begin{equation}\label{e3.30}
+\sum_s {\bf F}_s = {\bf 0}.
+\end{equation}
+
+Collisional {\em energy conservation}\/ requires the quantity
+\begin{equation}
+W_{Lss'} \equiv \int \frac{1}{2}\,m_s\,v^2\,C_{ss'}\,d^3{\bf v}
+\end{equation}
+to be conserved in collisions: {\em i.e.},
+\begin{equation}
+W_{Lss'} + W_{Ls's} =0.
+\end{equation}
+Here, the $L$-subscript indicates that the kinetic energy of both
+species is measured in the same ``lab'' frame. Because of Galilean invariance,
+the choice of this common reference frame does not matter.
+
+An alternative collisional energy-moment is
+\begin{equation}
+W_{ss'} \equiv \int \frac{1}{2}\,m_s\,w_s^{~2}\,C_{ss'}\,d^3{\bf v}:
+\end{equation}
+{\em i.e.}, the kinetic energy change experienced by species $s$, due to
+collisions with species $s'$, measured in the rest frame of species $s$.
+The total energy change for species $s$ is, of course, 
+\begin{equation}
+W_s \equiv \sum_{s'} W_{ss'}.
+\end{equation}
+It is easily verified that
+\begin{equation}
+W_{Lss'} = W_{ss'} + {\bf V}_s\cdot{\bf F}_{ss'}.
+\end{equation}
+Thus, the collisional energy conservation law can be written
+\begin{equation}
+W_{ss'} +W_{s's} +({\bf V}_s-{\bf V}_{s'})\cdot {\bf F}_{ss'} = 0,
+\end{equation} 
+or in non-detailed form
+\begin{equation}\label{e3.37}
+\sum_s (W_s + {\bf V}_s\cdot{\bf F}_s) = 0.
+\end{equation}
+
+\section{Moments of the Kinetic Equation}
+We obtain fluid equations by taking appropriate moments of the ensemble-average 
+kinetic equation, (\ref{e3.9}). In the following, we suppress all ensemble-average over-bars
+for ease of notation. It is convenient to rearrange the acceleration
+term,
+\begin{equation}
+{\bf a}_s\cdot\nabla_v f_s = \nabla_v\cdot({\bf a}_s\,f_s).
+\end{equation}
+The two forms are equivalent  because flow in velocity space under the
+Lorentz force is incompressible: {\em i.e.},
+\begin{equation}
+\nabla_v\cdot {\bf a}_s = 0.
+\end{equation}
+Thus, Eq.~(\ref{e3.9}) becomes
+\begin{equation}\label{e3.40}
+\frac{\partial f_s}{\partial t} + 
+\nabla\cdot({\bf v}\,f_s) +\nabla_v\cdot({\bf a}_s\,f_s) = C_s(f).
+\end{equation}
+The rearrangement of the flow term is, of course, trivial, since ${\bf v}$
+is independent of ${\bf r}$. 
+
+The $k$th moment of the ensemble-average kinetic equation is obtained
+by multiplying the above equation by $k$ powers of ${\bf v}$ and integrating
+over velocity space. The flow term is simplified by pulling the
+divergence outside the velocity integral. The acceleration term is treated by partial
+integration. Note that these two terms couple the $k$th moment
+to the $(k+1)$th and $(k-1)$th moments, respectively. 
+
+Making use of the collisional conservation laws, the zeroth moment of Eq. (\ref{e3.40})
+yields the {\em continuity equation}\/ for species $s$:
+\begin{equation}\label{e3.41}
+\frac{\partial n_s}{\partial t} + \nabla\cdot(n_s\,{\bf V}_s) = 0.
+\end{equation}
+Likewise, the first moment gives the {\em momentum conservation equation}\/
+for species $s$:
+\begin{equation}\label{e3.42}
+\frac{\partial(m_s n_s\,{\bf V}_s)}{\partial t}
++ \nabla\cdot{\bf P}_s -e_s n_s({\bf E} + {\bf V}_s\times {\bf B}) ={\bf F}_s.
+\end{equation}
+Finally, the contracted second moment yields the {\em energy conservation
+equation}\/ for species $s$:
+\begin{equation}\label{e3.43}
+\frac{\partial}{\partial t}\left( \frac{3}{2}\,p_s + \frac{1}{2}\,m_s n_s\,V_s^{~2}
+\right) + \nabla\cdot{\bf Q}_s - e_s n_s\,{\bf E}\cdot{\bf V}_s = W_s
++ {\bf V}_s\cdot {\bf F}_s.
+\end{equation}
+
+The interpretation of Eqs.~(\ref{e3.41})--(\ref{e3.43}) as {\em conservation laws}\/ is 
+straightforward. Suppose that $G$ is some physical quantity ({\em e.g.},
+total number of particles, total energy, \ldots), and $g({\bf r}, t)$
+is its density:
+\begin{equation}
+G = \int g\,d^3{\bf r}.
+\end{equation}
+If $G$ is conserved then $g$ must evolve according to
+\begin{equation}
+\frac{\partial g}{\partial t} + \nabla\cdot {\bf g} = {\mit\Delta} g,
+\end{equation}
+where ${\bf g}$ is the flux density of $G$, and ${\mit\Delta}g$ is the
+local rate per unit volume at which $G$ is created or exchanged with other
+entities in the fluid. Thus, the density of $G$ at some point
+changes because there is net flow of $G$ towards or away from that
+point (measured by the divergence term), or because of local
+sources or sinks of $G$ (measured by the right-hand side). 
+
+Applying this reasoning to Eq.~(\ref{e3.41}), we see that $n_s\,{\bf V}_s$ is indeed the
+species-$s$ particle flux density, and that there are no local sources or sinks of 
+species-$s$ particles.\footnote{In general, this is not true. Atomic or nuclear processes
+operating in a plasma can give rise to local sources and sinks of particles
+of various species. However, if a plasma is sufficiently hot to be completely
+ionized, but still cold enough to prevent nuclear reactions from
+occurring, then
+such sources and sinks are usually negligible.} From Eq.~(\ref{e3.42}), we
+see that the stress tensor ${\bf P}_s$ is the species-$s$ momentum flux density, and that 
+the species-$s$ momentum is changed locally by the Lorentz force and by collisional
+friction with other species. Finally, from Eq.~(\ref{e3.43}), we see that
+${\bf Q}_s$ is indeed the species-$s$ energy flux density, and that the
+species-$s$ energy is changed locally  by electrical work, energy exchange with
+other species, and frictional heating. 
+
+\section{Fluid Equations}
+It is conventional to rewrite our fluid equations in terms of the pressure tensor,
+${\bf p}_s$, 
+and the heat flux density, ${\bf q}_s$. Substituting from Eqs.~(\ref{e3.23a})--(\ref{e3.23b}), and performing a little
+ tensor
+algebra,  Eqs.~(\ref{e3.41})--(\ref{e3.43})  reduce to:
+\begin{eqnarray}\label{e3.46a}
+\frac{dn_s}{dt} + n_s\,\nabla\!\cdot\!{\bf V}_s &=& 0,\\[0.5ex]
+m_s n_s\,\frac{d {\bf V}_s}{dt} + \nabla\!\cdot \!{\bf p}_s - e_s n_s
+({\bf E} + {\bf V}_s\times {\bf B})& =& {\bf F}_s,\\[0.5ex]
+\frac{3}{2}\frac{d p_s}{dt} + \frac{3}{2}\,p_s\,\nabla\!\cdot\!{\bf V}_s
++ {\bf p}_s:\nabla{\bf V}_s + \nabla\!\cdot\!{\bf q}_s &=& W_s.\label{e3.46c}
+\end{eqnarray}
+Here, 
+\begin{equation}
+\frac{d}{dt} \equiv \frac{\partial}{\partial t} + {\bf V_s}\cdot \nabla
+\end{equation}
+is the well-known {\em convective derivative}, and 
+\begin{equation}
+{\bf p} : \nabla {\bf V}_s \equiv (p_s)_{\alpha\beta} \,\frac{\partial (V_s)_{\beta}}{\partial r_\alpha}.
+\end{equation}
+In the above, $\alpha$ and $\beta$ refer to Cartesian components, and repeated
+indices are summed (according to the Einstein summation convention).
+The convective derivative, of course, measures time variation  in
+the local rest frame of the species-$s$ fluid.
+Strictly
+speaking, we should include an $s$ subscript with each convective derivative,
+since this operator is clearly different for different plasma species. 
+
+There is one additional refinement to our fluid equations which is worth
+carrying out. We introduce the {\em generalized viscosity tensor}, $\bpi_s$,
+by writing
+\begin{equation}
+{\bf p}_s = p_s\,{\bf I} + \bpi_s,
+\end{equation}
+where ${\bf I}$ is the unit (identity) tensor. We expect the scalar
+pressure term to dominate if the plasma is relatively close to thermal 
+equilibrium. We also expect, by analogy with conventional fluid theory,  the
+second term to describe viscous stresses. Indeed, this is generally the case
+in plasmas, 
+although the generalized viscosity tensor can also include terms which are
+quite unrelated to conventional viscosity. Equations~(\ref{e3.46a})--(\ref{e3.46c}) can, thus, be rewritten:
+\begin{eqnarray}\label{e3.50a}
+\frac{dn_s}{dt} + n_s\,\nabla\!\cdot\!{\bf V}_s &=& 0,\\[0.5ex]
+m_s n_s\,\frac{d {\bf V}_s}{dt} + \nabla p_s + \nabla\!\cdot \!\bpi_s - e_s n_s
+({\bf E} + {\bf V}_s\times {\bf B})& =& {\bf F}_s,\label{e3.50b}\\[0.5ex]
+\frac{3}{2}\frac{d p_s}{dt} + \frac{5}{2}\,p_s\,\nabla\!\cdot\!{\bf V}_s
++ \bpi_s:\nabla{\bf V}_s + \nabla\!\cdot\!{\bf q}_s &=& W_s.\label{e3.50c}
+\end{eqnarray}
+According to Eq.~(\ref{e3.50a}), the species-$s$ density is constant along a fluid
+trajectory unless the species-$s$ flow is non-solenoidal. For this reason,
+the condition
+\begin{equation}
+\nabla\!\cdot\!{\bf V}_s = 0
+\end{equation}
+is said to describe {\em incompressible}\/ species-$s$ flow. According to 
+Eq.~(\ref{e3.50b}), the species-$s$ flow accelerates 
+along a fluid trajectory under the influence of the
+scalar pressure gradient, the viscous stresses, the Lorentz force, and the
+frictional force due to collisions with other species. Finally,
+according to Eq.~(\ref{e3.50c}), the species-$s$ energy density ({\em i.e.}, $p_s$)
+changes along a fluid trajectory
+because of the work done in compressing the fluid, viscous heating,
+heat flow, and the local energy gain due to collisions with other species.
+Note that the electrical contribution to plasma heating, which was explicit
+in Eq.~(\ref{e3.43}), has now become entirely implicit. 
+
+\section{Entropy Production}
+It is instructive to rewrite the species-$s$ energy evolution  equation (\ref{e3.50c}) as
+an {\em entropy}\/ evolution equation. The fluid definition of entropy
+density, which coincides with the thermodynamic entropy density in the 
+limit in which the distribution function approaches a Maxwellian, is
+\begin{equation}\label{entropy}
+s_s = n_s\log\!\left(\frac{T_s^{~3/2}}{n_s}\right).
+\end{equation}
+The corresponding entropy flux density is written
+\begin{equation}
+{\bf s}_s = s_s\,{\bf V}_s + \frac{{\bf q}_s}{T_s}.
+\end{equation}
+Clearly, entropy is convected by the fluid flow, but is also carried by the
+flow of heat, in accordance with the second law of thermodynamics. After some
+algebra, Eq.~(\ref{e3.50c}) can be rearranged to give
+\begin{equation}
+\frac{\partial s_s}{\partial t} + \nabla\!\cdot\!{\bf s}_s = {\mit\Theta}_s,
+\end{equation}
+where the right-hand side is given by
+\begin{equation}
+{\mit\Theta}_s = \frac{W_s}{T_s} - \frac{\bpi_s : \nabla {\bf V}_s}{T_s}
+- \frac{{\bf q}_s}{T_s} \cdot \frac{\nabla T_s}{T_s}.
+\end{equation}
+It is clear, from our previous discussion of conservation laws, that the
+quantity ${\mit\Theta}_s$ can be regarded as the {\em entropy production rate}\/
+per unit volume for species $s$. Note that entropy is produced by
+collisional heating, viscous heating, and heat flow down temperature
+gradients.
+
+\section{Fluid Closure}\label{s3.7}
+No amount of manipulation, or rearrangement, can cure our fluid equations
+of their most serious defect: the fact that they are {\em incomplete}. 
+In their present form, (\ref{e3.50a})--(\ref{e3.50c}), our equations
+relate interesting fluid quantities, such as the density, $n_s$, the
+flow velocity, ${\bf V}_s$, and the scalar pressure, $p_s$, to unknown quantities,
+such as the viscosity tensor, $\bpi_s$, the heat flux
+density, ${\bf q}_s$, and the
+moments of the collision operator, ${\bf F}_s$ and $W_s$. In order to complete
+our set of equations, we need to use some additional information to express the
+latter quantities in terms of the former. This process is known as {\em closure}. 
+
+Lack of closure is an endemic problem in fluid theory. Since each moment is
+coupled to the next higher moment ({\em e.g.}, the density evolution depends on
+the flow velocity, the flow velocity evolution depends on the viscosity
+tensor, {\em etc}.), any finite set of exact moment equations is bound to
+contain more unknowns than equations. 
+
+There are two basic types of fluid closure schemes. In {\em truncation}\/ schemes,
+higher order moments are arbitrarily 
+assumed to vanish, or simply prescribed in terms of lower
+moments. Truncation schemes can often provide quick insight into fluid
+systems, but always involve uncontrolled approximation. {\em Asymptotic}\/ schemes
+depend on the rigorous exploitation of some small parameter. 
+They have the advantage of being systematic, and providing some
+estimate of the error involved in the closure. On the other hand,
+the asymptotic approach to closure is mathematically very demanding, since it
+inevitably involves working with the kinetic equation.
+
+The classic example of an asymptotic closure scheme is the Chapman-Enskog
+theory of a neutral gas dominated by collisions. In this case, the small
+parameter is the ratio of the mean-free-path between collisions to the
+macroscopic variation length-scale. It is instructive to briefly examine this theory,
+which is very well described in a classic monograph by Chapman and 
+Cowling.\footnote{S.~Chapman, and T.G.~Cowling, {\em The Mathematical Theory
+of Non-Uniform Gases} (Cambridge University Press, Cambridge  UK, 1953).}
+
+Consider a neutral gas consisting of identical hard-sphere molecules of
+mass $m$ and 
+diameter $\sigma$. Admittedly, this is not a particularly 
+physical model of a neutral gas,
+ but we are only considering it for illustrative purposes. The fluid
+equations for such a gas are similar to Eqs.~(\ref{e3.50a})--(\ref{e3.50c}):
+\begin{eqnarray}\label{e3.56a}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V} &=& 0,\\[0.5ex]
+m n\,\frac{d {\bf V}}{dt} + \nabla p + \nabla\!\cdot \!\bpi + mn\,{\bf g}
+& =& {\bf 0},\\[0.5ex]
+\frac{3}{2}\frac{d p}{dt} + \frac{5}{2}\,p\,\nabla\!\cdot\!{\bf V}
++ \bpi:\nabla{\bf V} + \nabla\!\cdot\!{\bf q} &=& 0.\label{e3.56c}
+\end{eqnarray}
+Here, $n$ is the (particle) density, ${\bf V}$ the flow velocity, 
+$p$ the scalar pressure,
+and ${\bf g}$  the acceleration due to gravity.
+We have dropped the subscript $s$ because, in this case, there is
+only a single species. Note
+ that there is no collisional friction or heating
+in a single species system. 
+Of course, there are no electrical or magnetic forces in
+a neutral gas, so we have included gravitational forces instead. 
+The purpose of the closure scheme is to express the
+viscosity tensor, $\bpi$, and the heat flux density, ${\bf q}$, in terms
+of $n$, ${\bf V}$, or $p$, and, thereby, complete the set of equations.
+
+The mean-free-path $l$ for  hard-sphere molecules is given by
+\begin{equation}\label{e3.57}
+l = \frac{1}{\sqrt{2}\,\pi\,n\,\sigma^2}.
+\end{equation}
+This formula is fairly easy to understand: the volume swept out by a given molecule
+in moving a mean-free-path must contain, on average, approximately one
+other molecule. Note that $l$ is completely independent of the speed or
+mass of the molecules. The mean-free-path is assumed to be much
+smaller than the variation length-scale $L$ of macroscopic quantities,
+so that
+\begin{equation}
+\epsilon = \frac{l}{L} \ll 1.
+\end{equation}
+
+In the Chapman-Enskog scheme, the distribution function is expanded, order by order,
+in the small parameter $\epsilon$:
+\begin{equation}
+f({\bf r}, {\bf v}, t) = f_0({\bf r}, {\bf v}, t) + \epsilon\,f_1({\bf r}, {\bf v}, t) + \epsilon^2\, f_2({\bf r}, {\bf v}, t) + \cdots.
+\end{equation}
+Here, $f_0$, $f_1$, $f_2$, {\em etc.}, are all assumed to be of the same order of
+magnitude. In fact, only the first {\em two}\/ terms in this expansion are ever
+calculated. 
+To zeroth order in $\epsilon$, the kinetic equation requires that $f_0$ be
+a Maxwellian:
+\begin{equation}
+f_0({\bf r}, {\bf v}, t) = n({\bf r})
+\left(\frac{m}{2\pi\,T({\bf r})}\right)^{3/2}\,\exp\!\left[-\frac{m\,({\bf v}-
+{\bf V})^2}
+{2\,T({\bf r})}\right].
+\end{equation}
+Recall that $p=n\,T$. Note that there is zero heat flow or viscous stress associated
+with a Maxwellian distribution function. Thus, both the heat flux density, 
+${\bf q}$,
+and the viscosity tensor, $\bpi$, depend on the first-order 
+non-Maxwellian correction
+to the distribution function, $f_1$. 
+
+It is possible to {\em linearize}\/ the kinetic equation, and then rearrange
+it so as to obtain an {\em integral equation}\/ for $f_1$ in terms of $f_0$.
+This rearrangement depends crucially on the {\em bilinearity}\/ of the collision
+operator.
+Incidentally, the equation is integral because the collision operator is an integral
+operator. The integral equation is solved by expanding $f_1$ in velocity space
+using Laguerre polynomials (sometime called Sonine polynomials). It is
+possible to reduce the integral equation to an infinite  set of simultaneous
+algebraic equations for the coefficients in this expansion. If the expansion
+is truncated, after $N$ terms, say, then these algebraic equations can be solved for
+the coefficients. It turns out that the Laguerre polynomial expansion
+converges very rapidly. Thus, it is conventional to only keep the first {\em two}\/
+terms in this expansion, which is usually sufficient to ensure an accuracy of
+about $1\%$ in the final result. Finally, the appropriate moments
+of $f_1$ are taken, so as to obtain expression for the heat flux density
+and the viscosity
+tensor. Strictly speaking, after evaluating $f_1$, we should then go on to
+evaluate $f_2$, so as to ensure that $f_2$ really is negligible compared to $f_1$.
+In reality, this is never done because the mathematical difficulties involved
+in such a calculation are prohibitive.
+
+The Chapman-Enskog method outlined above can be applied to {\em any}\/ assumed
+force law between molecules, provided that the force is sufficiently short-range
+({\em i.e.}, provided that it falls off faster with increasing 
+separation than the Coulomb force). For all sensible force laws, the viscosity
+tensor is given by
+\begin{equation}\label{e3.61}
+\pi_{\alpha\beta} =- \eta \left( \frac{\partial V_\alpha}{\partial r_\beta}
++ \frac{\partial V_\beta}{\partial r_\alpha} - \frac{2}{3}\,\nabla\!\cdot\!{\bf V}\,\delta_{\alpha\beta}
+\right),
+\end{equation}
+whereas the heat flux density takes the form
+\begin{equation}\label{e3.62}
+{\bf q} = - \kappa\,\nabla T.
+\end{equation}
+Here, $\eta$ is the {\em coefficient of viscosity}, and $\kappa$ is the
+{\em coefficient of thermal conduction}. It is convenient to write
+\begin{eqnarray}
+\eta &= &m n \,{\mit\chi}_v,\\[0.5ex]
+\kappa& =& n\,{\mit\chi}_t,
+\end{eqnarray}
+where ${\mit\chi}_v$ is the {\em viscous diffusivity}\/ and ${\mit\chi}_t$
+is the {\em thermal diffusivity}. Note that both ${\mit\chi}_v$ and
+${\mit\chi}_t$ have the dimensions ${\rm m}^2\,{\rm s}^{-1}$ and are,
+effectively, {\em diffusion coefficients}. For the special
+case of hard-sphere molecules, Chapman-Enskog theory yields:
+\begin{eqnarray}\label{e3.64a}
+{\mit\chi}_v &=& \frac{75\,\pi^{1/2}}{64}\,\left[1+ \frac{3}{202}
++\cdots\right]\,\nu\,l^2 = A_v\,\nu\,l^2,\\[0.5ex]
+{\mit\chi}_t &=& \frac{5\,\pi^{1/2}}{16}\,\left[
+1+ \frac{1}{44}+\cdots\right]\,\nu\,l^2 = A_t\,\nu\,l^2.\label{e3.64b}
+\end{eqnarray}
+Here, 
+\begin{equation}\label{e3.65}
+\nu \equiv \frac{v_t}{l} \equiv \frac{\sqrt{2\,T/m}}{l}
+\end{equation}
+is the {\em collision frequency}. Note that the first two terms in the Laguerre
+polynomial expansion are shown explicitly (in the square brackets) in Eqs.~(\ref{e3.64a})--(\ref{e3.64b}).
+
+Equations (\ref{e3.64a})--(\ref{e3.64b}) have a simple physical interpretation: the viscous and thermal
+diffusivities of a neutral gas can be accounted for in terms of the {\em
+random-walk diffusion}\/ of molecules with excess momentum and energy, respectively.
+Recall the standard result in stochastic theory that if particles
+jump an average distance $l$, in a random direction, $\nu$ times a second, then
+the diffusivity associated with such motion is $\chi\sim\nu\,l^2$.
+Chapman-Enskog theory basically allows us to calculate the numerical constants
+$A_v$ and $A_t$,
+multiplying $\nu\,l^2$ in the expressions for $\chi_v$ and $\chi_t$,
+ for a given force law between molecules.
+Obviously, these coefficients are different for different force laws. The
+expression for the 
+mean-free-path, $l$,  is also different for different force laws. 
+
+Let $\bar{n}$, $\bar{v}_t$, and $\bar{l}$ be typical values of the
+particle density, the thermal velocity, and the mean-free-path, respectively.
+Suppose that the typical flow velocity is $\lambda\,\bar{v}_t$,
+and the typical variation length-scale is $L$. Let us
+define the following normalized quantities: $\hat{n}=n/\bar{n}$, $\hat{v}_t=
+v_t/\bar{v}_t$, $\hat{l} = l/\bar{l}$, $\hat{{\bf r}}= {\bf r}/ L$,
+$\hat{\nabla} = L\,\nabla$, $\hat{t} = \lambda\,\bar{v}_t\,t/L$, 
+$\hat{\bf V} = {\bf V}/\lambda\,\bar{v}_t$, 
+$\hat{T} = T/m\,\bar{v}_t^{~2}$, 
+$\hat{\bf g} = L\,{\bf g}/ (1+\lambda^2)\,\bar{v}_t^{~2}$,
+$\hat{p}= p/m\,\bar{n}\,\bar{v}_t^{~2}$, $\hat{\bpi} =
+\bpi/ \lambda\,\epsilon\,m\,\bar{n}\,\bar{v}_t^{~2}$, 
+$\hat{\bf q}= {\bf q} / \epsilon\,m\,\bar{n}\,\bar{v}_t^{~3}$. Here,
+$\epsilon = \bar{l}/L\ll 1$. 
+Note that
+\begin{eqnarray}
+\hat{\bpi} &=& - A_v\,\hat{n}\,\hat{v}_t\,\hat{l}\left(
+\frac{\partial\hat{V}_\alpha}{\partial\hat{r}_\beta}+
+\frac{\partial\hat{V}_\beta    }{\partial\hat{r}_\alpha}-\frac{2}{3}\,\hat{\nabla}\!
+\cdot\!\hat{\bf V}\,\delta_{\alpha\beta}\right),\\[0.5ex]
+\hat{\bf q} &=& - A_t\,\hat{n}\,\hat{v}_t\,\hat{l}\,\,\hat{\nabla}\hat{T}.
+\end{eqnarray}
+All hatted quantities are designed to be
+ $O(1)$.
+The normalized fluid equations are written:
+\begin{eqnarray}\label{e3.67a}
+\frac{d\hat{n}}{d\hat{t}} + \hat{n}\,\hat{\nabla}\!\cdot\!\hat{\bf V} &=& 0,\\[0.5ex]
+\lambda^2\,\hat{n}\,\frac{d \hat{\bf V}}{d\hat{t}} + \hat{\nabla} \hat{p}
+ + \lambda\,\epsilon\,\hat{\nabla}\!\cdot \!\hat{\bpi} + (1+\lambda^2)
+\,\hat{n}\,\hat{\bf g}
+& =& {\bf 0},\\[0.5ex]
+\lambda\,\frac{3}{2}\frac{d \hat{p}}{d\hat{t}} + 
+\lambda\,\frac{5}{2}\,\hat{p}\,\hat{\nabla}\!\cdot\!
+\hat{\bf V}
++ \lambda^2\,\epsilon\,\hat{\bpi}:\hat{\nabla}\hat{\bf V} + 
+\epsilon\,\hat{\nabla}\!\cdot\!\hat{\bf q} &=& 0,\label{e3.67c}
+\end{eqnarray}
+where
+\begin{equation}
+\frac{d}{d\hat{t}}\equiv \frac{\partial}{\partial \hat{t}} + 
+\hat{\bf V}\!\cdot\!\hat{\nabla}.
+\end{equation}
+Note that the only large or small quantities in the above equations are
+the parameters $\lambda$ and $\epsilon$. 
+
+Suppose that $\lambda\gg 1$. In other words, the flow velocity is much
+greater than the thermal speed. Retaining only the largest terms in Eqs.~(\ref{e3.67a})--(\ref{e3.67c}),
+our system of fluid equations reduces to (in unnormalized form):
+\begin{eqnarray}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V} &=& 0,\\[0.5ex]
+\frac{d{\bf V}}{dt} + {\bf g} &\simeq& {\bf 0}.
+\end{eqnarray}
+These are called the {\em cold-gas}\/ equations, because they can also
+be obtained by formally taking the limit $T\rightarrow 0$. The cold-gas
+ equations describe
+externally driven, highly supersonic, gas dynamics.
+Note that  the gas pressure ({\em i.e.}, energy density) 
+can be neglected in the cold-gas limit, since the thermal velocity is much
+smaller than the flow velocity, and so there is no need for an energy evolution equation. Furthermore, the 
+viscosity can also be neglected, since the
+viscous diffusion velocity  is also far smaller than the
+flow velocity.
+
+Suppose that $\lambda\sim O(1)$. In other words, the flow velocity is of order the
+thermal speed. Again, retaining only the largest terms in Eqs.~(\ref{e3.67a})--(\ref{e3.67c}),
+our system of fluid equations reduces to (in unnormalized form):
+\begin{eqnarray}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V} &=& 0,\\[0.5ex]
+m n\,\frac{d {\bf V}}{dt} + \nabla p + mn\,{\bf g}
+& \simeq& {\bf 0},\\[0.5ex]
+\frac{3}{2}\frac{d p}{dt} + \frac{5}{2}\,p\,\nabla\!\cdot\!{\bf V}
+ &\simeq& 0.
+\end{eqnarray}
+The above  equations can be rearranged to give:
+\begin{eqnarray}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V} &=& 0,\\[0.5ex]
+m n\,\frac{d {\bf V}}{dt} + \nabla p + mn\,{\bf g}
+& \simeq& {\bf 0},\\[0.5ex]
+\frac{d}{dt}\!\left(\frac{p}{n^{5/3}}\right) 
+ &\simeq& 0.\label{e3.71c}
+\end{eqnarray}
+These are called the {\em hydrodynamic}\/ equations, since they are similar to the
+equations governing the dynamics of water. The hydrodynamic equations
+govern relatively fast, internally driven, 
+gas dynamics: in particular, the dynamics of {\em sound waves}.
+Note that the gas pressure is non-negligible in the
+hydrodynamic limit,  since the
+thermal velocity is of  order  the flow speed, and so
+ an energy evolution equation is needed. However, the
+energy equation takes a particularly simple form, because
+Eq.~(\ref{e3.71c}) is immediately recognizable as the {\em adiabatic}\/ equation
+of state for a monatomic gas. This is not surprising, since the
+flow velocity is still much faster than the viscous and thermal diffusion
+velocities (hence, the absence of viscosity and thermal conductivity in the
+hydrodynamic equations), in which case the gas acts effectively like a perfect
+thermal insulator. 
+
+Suppose, finally, that $\lambda\sim \epsilon$. In other words, the flow
+velocity is of order the viscous and thermal diffusion velocities. Our system
+of fluid equations now reduces to a force balance criterion,
+\begin{equation}
+\nabla p + mn\,{\bf g} \simeq {\bf 0},
+\end{equation}
+to lowest order. To next order, we obtain a set of equations
+describing the relatively slow viscous and thermal evolution 
+of the gas:
+\begin{eqnarray}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V} &=& 0,\\[0.5ex]
+m n\,\frac{d {\bf V}}{dt} + \nabla\!\cdot \!\bpi 
+& \simeq& {\bf 0},\\[0.5ex]
+\frac{3}{2}\frac{d p}{dt} + \frac{5}{2}\,p\,\nabla\!\cdot\!{\bf V}
++ \nabla\!\cdot\!{\bf q} &\simeq& 0.
+\end{eqnarray}
+Clearly, this set of equations is only appropriate to relatively quiescent,
+quasi-equilibrium, gas dynamics. Note that virtually all of the terms
+in our original fluid  equations, (\ref{e3.56a})--(\ref{e3.56c}), must be retained in this limit.
+
+The above investigation reveals an important truth in gas dynamics, which also
+applies to plasma dynamics. Namely, the form of the
+fluid equations depends crucially on the typical fluid {\em velocity}\/ 
+associated with the type of dynamics under investigation. As a general rule,
+the equations get simpler as the typical velocity  get faster, and {\em vice versa}. 
+
+\section{Braginskii Equations}
+Let now consider the problem of closure in {\em plasma}\/ fluid equations. There are, in
+fact, two possible small parameters in plasmas upon which we could
+ base an asymptotic
+closure scheme. The first is the ratio of the mean-free-path, $l$, to the
+macroscopic length-scale, $L$. This is only appropriate to {\em collisional}\/ 
+plasmas. The second is the ratio of the Larmor radius, $\rho$, to the macroscopic
+length-scale, $L$. This is only appropriate to {\em magnetized} plasmas. 
+There is, of course, no small parameter upon which to base an asymptotic
+closure scheme in a collisionless, unmagnetized plasma. However, such systems
+occur predominately in accelerator physics contexts, and are not really 
+``plasmas'' at all,
+since they exhibit virtually no collective effects. Let us
+ investigate 
+Chapman-Enskog-like closure schemes
+in a {\em collisional}, quasi-neutral plasma consisting of
+equal numbers of electrons and ions. We shall treat the 
+unmagnetized and magnetized cases
+separately. 
+
+The first step in our closure scheme is to approximate the actual collision
+operator for Coulomb interactions by an operator which is strictly
+{\em bilinear}\/ in its arguments (see Sect.~\ref{s3.3}). Once this has been achieved,
+the closure problem is formally of the type which can be solved using the
+Chapman-Enskog method. 
+
+The electrons and ions collision times, $\tau = l/v_t = \nu^{-1}$, are
+written
+\begin{equation}\label{e3.74}
+\tau_e = \frac{6\sqrt{2}\,\pi^{3/2}\,\epsilon_0^{~2}\,\sqrt{m_e}\,\,T_e^{~3/2}}
+{\ln\Lambda\, e^4\, n},
+\end{equation}
+and
+\begin{equation}\label{e3.75}
+\tau_i = \frac{ 12\,\pi^{3/2}\,\epsilon_0^{~2}\,\sqrt{m_i}\,\,T_i^{~3/2}}
+{\ln\Lambda\, e^4\, n},
+\end{equation}
+respectively. 
+Here, $n=n_e=n_i$ is the number density of particles, and $\ln\Lambda$ is a quantity
+called the {\em Coulomb logarithm}\/ whose origin is  the slight modification to the
+collision operator  mentioned above. The Coulomb logarithm is equal to
+the natural logarithm of the ratio of the maximum to minimum impact parameters
+for Coulomb ``collisions.'' In other words, $\ln\Lambda=\ln\,(d_{\rm max}/d_{\rm min})$.
+The minimum parameter is simply the distance of closest approach,
+$d_{\rm min} \simeq r_c= e^2/4\pi\epsilon_0\,T_e$ [see Eq.~(\ref{e1.17})]. The
+maximum parameter is the Debye length, $d_{\rm max} \simeq 
+\lambda_D=\sqrt{\epsilon_0\,T_e/
+n\,e^2}$, since the Coulomb potential is shielded over distances greater than
+the Debye length. The Coulomb logarithm is a {\em very slowly varying}\/  function
+of the plasma density and the electron temperature, and is well approximated by
+\begin{equation}
+\ln\Lambda \simeq 6.6 - 0.5 \, ln \,n + 1.5\,\ln T_e,
+\end{equation}
+where $n$ is expressed in units of $10^{20}\,{\rm m}^{-3}$, and $T_e$ is expressed in electron volts.
+
+The basic forms of Eqs.~(\ref{e3.74}) and (\ref{e3.75}) are not hard to understand.
+From Eq.~(\ref{e3.57}), we expect
+\begin{equation}
+\tau \sim \frac{l}{v_t} \sim \frac{1}{n\,\sigma^2\,v_t},
+\end{equation}
+where $\sigma^2$ is the typical ``cross-section'' of the electrons or ions for
+Coulomb ``collisions.'' Of course, this cross-section is simply the square of
+the distance
+of closest approach, $r_c$, defined in Eq.~(\ref{e1.17}). Thus,
+\begin{equation}
+\tau \sim \frac{1}{n\,r_c^{~2}\,v_t} \sim \frac{\epsilon_0^{~2}\sqrt{m}\,\,T^{3/2}}
+{e^4\,n}.
+\end{equation}
+The most significant feature of Eqs.~(\ref{e3.74}) and (\ref{e3.75}) is the strong variation of
+the collision times with {\em temperature}. As the plasma gets hotter, the
+distance of closest approach gets smaller, so that both electrons and
+ions offer  much smaller cross-sections for Coulomb collisions. The net
+result is that such collisions become far  less frequent, and the collision
+times ({\em i.e.}, the mean times between $90^\circ$ degree scattering
+events) get much  longer. It follows that as plasmas are heated they become
+less collisional very rapidly. 
+
+The electron and ion fluid equations in a collisional plasma
+take the form [see Eqs.~(\ref{e3.50a})--(\ref{e3.50c})]:
+\begin{eqnarray}\label{e3.79a}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V}_e &=& 0,\\[0.5ex]
+m_e n\,\frac{d {\bf V}_e}{dt} + \nabla p_e+ \nabla\!\cdot \!\bpi_e + e n\,
+({\bf E} + {\bf V}_e\times {\bf B})& =& {\bf F},\\[0.5ex]
+\frac{3}{2}\frac{d p_e}{dt} + \frac{5}{2}\,p_e\,\nabla\!\cdot\!{\bf V}_e
++ \bpi_e:\nabla{\bf V}_e+ \nabla\!\cdot\!{\bf q}_e &=& W_e,\label{e3.79c}
+\end{eqnarray}
+and
+\begin{eqnarray}\label{e3.80a}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V}_i &=& 0,\\[0.5ex]
+m_i n\,\frac{d {\bf V}_i}{dt} + \nabla p_i + \nabla\!\cdot \!\bpi_i - e n\,
+({\bf E} + {\bf V}_i\times {\bf B})& =&- {\bf F},\\[0.5ex]
+\frac{3}{2}\frac{d p_i}{dt} + \frac{5}{2}\,p_i\,\nabla\!\cdot\!{\bf V}_i
++ \bpi_i:\nabla{\bf V}_i+ \nabla\!\cdot\!{\bf q}_i &=& W_i,\label{e3.80c}
+\end{eqnarray}
+respectively. Here, use has been made of the momentum conservation law (\ref{e3.30}). 
+Equations (\ref{e3.79a})--(\ref{e3.79c}) and (\ref{e3.80a})--(\ref{e3.80c})  are called the {\em Braginskii equations}, since they were first obtained
+in a celebrated article by S.I.~Braginskii.\footnote{S.I.~Braginskii,
+{\em Transport Processes in a Plasma}, in {\sf Reviews of Plasma Physics}
+(Consultants Bureau, New York NY, 1965), Vol.~1, p.~205.}
+
+In the {\em unmagnetized}\/ limit, which actually
+corresponds to
+\begin{equation}
+{\mit\Omega}_i\,\tau_i, \,\,\,{\mit\Omega}_e\,\tau_e \ll 1,
+\end{equation}
+the standard two-Laguerre-polynomial Chapman-Enskog closure scheme yields
+\begin{eqnarray}\label{e3.82a}
+{\bf F} &=& \frac{ne\,{\bf j}}{\sigma_\parallel} - 0.71\,n\,\nabla T_e,\\[0.5ex]\label{e3.82b}
+W_i &=& \frac{3\,m_e}{m_i} \frac{n\,(T_e-T_i)}{\tau_e},\\[0.5ex]
+W_e &=& -W_i + \frac{ {\bf j}\cdot {\bf F} }{n \,e}= -W_i + 
+\frac{j^2}{\sigma_\parallel} -
+0.71\,\frac{{\bf j}\cdot \nabla T_e}{e}.\label{e3.82c}
+\end{eqnarray}
+Here, ${\bf j} = - n\,e\,({\bf V}_e-{\bf V}_i)$ is the net plasma current,
+and the {\em electrical conductivity}\/ $\sigma_\parallel$ is given by
+\begin{equation}\label{e3.83}
+\sigma_\parallel = 1.96\,\frac{n \,e^2\,\tau_e}{m_e}.
+\end{equation} In the above, use has been made of the conservation law
+(\ref{e3.37}).
+
+Let us examine each of the above collisional terms, one by one. The first
+term on the right-hand side of Eq.~(\ref{e3.82a}) is a friction force due to the
+relative motion of electrons and ions, and obviously controls the electrical
+conductivity of the plasma. The form of this term is fairly easy to understand.
+The electrons lose their ordered velocity
+with respect to the ions,  ${\bf U} = {\bf V}_e - {\bf V}_i$,
+in an electron collision time, $\tau_e$, and consequently lose momentum 
+$m_e\,{\bf U}$  per electron (which is given to the ions) in this time. 
+This means that a frictional force $(m_e\,n/\tau_e)\,{\bf U}
+\sim n\,e\,{\bf j}/(n\,e^2\,\tau_e/m_e)$ is exerted on the electrons.
+An equal and opposite force is exerted on the ions. Note that, since the Coulomb
+cross-section diminishes with increasing electron energy ({\em i.e.}, 
+$\tau_e\sim T_e^{~3/2}$),
+the conductivity of the fast electrons in the distribution function
+is higher than that of the slow electrons (since, $\sigma_\parallel \sim \tau_e$).
+Hence, electrical current in plasmas is carried predominately by the
+{\em fast}\/  electrons. This effect has some important and interesting
+consequences. 
+
+One immediate consequence is the second term on the right-hand side of Eq.~(\ref{e3.82a}),
+which is called the {\em thermal force}. To understand the origin of
+a frictional force proportional to minus the gradient of the electron temperature,
+let us assume that the electron and ion fluids are at rest ({\em i.e.}, 
+$V_e=V_i =0$). It follows that the number of electrons moving from left to right
+(along the $x$-axis, say) and from right to left per unit time is exactly the
+same at a given point (coordinate $x_0$, say) in the plasma. As a result
+of electron-ion collisions, these fluxes experience frictional forces,
+${\bf F}_-$ and ${\bf F}_+$, respectively, of order $m_e\,n\,v_e/\tau_e$,
+where $v_e$ is the electron thermal velocity. In a completely homogeneous
+plasma these forces balance exactly, and so there is zero net frictional force.
+Suppose, however, that the electrons coming from the right are, on average, hotter
+than those coming from the left. It follows that the frictional force
+${\bf F}_+$ acting on the fast electrons coming from the right is less than
+the force ${\bf F}_-$ acting on the slow electrons coming from the left, since
+$\tau_e$ increases with electron temperature. As a result, there is a net 
+frictional force acting to the left: {\em i.e.}, in the direction of $-\nabla T_e$. 
+
+Let us estimate the magnitude of the frictional force. At point $x_0$, collisions
+are experienced by electrons which have traversed distances of order a
+mean-free-path, $l_e\sim v_e\,\tau_e$. Thus, the electrons coming from the
+right originate from regions in which the temperature is approximately
+$l_e\,\partial T_e/\partial x$ greater than the regions from which the electrons
+coming from the left originate. Since the friction force is proportional to 
+$T_e^{~-1}$, the net force ${\bf F}_+ - {\bf F}_-$ is of order
+\begin{equation}\label{e3.84}
+{\bf F}_T \sim- \frac{l_e}{T_e} \frac{\partial T_e}{\partial x}
+\frac{m_e\,n\,v_e}{\tau_e} \sim- \frac{m_e\,v_e^{~2}}{T_e}\, n\,\frac{\partial T_e}
+{\partial x} \sim - n\,\frac{\partial T_e}
+{\partial x}.
+\end{equation}
+It must be emphasized that the thermal force is a direct consequence of {\em 
+collisions}, despite the fact that the expression for
+the thermal force does not contain
+$\tau_e$ explicitly. 
+
+The term $W_i$, specified by Eq.~(\ref{e3.82b}),  represents the rate at which
+energy is acquired by the ions due to collisions
+with the electrons. 
+The most striking aspect of this term is
+its {\em smallness}\/
+ (note that it is proportional to an inverse mass ratio,
+$m_e/m_i$). The smallness of $W_i$ is a direct consequence of the
+fact that electrons are considerably lighter than ions. Consider the
+limit in which the ion mass is infinite, and the ions are at rest on average:
+{\em i.e.}, $V_i=0$. In this case, collisions of electrons with ions
+take place {\em without any}\/ exchange of energy. The electron velocities
+are randomized by the collisions, so that the energy associated
+with their ordered velocity, ${\bf U} = {\bf V}_e-{\bf V}_i$, is converted
+into heat energy in the electron fluid [this is represented by the second term
+on the extreme right-hand side of Eq.~(\ref{e3.82c})]. However, the ion energy remains
+unchanged. Let us now assume that the ratio $m_i/m_e$ is large, but finite, and
+that $U=0$. If $T_e=T_i$, the ions and electrons are in thermal equilibrium, so
+no heat is exchanged between them. However, if $T_e>T_i$, heat
+is transferred from the electrons to the ions. As is well known, when
+a light particle collides with a heavy particle, the order of magnitude of the
+transferred energy is given by the mass ratio $m_1/m_2$, where $m_1$ is the
+mass of the lighter particle. For example, the mean fractional energy transferred
+in isotropic scattering is $2m_1/m_2$. Thus, we would expect the
+energy per unit time transferred from  the electrons to the ions to be roughly
+\begin{equation}
+W_i \sim \frac{n}{\tau_e} \,\frac{2m_e}{m_i}\,\frac{3}{2} \,(T_e-T_i).
+\end{equation}
+In fact, $\tau_e$ is defined so as to make the above estimate exact.
+
+The term $W_e$, specified by Eq.~(\ref{e3.82c}), represents the rate at
+which energy is acquired by the electrons due to
+collisions with the ions, and consists of three terms. Not surprisingly,
+the first term is simply minus the rate at which energy is
+acquired by the ions due to collisions with the
+electrons. The second term represents the conversion
+of the ordered motion of the electrons, relative to the ions, into random
+motion ({\em i.e.}, heat) via collisions with the ions. Note that this
+term is positive definite, indicating that the randomization of the electron
+ordered motion gives rise to {\em irreversible}\/ heat generation.
+Incidentally,  this
+term is usually called the {\em ohmic heating}\/ term. Finally, the third
+term represents the work done against the thermal force. Note that this
+term can be either positive or negative, depending on the direction of
+the current flow relative to the electron temperature gradient. This
+indicates that work done against the thermal force gives rise to {\em reversible}\/ 
+heat generation. There is an analogous effect in metals called the {\em
+Thomson effect}. 
+
+The electron and ion heat flux densities are given by
+\begin{eqnarray}\label{e3.86a}
+{\bf q}_e &=& -\kappa_\parallel^e\,\nabla T_e - 
+0.71\,\frac{T_e\,{\bf j}}{e},\\[0.5ex]
+{\bf q}_i &=& -\kappa_\parallel^i\,\nabla T_i,\label{e3.86b}
+\end{eqnarray}
+respectively. The electron and ion {\em thermal conductivities}\/ are written
+\begin{eqnarray}\label{e3.87a}
+\kappa_\parallel^e &=& 3.2\,\,\frac{n\,\tau_e\,T_e}{m_e},\\[0.5ex]
+\kappa_\parallel^i &=& 3.9\,\,\frac{n\,\tau_i\,T_i}{m_i},\label{e3.87b}
+\end{eqnarray}
+respectively. 
+
+It follows, by comparison with Eqs.~(\ref{e3.62})--(\ref{e3.65}), that 
+the first term on the right-hand side of Eq.~(\ref{e3.86a}) and the expression
+on the right-hand side of Eq. (\ref{e3.86b}) represent straightforward
+random-walk heat diffusion, with frequency $\nu$, and step-length $l$.
+Recall, that $\nu=\tau^{-1}$ is the collision frequency, and
+$l=\tau\,v_t$ is the mean-free-path. Note  that the
+electron  heat diffusivity is generally much greater than that of the ions,
+since $\kappa_\parallel^e/\kappa_\parallel^i\sim \sqrt{m_i/m_e}$,
+assuming that $T_e\sim T_i$. 
+
+The second term on the right-hand side of Eq.~(\ref{e3.86a}) describes  a convective
+heat flux due to the motion of the electrons relative to the ions. 
+To understand the origin of this flux, we need to recall that
+electric current in plasmas is carried predominately by the fast electrons
+in the distribution function. Suppose that $U$ is non-zero. In the
+coordinate system in which $V_e$ is zero, more fast electron move in the
+direction of ${\bf U}$, and more slow electrons move in the opposite
+direction. Although the electron fluxes are balanced in this frame of reference,
+the energy fluxes are not (since a fast electron possesses more energy than a slow
+electron), and heat flows in the direction of ${\bf U}$: {\em i.e.}, in
+the opposite direction to the electric current. The net heat flux density is of
+order $n\,T_e\,U$: {\em i.e.}, there is no near cancellation of the fluxes
+due to the fast and slow electrons. Like the thermal force, this effect
+depends on collisions despite the fact that the expression for the convective
+heat flux does not contain $\tau_e$ explicitly. 
+
+Finally, the electron and ion viscosity tensors take the form
+\begin{eqnarray}\label{e3.88a}
+(\pi_e)_{\alpha\beta}& =& - \eta_0^e\, \left( \frac{\partial V_\alpha}{\partial r_\beta}
++ \frac{\partial V_\beta}{\partial r_\alpha} - \frac{2}{3}\,\nabla\!\cdot\!{\bf V}\,\delta_{\alpha\beta}\right),\\[0.5ex]
+(\pi_i)_{\alpha\beta}& =& - \eta_0^i\, \left( \frac{\partial V_\alpha}{\partial r_\beta}
++ \frac{\partial V_\beta}{\partial r_\alpha} - \frac{2}{3}\,\nabla\!\cdot\!{\bf V}\,\delta_{\alpha\beta}
+\right),\label{e3.88b}
+\end{eqnarray}
+respectively. Obviously, $V_\alpha$ refers to a Cartesian component of the
+electron fluid velocity in Eq.~(\ref{e3.88a}) and the ion fluid velocity in Eq.~(\ref{e3.88b}).
+Here, the electron and ion {\em viscosities}\/ are given
+by
+\begin{eqnarray}\label{e3.89a}
+\eta_0^e &=& 0.73\,n\,\tau_e\,T_e,\\[0.5ex]
+\eta_0^i &=& 0.96\,n\,\tau_i\,T_i,\label{e3.89b}
+\end{eqnarray}
+respectively. 
+It follows, by comparison with Eqs.~(\ref{e3.61})--(\ref{e3.65}), that the above expressions
+correspond to straightforward random-walk diffusion of momentum, with 
+frequency $\nu$, and step-length $l$. Again, the electron diffusivity
+exceeds the ion diffusivity by the square root of a mass ratio (assuming
+$T_e\sim T_i$).  However,
+the ion viscosity exceeds the electron viscosity by the same factor (recall
+that $\eta\sim nm\,\chi_v$): {\em i.e.}, $\eta_0^i/\eta_0^e\sim\sqrt{m_i/m_e}$.
+For this reason, the viscosity of a plasma is determined essentially by the
+ions. This is not surprising, since viscosity is the diffusion of momentum,
+and the ions possess nearly all of the momentum in a plasma by virtue of
+their large masses.
+
+
+Let us now examine the {\em magnetized}\/ limit,
+\begin{equation}
+{\mit\Omega}_i\,\tau_i, \,\,\,{\mit\Omega}_e\, \tau_e \gg 1,
+\end{equation}
+in which the electron and ion gyroradii are much {\em smaller}\/ than the
+corresponding mean-free-paths. In this limit, the two-Laguerre-polynomial
+Chapman-Enskog closure scheme yields
+\begin{eqnarray}\label{e3.91a}
+{\bf F}&=& ne\left(\frac{{\bf j}_\parallel}{\sigma_\parallel}
++\frac{{\bf j}_\perp}{\sigma_\perp}\right) -0.71\,n\,\nabla_\parallel T_e
+-\frac{3\,n}{2\,|{\mit\Omega}_e|\,\tau_e}\,{\bf b}\times\nabla_\perp T_e,
+\\[0.5ex]
+W_i &=& \frac{3\,m_e}{m_i} \frac{n\,(T_e-T_i)}{\tau_e},\\[0.5ex]
+W_e &=& -W_i + \frac{ {\bf j}\cdot {\bf F} }{n \,e}.
+\end{eqnarray}
+Here, the {\em parallel electrical conductivity}, $\sigma_\parallel$, is given by Eq.~(\ref{e3.83}),
+whereas the {\em perpendicular electrical conductivity}, $\sigma_\perp$,  takes the form
+\begin{equation}\label{e3.92}
+\sigma_\perp = 0.51\,\sigma_\parallel = \frac{n\,e^2\,\tau_e}{m_e}.
+\end{equation}
+Note that $\nabla_\parallel\cdots \equiv {\bf b}\,({\bf b}\!\cdot\!\nabla
+\cdots)$ denotes a
+gradient parallel to the magnetic field, whereas $\nabla_\perp \equiv
+ \nabla-\nabla_\parallel$ denotes a gradient perpendicular to the magnetic
+field. Likewise, ${\bf j}_\parallel \equiv {\bf b}\,({\bf b}\!\cdot{\bf j})$
+represents the component of the plasma current flowing parallel to the
+magnetic field, whereas ${\bf j}_\perp \equiv {\bf j} - {\bf j}_\parallel$
+represents the perpendicular component of the plasma current.
+
+We expect the presence of a strong magnetic field to give rise to a 
+marked {\em anisotropy}\/ in  plasma properties between directions parallel
+and perpendicular to ${\bf B}$, because of the completely different motions
+of the constituent ions and electrons parallel and perpendicular to the field. 
+Thus, not surprisingly, we find that the electrical conductivity perpendicular
+to the field is approximately half that parallel to the field [see Eqs.~(\ref{e3.91a})
+and (\ref{e3.92})]. The thermal force is unchanged (relative to the unmagnetized case)
+in the parallel direction, but is radically modified in the
+perpendicular direction. In order to understand the origin
+of the last term in Eq.~(\ref{e3.91a}), let us consider a situation in
+which there is a strong magnetic field along the $z$-axis, and an electron
+temperature gradient along the $x$-axis---see Fig.~\ref{f7}. The electrons gyrate
+in the $x$-$y$ plane in circles of radius $\rho_e\sim v_e/|{\mit\Omega}_e|$.
+At a given point, coordinate $x_0$, say, on the $x$-axis, the electrons that
+come from the right and the left have traversed distances of order $\rho_e$. 
+Thus, the electrons from the right originate from regions where the
+electron temperature is of order $\rho_e\,\partial T_e/\partial x$ greater than
+the regions from which the electrons from the left originate. Since the
+friction force is proportional to $T_e^{-1}$, an unbalanced friction force
+arises, directed along the $-y$-axis---see Fig.~\ref{f7}. This direction
+corresponds to the direction of $-{\bf b}\times\nabla T_e$. 
+Note that there is
+no friction force along the $x$-axis, since the $x$-directed fluxes are due
+to electrons which originate from regions where $x=x_0$. 
+By analogy with Eq.~(\ref{e3.84}), the magnitude of the perpendicular
+thermal force is
+\begin{equation}
+{\bf F}_{T\perp} \sim \frac{{\rho}_e}{T_e}\frac{\partial T_e}{\partial x}
+\frac{m_e\,n\,v_e}{\tau_e} \sim \frac{n}{|{\mit\Omega}_e|\,\tau_e}
+\frac{\partial T_e}{\partial x}.
+\end{equation}
+Note that the effect of a strong magnetic field on the perpendicular
+component of the thermal force is directly analogous to a well-known
+phenomenon in metals, called the {\em Nernst effect}. 
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter03/brag1.eps}}
+\caption{\em Origin of the perpendicular thermal force in a magnetized plasma.}\label{f7}
+\end{figure}
+
+In the magnetized limit, the electron and ion heat flux densities become
+\begin{eqnarray}
+{\bf q}_e &=& -\kappa_\parallel^e\,\nabla_\parallel T_e -\kappa_\perp^e\,
+\nabla_\perp T_e
+-\kappa_\times^e\,{\bf b}\times\nabla_\perp T_e\nonumber\\[0.5ex]
+&&- 0.71\,\frac{T_e\,{\bf j}_\parallel}{e}-
+\frac{3\,T_e}{2\,|{\mit\Omega}_e|\,\tau_e\,e}\,{\bf b}\times{\bf j}_\perp,\label{e3.94a}\\[0.5ex]
+{\bf q}_i &=& -\kappa_\parallel^i\,\nabla_\parallel T_i -\kappa_\perp^i\,
+\nabla_\perp T_i
++\kappa_\times^i\,{\bf b}\times\nabla_\perp T_i,\label{e3.94b}
+\end{eqnarray}
+respectively. Here, the {\em parallel thermal conductivities}\/ are 
+given by Eqs.~(\ref{e3.87a})--(\ref{e3.87b}), and
+the {\em perpendicular thermal conductivities}\/ take the form
+\begin{eqnarray}
+\kappa_\perp^e &=& 4.7\,\frac{n\,T_e}{m_e\,{\mit\Omega}_e^{~2}\,\tau_e},\\[0.5ex]
+\kappa_\perp^i &=& 2\, \frac{n\,T_i}{m_i\,{\mit\Omega}_i^{~2}\,\tau_i}.
+\end{eqnarray}
+Finally, the {\em cross thermal conductivities}\/ are written
+\begin{eqnarray}
+\kappa_\times^e &=& \frac{5\,n\,T_e}{2\,m_e\,|{\mit\Omega}_e|},\\[0.5ex]
+\kappa_\times^i &=&\frac{5\,n\,T_i}{2\,m_i\,{\mit\Omega}_i}.
+\end{eqnarray}
+
+The first two terms on the right-hand sides of Eqs.~(\ref{e3.94a}) and (\ref{e3.94b})
+correspond to {\em diffusive}\/ heat transport by the electron and ion
+fluids, respectively. According to the first terms, the diffusive transport in
+the direction parallel to the magnetic field is exactly the same as that in the
+unmagnetized case: {\em i.e.}, it corresponds to 
+collision-induced random-walk diffusion
+of the ions and electrons, with
+frequency $\nu$, and step-length $l$. According to the
+second terms, the diffusive transport in the direction perpendicular to the
+magnetic field is {\em far smaller}\/ than that in the parallel direction.
+In fact, it is smaller by a factor $(\rho/l)^2$, where $\rho$ is the
+gyroradius, and $l$ the mean-free-path. Note, that the perpendicular
+heat transport also corresponds to collision-induced random-walk diffusion
+of charged particles,
+but  with frequency $\nu$, and
+step-length $\rho$. Thus, it is the greatly reduced step-length in the
+perpendicular direction, relative to the parallel direction, which ultimately
+gives rise to the strong reduction in the perpendicular heat transport. 
+If $T_e\sim T_i$, then the ion perpendicular heat diffusivity actually
+{\em exceeds}\/ that of the electrons by the square root of a mass ratio:
+$\kappa_\perp^i/\kappa_\perp^e\sim \sqrt{m_i/m_e}$. 
+
+The third terms on the right-hand sides of  Eqs.~(\ref{e3.94a}) and (\ref{e3.94b})
+correspond to heat fluxes which are perpendicular to both the magnetic field
+and the direction of the temperature gradient. In order to understand the
+origin of these terms, let us consider the ion flux. Suppose that there
+is a strong magnetic field along the $z$-axis, and an ion temperature gradient
+along the $x$-axis---see Fig.~\ref{f8}. The ions gyrate in the $x$-$y$ plane
+in circles of radius $\rho_i\sim v_i/{\mit\Omega}_i$, where $v_i$ is the
+ion thermal velocity. At a given point, coordinate $x_0$, say, on the $x$-axis,
+the ions that come from the right and the left have traversed distances of
+order $\rho_i$. The ions from the right are clearly somewhat hotter than those
+from the left. If the unidirectional particle fluxes, of order $n\,v_i$, are
+balanced, then the unidirectional heat fluxes, of order $n\,T_i\,v_i$, will
+have an unbalanced component of fractional order $(\rho_i/T_i)\partial
+T_i/\partial x$. As a result, there is a net heat flux in the $+y$-direction
+({\em i.e.}, the direction of ${\bf b}\times\nabla T_i$). The magnitude of
+this flux is
+\begin{equation}
+ q_\times^i \sim n\,v_i\, \rho_i\,\frac{\partial T_i}{\partial x}
+\sim \frac{n\,T_i}{m_i\,|{\mit\Omega}_i|}\,\frac{\partial T_i}{\partial x}.
+\end{equation}
+There is an analogous expression for the electron flux, except that the electron
+flux is in the opposite direction 
+to the ion flux (because the electrons gyrate in the opposite
+direction to the ions). Note that both ion and electron fluxes transport
+heat  {\em along isotherms}, and do not, therefore, give rise to
+any plasma heating. 
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter03/brag2.eps}}
+\caption{\em Origin of the convective  perpendicular heat flux in a magnetized plasma.}\label{f8}
+\end{figure}
+
+The fourth and fifth terms on the right-hand side of Eq.~(\ref{e3.94a}) correspond to
+the convective component of the electron heat flux density,  driven by
+ motion of the electrons relative to the ions. It is clear from the
+fourth  term that the convective flux parallel to the magnetic field is exactly the
+same as in the unmagnetized case [see Eq.~(\ref{e3.86a})]. However, according to the fifth term, the
+convective flux is radically modified in the perpendicular direction. 
+Probably the easiest method of explaining the fifth
+ term is via an examination
+of Eqs.~(\ref{e3.82a}), (\ref{e3.86a}), (\ref{e3.91a}), and (\ref{e3.94a}). There is clearly a very close 
+connection between the electron thermal force and the convective heat flux. 
+In fact, starting from general principles of the thermodynamics of irreversible
+processes, the so-called {\em Onsager principles}, it is possible to
+demonstrate that an electron frictional force of the form 
+$\alpha\,(\nabla\,T_e)_\beta\,{\bf i}$ necessarily gives rise to an electron heat flux
+of the form $\alpha\,(T_e\,j_\beta/ne)\,{\bf i}$, where the
+subscript $\beta$ corresponds to a general Cartesian component, and ${\bf i}$
+is a unit vector. Thus, the fifth term on the right-hand side of Eq.~(\ref{e3.94a})
+follows by {\em Onsager symmetry}\/ from the third term on the right-hand
+side of Eq.~(\ref{e3.91a}). This is one of many Onsager symmetries which
+occur in plasma transport theory. 
+
+In order to describe the viscosity tensor in a magnetized plasma, it is
+helpful to define the {\em rate-of-strain tensor}
+\begin{equation}
+W_{\alpha\beta} = \frac{\partial V_\alpha}{\partial r_\beta}
++ \frac{\partial V_\beta}{\partial r_\alpha} - \frac{2}{3} \,\nabla\!\cdot\!{\bf V}\,
+\delta_{\alpha\beta}.
+\end{equation}
+Obviously, there is a separate rate-of-strain tensor for the electron and ion
+fluids. It is easily demonstrated that this tensor is zero if the plasma
+translates or rotates as a rigid body, or if it undergoes isotropic
+compression. Thus, the rate-of-strain tensor measures the {\em deformation}\/  of
+plasma volume elements. 
+
+In a magnetized plasma, the viscosity tensor is best described as the
+sum of {\em five}\/ component tensors,
+\begin{equation}
+\bpi  = \sum_{n=0}^4 \bpi_n,
+\end{equation}
+where 
+\begin{equation}
+\bpi_0 = - 3\,\eta_0\,\left({\bf b}{\bf b} - \frac{1}{3}\,{\bf I}\right)
+\left({\bf b}{\bf b} - \frac{1}{3}\,{\bf I}\right): \nabla {\bf V},
+\end{equation}
+with
+\begin{equation}
+\bpi_1 =- \eta_1\left[{\bf I}_\perp\! \cdot\!{\bf W}\!\cdot\!{\bf I}_\perp
++ \frac{1}{2}\,{\bf I}_\perp\,({\bf b}\!\cdot\!{\bf W}\!\cdot\!{\bf b})\right],
+\end{equation}
+and
+\begin{equation}
+\bpi_2 = -4\,\eta_1\,\left[ {\bf I}_\perp\!\cdot\!
+{\bf W}\!\cdot\!{\bf b}{\bf b}
++ {\bf b}{\bf b}\!\cdot\!{\bf W} \!\cdot\!{\bf I}_\perp\right].
+\end{equation}
+plus
+\begin{equation}
+\bpi_3 = \frac{\eta_3}{2}\,\left[ {\bf b}\times 
+{\bf W}\!\cdot\!{\bf I}_\perp - {\bf I}_\perp\!\cdot\!{\bf W}\times{\bf b}
+\right],
+\end{equation}
+and
+\begin{equation}
+\bpi_4 = 2\,\eta_3\,\left[{\bf b} \times{\bf W} \!\cdot\! {\bf b}{\bf b}
+- {\bf b}{\bf b} \!\cdot\!{\bf W} \times{\bf b}\right].
+\end{equation}
+Here, ${\bf I}$ is the identity tensor, and 
+${\bf I}_\perp = {\bf I} - {\bf b}{\bf b}$. The above
+expressions are valid for both electrons and ions. 
+
+The tensor $\bpi_0$ describes what is known as {\em parallel viscosity}.
+This is a viscosity which controls the variation along magnetic field-lines of the
+velocity component parallel to  field-lines.
+ The parallel
+viscosity coefficients, $\eta_0^e$ and $\eta_0^i$ are specified in Eqs.~(\ref{e3.89a})--(\ref{e3.89b}). 
+Note that the parallel viscosity is unchanged from the unmagnetized case,
+and is due to the collision-induced random-walk diffusion of particles,
+with frequency $\nu$, and step-length $l$. 
+
+The tensors $\bpi_1$ and $\bpi_2$ describe what is known
+as {\em perpendicular viscosity}. This is a viscosity
+which controls the variation perpendicular to magnetic field-lines
+of the velocity components perpendicular to field-lines. The perpendicular
+viscosity coefficients are given by
+\begin{eqnarray}
+\eta_1^e &=& 0.51\, \frac{n\,T_e}{{\mit\Omega}_e^{~2}\,\tau_e},\\[0.5ex]
+\eta_1^i &=& \frac{3\, n\,T_i}{10\,{\mit\Omega}_i^{~2}\,\tau_i}.
+\end{eqnarray}
+Note that the perpendicular viscosity is {\em far smaller}\/ than the parallel
+viscosity. In fact, it is smaller by a factor $(\rho/l)^2$. The
+perpendicular viscosity corresponds to collision-induced random-walk diffusion
+of particles, with frequency $\nu$, and step-length $\rho$. Thus, it
+is the greatly reduced step-length in the perpendicular direction, relative
+to the parallel direction, which accounts for the smallness of the
+perpendicular viscosity compared to the parallel viscosity. 
+
+Finally, the tensors $\bpi_3$ and $\bpi_4$ describe what is known
+as {\em gyroviscosity}. This is not really viscosity at all, since the
+associated viscous stresses are always perpendicular to the velocity, implying that
+there is no dissipation ({\em i.e.}, viscous heating) associated with
+this effect. The gyroviscosity coefficients are given by 
+\begin{eqnarray}
+\eta_3^e &=& -\frac{n\,T_e}{2\,|{\mit\Omega}_e|} ,\\[0.5ex]
+\eta_3^i &=& \frac{n\,T_i}{2\,{\mit\Omega}_i}.
+\end{eqnarray}
+The origin of gyroviscosity is very similar to the origin of the
+cross thermal conductivity terms in Eqs.~(\ref{e3.94a})--(\ref{e3.94b}). Note that both
+cross thermal conductivity and gyroviscosity are {\em independent}\/
+of the collision frequency. 
+
+\section{Normalization of the Braginskii Equations}\label{s3.9}
+As we have just seen, the Braginskii equations contain terms which describe a
+very wide range of physical phenomena. For this reason, they are
+extremely complicated. Fortunately, however, it is not generally 
+necessary to retain all of
+the terms in these equations when investigating a particular
+problem in plasma physics: {\em e.g.}, electromagnetic wave propagation
+through plasmas. In this section, we shall attempt to construct a systematic
+normalization scheme for the Braginskii equations which will, hopefully, enable us
+to determine which terms to keep, and which to discard, when investigating
+a particular aspect of plasma physics. 
+
+Let us consider a magnetized plasma. It is convenient to split the friction force
+${\bf F}$ into a component ${\bf F}_U$ due to resistivity, and a
+component ${\bf F}_T$ corresponding to the thermal force. Thus,
+\begin{equation}
+{\bf F} = {\bf F}_U+{\bf F}_T,
+\end{equation}
+where\begin{eqnarray}
+{\bf F}_U&=& ne\left(\frac{{\bf j}_\parallel}{\sigma_\parallel}
++\frac{{\bf j}_\perp}{\sigma_\perp}\right), \\[0.5ex]
+{\bf F}_T &=& - 0.71\,n\,\nabla_\parallel T_e
+-\frac{3\,n}{2\,|{\mit\Omega}_e|\,\tau_e}\,{\bf b}\times\nabla_\perp T_e.
+\end{eqnarray}
+Likewise, the electron collisional energy gain term $W_e$ is split
+into a component $-W_i$ due to the energy lost to the ions (in the
+ion rest frame), a component $W_U$ due to work done by the friction
+force ${\bf F}_U$, and a component $W_T$ due to work done by the
+thermal force ${\bf F}_T$. Thus,
+\begin{equation}
+W_e = -W_i + W_U + W_T,
+\end{equation}
+where
+\begin{eqnarray}
+W_U &=& \frac{{\bf j}\cdot{\bf F}_U}{ne},\\[0.5ex]
+W_T&=& \frac{{\bf j}\cdot{\bf F}_T}{ne}.
+\end{eqnarray}
+Finally, it is helpful to split the electron heat flux density ${\bf q}_e$ into
+a diffusive component ${\bf q}_{Te}$ and a convective component ${\bf q}_{Ue}$. 
+Thus,
+\begin{equation}
+{\bf q}_e = {\bf q}_{Te} + {\bf q}_{Ue},
+\end{equation}
+where
+\begin{eqnarray}
+{\bf q}_{Te} &=&-\kappa_\parallel^e\,\nabla_\parallel T_e -\kappa_\perp^e\,
+\nabla_\perp T_e
+-\kappa_\times^e\,{\bf b}\times\nabla_\perp T_e,\\[0.5ex]
+{\bf q}_{Ue}&=&  0.71\,\frac{T_e\,{\bf j}_\parallel}{e}-
+\frac{3\,T_e}{2\,|{\mit\Omega}_e|\,\tau_e\,e}\,{\bf b}\times{\bf j}_\perp.
+\end{eqnarray}
+
+
+Let us, first of all, consider the electron fluid equations, which can
+be written:
+\begin{eqnarray}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V}_e &=& 0,\\[0.5ex]
+m_e n\,\frac{d {\bf V}_e}{dt} + \nabla p_e+ \nabla\!\cdot \!\bpi_e + e n\,
+({\bf E} + {\bf V}_e\times {\bf B})& =& {\bf F}_U +{\bf F}_T,\\[0.5ex]
+\frac{3}{2}\frac{d p_e}{dt} + \frac{5}{2}\,p_e\,\nabla\!\cdot\!{\bf V}_e
++ \bpi_e:\nabla{\bf V}_e+ \nabla\!\cdot\!{\bf q}_{Te} 
++ \nabla\!\cdot\!{\bf q}_{Ue} &=& -W_i\\[0.5ex]
+&&+W_U + W_T.\nonumber
+\end{eqnarray}
+Let $\bar{n}$, $\bar{v}_e$, $\bar{l}_e$, $\bar{B}$,
+and $\bar{\rho}_e =\bar{ v}_e/(e\bar{B}/m_e)$,  be typical values
+of the particle density, the electron thermal velocity, the electron
+mean-free-path,  the magnetic field-strength, and the
+electron gyroradius,  respectively. 
+Suppose that the typical electron flow velocity is $\lambda_e\,\bar{v}_e$, and
+the typical variation length-scale is $L$. Let
+ \begin{eqnarray}
+\delta_e &=& \frac{\bar{\rho}_e}{L},\\[0.5ex]
+\zeta_e &=& \frac{\bar{\rho}_e}{\bar{l}_e},\\[0.5ex]
+\mu &=& \sqrt{\frac{m_e}{m_i}}.
+\end{eqnarray}
+All three of these parameters are assumed to be {\em small}\/
+compared to unity.
+
+ We
+define the following normalized quantities: $\hat{n} = n/\bar{n}$,
+$\hat{v}_e = v_e/\bar{v}_e$, $\hat{\bf r} = {\bf r}/ L$, 
+$\hat{\nabla} = L\,\nabla$, $\hat{t} = \lambda_e\,\bar{v}_e\,t/L$, 
+$\hat{\bf V}_e = {\bf V}_e/\lambda_e\,\bar{v}_e$, $\hat{\bf B}= {\bf B}
+/\bar{B}$, $\hat{\bf E} = {\bf E}/ \lambda_e\,\bar{v}_e\,\bar{B}$,
+$\hat{\bf U} ={\bf U} / (1+\lambda_e^{~2})\,\delta_e\,\bar{v}_e$, 
+plus 
+$\hat{p}_e = p_e/m_e\,\bar{n}\,\bar{v}_e^{~2}$, $\hat{\bpi}_e= \bpi_e
+/\lambda_e\,\delta_e\,\zeta_e^{-1}\,m_e\,\bar{n}\,\bar{v}_e^{~2}$, 
+$\hat{\bf q}_{Te} = {\bf q}_{Te} / \delta_e\,\zeta_e^{-1}\,
+m_e\,\bar{n}\,\bar{v}_e^{~3}$, $\hat{\bf q}_{Ue} = {\bf q}_{Ue} / 
+(1+\lambda_e^{~2})\,\delta_e\,m_e\,\bar{n}\,\bar{v}_e^{~3}$, 
+$\hat{\bf F}_U = {\bf F}_U/ (1+\lambda_e^{~2}) \,\zeta_e\,
+m_e\,\bar{n}\,\bar{v}_e^{~2}/L$, 
+$\hat{\bf F}_T = {\bf F}_T/m_e\,\bar{n}\,\bar{v}_e^{~2}/L$,
+$\hat{W}_i = W_i/\delta_e^{-1}\,\zeta_e\,\mu^2\, m_e\,\bar{n}\,\bar{v}_e^{~3}/L$,
+$\hat{W}_U = W_U/(1+\lambda_e^{~2})^2\,\delta_e\,\zeta_e\, m_e\,
+\bar{n}\,\bar{v}_e^{~3}/L$,
+$\hat{W}_T = W_T/(1+\lambda_e^{~2})\,\delta_e\, m_e\,\bar{n}\,\bar{v}_e^{~3}/L$.
+
+The normalization procedure is designed to make all hatted quantities $O(1)$.
+The normalization of the electric field is chosen 
+ such that the ${\bf E}\times{\bf B}$
+velocity is of order the electron fluid velocity. Note that the parallel viscosity
+makes an $O(1)$ contribution to $\hat{\bpi}_e$, whereas the gyroviscosity
+makes an $O(\zeta_e)$ contribution, and the perpendicular viscosity only 
+makes an $O(\zeta_e^{~2})$ contribution. Likewise, the parallel thermal
+conductivity 
+makes an $O(1)$ contribution to $\hat{\bf q}_{Te}$, whereas the cross
+conductivity 
+makes an $O(\zeta_e)$ contribution, and the perpendicular conductivity only 
+makes an $O(\zeta_e^{~2})$ contribution. Similarly, the parallel components
+of ${\bf F}_T$ and ${\bf q}_{Ue}$ are $O(1)$, whereas the perpendicular
+components are $O(\zeta_e)$. 
+
+The normalized electron fluid equations take the form:
+\begin{eqnarray}
+\frac{d\hat{n}}{d\hat{t}} + \hat{n}\,\hat{\nabla}\!\cdot\!\hat{\bf V}_e &=&0,\label{e3.113a}\\[0.5ex]
+\lambda_e^{~2}\,\delta_e\,\hat{n}\,\frac{d\hat{\bf V}_e}{d\hat{t}} + \delta_e\,
+\hat{\nabla}\hat{p}_e + \lambda_e\,\delta_e^{~2}\,\zeta_e^{-1}\,\hat{\nabla}
+\!\cdot\!\hat{\bpi}_e  \\[0.5ex]
++ \lambda_e\,\hat{n}\,(\hat{\bf E} + \hat{\bf V}_e
+\times\hat{\bf B}) &=& (1+\lambda_e^{~2})\,\delta_e\,\zeta_e\,\hat{\bf F}_U + \delta_e
+\,\hat{\bf F}_T, \nonumber\\[0.5ex]
+\lambda_e\,\frac{3}{2}\frac{d\hat{p}_e}{d\hat{t}} + \lambda_e\,\frac{5}{2}\,
+\hat{p}_e\,\hat{\nabla}\!\cdot\!\hat{\bf V}_e + \lambda_e^{~2}\,\delta_e\,
+\zeta_e^{-1}\,\hat{\bpi}_e : \hat{\nabla}\!\cdot\!\hat{\bf V}_e&&\label{e3.113c}\\[0.5ex] 
++\delta_e\,\zeta_e^{-1} \,\hat{\nabla}\!\cdot\!\hat{\bf q}_{Te}
+ +(1+\lambda_e^{~2})\,\delta_e\,\hat{\nabla}\!\cdot\!\hat{\bf q}_{Ue} 
+&=& -\delta_e^{-1}\,\zeta_e\,\mu^2\,\hat{W}_i \nonumber\\[0.5ex]
+&&+ (1+\lambda_e^{~2})^2\,\delta_e\,\zeta_e\,
+\hat{W}_U \nonumber\\[0.5ex]&& + (1+\lambda_e^{~2})\,\delta_e\,\hat{W}_T.\nonumber
+\end{eqnarray}
+Note that the only large or small quantities in these equations are the
+parameters $\lambda_e$, $\delta_e$, $\zeta_e$, and $\mu$. 
+Here, $d/d\hat{t}\equiv\partial /\partial\hat{t} +
+ \hat{\bf V}_e\!\cdot\!\hat{\nabla}$. It is assumed that $T_e\sim T_i$.
+
+
+
+Let us now consider the ion fluid equations, which can be written:
+\begin{eqnarray}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V}_i &=& 0,\\[0.5ex]
+m_i n\,\frac{d {\bf V}_i}{dt} + \nabla p_i + \nabla\!\cdot \!\bpi_i - e n\,
+({\bf E} + {\bf V}_i\times {\bf B})& =&- {\bf F}_U -{\bf F}_T,\\[0.5ex]
+\frac{3}{2}\frac{d p_i}{dt} + \frac{5}{2}\,p_i\,\nabla\!\cdot\!{\bf V}_i
++ \bpi_i:\nabla{\bf V}_i+ \nabla\!\cdot\!{\bf q}_i &=& W_i.
+\end{eqnarray}
+It is convenient to adopt a normalization scheme for the ion equations
+which is similar to, but independent of, that employed to normalize the
+electron equations. Let  $\bar{n}$, $\bar{v}_i$, $\bar{l}_i$, $\bar{B}$,
+and $\bar{\rho}_i =\bar{ v}_i/(e\bar{B}/m_i)$,  be typical values
+of the particle density, the ion  thermal velocity, the ion
+mean-free-path,  the magnetic field-strength, and the
+ion gyroradius,  respectively. 
+Suppose that the typical ion flow velocity is $\lambda_i\,\bar{v}_i$, and
+the typical variation length-scale is $L$. Let
+ \begin{eqnarray}
+\delta_i &=& \frac{\bar{\rho}_i}{L},\\[0.5ex]
+\zeta_i &=& \frac{\bar{\rho}_i}{\bar{l}_i},\\[0.5ex]
+\mu &=& \sqrt{\frac{m_e}{m_i}}.
+\end{eqnarray}
+All three of these parameters are assumed to be {\em small}\/
+compared to unity.
+
+We
+define the following normalized quantities: $\hat{n} = n/\bar{n}$,
+$\hat{v}_i = v_i/\bar{v}_i$, $\hat{\bf r} = {\bf r}/ L$, 
+$\hat{\nabla} = L\,\nabla$, $\hat{t} = \lambda_i\,\bar{v}_i\,t/L$, 
+$\hat{\bf V}_i = {\bf V}_i/\lambda_i\,\bar{v}_i$, $\hat{\bf B}= {\bf B}
+/\bar{B}$, $\hat{\bf E} = {\bf E}/ \lambda_i\,\bar{v}_i\,\bar{B}$,
+$\hat{\bf U} ={\bf U} / (1+\lambda_i^{~2})\,\delta_i\,\bar{v}_i$, 
+$\hat{p}_i = p_i/m_i\,\bar{n}\,\bar{v}_i^{~2}$, $\hat{\bpi}_i= \bpi_i
+/\lambda_i\,\delta_i\,\zeta_i^{-1}\,m_i\,\bar{n}\,\bar{v}_i^{~2}$, 
+$\hat{\bf q}_{i} = {\bf q}_{i} / \delta_i\,\zeta_i^{-1}\,
+m_i\,\bar{n}\,\bar{v}_i^{~3}$,  
+$\hat{\bf F}_U = {\bf F}_U/ (1+\lambda_i^{~2}) \,\zeta_i\,\mu\,
+m_i\,\bar{n}\,\bar{v}_i^{~2}/L$, 
+$\hat{\bf F}_T = {\bf F}_T/m_i\,\bar{n}\,\bar{v}_i^{~2}/L$,
+$\hat{W}_i = W_i/\delta_i^{-1}\,\zeta_i\,\mu\, m_i\,\bar{n}\,\bar{v}_i^{~3}/L$.
+
+As before, the normalization procedure is designed to make all hatted quantities $O(1)$.
+The normalization of the electric field is chosen 
+ such that the ${\bf E}\times{\bf B}$
+velocity is of order the ion fluid velocity. Note that the parallel viscosity
+makes an $O(1)$ contribution to $\hat{\bpi}_i$, whereas the gyroviscosity
+makes an $O(\zeta_i)$ contribution, and the perpendicular viscosity only 
+makes an $O(\zeta_i^{~2})$ contribution. Likewise, the parallel thermal
+conductivity 
+makes an $O(1)$ contribution to $\hat{\bf q}_{i}$, whereas the cross
+conductivity 
+makes an $O(\zeta_i)$ contribution, and the perpendicular conductivity only 
+makes an $O(\zeta_i^{~2})$ contribution. Similarly, the parallel component
+of ${\bf F}_T$ is  $O(1)$, whereas the perpendicular
+component is  $O(\zeta_i\,\mu)$. 
+
+The normalized ion fluid equations take the form:
+\begin{eqnarray}\label{e3.116a}
+\frac{d\hat{n}}{d\hat{t}} + \hat{n}\,\hat{\nabla}\!\cdot\!\hat{\bf V}_i &=&0,\\[0.5ex]
+\lambda_i^{~2}\,\delta_i\,\hat{n}\,\frac{d\hat{\bf V}_i}{d\hat{t}} + \delta_i\,
+\hat{\nabla}\hat{p}_i+ \lambda_i\,\delta_i^{~2}\,\zeta_i^{-1}\,\hat{\nabla}
+\!\cdot\!\hat{\bpi}_i  \\[0.5ex]
+-\lambda_i\,\hat{n}\,(\hat{\bf E} + \hat{\bf V}_i
+\times\hat{\bf B}) &=& -(1+\lambda_i^{~2})\,\delta_i\,\zeta_i\,\mu\,\hat{\bf F}_U
+ - \delta_i
+\,\hat{\bf F}_T, \nonumber\\[0.5ex]
+\lambda_i\,\frac{3}{2}\frac{d\hat{p}_i}{d\hat{t}} + \lambda_i\,\frac{5}{2}\,
+\hat{p}_i\,\hat{\nabla}\!\cdot\!\hat{\bf V}_i + \lambda_i^{~2}\,\delta_i\,
+\zeta_i^{-1}\,\hat{\bpi}_i : \hat{\nabla}\!\cdot\!\hat{\bf V}_i&&\label{e3.116c}\\[0.5ex] 
++\delta_i\,\zeta_i^{-1} \,\hat{\nabla}\!\cdot\!\hat{\bf q}_{i}
+&=& \delta_i^{-1}\,\zeta_i\,\mu\,\hat{W}_i. \nonumber
+\end{eqnarray}
+Note that the only large or small quantities in these equations are the
+parameters $\lambda_i$, $\delta_i$, $\zeta_i$, and $\mu$. 
+Here, $d/d\hat{t}\equiv\partial /\partial\hat{t} +
+ \hat{\bf V}_i\!\cdot\!\hat{\nabla}$.
+
+Let us adopt the ordering
+\begin{equation}
+\delta_e, \delta_i \ll \zeta_e, \zeta_i,\,\,\, \mu \ll 1,
+\end{equation}
+which is appropriate to a collisional, {\em highly magnetized}\/ plasma. 
+In the first stage of our ordering procedure, we shall treat $\delta_e$ and $\delta_i$
+as small parameters, and $\zeta_e$, $\zeta_i$, and $\mu$ as $O(1)$.
+ In the second stage, we shall take note of the smallness of 
+$\zeta_e$, $\zeta_i$, and $\mu$. Note that the parameters $\lambda_e$ and $\lambda_i$
+are ``free ranging:'' {\em i.e.}, they can be either large, small, or $O(1)$. 
+In the initial stage of the
+ordering procedure, the ion and electron
+normalization schemes we have adopted become  essentially
+identical [since $\mu\sim O(1)$], and 
+it is convenient to write 
+\begin{eqnarray}
+\lambda_e\sim \lambda_i&\sim & \lambda,\\[0.5ex]
+\delta_e \sim \delta_i &\sim &\delta,\\[0.5ex]
+V_e \sim V_i &\sim & V,\\[0.5ex]
+v_e \sim v_i &\sim & v_t,\\[0.5ex]
+{\mit\Omega}_e \sim {\mit\Omega}_i &\sim & {\mit\Omega}.
+\end{eqnarray}
+
+
+There are {\em three fundamental orderings}\/  in plasma fluid theory. These are
+analogous to the three orderings in neutral gas fluid theory discussed in Sect.~\ref{s3.7}.
+
+The first ordering is
+\begin{equation}\label{e3.119}
+\lambda \sim \delta^{-1}.
+\end{equation}
+This corresponds to
+\begin{equation}\label{e3.120}
+V\gg v_t.
+\end{equation}
+In other words, the fluid velocities are much greater than the 
+thermal velocities. We also have
+\begin{equation}\label{e3.121}
+\frac{V}{L} \sim {\mit\Omega}.
+\end{equation}
+Here, $V/L$ is conventionally termed the {\em transit frequency}, and is
+the frequency with which fluid elements traverse the system. It is clear
+that the transit frequencies are of order the gyrofrequencies
+in this ordering. Keeping only the largest terms in Eqs.~(\ref{e3.113a})--(\ref{e3.113c}) and
+(\ref{e3.116a})--(\ref{e3.116c}), the Braginskii equations reduce to (in unnormalized form):
+\begin{eqnarray}\label{e3.122a}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V}_e &=& 0,\\[0.5ex]
+m_e n\,\frac{d {\bf V}_e}{dt}  + e n\,
+({\bf E} + {\bf V}_e\times {\bf B})& =& [\zeta]\,{\bf F}_U,\label{e3.122b}
+\end{eqnarray}
+and
+\begin{eqnarray}\label{e3.123a}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V}_i &=& 0,\\[0.5ex]
+m_i n\,\frac{d {\bf V}_i}{dt}  - e n\,
+({\bf E} + {\bf V}_i\times {\bf B})& =&- [\zeta]\,{\bf F}_U.\label{e3.123b}
+\end{eqnarray}
+The factors in square brackets are just to remind us that the terms they precede
+are  smaller than the other terms in the equations (by the 
+corresponding factors inside
+the  
+brackets). 
+
+Equations (\ref{e3.122a})--(\ref{e3.122b}) and (\ref{e3.123a})--(\ref{e3.123b}) are called the {\em cold-plasma equations}, because
+they can be obtained from the Braginskii equations by formally taking the
+limit $T_e, T_i\rightarrow 0$. Likewise, the ordering (\ref{e3.119}) is called
+the {\em cold-plasma approximation}. Note that the cold-plasma approximation
+applies not only to cold plasmas, but also to very {\em fast disturbances}\/  which
+propagate through conventional plasmas. In particular,
+the cold-plasma equations provide a good description of the propagation
+of {\em electromagnetic waves}\/ through plasmas. After all, electromagnetic
+waves generally have very high velocities ({\em i.e.}, $V\sim c$), 
+which they impart to
+plasma fluid elements, so there is usually
+no difficulty satisfying the inequality (\ref{e3.120}). 
+
+Note that the electron and ion pressures can be neglected in the cold-plasma
+limit, since the thermal velocities are much smaller than the
+fluid velocities. It follows that there is no need for an electron
+or  ion energy evolution equation. Furthermore, the motion of the
+plasma is so fast, in this limit, that relatively slow ``transport'' effects,
+such as viscosity and thermal conductivity, play no role in the cold-plasma
+fluid equations. In fact, the only collisional effect which appears in these
+equations is {\em resistivity}. 
+
+
+The second ordering is
+\begin{equation}\label{e3.124}
+\lambda \sim 1,
+\end{equation}
+which corresponds to
+\begin{equation}
+V \sim v_t.
+\end{equation}
+In other words, the fluid velocities are of order the thermal
+velocities. Keeping only the largest terms in Eqs.~(\ref{e3.113a})--(\ref{e3.113c}) and (\ref{e3.116a})--(\ref{e3.116c}),
+the Braginskii equations reduce to (in unnormalized form):
+\begin{eqnarray}\label{e3.126a}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V}_e &=& 0,\\[0.5ex]
+m_e n\,\frac{d {\bf V}_e}{dt} + \nabla p_e+   [\delta^{-1}]\,e n\,
+({\bf E} + {\bf V}_e\times {\bf B})& =& [\zeta]\,{\bf F}_U + {\bf F}_T,\\[0.5ex]
+\frac{3}{2}\frac{d p_e}{dt} + \frac{5}{2}\,p_e\,\nabla\!\cdot\!{\bf V}_e
+&=& -[\delta^{-1}\,\zeta\,\mu^2]\,W_i,\label{e3.126c}
+\end{eqnarray}
+and
+\begin{eqnarray}\label{e3.127a}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V}_i &=& 0,\\[0.5ex]
+m_i n\,\frac{d {\bf V}_i}{dt} + \nabla p_i - [\delta^{-1}]\, e n\,
+({\bf E} + {\bf V}_i\times {\bf B})& =&- [\zeta]\,{\bf F}_U
+-{\bf F}_T,\label{e3.127b}\\[0.5ex]
+\frac{3}{2}\frac{d p_i}{dt} + \frac{5}{2}\,p_i\,\nabla\!\cdot\!{\bf V}_i
+ &=&[\delta^{-1}\,\zeta\,\mu^2]\, W_i.\label{e3.127c}
+\end{eqnarray}
+Again, the factors in square brackets remind us that the terms they precede
+are larger, or smaller, than the other terms in the equations. 
+
+Equations (\ref{e3.126a})--(\ref{e3.126c}) and (\ref{e3.127a})--(\ref{e3.127b}) are called the {\em magnetohydrodynamical equations},
+or {\em MHD equations}, for short. Likewise, the ordering (\ref{e3.124}) is called
+the {\em MHD approximation}. The MHD equations are conventionally
+used to study macroscopic  plasma
+instabilities possessing  relatively fast growth-rates: {\em e.g.},
+``sausage'' modes, ``kink'' modes. 
+
+Note that the electron and ion pressures cannot be neglected in the MHD
+limit, since the fluid velocities are of order the thermal
+velocities. Thus, electron and ion energy evolution equations are needed
+in this limit. However, MHD motion is sufficiently fast that 
+``transport'' effects, such as viscosity and thermal conductivity,
+are too slow to  play
+a role in the MHD equations. In fact, the only collisional effects
+which appear in these equations are resistivity, the thermal force, and
+electron-ion collisional energy exchange. 
+
+The final ordering is
+\begin{equation}\label{e3.128}
+\lambda\sim \delta,
+\end{equation}
+which corresponds to
+\begin{equation}
+V \sim \delta\,v_t \sim v_d,
+\end{equation}
+where $v_d$ is a typical drift ({\em e.g.}, a curvature or grad-B
+drift---see Sect.~\ref{s2}) velocity. In other words, the fluid velocities
+are of order the drift velocities. Keeping only the
+largest terms in Eqs.~(3.113) and (3.116), the Braginskii equations reduce to
+(in unnormalized form):
+\begin{eqnarray}\label{e3.130a}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V}_e &=& 0,\\[0.5ex]
+m_e n\,\frac{d {\bf V}_e}{dt} + [\delta^{-2}]\,\nabla p_e+
+[\zeta^{-1}]\, \nabla\!\cdot \!\bpi_e &&\\[0.5ex]
++ [\delta^{-2}]\,e n\,
+({\bf E} + {\bf V}_e\times {\bf B})& =&[\delta^{-2}\,\zeta]\, {\bf F}_U + [\delta^{-2}]\,
+{\bf F}_T,\nonumber\\[0.5ex]
+\frac{3}{2}\frac{d p_e}{dt} + \frac{5}{2}\,p_e\,\nabla\!\cdot\!{\bf V}_e
++ [\zeta^{-1}]\,\nabla\!\cdot\!{\bf q}_{Te}
++ \nabla\!\cdot\!{\bf q}_{Ue} &=&-[\delta^{-2}\,\zeta\,\mu^2]\, W_i\\[0.5ex]
+&&+[\zeta]\,W_U + W_T,\nonumber\label{e3.130c}
+\end{eqnarray}
+and
+\begin{eqnarray}\label{e3.131a}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V}_i &=& 0,\\[0.5ex]
+m_i n\,\frac{d {\bf V}_i}{dt} + [\delta^{-2}]\,\nabla p_i + 
+[\zeta^{-1}]\,\nabla\!\cdot \!\bpi_i &&\\[0.5ex]
+- [\delta^{-2}]\,e n\,
+({\bf E} + {\bf V}_i\times {\bf B})& =& -[\delta^{-2}\,\zeta]\, {\bf F}_U - [\delta^{-2}]\,{\bf F}_T,
+\nonumber\\[0.5ex]
+\frac{3}{2}\frac{d p_i}{dt} + \frac{5}{2}\,p_i\,\nabla\!\cdot\!{\bf V}_i
++ [\zeta^{-1}]\,\nabla\!\cdot\!{\bf q}_i &=& [\delta^{-2}\,\zeta\,\mu^2]\,W_i.\label{e3.131c}
+\end{eqnarray}
+As before, the factors in square brackets remind us that the terms they
+precede are larger, or smaller, than the other terms in the equations. 
+
+Equations (\ref{e3.130a})--(\ref{e3.130c}) and (\ref{e3.131a})--(\ref{e3.131c}) are called the {\em drift equations}. Likewise,
+the ordering (\ref{e3.128}) is called the {\em drift approximation}. The drift equations
+are conventionally used to study equilibrium evolution, and the slow
+growing ``microinstabilities'' which are responsible for
+turbulent transport in tokamaks. It is clear that virtually all
+of the original terms in the Braginskii equations must be retained in
+this limit. 
+
+In the following sections, we investigate the cold-plasma equations, the
+MHD equations, and the drift equations, in more detail.
+
+\section{Cold-Plasma Equations}
+Previously, we  used the smallness of the magnetization parameter $\delta$
+to derive the cold-plasma equations:
+\begin{eqnarray}\label{e3.132a}
+\frac{\partial n}{\partial t} + \nabla\!\cdot\!(n\,{\bf V}_e) &=& 0,\\[0.5ex]
+m_e n\,\frac{\partial   {\bf V}_e}{\partial t} + m_e n\,
+({\bf V}_e\cdot \nabla ){\bf V}_e  + e n\,
+({\bf E} + {\bf V}_e\times {\bf B})& =& [\zeta]\,{\bf F}_U,\label{e3.132b}
+\end{eqnarray}
+and
+\begin{eqnarray}\label{e3.133a}
+\frac{\partial n}{\partial t} + \nabla\!\cdot\!(n\,{\bf V}_i) &=& 0,\\[0.5ex]
+m_i n\,\frac{\partial {\bf V}_i}{\partial t} +m_i n\,({\bf V}_i\cdot
+\nabla){\bf V}_i - e n\,
+({\bf E} + {\bf V}_i\times {\bf B})& =&- [\zeta]\,{\bf F}_U.\label{e3.133b}
+\end{eqnarray}
+Let us now use the smallness of the mass ratio $m_e/m_i$ to further
+simplify these equations. In particular, we would like to write the
+electron and ion fluid velocities in terms of the centre-of-mass
+velocity,
+\begin{equation}\label{e3.134}
+{\bf V} = \frac{m_i\,{\bf V}_i + m_e\,{\bf V}_e}{m_i+ m_e},
+\end{equation}
+and the plasma current
+\begin{equation}\label{e3.135}
+{\bf j} = -ne\,{\bf U},
+\end{equation}
+where ${\bf U} = {\bf V}_e-{\bf V_i}$. According to the ordering
+scheme adopted in the previous section, $U\sim V_e\sim V_i$ in the cold-plasma
+limit. We shall continue to regard  the mean-free-path parameter $\zeta$ 
+as $O(1)$.
+
+It follows from Eqs.~(\ref{e3.134}) and (\ref{e3.135}) that
+\begin{equation}\label{e3.136}
+{\bf V}_i \simeq {\bf V} + O(m_e/m_i),
+\end{equation}
+and
+\begin{equation}\label{e3.137}
+{\bf V}_e \simeq {\bf V} - \frac{{\bf j}}{ne} + O\!\left(\frac{m_e}{m_i}\right).
+\end{equation}
+
+Equations (\ref{e3.132a}), (\ref{e3.133a}), (\ref{e3.136}), and (\ref{e3.137}) yield the
+{\em continuity equation}:
+\begin{equation}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V} = 0,
+\end{equation}
+where $d/dt \equiv \partial/\partial t + {\bf V}\!\cdot\!\nabla$. Here, use has
+been made of the fact that  $\nabla\!\cdot\!{\bf j} =0$ in a quasi-neutral
+plasma.
+
+Equations (\ref{e3.132b}) and (\ref{e3.133b}) can be summed  to give the
+{\em equation of motion}:
+\begin{equation}
+m_i n\,\frac{d{\bf V}}{dt} -{\bf j}\times {\bf B} \simeq 0.
+\end{equation}
+
+Finally, Eqs.~(\ref{e3.132b}), (\ref{e3.136}), and (\ref{e3.137}) can be combined and to give
+a modified  {\em Ohm's law}:
+\begin{eqnarray}
+{\bf E} + {\bf V}\times {\bf B}& \simeq& \frac{{\bf F}_U}{ne} + \frac{{\bf j}\times{\bf B}}
+{ne} + \frac{m_e}{n e^2} \frac{d{\bf j}}{dt}\\[0.5ex]
+ &&+ \frac{m_e}{ne^2}\, ({\bf j}\!\cdot\!\nabla){\bf V} - \frac{m_e}{n^2 e^3}\,
+({\bf j}\!\cdot\!\nabla){\bf j}.\nonumber
+\end{eqnarray}
+The first term on the right-hand side of the above equation corresponds to
+{\em resistivity}, the second corresponds to the {\em Hall effect}, the
+third corresponds to the effect of {\em electron inertia}, and the
+remaining terms are usually negligible.  
+
+\section{MHD Equations}
+The MHD equations take the form:
+\begin{eqnarray}\label{e3.141a}
+\frac{\partial n}{\partial t} + \nabla\!\cdot\!(n\,{\bf V}_e) &=& 0,\\[0.5ex]
+\label{e3.141b}
+m_e n\,\frac{\partial  {\bf V}_e}{\partial t} +
+m_e n\,({\bf V}_e\!\cdot\!\nabla){\bf V}_e+
+ \nabla p_e\\[0.5ex]
++   [\delta^{-1}]\,e n\,
+({\bf E} + {\bf V}_e\times {\bf B})& =& [\zeta]\,{\bf F}_U + {\bf F}_T,
+\nonumber\\[0.5ex]\label{e3.141c}
+\frac{3}{2}\frac{\partial  p_e}{\partial t} + \frac{3}{2}
+ \,({\bf V}_e\!\cdot\!\nabla)\, p_e 
++ \frac{5}{2}\,p_e\,\nabla\!\cdot\!{\bf V}_e
+&=& -[\delta^{-1}\,\zeta\,\mu^2]\,W_i,
+\end{eqnarray}
+and
+\begin{eqnarray}\label{e3.142a}
+\frac{\partial n}{\partial t} +\nabla\!\cdot\!(n\,{\bf V}_i) &=& 0,\\[0.5ex]
+\label{e3.142b}
+m_i n\,\frac{\partial  {\bf V}_i}{\partial t} +
+m_i n\,({\bf V}_i\!\cdot\!\nabla) {\bf V}_i
++ \nabla p_i \\[0.5ex]
+- [\delta^{-1}]\, e n\,
+({\bf E} + {\bf V}_i\times {\bf B})& =&- [\zeta]\,{\bf F}_U
+-{\bf F}_T,\nonumber\\[0.5ex]
+\frac{3}{2}\frac{\partial  p_i}{\partial t} +   \frac{3}{2}
+ \,({\bf V}_i\!\cdot\!\nabla) \,p_i +
+\frac{5}{2}\,p_i\,\nabla\!\cdot\!{\bf V}_i
+ &=&[\delta^{-1}\,\zeta\,\mu^2]\, W_i.\label{e3.142c}
+\end{eqnarray}
+These equations can also be simplified by making use of the smallness
+of the mass ratio $m_e/m_i$. Now, according to the ordering adopted in Sect.~\ref{s3.9},
+$U \sim \delta\,V_e\sim \delta\,V_i$ in the MHD limit. It follows from Eqs.~(\ref{e3.136}) and (\ref{e3.137})
+that 
+\begin{equation}
+{\bf V}_i \simeq {\bf V} + O(m_e/m_i),
+\end{equation}
+and
+\begin{equation}
+{\bf V}_e \simeq {\bf V} - [\delta]\,\frac{{\bf j}}{ne} + O\!\left(\frac{m_e}
+{m_i}\right).
+\end{equation}
+The main point, here, is that in the MHD limit the velocity difference between
+the electron and ion fluids is relatively small. 
+
+Equations (\ref{e3.141a}) and (\ref{e3.142a}) yield the {\em continuity equation}:
+\begin{equation}\label{e3.145}
+\frac{dn}{dt} + n\, \nabla\!\cdot\!{\bf V} = 0,
+\end{equation}
+where $d/dt\equiv \partial/\partial t + {\bf V}\!\cdot\!\nabla$. 
+
+Equations (\ref{e3.141b}) and (\ref{e3.142b}) can be summed to give the
+{\em equation of motion}:
+\begin{equation}
+m_i n\,\frac{d{\bf V}}{dt} + \nabla p - {\bf j}\times{\bf B} \simeq 0.
+\end{equation}
+Here, $p=p_e+p_i$ is the total pressure. 
+Note that all terms in the above  equation are the same order in $\delta$. 
+
+The $O(\delta^{-1})$ components of Eqs.~(\ref{e3.141b}) and (\ref{e3.142b}) yield
+the {\em Ohm's law}:
+\begin{equation}\label{e3.147}
+{\bf E} + {\bf V}\times {\bf B} \simeq 0.
+\end{equation}
+This is sometimes called the {\em perfect conductivity equation}, since
+it is identical to the Ohm's law in a perfectly conducting liquid. 
+
+Equations (\ref{e3.141c}) and (\ref{e3.142c}) can be summed to give the
+{\em energy evolution equation}:
+\begin{equation}\label{e3.148}
+\frac{3}{2} \frac{dp}{dt} + \frac{5}{2}\, p \,\nabla\!\cdot\!{\bf V} \simeq 0.
+\end{equation}
+Equations (\ref{e3.145}) and (\ref{e3.148}) can be combined to give the more familiar
+{\em adiabatic equation of state:}
+\begin{equation}
+\frac{d}{dt}\!\left(\frac{p}{n^{5/3}}\right) \simeq 0.
+\end{equation}
+
+Finally, the $O(\delta^{-1})$ components of Eqs.~(\ref{e3.141c}) and (\ref{e3.142c}) 
+yield
+\begin{equation}
+W_i \simeq 0,
+\end{equation}
+or $T_e\simeq T_i$ [see Eq.~(\ref{e3.82b})]. Thus, we expect equipartition of the
+thermal energy between electrons and ions in  the MHD limit. 
+
+\section{Drift Equations}\label{s3.12}
+The drift equations take the form:
+\begin{eqnarray}
+\frac{\partial n}{\partial t} + \nabla\!\cdot\!(n\,{\bf V}_e) &=& 0,\label{e3.151a}\\[0.5ex]
+m_e n\,\frac{\partial  {\bf V}_e}{\partial t} +
+m_e n\,({\bf V}_e\!\cdot\!\nabla){\bf V}_e+
+ [\delta^{-2}]\,\nabla p_e+
+[\zeta^{-1}]\, \nabla\!\cdot \!\bpi_e &&\label{e3.151b}\\[0.5ex]
+ +[\delta^{-2}]\,e n\,
+({\bf E} + {\bf V}_e\times {\bf B})& =&[\delta^{-2}\,\zeta]\, {\bf F}_U + [\delta^{-2}]\,
+{\bf F}_T,\nonumber\\[0.5ex]
+\frac{3}{2}\frac{\partial  p_e}{\partial t} + \frac{3}{2}
+ \,({\bf V}_e\!\cdot\!\nabla)\, p_e 
++ \frac{5}{2}\,p_e\,\nabla\!\cdot\!{\bf V}_e&&\\[0.5ex]
++ [\zeta^{-1}]\,\nabla\!\cdot\!{\bf q}_{Te} +\nabla\!\cdot\!{\bf q}_{Ue}  &=&-[\delta^{-2}\,\zeta\,\mu^2]\,
+ W_i\nonumber\\[0.5ex]
+&&+ [\zeta]\,W_U + W_T,\nonumber\label{e3.151c}
+\end{eqnarray}
+and
+\begin{eqnarray}\label{e3.152a}
+\frac{\partial n}{\partial t} +\nabla\!\cdot\!(n\,{\bf V}_i) &=& 0,\\[0.5ex]
+m_i n\,\frac{\partial  {\bf V}_i}{\partial t} +
+m_i n\,({\bf V}_i\!\cdot\!\nabla) {\bf V}_i +
+ [\delta^{-2}]\,\nabla p_i + 
+[\zeta^{-1}]\,\nabla\!\cdot \!\bpi_i &&\\\label{e3.152b}[0.5ex]
+- [\delta^{-2}]\,e n\,
+({\bf E} + {\bf V}_i\times {\bf B})& =&-[\delta^{-2}\,\zeta]\, {\bf F}_U - [\delta^{-2}]\,{\bf F}_T,
+\nonumber\\[0.5ex]
+\frac{3}{2}\frac{\partial  p_i}{\partial t} +   \frac{3}{2}
+ \,({\bf V}_i\!\cdot\!\nabla) \,p_i
++ \frac{5}{2}\,p_i\,\nabla\!\cdot\!{\bf V}_i\\[0.5ex]
++ [\zeta^{-1}]\,\nabla\!\cdot\!{\bf q}_i &=& [\delta^{-2}\,\zeta\,\mu^2]\,W_i.
+\nonumber\label{e3.152c}
+\end{eqnarray}
+
+In the drift limit, the motions of the electron and ion fluids are
+sufficiently different that there is little to be gained in rewriting the
+drift equations in terms of the centre of mass velocity and the plasma
+current. 
+Instead, let us consider the $O(\delta^{-2})$ components of Eqs.~(\ref{e3.151b}) and (\ref{e3.152b}):
+\begin{eqnarray}\label{e3.153a}
+{\bf E} + {\bf V}_e\times{\bf B} &\simeq& - \frac{\nabla p_e}{en}
+ -\frac{ 0.71\,\nabla_\parallel T_e}{e},\\[0.5ex]
+{\bf E} + {\bf V}_i\times {\bf B} &\simeq& +\frac{\nabla p_i}{en} -
+\frac{ 0.71\,\nabla_\parallel T_e}{e}.\label{e3.153b}
+\end{eqnarray}
+In the above equations, we
+ have neglected all $O(\zeta)$ terms  for the
+sake of simplicity.
+Equations (\ref{e3.153a})--(\ref{e3.153b})  can be inverted to give
+\begin{eqnarray}\label{e3.154a}
+{\bf V}_{\perp\,e}& \simeq & {\bf V}_E + {\bf V}_{\ast\,e},
+\\[0.5ex]
+{\bf V}_{\perp\,i} &\simeq & {\bf V}_E + {\bf V}_{\ast\,i}.\label{e3.154b}
+\end{eqnarray}
+Here, ${\bf V}_E\equiv {\bf E}\times{\bf B}/B^2$ is the ${\bf E}\times{\bf B}$
+velocity, whereas
+\begin{equation}
+{\bf V}_{\ast\,e} \equiv \frac{\nabla p_e \times{\bf B}}
+{en\,B^2},
+\end{equation}
+and
+\begin{equation}
+{\bf V}_{\ast\,i} \equiv -\frac{\nabla p_i 
+\times{\bf B}}
+{en\,B^2},
+\end{equation}
+are termed the {\em electron diamagnetic velocity}\/ and the {\em ion diamagnetic
+velocity}, respectively. 
+
+
+According to Eqs.~(\ref{e3.154a})--(\ref{e3.154b}), in the drift approximation the velocity  of the electron 
+fluid perpendicular to the magnetic field is the sum of the ${\bf E}\times{\bf B}$
+velocity and the electron diamagnetic velocity. Similarly, for the ion fluid. 
+Note that in the MHD approximation  the perpendicular velocities of the
+two fluids consist of  the ${\bf E}\times{\bf B}$ velocity alone, and are,
+therefore, identical to lowest order. The main difference between the
+two ordering lies in the assumed magnitude of the electric field. In the
+MHD limit
+\begin{equation}
+\frac{E}{B} \sim v_t,
+\end{equation}
+whereas in the drift limit
+\begin{equation}
+\frac{E}{B} \sim \delta\,v_t\sim v_d.
+\end{equation}
+Thus, the MHD ordering can be regarded as a {\em strong}\/ (in the sense
+used in  Sect.~\ref{s2}) electric field
+ordering, whereas the drift ordering corresponds to a {\em weak}\/ electric
+field ordering. 
+
+The diamagnetic velocities are so named because the {\em diamagnetic
+current},
+\begin{equation}
+{\bf j}_\ast \equiv - en\,({\bf V}_{\ast\,e}-{\bf V}_{\ast\,i})
+=-\frac{\nabla p\times{\bf B}}{B^2},
+\end{equation}
+generally acts to {\em reduce}\/ the magnitude of the magnetic field inside
+ the plasma. 
+
+The electron diamagnetic velocity can be written
+\begin{equation}
+{\bf V}_{\ast\,e} = \frac{T_e\,\nabla n\times{\bf b}}{en\,B} + \frac{
+\nabla T_e\times{\bf b}}{e\,B}.
+\end{equation}
+In order to account for this velocity, let us consider a simplified
+case in which the electron temperature is uniform, there is a
+uniform {\em density}\/ gradient running along the $x$-direction, and the magnetic
+field is parallel to the $z$-axis---see Fig.~\ref{f9}.
+The electrons gyrate in the $x$-$y$ plane in circles of radius $\rho_e\sim v_e/
+|{\mit\Omega}_e|$. At a given point, coordinate $x_0$, say, on the $x$-axis, 
+the electrons that come from the right and the left have traversed distances
+of order $\rho_e$. Thus, the electrons from the right originate from
+regions where the particle density is of order $\rho_e\,\partial n/\partial x$
+greater than the regions from which the electrons from the left originate. 
+It follows  that the $y$-directed particle flux 
+is unbalanced, with slightly more particles moving in the $-y$-direction
+than in the $+y$-direction. Thus, there is a net particle flux
+in the $-y$-direction: {\em i.e.}, in the direction of $\nabla n \times{\bf b}$. 
+The magnitude of this flux is 
+\begin{equation}
+n\,V_{\ast\,e} \sim \rho_e\,\frac{\partial n}{\partial x}\,v_e \sim 
+\frac{T_e}{e\,B} \frac{\partial n}{\partial x}.
+\end{equation}
+Note that there is no unbalanced particle flux in the $x$-direction, since the
+$x$-directed fluxes are due to electrons which originate from regions
+where $x=x_0$. We have now accounted for the first term on the
+right-hand side of the above equation.
+We can account for the second term using similar arguments. 
+The ion diamagnetic velocity is similar in magnitude to the electron
+diamagnetic velocity, but is {\em  oppositely}\/ directed, since ions gyrate
+in the {\em opposite}\/ direction to electrons. 
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter03/dia.eps}}
+\caption{\em Origin of the diamagnetic velocity in a magnetized plasma.}\label{f9}
+\end{figure}
+
+The most curious aspect of  diamagnetic flows is that they represent fluid flows
+for which there is {\em no corresponding motion}\/ of the particle guiding
+centres. Nevertheless, the diamagnetic velocities are {\em real}\/ fluid
+velocities, and the associated diamagnetic current is a {\em real}\/ current. 
+For instance, the diamagnetic current contributes to force balance inside the plasma,
+and also gives rise to ohmic heating. 
+
+\section{Closure in Collisionless Magnetized Plasmas}\label{s3.13}
+Up to now, we have only considered fluid closure in {\em collisional}\/  magnetized
+plasmas.
+Unfortunately, most magnetized plasmas encountered in nature---in particular,
+fusion, space, and astrophysical plasmas---are {\em collisionless}. 
+Let us consider what happens to the cold-plasma equations, the MHD equations,
+and the drift equations, in the limit in which the mean-free-path goes
+to infinity ({\em i.e.}, $\zeta\rightarrow 0$). 
+
+In the limit $\zeta\rightarrow 0$, the cold-plasma equations reduce to
+\begin{eqnarray}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V} &=& 0,\label{e3.162a}\\[0.5ex]
+m_i n\,\frac{d{\bf V}}{dt} -{\bf j}\times {\bf B}& =& 0,\\[0.5ex]
+{\bf E} + {\bf V}\times {\bf B}& =& 
+\frac{{\bf j}\times{\bf B}}
+{ne} + \frac{m_e}{n e^2} \frac{d{\bf j}}{dt}\\[0.5ex]
+ &&+ \frac{m_e}{ne^2}\, ({\bf j}\!\cdot\!\nabla){\bf V} - \frac{m_e}{n^2 e^3}\,
+({\bf j}\!\cdot\!\nabla){\bf j}.\nonumber\label{e3.162c}
+\end{eqnarray}
+Here, we have neglected the resistivity term, since it is $O(\zeta)$. 
+Note that none of the remaining terms in these equations depend 
+explicitly on collisions. Nevertheless, the absence of collisions
+poses a serious problem. Whereas the magnetic field effectively confines
+charged particles in directions perpendicular to  magnetic field-lines,
+by forcing them to execute tight Larmor orbits, we have now  lost all 
+confinement along  field-lines. But, does this matter?
+ 
+The typical frequency associated with fluid motion 
+is the transit frequency, $V/L$. However, according to Eq.~(\ref{e3.121}),
+the cold-plasma ordering implies that the transit frequency is of order a
+typical gyrofrequency:
+\begin{equation}\label{e3.163}
+\frac{V}{L} \sim {\mit\Omega}.
+\end{equation}
+So, how far is a charged particle likely to drift along a field-line in
+an inverse transit frequency? The answer is
+\begin{equation}
+{\mit\Delta} l_\parallel \sim \frac{v_t\,L}{V} \sim \frac{v_t}{\mit\Omega}\sim  \rho.
+\end{equation} 
+In other words, the fluid motion  in the cold-plasma limit is so fast that
+charged particles only have time to drift a Larmor radius along field-lines
+on a typical dynamical time-scale. Under these circumstances, it does not
+really matter that the particles are not localized along field-lines---the lack
+of parallel confinement manifests itself {\em too slowly}\/ 
+ to affect the plasma dynamics. We conclude, therefore, that the cold-plasma
+equations {\em remain valid in the collisionless limit}, provided, of course,
+ that the
+plasma dynamics are sufficiently rapid for the basic cold-plasma ordering
+(\ref{e3.163}) to apply. In fact, the only difference between the collisional and 
+collisionless cold-plasma equations  is the absence of the resistivity term in Ohm's law in the
+latter case. 
+
+Let us now consider the MHD limit. In this case, the typical
+transit frequency is
+\begin{equation}\label{e3.165}
+\frac{V}{L}\sim \delta\,{\mit\Omega}.
+\end{equation}
+Thus, charged particles typically drift a distance
+\begin{equation}
+{\mit\Delta} l_\parallel \sim \frac{v_t\,L}{V} \sim \frac{v_t}{\delta\,{\mit\Omega}}\sim L
+\end{equation}
+along field-lines in an inverse transit frequency. In other words, the
+fluid motion in the MHD limit is sufficiently slow that changed particles
+have time to drift along field-lines  all the way across the system 
+on a
+typical dynamical time-scale. Thus, strictly speaking, the MHD equations
+are {\em invalidated}\/ by the lack of particle confinement along magnetic
+field-lines. 
+
+In fact, in collisionless plasmas, MHD theory is  replaced by a theory
+known as {\em kinetic-MHD}.\footnote{Kinetic-MHD is described in the following
+two classic papers: M.D.~Kruskal, and C.R.~Oberman, Phys.\ Fluids {\bf 1}, 275
+(1958): M.N.~Rosenbluth, and N.~Rostoker, Phys.\ Fluids {\bf 2}, 23 (1959).}
+ The latter theory is a combination of a
+one-dimensional kinetic theory, describing particle  motion along magnetic
+field-lines, and a two-dimensional fluid theory, describing perpendicular
+motion. As can well be imagined, the equations of kinetic-MHD are
+considerably more complicated that the conventional MHD equations. 
+Is there any situation in which we can salvage the simpler MHD equations in
+a collisionless plasma? Fortunately,  there
+is one case in which this is possible. 
+
+It turns out that in both varieties of MHD the motion of the plasma
+parallel to magnetic field-lines is associated with the dynamics of
+{\em sound waves}, whereas the motion perpendicular to field-lines
+is associated with the dynamics of a new type of wave called an {\em Alfv\'{e}n
+wave}. As we shall see, later on,  Alfv\'{e}n
+waves involve the ``twanging'' motion of magnetic field-lines---a bit
+like the twanging of guitar strings. It is only the sound wave dynamics
+which are significantly modified when we move from a collisional to a
+collisionless plasma. It follows, therefore, that the MHD equations
+remain a reasonable approximation in a collisionless plasma in situations where
+the dynamics of sound waves,  parallel to the magnetic field, are unimportant
+compared to the dynamics of Alfv\'{e}n waves, perpendicular to the field. 
+This situation arises whenever the parameter
+\begin{equation}
+\beta = \frac{2\,\mu_0\,p}{B^2}
+\end{equation}
+(see Sect.~\ref{s1.10}) is much less than unity. In fact, it is easily
+demonstrated that 
+\begin{equation}
+\beta \sim \left(\frac{V_S}{V_A}\right)^2,
+\end{equation}
+where $V_S$ is the sound speed ({\em i.e.}, thermal velocity), and $V_A$
+is the speed of an Alfv\'{e}n wave. Thus, the inequality
+\begin{equation}
+\beta\ll 1
+\end{equation}
+ensures that the collisionless
+parallel plasma dynamics are {\em  too slow}\/ to affect the
+perpendicular dynamics. 
+
+We conclude, therefore, that in a low-$\beta$, collisionless, magnetized
+plasma the MHD equations,
+\begin{eqnarray}
+\frac{dn}{dt} + n\,\nabla\!\cdot\!{\bf V} &=& 0,\\[0.5ex]
+m_i n\,\frac{d{\bf V}}{dt} &= & {\bf j}\times{\bf B} - \nabla p,\\[0.5ex]
+{\bf E} + {\bf V} \times{\bf B} &=& 0,\\[0.5ex]
+\frac{d}{dt}\!\left(\frac{p}{n^{5/3}}\right) &=& 0,
+\end{eqnarray}
+fairly well describe plasma dynamics which satisfy the basic MHD ordering
+(\ref{e3.165}).
+
+Let us, finally, consider the drift limit. In this case, the typical
+transit frequency is
+\begin{equation}
+\frac{V}{L} \sim \delta^2\,{\mit\Omega}.
+\end{equation}
+Thus, charged particles
+typically drift a distance
+\begin{equation}
+{\mit\Delta} l_\parallel \sim \frac{v_t\,L}{V} \sim \frac{L}{\delta}
+\end{equation}
+along field-lines in an inverse transit frequency. In other
+words, the fluid motion in the drift limit is so slow
+that charged particles drifting along
+field-lines have time to traverse the system {\em very many times}\/ on a typical
+dynamical time-scale. In fact, in this limit we have to
+draw a distinction between those particles which always drift along field-lines
+in the same direction, and those  particles which are trapped between magnetic
+mirror points and, therefore,  continually reverse their direction of motion
+along field-lines. The former are termed {\em passing particles}, whereas
+the latter are termed {\em trapped particles}. 
+
+Now, in the drift limit, the  perpendicular drift velocity of
+charged particles, which is a combination of ${\bf E}\times{\bf B}$ drift,
+grad-$B$ drift, and curvature drift (see Sect.~\ref{s2}), is of order
+\begin{equation}
+v_d \sim \delta\,v_t.
+\end{equation}
+Thus, charged particles typically drift a distance
+\begin{equation}
+{\mit\Delta} l_\perp \sim \frac{v_d\,L}{V} \sim L
+\end{equation}
+across field-lines in an inverse transit time. In other words, the
+fluid motion in the drift limit is so slow that charged particles
+have time
+to drift perpendicular to field-lines all the way across the system on a
+typical dynamical time-scale. 
+It is, thus, clear that in the drift limit the absence of collisions implies
+lack of confinement both parallel and perpendicular to the magnetic
+field. This means that the collisional drift equations, (\ref{e3.151a})--(\ref{e3.151c}) and
+(\ref{e3.152a})--(\ref{e3.152c}), are {\em completely invalid}\/ in the long mean-free-path limit. 
+
+In fact, in collisionless plasmas, Braginskii-type transport theory---convention\-ally
+known as {\em classical transport theory}---is replaced by a new theory---known as
+{\em neoclassical transport  theory}\footnote{Neoclassical transport theory in
+axisymmetric systems is
+ described in the following classic papers: I.B.~Bernstein, Phys.\
+Fluids {\bf 17}, 547 (1974): F.L.~Hinton, and R.D.~Hazeltine,
+Rev.\ Mod.\ Phys.\ {\bf 48}, 239 (1976).}
+---which is a combination of a two-dimensional
+kinetic theory, describing particle motion on {\em drift surfaces}, and
+a one-dimensional fluid theory, describing motion perpendicular to the drift
+surfaces. Here, a drift surface is a closed surface formed by the locus of a
+charged particle's drift orbit (including
+drifts parallel and perpendicular to the magnetic field).
+ Of course, the orbits only form closed surfaces if the plasma is {\em confined},
+but there is little point in examining transport in an unconfined plasma. 
+Unlike classical
+transport theory, which is strictly {\em  local}\/ in nature,
+neoclassical transport theory is {\em nonlocal}, in the sense that the
+transport coefficients depend on the {\em average}\/ values of
+ plasma properties taken over
+drift surfaces. Needless to say, neoclassical transport theory
+is horribly complicated!
+
+\section{Langmuir Sheaths}
+Virtually all terrestrial plasmas are contained inside solid vacuum vessels. So, an obvious question is: what happens to the plasma in the immediate vicinity of the  vessel wall?  Actually, to a first approximation, when ions and electrons hit a solid surface they recombine and are lost to the plasma. Hence, we can
+treat the wall as a perfect sink of particles. Now, given that the electrons in a plasma generally
+move much faster than the ions, the initial electron flux into the wall greatly
+exceeds the ion flux, assuming that the wall starts off
+unbiased with respect to the plasma. Of course, this flux imbalance causes the wall to charge up negatively, and so
+generates a potential barrier which repels the electrons, and thereby
+reduces the electron flux.
+Debye shielding
+confines this barrier to a thin layer of plasma, whose thickness is a few
+Debye lengths, coating the inside surface of the wall. This layer
+is known as a {\em plasma sheath}\/ or a {\em Langmuir sheath}. 
+The height of the potential barrier  continues to grow as long
+as there is a net  flux of negative charge into the wall.
+This process presumably comes to an end, and a steady-state is attained, when the potential barrier becomes sufficiently large to make electron flux  equal to the ion flux.
+
+Let us construct a one-dimensional model of an unmagnetized, steady-state,   Langmuir sheath. 
+Suppose that the wall lies at $x=0$, and that the plasma occupies the
+region $x>0$. Let us treat the ions and the electrons inside the sheath
+as {\em collisionless fluids}. 
+The ion and electron equations of
+motion are thus written
+\begin{eqnarray}
+m_i\,n_i\,V_i\,\frac{dV_i}{dx} &=& - T_i\,\frac{dn_i}{dx} - e\,n_i\,\frac{d\phi}{dx},\label{e3.261}\\[0.5ex]
+m_e\,n_e\,V_e\,\frac{dV_e}{dx} &=& - T_e\,\frac{dn_e}{dx} + e\,n_e\,\frac{d\phi}{dx},\label{e3.262}
+\end{eqnarray}
+respectively. Here, $\phi(x)$ is the electrostatic potential. Moreover, we have
+assumed {\em uniform}\/ ion and electron temperatures, $T_i$ and $T_e$,
+respectively, for the sake of simplicity. We have also neglected any off-diagonal
+terms in the ion and electron stress-tensors, since these terms are
+comparatively small. 
+ Note that quasi-neutrality
+does not apply inside the sheath, and so the ion and
+electron number densities, $n_e$ and $n_i$, respectively, are not
+necessarily equal to one another.
+
+Consider the ion fluid. Let us assume that the mean ion velocity, $V_i$,
+is {\em much greater}\/ than the ion thermal velocity, $(T_i/m_i)^{1/2}$. Since,
+as will become apparent, $V_i\sim (T_e/m_i)^{1/2}$, this ordering necessarily  implies
+that $T_i\ll T_i$: {\em i.e.}, that the ions are
+{\em cold}\/ with respect to the electrons. It turns out that plasmas in the
+immediate vicinity of solid walls often  have comparatively cold ions, so our ordering assumption
+is fairly reasonable.  In the cold ion limit, the pressure term in Eq.~(\ref{e3.261})
+is negligible, and the  equation can be integrated to
+give
+\begin{equation}
+\frac{1}{2}\,m_i\,V_i^{\,2}(x) + e\,\phi(x) = \frac{1}{2}\,m_i\,V_s^{\,2} + e\,\phi_s.
+\end{equation}
+Here, $V_s$ and $\phi_s$ are the mean ion velocity and electrostatic
+potential, respectively, at the edge of the sheath ({\em i.e.}, $x\rightarrow\infty$). 
+Now,  ion fluid continuity requires that
+\begin{equation}
+n_i(x)\,V_i(x) = n_s\,V_s,
+\end{equation}
+where $n_s$ is the ion number density at the  sheath boundary. Incidentally, since we
+expect quasi-neutrality to hold in the plasma outside the sheath, the electron number density
+at the edge of the sheath must also be $n_s$ (assuming singly charged
+ions). The previous two equations can be combined to give
+\begin{eqnarray}
+V_i &=& V_s\left[1- \frac{2\,e}{m_i\,V_s^{\,2}}\,(\phi-\phi_s)\right]^{1/2},\\[0.5ex]
+n_i&=& n_s\left[1- \frac{2\,e}{m_i\,V_s^{\,2}}\,(\phi-\phi_s)\right]^{-1/2}.
+\end{eqnarray}
+
+Consider the electron fluid. Let us assume that the mean electron
+velocity, $V_e$, is {\em much less}\/ than the electron thermal
+velocity, $(m_e/T_e)^{1/2}$. In fact, this must be the case, otherwise,
+the electron flux to the wall would greatly exceed the ion flux. 
+Now, if the electron fluid is essentially stationary then the left-hand side of
+Eq.~(\ref{e3.262}) is negligible, and the equation can be integrated to
+give
+\begin{equation}\label{e3.267}
+n_e = n_s\,\exp\left[\frac{e\,(\phi-\phi_s)}{T_e}\right].
+\end{equation}
+Here, we have made use of the  fact  that $n_e=n_s$ at
+the edge of the sheath. 
+
+Now, Poisson's equation is written
+\begin{equation}
+\epsilon_0\,\frac{d^2\phi}{dx^2} = e\,(n_e-n_i).
+\end{equation}
+It follows that
+\begin{equation}\label{e3.269}
+\epsilon_0\,\frac{d^2\phi}{dx^2}= e\,n_s\left(\exp\left[\frac{e\,(\phi-\phi_s)}{T_e}\right]-\left[1- \frac{2\,e}{m_i\,V_s^{\,2}}\,(\phi-\phi_s)\right]^{-1/2}\right).
+\end{equation}
+Let $\Phi=-e\,(\phi-\phi_s)/T_e$, $y = \sqrt{2}\,x/\lambda_D$, and
+\begin{equation}
+K =\frac{m_i\,V_s^{\,2}}{2\,T_e},
+\end{equation}
+ where $\lambda_D= (\epsilon_0\,T_e/e^2\,n_s)^{1/2}$ is the Debye length. Equation~(\ref{e3.269}) transforms to
+\begin{equation}
+2\,\frac{d^2 \Phi}{dy^2} = - {\rm e}^{-\Phi}+ \left(1+\frac{\Phi}{K}\right)^{-1/2},
+\end{equation}
+subject to the boundary condition  $\Phi\rightarrow 0$ as $y\rightarrow \infty$. 
+Multiplying through by $d\Phi/dy$, integrating with respect to $y$, and making use of the
+boundary condition, we obtain
+\begin{equation}\label{e3.271}
+\left(\frac{d\Phi}{dy}\right)^2 = {\rm e}^{-\Phi}-1+ 2\,K\left[
+\left(1+\frac{\Phi}{K}\right)^{1/2}-1\right].
+\end{equation}
+Unfortunately, the above equation is highly nonlinear, and can only be solved numerically. 
+However, it is not necessary to attempt this to see that 
+ a physical solution can only exist
+if the right-hand side of the equation is {\em positive}\/ for all  $y\geq 0$. Consider the  the
+limit  $y\rightarrow\infty$. It follows from the boundary condition that $\Phi\rightarrow 0$. Expanding
+the right-hand side of Eq.~(\ref{e3.271}) in powers of $\Phi$, we find that the zeroth- and first-order terms cancel, and  we are left with
+\begin{equation}
+\left(\frac{d\Phi}{dy}\right)^2 \simeq \frac{\Phi^2}{2}\left(1- \frac{1}{2\,K}\right) + \frac{\Phi^3}{3}\left(\frac{3}{8\,K^2}-1\right) + O(\Phi^4).
+\end{equation}
+Now, the purpose of the sheath is to {\em shield}\/ the plasma from the wall
+potential. It can be seen, from the above expression, that the physical
+solution with
+maximum possible shielding corresponds to $K=1/2$, since this
+choice eliminates the first term on the right-hand side (thereby making
+$\Phi$ as small as possible at large $y$) leaving the much smaller,
+but positive (note that $\Phi$ is positive), second term.
+Hence, we conclude that
+\begin{equation}\label{e3.273}
+V_s = \left(\frac{T_e}{m_i}\right)^{1/2}.
+\end{equation}
+This result is known as the {\em Bohm sheath criterion}.
+It is a somewhat surprising result, since it indicates that
+ions at the edge of the sheath are already moving toward the wall at a
+considerable velocity. Of course, the ions are further accelerated 
+as they pass through the sheath. Since the ions are presumably at
+rest in the interior of the plasma, it is clear that there
+must exist a region sandwiched between the sheath and the main plasma
+in which the ions are accelerated from rest to the Bohm velocity,
+$V_s=(T_e/m_i)^{1/2}$. This region is called the {\em pre-sheath}, 
+and  is both quasi-neutral and much wider than the sheath (the actual
+width depends on the nature of the ion source).
+
+The ion current density at the wall is
+\begin{equation}
+j_i = -e\,n_i(0)\,V_i(0) = -e\,n_s\,V_s = - e\,n_s\left(\frac{T_e}{m_i}\right)^{1/2}.
+\end{equation}
+This current density is negative because the ions are moving in the negative $x$-direction. What about the electron current density? Well, the
+number density of electrons at the wall is $n_e(0) = n_s\,\exp[\,e\,(\phi_w-\phi_s)/T_e)]$, where $\phi_w=\phi(0)$ is the wall potential. Let us assume
+that the electrons have a Maxwellian velocity distribution peaked at
+zero velocity (since the electron fluid velocity is much less than the
+electron thermal velocity). It follows that half of the electrons at $x=0$ are moving in
+the negative-$x$ direction, and half in the positive-$x$ direction. 
+Of course, the former electrons hit the wall, and thereby constitute an electron
+current to the wall. This current is $j_e=(1/4)\,e\,n_e(0)\,\bar{V}_e$, where
+the $1/4$ comes from averaging over solid angle, and $\bar{V}_e=(8\,T_e/\pi\,m_e)^{1/2}$ is the mean electron speed corresponding to a
+Maxwellian velocity distribution. Thus, the electron current density at the wall
+is
+\begin{equation}
+j_e= e\,n_s\,\left(\frac{T_e}{2\,\pi\,m_e}\right)^{1/2} \exp\left[\frac{e\,(\phi_w-\phi_s)}{T_e}\right].
+\end{equation}
+Now, in order to replace the electrons lost to the wall, the electrons must have a mean velocity
+\begin{equation}
+V_{e\,s} = \frac{j_e}{e\,n_s}= \left(\frac{T_e}{2\pi\,m_e}\right)^{1/2} \exp\left[\frac{e\,(\phi_w-\phi_s)}{T_e}\right]
+\end{equation}
+at the edge of the sheath. However, we previously assumed that any
+electron fluid velocity was much less than the electron thermal
+velocity, $(T_e/m_e)^{1/2}$. As is clear from the above equation,
+this is only possible provided that
+\begin{equation}
+\exp\left[\frac{e\,(\phi_w-\phi_s)}{T_e}\right]\ll 1.
+\end{equation}
+{\em i.e.}, provided that the wall potential is sufficiently negative to
+strongly reduce the electron number density at the wall.
+The net current density at the wall is
+\begin{equation}\label{e3.279}
+j = e\,n_s\,\left(\frac{T_e}{m_i}\right)^{1/2}\left\{\left(\frac{m_i}{2\pi\,m_e}\right)^{1/2}\exp\left[\frac{e\,(\phi_w-\phi_s)}{T_e}\right]-1\right\}.
+\end{equation}
+Of course, we require $j=0$ in a steady-state sheath, in order to prevent wall charging, and so we obtain
+\begin{equation}
+e\,(\phi_w-\phi_s)= -T_e\,\ln\left(\frac{m_i}{2\pi\,m_e}\right)^{1/2}.
+\end{equation}
+We conclude that, in a steady-state sheath, the wall is biased {\em negatively}\/ with respect to  the
+sheath edge by an amount which is proportional to the electron temperature.
+
+For a hydrogen plasma, $\ln(m_i/2\pi\,m_e)\simeq 2.8$. Thus, hydrogen
+ions enter the sheath with an initial energy $(1/2)\,m_i\,V_s^{\,2} = 0.5\,T_e\,{\rm eV}$, fall through the sheath potential, and so impact the
+wall with energy $3.3\,T_e\,{\rm eV}$. 
+
+A {\em Langmuir probe}\/ is a device  used to determine the electron temperature and electron number density of a plasma. It works by inserting an electrode  which is biased with respect to the vacuum vessel into the plasma. Provided that the bias voltage is not too positive, we would
+expect the probe current to vary as
+\begin{equation}\label{e3.280}
+I = A\,e\,n_s\,\left(\frac{T_e}{m_i}\right)^{1/2}\left[\left(\frac{m_i}{2\pi\,m_e}\right)^{1/2}\exp\left(\frac{e\,V}{T_e}\right)-1\right],
+\end{equation}
+where $A$ is the surface area of the probe, and $V$ its bias with respect to the vacuum vessel---see Eq.~(\ref{e3.279}). For strongly negative
+biases, the probe current saturates in the ion (negative) direction. The
+characteristic current which flows in this situation is called the {\em ion
+saturation current}, and is of magnitude
+\begin{equation}\label{e3.281}
+I_s = A\,e\,n_s\,\left(\frac{T_e}{m_i}\right)^{1/2}.
+\end{equation}
+For less negative biases, the current-voltage relation of the probe
+has the general form
+\begin{equation}
+\ln I = C + \frac{e\,V}{T_e},
+\end{equation}
+where $C$ is a constant. Thus, a plot of $\ln I$ versus $V$  gives
+a {\em straight-line}\/  from whose slope the electron temperature can be deduced. Note, however, that if the bias voltage becomes too positive then
+electrons cease to be effectively repelled from the probe surface, and the
+current-voltage relation (\ref{e3.280}) breaks down.
+Given the electron temperature, a measurement of the ion saturation current  allows the electron
+number density at the sheath edge, $n_s$, to be calculated from Eq.~(\ref{e3.281}). Now, in order to accelerate ions to the Bohm velocity, the
+potential drop across the pre-sheath needs to be $e\,(\phi_p-\phi_s) =- T_e/2$,
+where $\phi_p$ is the electric potential in the interior of the plasma. It follows
+from Eq.~(\ref{e3.267}) that the relationship between the electron number
+density at the sheath boundary, $n_s$, and the number density   in the interior of the plasma, $n_p$,  is
+\begin{equation}
+n_s = n_p\,{\rm e}^{-0.5} \simeq 0.61\,n_p.
+\end{equation}
+Thus, $n_p$ can also be determined from the probe.

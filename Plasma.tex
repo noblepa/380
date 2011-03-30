@@ -1,0 +1,120 @@
+% PLASMA PHYSICS
+% A GRADUATE COURSE
+% BY RICHARD FITZPATRICK
+% PROFESSOR OF PHYSICS
+% THE UNIVERSITY OF TEXAS AT AUSTIN
+% E-mail: rfitzp@farside.ph.utexas.edu
+
+%$$$$$$$$$$$$
+% Start preamble
+%$$$$$$$$$$$$
+
+\documentclass[12pt]{rfbook}
+\usepackage{fullpage}
+
+%%%%%%%%%%%
+% Needed for figures
+%%%%%%%%%%%
+\usepackage{epsf}
+\include{rotate}
+
+%%%%%%%%%
+% Customize fonts
+%%%%%%%%%
+\usepackage{charter}
+\usepackage{euler}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Customize equation, figure, and table numbering
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\@addtoreset{equation}{chapter}
+\@addtoreset{figure}{chapter}
+\@addtoreset{table}{chapter}
+\def\theequation{\arabic{chapter}.\arabic{equation}}
+\def\thefigure{\arabic{chapter}.\arabic{figure}}
+\def\thetable{\arabic{chapter}.\arabic{table}}
+\makeatother
+
+%%%%%%%%%%%%%%%
+% Customize table of contents
+%%%%%%%%%%%%%%%
+\usepackage{rftocloft}
+\addtolength{\cftsubsecnumwidth}{1em}
+\addtolength{\cftsecnumwidth}{0.6em}
+
+%%%%%%%%%%%%%
+% Customize page headers
+%%%%%%%%%%%%%
+\setlength{\headheight}{14.5pt}
+\setlength{\headsep}{10pt}
+\usepackage{fancyhdr}
+
+%%%%%%%%%%%%%
+% Define custom symbols
+%%%%%%%%%%%%%
+\newcommand {\ltapp} {\stackrel {_{\normalsize<}}{_{\normalsize \sim}}}
+\newcommand {\gtapp} {\stackrel {_{\normalsize>}}{_{\normalsize \sim}}}
+\newcommand {\btheta} {\mbox{\boldmath$\theta$}}
+\newcommand {\bphi} {\mbox{\boldmath$\phi$}}
+\newcommand {\bpsi} {\mbox{\boldmath$\psi$}}
+\newcommand {\bvarphi} {\mbox{\boldmath$\varphi$}}
+\newcommand {\brho} {\mbox{\boldmath$\rho$}}
+\newcommand{\bmu}{\mbox{\boldmath$\mu$}}
+\newcommand{\bzeta}{\mbox{\boldmath$\zeta$}}
+\newcommand{\bxi}{\mbox{\boldmath$\xi$}}
+\newcommand{\bpi}{\mbox{\boldmath$\pi$}}
+\newcommand{\bsigma}{\mbox{\boldmath$\sigma$}}
+
+%$$$$$$$$$$$$
+% End preamble
+%$$$$$$$$$$$$
+
+%$$$$$$$$$$$
+% Start content
+%$$$$$$$$$$$
+\begin{document}
+
+%%%%%%%
+% Titlepage
+%%%%%%%
+\thispagestyle{empty}
+\begin{center}
+{\Huge\bf Plasma Physics}\\[1ex]
+~\\
+~\\
+~\\
+{\Large\em  Richard Fitzpatrick}\\[1.5ex]~\\[1.5ex]
+{\Large\sf  Professor  of Physics}\\[1.5ex]
+{\Large\sf  The University of Texas at Austin}
+\end{center}
+
+%%%%%%%%%%
+% Set page headers
+%%%%%%%%%%
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhf{}
+\fancyhead[LO,RE]{\sl \leftmark}
+\fancyhead[LE,RO]{\sl \thepage}
+\fancyhead[RE]{\sl PLASMA PHYSICS}
+
+%%%%%%%%%%
+% Table of contents
+%%%%%%%%%%
+\tableofcontents
+
+%%%%
+% Body
+%%%%
+\include{Chapter01/Chapter01}
+\include{Chapter02/Chapter02}
+\include{Chapter03/Chapter03}
+\include{Chapter04/Chapter04}
+\include{Chapter05/Chapter05}
+\include{Chapter06/Chapter06}
+
+\end{document}
+%$$$$$$$$$$
+% End content
+%$$$$$$$$$$

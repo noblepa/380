@@ -1,0 +1,1202 @@
+\chapter{Waves in Warm Plasmas}
+\section{Introduction}
+In this section we shall investigate  wave propagation in a warm collisionless
+plasma, extending the discussion given in Sect.~\ref{s4} to take 
+thermal effects into account. It turns out that  thermal modifications to
+wave
+propagation are not very well
+described by fluid equations. We shall, therefore, adopt  a {\em kinetic}\/ 
+description of the plasma. The appropriate kinetic equation is, of course,
+the {\em Vlasov equation}, which is described in Sect.~\ref{s3.1}.
+
+\section{Landau Damping}\label{s6.2}
+Let us begin our study of the Vlasov equation by
+examining what appears, at first sight, to be a fairly simple and
+straight-forward problem. Namely, the propagation of
+small amplitude plasma waves through  a uniform plasma with no
+equilibrium magnetic field. For the sake of simplicity, we shall only consider
+ electron motion, assuming that the ions form an immobile,
+neutralizing background. The ions are also  assumed to
+be singly-charged.
+We shall look for  electrostatic
+plasma waves of the type discussed in Sect.~\ref{s4.7}. Such waves 
+are longitudinal in nature, and possess
+a perturbed electric field, but no perturbed magnetic field.
+
+Our starting point is the Vlasov equation for an unmagnetized, collisionless
+plasma:
+\begin{equation}\label{e6.1}
+\frac{\partial f_e}{\partial t} + {\bf v}\!\cdot\!\nabla f_e - \frac{e}{m_e}\,
+{\bf E}\!\cdot\!\nabla_v f_e = 0,
+\end{equation}
+where $f_e({\bf r},{\bf v}, t)$ is the ensemble averaged electron distribution
+function. The electric field satisfies
+\begin{equation}\label{e6.2}
+{\bf E} = -\nabla\phi.
+\end{equation}
+where
+\begin{equation}\label{e6.3}
+\nabla^2\phi = -\frac{e}{\epsilon_0}\left(n-\int \!f_e\,d^3{\bf v}\right).
+\end{equation}
+Here, $n$ is the number density of ions (which is the same
+as the number density of electrons). 
+
+Since we are dealing with small amplitude waves, it is appropriate to
+{\em linearize}\/  the Vlasov equation. Suppose that the electron
+distribution function is written
+\begin{equation}
+f_e({\bf r}, {\bf v}, t) = f_0({\bf v}) + f_1({\bf r}, {\bf v}, t).
+\end{equation}
+Here, $f_0$ represents the equilibrium electron distribution, whereas $f_1$
+represents the small perturbation due to the wave. Note that $\int f_0\,d^3{\bf v}
+=n$, otherwise the equilibrium state is not quasi-neutral. The electric
+field is assumed to be zero in the unperturbed state, so that ${\bf E}$
+can be regarded as a small quantity. Thus, linearization of
+Eqs.~(\ref{e6.1}) and (\ref{e6.3}) yields
+\begin{equation}\label{e6.5}
+\frac{\partial f_1}{\partial t} + {\bf v}\!\cdot\!\nabla f_1
+- \frac{e}{m_e}\,{\bf E}\!\cdot\!\nabla_v f_0 =0,
+\end{equation}
+and
+\begin{equation}\label{e6.6}
+\nabla^2\phi = \frac{e}{\epsilon_0}\int\! f_1\,d^3{\bf v},
+\end{equation}
+respectively.
+
+Let us now follow the standard procedure for analyzing small amplitude
+waves, by assuming that all perturbed quantities vary with
+${\bf r}$ and $t$ like $\exp[\,{\rm i}\,({\bf k}\!\cdot\!{\bf r} - \omega\,t)]$.
+Equations (\ref{e6.5}) and (\ref{e6.6}) reduce to
+\begin{equation}
+-{\rm i}\,(\omega - {\bf k}\!\cdot\!{\bf v}) f_1
++ {\rm i}\,\frac{e}{m_e}\,\phi \,{\bf k}\!\cdot\!\nabla_v f_0 = 0,
+\end{equation}
+and
+\begin{equation}
+-k^2\,\phi = \frac{e}{\epsilon_0} \int\! f_1\,d^3{\bf v},
+\end{equation}
+respectively. Solving the first of these equations for $f_1$, and substituting 
+into the integral in the second, we conclude that if $\phi$ is non-zero
+then we must have
+\begin{equation}\label{e6.9}
+1 + \frac{e^2}{\epsilon_0\,m_e\,k^2} \int\frac{ {\bf k}\!\cdot\!\nabla_v f_0}
+{\omega - {\bf k}\!\cdot\!{\bf v}}\,d^3{\bf v} = 0.
+\end{equation}
+
+We can interpret Eq.~(\ref{e6.9}) as the dispersion relation for electrostatic plasma
+waves, relating the wave-vector,  ${\bf k}$, to the frequency, $\omega$. 
+However, in doing so, we run up against a serious problem, since the integral has
+a {\em singularity}\/  in velocity space, where $\omega={\bf k}\!\cdot\!{\bf v}$,
+and is, therefore, not properly defined.
+
+The way around this problem was first pointed out by Landau\footnote{L.D.~Landau,
+Sov.\ Phys.--JETP {\bf 10}, 25 (1946).} in a very
+influential paper which laid the basis of much subsequent
+research on plasma oscillations and instabilities. Landau showed that,
+instead of simply assuming that $f_1$ varies in time as $\exp(-{\rm i}\,\omega\,t)$,
+the problem must be regarded as an initial value problem in which $f_1$
+is given at $t=0$ and found at later times. 
+We may still Fourier analyze with respect to ${\bf r}$, so we write
+\begin{equation}
+f_1({\bf r}, {\bf v}, t) = f_1({\bf v},t)\,{\rm e}^{\,{\rm i}\,{\bf k}\cdot
+{\bf r}}.
+\end{equation}
+It is helpful to define $u$ as the velocity component along ${\bf k}$ 
+({\em i.e.}, $u= {\bf k}\!\cdot\!{\bf v}/k$) \, and to define 
+$F_0(u)$ and $F_1(u,t)$ to be the integrals of $f_0({\bf v})$ and
+$f_1({\bf v},t)$ over the velocity components perpendicular to ${\bf k}$. 
+Thus, we obtain
+\begin{equation}\label{e6.11}
+\frac{\partial F_1}{\partial t} + {\rm i}\,k\,u\,F_1 - \frac{e}{m_e}\,E\,
+\frac{\partial F_0}{\partial u} = 0,
+\end{equation}
+and
+\begin{equation}\label{e6.12}
+{\rm i}\,k\,E =-\frac{e}{\epsilon_0} \int_{-\infty}^{\infty} F_1(u)\,du.
+\end{equation}
+
+In order to solve Eqs.~(\ref{e6.11}) and (\ref{e6.12}) as an initial value problem, we
+introduce the Laplace transform of $F_1$ with respect to $t$:
+\begin{equation}
+\bar{F}_1(u,p) = \int_0^\infty F_1(u,t)\,{\rm e}^{-p\,t}\,dt.
+\end{equation}
+If the growth of $F_1$ with $t$ is no faster than exponential then the above
+integral converges and defines $\bar{F}_1$ as an analytic function of $p$, provided 
+that the real part of $p$ is sufficiently large. 
+
+Noting that the Laplace transform of $\partial F_1/\partial t$ is $p\,\bar{F}_1-F_1(u,t=0)$
+(as is easily shown by integration by parts), we can Laplace transform Eqs.~(\ref{e6.11})
+and (\ref{e6.12}) to obtain
+\begin{equation}
+p\,\bar{F}_1 + {\rm i}\,k\,u\,\bar{F}_1 = \frac{e}{m_e}\,\bar{E}\,\frac{\partial
+F_0}{\partial u} + F_1(u,t=0),
+\end{equation}
+and
+\begin{equation}
+{\rm i}\,k\,\bar{E} =-\frac{e}{\epsilon_0}\int_{-\infty}^{\infty}\!\bar{F}_1(u)\,
+du,
+\end{equation}
+respectively.
+The above two equations can be combined to give
+\begin{equation}
+{\rm i}\,k\,\bar{E} = -\frac{e}{\epsilon_0}\int_{-\infty}^{\infty}
+\left[ \frac{e}{m_e}\,\bar{E}\,\frac{\partial F_0/\partial u}
+{p + {\rm i}\,k\,u} + \frac{F_1(u,t=0)}{p+{\rm i}\,k\,u}\right] du,
+\end{equation}
+yielding
+\begin{equation}\label{e6.17}
+\bar{E} = -\frac{(e/\epsilon_0)}{{\rm i}\,k\,\epsilon(k,p)}
+\int_{-\infty}^\infty \frac{F_1(u,t=0)}{p+{\rm i}\,k\,u}\,du,
+\end{equation}
+where
+\begin{equation}
+\epsilon(k,p) = 1 + \frac{e^2}{\epsilon_0\,m_e\,k}
+\int_{-\infty}^{\infty} \frac{\partial F_0/\partial u}{{\rm i}\,p-
+k\,u}\,du.
+\end{equation}
+The function $\epsilon(k,p)$ is known as the {\em plasma dielectric
+function}. Note that if $p$ is replaced by $-{\rm i}\,\omega$ then
+the dielectric function becomes equivalent to the left-hand side
+of Eq.~(\ref{e6.9}). However, since $p$ possesses a positive real part, the above
+integral is well defined.
+
+The Laplace transform of the distribution function is written
+\begin{equation}
+\bar{F}_1 = \frac{e}{m_e}\,\bar{E}\, \frac{\partial F_0/\partial u}
+{p+ {\rm i}\,k\,u} + \frac{F_1(u,t=0)}{p+ {\rm i}\,k\,u},
+\end{equation}
+or
+\begin{equation}\label{e6.20}
+\bar{F}_1 = - \frac{e^2}{\epsilon_0\,m_e\,{\rm i}\,k} \frac{\partial F_0/\partial u}
+{\epsilon(k, p)\,(p + {\rm i}\,k\,u)}
+\int_{-\infty}^\infty \frac{F_1(u',t=0)}
+{p+ {\rm i}\,k\,u'}\,du' + \frac{F_1(u,t=0)}{p+ {\rm i}\,k\,u}.
+\end{equation}
+
+Having found the Laplace transforms of the electric field and the perturbed
+distribution function, we must now invert them to obtain
+ $E$ and $F_1$  as functions of time. The inverse Laplace transform
+of the distribution function is given by
+\begin{equation}\label{e6.21}
+F_1(u,t) = \frac{1}{2\pi\,{\rm i}}\int_C \bar{F}_1(u,p)\,{\rm e}^{\,p\,t}\,dp,
+\end{equation}
+where $C$, the so-called {\em Bromwich contour}, is a contour running parallel to
+the imaginary axis, and lying to the right of all singularities of $\bar{F}_1$
+in the complex-$p$ plane (see Fig.~\ref{f30}). There is an analogous
+expression for the parallel electric field, $E(t)$. 
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter06/brom.eps}}
+\caption{\em The Bromwich contour.}\label{f30}
+\end{figure}
+
+Rather than trying to obtain a general expression for $F_1(u,t)$, from
+Eqs.~(\ref{e6.20}) and (\ref{e6.21}), we shall concentrate on the behaviour of the
+perturbed distribution function at {\em large}\/ times. Looking at
+Fig.~\ref{f30}, we note that if $\bar{F}_1(u,p)$ has only a finite
+number of simple poles in the region ${\rm Re}(p)>-\sigma$, then
+we may deform the contour as shown in Fig.~\ref{f31}, with a loop around
+each of the singularities. A pole at $p_0$ gives a contribution
+going as ${\rm e}^{\,p_0\,t}$, whilst the vertical part of the
+contour goes as ${\rm e}^{-\sigma\,t}$. For sufficiently long times
+this latter contribution is negligible, and the behaviour is
+dominated by contributions from the poles furthest to the right.
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter06/brom1.eps}}
+\caption{\em The distorted Bromwich contour.}\label{f31}
+\end{figure}
+
+Equations~(\ref{e6.17})--(\ref{e6.20}) all involve integrals of the form
+\begin{equation}\label{e6.22}
+\int_{-\infty}^\infty \frac{G(u)}{u-{\rm i}\,p/k}\,du,
+\end{equation}
+which become singular as $p$ approaches the imaginary axis. In order to
+distort the contour $C$, in the manner shown in Fig.~31, we need to continue
+these integrals smoothly across the imaginary $p$-axis. By virtue of the
+way in which the Laplace transform was originally defined, for ${\rm Re}(p)$
+sufficiently large, the appropriate way to do this is to take the values
+of these integrals when $p$ is in the right-hand half-plane, and find the
+analytic continuation into the left-hand half-plane.
+
+If $G(u)$ is sufficiently well-behaved that it can be continued off the
+real axis as an analytic function of a complex variable $u$ then the
+continuation of (\ref{e6.22}) as the singularity crosses the real axis
+in the complex $u$-plane, from the upper to the lower half-plane, is obtained
+by letting the singularity take the contour with it, as shown
+in Fig.~\ref{f32}.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter06/brom3.eps}}
+\caption{\em The Bromwich contour for Landau damping.}\label{f32}
+\end{figure}
+
+Note that the ability to deform the contour $C$ into that of Fig.~\ref{f31}, and find
+a dominant contribution to $E(t)$ and
+$F_1(u,t)$  from a few poles, depends on $F_0(u)$ and $F_1(u,t=0)$
+having  {\em smooth}\/ enough
+ velocity dependences that the integrals appearing in
+Eqs.~(\ref{e6.17})--(\ref{e6.20}) can be continued sufficiently far into the left-hand
+half of the complex $p$-plane.
+
+If we consider the electric field given by the inversion of Eq.~(\ref{e6.17}),
+we see that its behaviour at large times is dominated by the zero of $\epsilon(k, p)$
+which lies furthest to the right in the complex $p$-plane.
+According to Eqs.~(\ref{e6.20}) and (\ref{e6.21}), $F_1$
+has a similar contribution, as well as a contribution going as ${\rm e}^{-{\rm i}\,k\,u\,t}$. Thus, for sufficiently long times after the initiation of
+the wave, the electric field depends only on the positions of the
+roots of $\epsilon(k,p)=0$ in the complex $p$-plane. The distribution function
+has a corresponding contribution
+from the poles, as well as a component going as ${\rm e}^{-{\rm i}\,k\,u\,t}$. 
+For large times, the latter component of the distribution function is
+a rapidly oscillating function of velocity, and its contribution to the
+charge density, obtained by integrating over $u$, is negligible. 
+
+As we have already noted, the function $\epsilon(k, p)$ is equivalent to the
+left-hand side of Eq.~(\ref{e6.9}), provided that $p$ is replaced by $-{\rm i}\,\omega$.
+Thus, the dispersion relation, (\ref{e6.9}), obtained via Fourier transformation of the
+Vlasov equation,
+gives the correct behaviour at large times as long as the singular integral
+is treated correctly. Adapting the procedure which we found using the
+variable $p$, we see that the integral is defined as it is written for
+${\rm Im}(\omega)>0$, and analytically continued, by deforming the
+contour of integration in the $u$-plane (as shown in Fig.~\ref{f32}), into the region
+${\rm Im}(\omega)<0$. The simplest way to remember how to do the
+analytic continuation is to note that the integral is
+continued from the part of the $\omega$-plane corresponding to {\em growing}\/
+perturbations, to that corresponding to {\em damped}\/ perturbations. Once we
+know this rule, we can obtain kinetic dispersion relations in a fairly direct manner
+via  Fourier
+transformation of the Vlasov
+equation, and there is no need to attempt the more complicated Laplace transform
+solution.
+
+In Sect.~\ref{s4}, where we investigated the cold-plasma dispersion relation, we found that
+for any given $k$ there were a finite number of values of $\omega$, say $\omega_1$,
+$\omega_2$, $\cdots$, and a general solution was a linear superposition of
+functions varying in time as ${\rm e}^{-{\rm i}\,\omega_1\,t}$,  ${\rm e}^{-{\rm i}\,\omega_2\,t}$, {\em etc}. This set of values of $\omega$ is called the
+{\em spectrum}, and the cold-plasma equations yield a {\em discrete}\/  spectrum.
+On the other hand, in the kinetic problem we obtain contributions
+to the distribution function going as ${\rm e}^{-{\rm i}\,k\,u\,t}$,
+with $u$ taking any real value. 
+All of the mathematical difficulties of the kinetic
+problem arise from the existence of this {\em continuous spectrum}. At
+short times, the behaviour is very complicated, and depends on the details
+of the initial perturbation. It is only asymptotically that a mode
+varying as ${\rm e}^{-{\rm i}\,\omega\,t}$ is obtained, with $\omega$ determined
+by a dispersion relation which is solely a function of the unperturbed state.
+As we have seen, the emergence of such a mode depends on the initial velocity
+disturbance being sufficiently smooth.
+
+Suppose, for the sake of simplicity, that the background plasma state is a
+Maxwellian distribution. Working in terms of $\omega$, rather than $p$, the kinetic dispersion
+relation for electrostatic waves takes the form
+\begin{equation}\label{e6.23}
+\epsilon(k,\omega) =  1 + \frac{e^2}{\epsilon_0\,m_e\,k}
+\int_{-\infty}^{\infty} \frac{\partial F_0/\partial u}{\omega-
+k\,u}\,du=0,
+\end{equation}
+where
+\begin{equation}
+F_0(u) = \frac{n}{(2\pi\,T_e/m_e)^{1/2}}\,\exp(-m_e\,u^2/2\,T_e).
+\end{equation}
+Suppose that, to a first approximation, $\omega$ is real. Letting $\omega$
+tend to the real axis from the domain ${\rm Im}(\omega)>0$, we obtain
+\begin{equation}
+\int_{-\infty}^{\infty} \frac{\partial F_0/\partial u}{\omega-
+k\,u}\,du= P\!\int_{-\infty}^{\infty}\frac{\partial F_0/\partial u}{\omega-
+k\,u}\,du - \frac{{\rm i}\,\pi}{k} \left(\frac{\partial F_0}{\partial u}
+\right)_{u=\omega/k},
+\end{equation}
+where $P$ denotes the {\em principal part}\/ of the integral. The origin
+of the two terms on the right-hand side of the above equation is illustrated
+in Fig.~\ref{f33}. The first term---the principal part---is obtained by removing an
+interval of length $2\,\epsilon$, symmetrical about the pole, $u=\omega/k$,
+from the range of integration, and then letting $\epsilon\rightarrow 0$. The
+second term comes from the small semi-circle linking the two halves of the
+principal part integral. Note that the semi-circle deviates {\em below}\/ the
+real $u$-axis, rather than above, because the integral is calculated by
+letting the pole approach the axis from the {\em  upper}\/ half-plane 
+in $u$-space. 
+
+\begin{figure}
+\epsfysize=2in
+\centerline{\epsffile{Chapter06/prin.eps}}
+\caption{\em Integration path about a pole.}\label{f33}
+\end{figure}
+
+Suppose that $k$ is sufficiently small that $\omega\gg k\,u$ over the
+range of $u$ where $\partial F_0/\partial u$ is non-negligible. It follows
+that we can expand the denominator of the principal part integral in a
+Taylor series:
+\begin{equation}
+\frac{1}{\omega-k\,u} \simeq \frac{1}{\omega}\left(1+ \frac{k\,u}{\omega}
++ \frac{k^2\,u^2}{\omega^2} + \frac{k^3 u^3}{\omega^3} + \cdots\right).
+\end{equation}
+Integrating the result term by term, and remembering that $\partial F_0/\partial u$
+is an odd function, Eq.~(\ref{e6.23}) reduces to
+\begin{equation}
+1-\frac{\omega_p^{~2}}{\omega^2} - 3\,k^2\,\frac{T_e\,\omega_p^{~2}}{m_e\,\omega^4}
+- \frac{e^2}{\epsilon_0\,m_e} \frac{{\rm i}\,\pi}{k^2} \left(\frac{\partial
+F_0}{\partial u}\right)_{u=\omega/k} \simeq 0,
+\end{equation}
+where $\omega_p=\sqrt{n\,e^2/\epsilon_0\,m_e}$ is the electron plasma frequency.
+Equating the real part of the above expression to zero yields
+\begin{equation}\label{e6.28}
+\omega^2 \simeq \omega_p^{~2}(1+ 3\,k^2\,\lambda_D^2),
+\end{equation}
+where $\lambda_D =\sqrt{T_e/m_e\,\omega_p^{~2}}$ is the Debye length, and it
+is assumed that $k\,\lambda_D\ll 1$. We can regard the imaginary
+part of $\omega$ as a small perturbation, and write $\omega=\omega_0+\delta\omega$,
+where $\omega_0$ is the root of Eq.~(\ref{e6.28}). It follows
+that
+\begin{equation}
+2\,\omega_0\,\delta\omega \simeq \omega_0^{~2}\, \frac{e^2}{\epsilon_0\,m_e} \frac{{\rm i}\,\pi}{k^2} \left(\frac{\partial
+F_0}{\partial u}\right)_{u=\omega/k},
+\end{equation}
+and so
+\begin{equation}\label{e6.30}
+\delta\omega \simeq \frac{{\rm i}\,\pi}{2} \frac{e^2\,\omega_p}{\epsilon_0\,m_e\,k^2}
+ \left(\frac{\partial
+F_0}{\partial u}\right)_{u=\omega/k},
+\end{equation}
+giving
+\begin{equation}\label{e6.31}
+\delta\omega \simeq - \frac{{\rm i}}{2}\sqrt{\frac{\pi}{2}} \frac{\omega_p}
+{(k\,\lambda_D)^3} \exp\left[-\frac{1}{2\,(k\,\lambda_D)^2}\right].
+\end{equation}
+
+If we compare the above results with those  for a cold-plasma, where
+the dispersion relation for an electrostatic plasma wave was found to
+be simply $\omega^2=\omega_p^{~2}$, we see, firstly,  that  $\omega$ now depends on $k$,
+according to Eq.~(\ref{e6.28}), so that in a warm plasma the electrostatic plasma
+wave is a {\em propagating}\/ mode, with a non-zero group velocity. Secondly,  we 
+now have
+an imaginary part to $\omega$, given by Eq.~(\ref{e6.31}), corresponding, since
+it is negative, to the {\em damping}\/ of the wave in time. This damping is generally
+known as {\em Landau damping}. If $k\,\lambda_D\ll 1$ ({\em i.e.},
+if the
+wave-length is much larger than the Debye length) then the imaginary part
+of $\omega$ is small compared to the real part, and the wave is only
+lightly damped. However, as the wave-length becomes comparable to the
+Debye length, the imaginary part of $\omega$ becomes comparable to the
+real part, and the damping becomes strong. 
+Admittedly, the approximate solution given above
+is not very accurate in the short wave-length case, but it is sufficient to indicate
+the existence of very strong damping. 
+
+There are {\em no}\/ dissipative effects included in the collisionless Vlasov equation.
+Thus, it can easily be verified that if the particle velocities are
+reversed at any time then the solution up to that point is simply reversed in
+time. At first sight, this reversible behaviour does not seem to be
+consistent with the fact that an initial perturbation dies out. However,
+we should note that it is only the electric field which decays. The
+distribution function contains an undamped term going as ${\rm e}^{-{\rm i}\,k\,
+u\,t}$. Furthermore, the decay of the electric field depends on there being a
+sufficiently smooth initial perturbation in velocity space. The presence
+of the  ${\rm e}^{-{\rm i}\,k\,
+u\,t}$ term means that as time advances the velocity space dependence of the
+perturbation becomes more and more convoluted. It follows that if we
+reverse the velocities after some time then we are not starting
+with a smooth distribution. Under these circumstances, there is
+no contradiction in the fact that under time reversal the electric field will
+grow initially, until the smooth initial state is recreated, and subsequently
+decay away. 
+
+\section{Physics of Landau Damping}\label{s6.3}
+We  have explained Landau damping in terms of mathematics.
+Let us now consider the physical explanation for this effect. The motion of a
+charged particle situated  in a one-dimensional electric field varying as $E_0\,\exp[\,{\rm i}\,
+(k\,x-\omega\,t)]$ is determined by
+\begin{equation}
+\frac{d^2x}{dt^2} = \frac{e}{m}\,E_0\,{\rm e}^{\,{\rm i}\,
+(k\,x-\omega\,t)}.
+\end{equation}
+Since we are dealing with a linearized theory in which the
+perturbation due to the wave is small, it follows that if the particle
+starts with velocity $u_0$ at position $x_0$ then we may substitute
+$x_0+u_0\,t$ for $x$ in the electric field term. This is actually the position of
+the particle on its unperturbed trajectory, starting at $x=x_0$ at $t=0$.
+Thus, we obtain 
+\begin{equation}
+\frac{du}{dt} = \frac{e}{m}\,E_0\,{\rm e}^{\,{\rm i}\,(k\,x_0+k\,u_0\,t-\omega\,t)},
+\end{equation}
+which yields
+\begin{equation}
+u-u_0 = \frac{e}{m}\,E_0\,\left[\frac{{\rm e}^{\,{\rm i}\,(k\,x_0+k\,u_0\,t-\omega\,t)}
+- {\rm e}^{\,{\rm i}\,k\,x_0}}{{\rm i}\,(k\,u_0-\omega)}\right].
+\end{equation}
+As $k\,u_0-\omega\rightarrow 0$, the above expression reduces to
+\begin{equation}
+u -u_0 = \frac{e}{m}\,E_0\,t\,{\rm e}^{\,{\rm i}\,k\,x_0},
+\end{equation}
+showing that particles with $u_0$ close to $\omega/k$, that is with velocity
+components along the $x$-axis close to the phase velocity of the wave, have
+velocity perturbations which {\em grow}\/ in time. These so-called {\em resonant particles}\/ 
+gain energy from, or lose energy to, the wave, and are responsible for the
+damping. This explains why the damping rate, given by Eq.~(\ref{e6.30}), depends on the
+slope of the distribution function calculated at $u=\omega/k$. The remainder of the
+particles are non-resonant, and have an oscillatory response to the
+wave field.
+
+To understand why energy should be transferred from the electric
+field to the resonant particles requires more detailed consideration. 
+Whether the speed of a resonant particle increases or decreases depends on the
+phase of the wave at its initial position, and it is not the case that
+all particles moving slightly faster than the wave lose energy, whilst all
+particles moving slightly slower than the wave gain energy. Furthermore, the
+density perturbation is out of phase with the wave electric field, so there
+is no initial wave generated excess of particles gaining or losing
+energy. However, if we consider those particles which start off with velocities
+slightly above the phase velocity of the wave then if they gain energy they
+move away from the resonant velocity whilst if they lose energy they approach
+the resonant velocity. The result is that the particles which lose energy interact more effectively with the wave, and, on average, there is a transfer of
+energy from the particles to the electric field. Exactly the opposite
+is true for particles with initial velocities lying just below the
+phase velocity of the wave. In the case of a Maxwellian distribution
+there are more particles in the latter class than in the former, so there is a net transfer
+of energy from the electric field to the particles: {\em i.e.}, the 
+electric field is damped. In the limit as the wave amplitude
+tends to zero, it is clear that the gradient of the distribution function
+at the wave speed is what determines the damping rate.
+
+It is of some interest to consider the limitations of the above result, in terms
+of the magnitude of the initial electric field above which it is seriously
+in error and {\em nonlinear}\/ effects become important. The basic
+requirement for the validity of the linear result is that a resonant
+particle should maintain its position relative to the phase of the
+electric field over a sufficiently long time for the damping to
+take place. To obtain a condition that this be the case, let us consider the
+problem in the frame of reference in which the wave is at rest, and the
+potential $-e\,\phi$ seen by an electron is as sketched in Fig.~\ref{f34}.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter06/res1.eps}}
+\caption{\em Wave-particle interaction.}\label{f34}
+\end{figure}
+
+If the electron starts at rest ({\em i.e.}, in resonance with the wave) at $x_0$ 
+then it begins to move towards the potential minimum, as shown. The time for
+the electron to shift its position relative to the wave may be estimated
+as the period with which it bounces back and forth in the potential well.
+Near the bottom of the well the equation of motion of the electron is written
+\begin{equation}
+\frac{d^2 x}{dt^2} = - \frac{e}{m_e}\,k^2\,x\,\phi_0,
+\end{equation}
+where $k$ is the wave-number, and so the bounce time is
+\begin{equation}
+\tau_b \sim 2\pi\,\sqrt{\frac{m_e}{e\,k^2\,\phi_0}} = 
+2\pi\,\sqrt{\frac{m_e}{e\,k\,E_0}},
+\end{equation}
+where $E_0$ is the amplitude of the electric field. We may expect the wave
+to damp according to linear theory if the bounce time, $\tau_b$, given
+above, is much greater than the damping time. Since the former varies
+inversely with the square root of the electric field amplitude, whereas the
+latter is amplitude independent, this criterion gives us an estimate of
+the maximum allowable initial perturbation which is consistent with linear
+damping. 
+
+If the initial amplitude is large enough for the resonant electrons to
+bounce back and forth in the potential well a number of times before the
+wave is damped, then it can be demonstrated that the result to be expected is
+a {\em non-monotonic}\/ decrease in the amplitude of the electric field, as shown
+in Fig.~\ref{f35}. The period of the amplitude oscillations is similar to the bounce
+time, $\tau_b$. 
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter06/res2.eps}}
+\caption{\em Nonlinear Landau damping.}\label{f35}
+\end{figure}
+
+\section{Plasma Dispersion Function}
+If the unperturbed distribution function, $F_0$, appearing in Eq.~(\ref{e6.23}), is
+a Maxwellian then it is readily seen that, with a suitable scaling of the
+variables, the dispersion relation for electrostatic
+plasma waves can be expressed in terms of the
+function
+\begin{equation}
+Z(\zeta) = \pi^{-1/2}\int_{-\infty}^{\infty} \frac{{\rm e}^{-t^2}}{t-\zeta}\,dt,
+\end{equation}
+which is defined as it is written for ${\rm Im}(\zeta)>0$, and is
+analytically continued  for ${\rm Im}(\zeta)\leq 0$. This function is
+known as the {\em plasma dispersion function}, and very often crops up
+in problems involving small-amplitude waves propagating through 
+warm plasmas. Incidentally, $Z(\zeta)$ is the Hilbert transform of a Gaussian.
+
+In view of the importance of the plasma dispersion function, and its regular
+occurrence in the literature of plasma physics, let us briefly examine its main
+properties. We first of all note that if we differentiate $Z(\zeta)$ with
+respect to $\zeta$ we obtain
+\begin{equation}
+Z'(\zeta) = \pi^{-1/2}\int_{-\infty}^{\infty} \frac{{\rm e}^{-t^2}}{(t-\zeta)^2}\,
+dt,
+\end{equation}
+which yields, on integration by parts,
+\begin{equation}\label{e6.40}
+Z'(\zeta) =-\pi^{-1/2}\int_{-\infty}^{\infty} \frac{2\,t}{t-\zeta}\,
+{\rm e}^{-t^2}\,dt = -2\,[1+\zeta\,Z].
+\end{equation}
+
+If we let $\zeta$ tend to zero from the upper half  of the complex plane, we get
+\begin{equation}\label{e6.41}
+Z(0) = \pi^{-1/2}\,{\rm P}\!\int_{-\infty}^{\infty} \frac{{\rm e}^{-t^2}}{t}\,dt
++ {\rm i}\,\pi^{1/2} = {\rm i}\,\pi^{1/2}.
+\end{equation}
+Note that the principle part integral is zero  because its integrand is an
+odd function of $t$.
+
+Integrating the linear differential equation (\ref{e6.40}), which possesses an
+integrating factor ${\rm e}^{\zeta^2}$, and using the boundary condition
+(\ref{e6.41}), we obtain an alternative expression for the plasma dispersion
+function:
+\begin{equation}
+Z(\zeta) = {\rm e}^{-\zeta^2}\left({\rm i}\,\pi^{1/2}
+-2\!\int_0^\zeta {\rm e}^{x^2}\,dx\right).
+\end{equation}
+Making the substitution $t={\rm i}\,x$ in the integral, and
+noting that
+\begin{equation}
+\int_{-\infty}^0 {\rm e}^{-t^2}\,dt = \frac{\pi^{1/2}}{2},
+\end{equation}
+we finally arrive at the expression
+\begin{equation}
+Z(\zeta) = 2\,{\rm i}\, {\rm e}^{-\zeta^2}\int_{-\infty}^{{\rm i}\,\zeta}
+{\rm e}^{-t^2}\,dt.
+\end{equation}
+This formula, which relates the plasma dispersion function to an
+error function of imaginary argument, is valid for all values
+of $\zeta$. 
+
+For small $\zeta$ we have the expansion
+\begin{equation}
+Z(\zeta) = {\rm i}\,\pi^{1/2}\,{\rm e}^{-\zeta^2}-2\,\zeta\left[
+1-\frac{2\,\zeta^2}{3} + \frac{4\,\zeta^4}{15} - \frac{8\,\zeta^6}{105}
++\cdots\right].
+\end{equation}
+For large $\zeta$, where $\zeta=x+{\rm i}\,y$, the asymptotic expansion
+for $x>0$ is written
+\begin{equation}\label{e6.46}
+Z(\zeta) \sim {\rm i}\,\pi^{1/2}\,\sigma\,{\rm e}^{-\zeta^2}
+-\zeta^{-1}\left[1+\frac{1}{2\,\zeta^2} + \frac{3}{4\,\zeta^4}+\frac{15}{8\,\zeta^6}
++\cdots\right].
+\end{equation}
+Here,
+\begin{equation}
+\sigma = \left\{
+\begin{array}{lll}
+0&\mbox{\hspace{1cm}}& y>1/|x|\\[0.5ex]
+1&& |y|<1/|x|\\[0.5ex]
+2&&y< -1/|x|
+\end{array}
+ \right..
+\end{equation}
+In deriving our expression for the Landau damping rate we have, in effect, used the
+first few terms of the above asymptotic expansion.
+
+The properties of the plasma dispersion function are specified in exhaustive
+detail in a well-known book by Fried and Conte.\footnote{B.D.~Fried, and
+S.D.~Conte, {\em The Plasma Dispersion Function} (Academic Press, New York NY,
+1961.)}
+
+\section{Ion Sound Waves}\label{s6.5}
+If we now take ion dynamics into account then the dispersion relation (\ref{e6.23}),
+for electrostatic plasma waves, generalizes to
+\begin{equation}
+1 + \frac{e^2}{\epsilon_0\,m_e\,k}\int_{-\infty}^{\infty}\frac{\partial F_{0\,e}/
+\partial u}{\omega - k\,u}\,du + \frac{e^2}{\epsilon_0\,m_i\,k}
+\int_{-\infty}^{\infty}\frac{\partial F_{0\,i}/\partial u}{\omega-k\,u}\,du = 0:
+\end{equation}
+{\em i.e.}, we simply add an extra term for the ions which has an
+analogous form to the electron term. Let us search for a wave with
+a phase velocity, $\omega/k$, which is much less than the electron thermal
+velocity, but much greater than the ion thermal velocity. We may assume
+that $\omega\gg k\,u$ for the ion term, as we did previously for the
+electron term. It follows that, to
+lowest order, this term reduces to $-\omega_{p\,i}^{~2}/\omega^2$. Conversely, we
+may assume that $\omega\ll k\,u$ for the electron term. Thus, to
+lowest order we may neglect $\omega$ in the velocity space
+integral. Assuming $F_{0\,e}$
+to be a Maxwellian with temperature $T_e$, the electron term reduces to
+\begin{equation}
+\frac{{\omega}_{p\,e}^{~2}}{k^2}\frac{m_e}{T_e} = \frac{1}{(k\,\lambda_D)^2}.
+\end{equation}
+
+Thus, to a first approximation, the dispersion relation can be written
+\begin{equation}\label{e6.50}
+1 + \frac{1}{(k\,\lambda_D)^2} - \frac{\omega_{p\,i}^{~2}}{\omega^2} = 0,
+\end{equation}
+giving
+\begin{equation}
+\omega^2 = \frac{\omega_{p\,i}^{~2}\,k^2\,\lambda_D^{~2}}{1+k^2\,\lambda_D^{~2}}
+= \frac{T_e}{m_i} \frac{k^2}{1+k^2\,\lambda_D^{~2}}.
+\end{equation}
+For $k\,\lambda_D\ll 1$, we have $\omega=(T_e/m_i)^{1/2}\,k$, a dispersion relation
+which is like that of an ordinary sound wave, with the pressure provided by the
+electrons, and the inertia by the ions. As the wave-length is reduced towards the
+Debye length, the frequency levels off and approaches the ion plasma
+frequency.
+
+Let us check our original assumptions. In the long wave-length limit, we see that
+the wave phase velocity $(T_e/m_i)^{1/2}$ is indeed much less than the
+electron thermal velocity [by a factor $(m_e/m_i)^{1/2}$], but that it
+is only much greater than the ion thermal velocity if the ion temperature, $T_i$,
+is much less than the electron temperature, $T_e$. In fact, if $T_i\ll T_e$
+then the wave phase velocity can lie on almost flat portions of the
+ion and electron distribution functions, as shown in Fig.~\ref{f36}, implying that
+the wave is subject to
+very little Landau damping. Indeed, an ion sound wave can only propagate a distance of order its wave-length
+without being strongly damped  provided that $T_e$ is at least five to ten times greater than $T_i$.
+
+Of course, it is possible to obtain the ion sound wave dispersion relation,
+$\omega^2/k^2 = T_e/m_i$, using fluid theory. The kinetic treatment used here
+is an improvement on the fluid theory to the extent that no equation of
+state is assumed, and it makes it clear to us that ion sound waves are subject to
+strong Landau damping ({\em i.e.}, they cannot be considered normal modes of the
+plasma) unless $T_e\gg T_i$. 
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter06/sound.eps}}
+\caption{\em Ion and electron distribution functions with $T_i\ll T_e$.}\label{f36}
+\end{figure}
+
+\section{Waves in  Magnetized Plasmas}\label{s6.6}
+Consider  waves propagating through a plasma placed in a uniform magnetic field, ${\bf B}_0$. 
+Let us take the perturbed magnetic field into account in our
+calculations, in order to allow for
+electromagnetic, as well as electrostatic, waves. The linearized Vlasov equation
+takes the form
+\begin{equation}\label{e6.52}
+\frac{\partial f_1}{\partial t} + {\bf v}\!\cdot\!\nabla f_1 + 
+\frac{e}{m}\,({\bf v}\times{\bf B}_0)\!\cdot\!\nabla_v f_1 = -\frac{e}{m}\,
+({\bf E} + {\bf v}\times{\bf B})\!\cdot\!\nabla_v f_0
+\end{equation}
+for both ions and electrons, where   ${\bf E}$ and
+${\bf B}$ are the perturbed electric and magnetic fields, respectively. Likewise,
+$f_1$ is the perturbed distribution function, and $f_0$  the equilibrium
+distribution function.
+
+In order to have an equilibrium state at all, we require that
+\begin{equation}
+({\bf v}\times{\bf B}_0)\!\cdot\!\nabla_v f_0 = 0.
+\end{equation}
+Writing the velocity, ${\bf v}$, in cylindrical polar coordinates,
+$(v_\perp, \theta, v_z)$, aligned with the equilibrium magnetic
+field, the above expression can easily be shown to imply that
+$\partial f_0/\partial \theta =0$: {\em i.e.}, $f_0$ is a function
+only of $v_\perp$ and $v_z$. 
+
+Let the trajectory of a particle be ${\bf r}(t)$, ${\bf v}(t)$. In the
+unperturbed state
+\begin{eqnarray}
+\frac{d{\bf r}}{dt} &=& {\bf v},\\[0.5ex]
+\frac{d{\bf v}}{dt} &=& \frac{e}{m}\,({\bf v}\times{\bf B}_0).
+\end{eqnarray}
+It follows that Eq.~(\ref{e6.52}) can be written
+\begin{equation}\label{e6.55}
+\frac{D f_1}{Dt} = -\frac{e}{m}\,
+({\bf E} + {\bf v}\times{\bf B})\!\cdot\!\nabla_v f_0,
+\end{equation}
+where $D f_1/Dt$ is the total rate of change of $f_1$, following the
+unperturbed trajectories. Under the assumption that $f_1$ vanishes as
+$t\rightarrow -\infty$, the solution to Eq.~(\ref{e6.55}) can be written
+\begin{equation}\label{e6.56}
+f_1({\bf r}, {\bf v}, t) =-\frac{e}{m}\int_{-\infty}^t
+\left[{\bf E}({\bf r}', t') + {\bf v}'\times {\bf B}({\bf r}', t')\right]\!
+\cdot\!\nabla_v f_0({\bf v}')\,dt',
+\end{equation}
+where $({\bf r}'$, ${\bf v}')$ is the unperturbed trajectory which passes
+through the point $({\bf r}$, ${\bf v})$ when $t'=t$. 
+
+It should be noted that the above method of solution is valid for any
+set of equilibrium electromagnetic fields, not just a uniform magnetic
+field. However, in a uniform magnetic field the unperturbed trajectories
+are merely helices, whilst in a general field configuration it is difficult to
+find a closed form for the particle trajectories which is sufficiently
+simple to allow further progress to be made.
+
+Let us write the velocity in terms of its Cartesian components:
+\begin{equation}
+{\bf v} =
+(v_\perp\cos\theta, v_\perp\sin\theta, v_z).
+\end{equation}
+ It follows that
+\begin{equation}\label{e6.58}
+{\bf v}' = \left( v_\perp\cos\!\left[{\Omega}\,(t-t')+\theta\,\right],
+ v_\perp\sin\!\left[{\Omega}\,(t-t')+\theta\,\right], v_z\right),
+\end{equation}
+where ${\Omega} = e\,B_0/m$ is the cyclotron frequency. The above
+expression can be integrated to give
+\begin{eqnarray}\label{e6.59a}
+x'-x &=& -\frac{v_\perp}{{\Omega}}\,\left(\,\sin\!\left[{\Omega}\,(t-t')
++\theta\,\right] -\sin\theta\right),\\[0.5ex]\label{e6.59b}
+y'-y &=& \frac{v_\perp}{{\Omega}}\,\left(\,\cos\!\left[{\Omega}\,(t-t')
++\theta\,\right] -\cos\theta\right),\\[0.5ex]\label{e6.59c}
+z'-z &=& v_z\,(t'-t).
+\end{eqnarray}
+Note that both $v_\perp$ and $v_z$ are constants of the motion. This
+implies that $f_0({\bf v}') = f_0({\bf v})$, because $f_0$ is only a
+function of $v_\perp$ and $v_z$. Since $v_\perp = (v_x'^{~2} + v_y'^{~2})^{1/2}$,
+we can write
+\begin{eqnarray}\label{e6.60a}
+\frac{\partial f_0}{\partial v_x'}& =& \frac{\partial v_\perp}{\partial v_x'}
+\frac{\partial f_0}{\partial v_\perp} = \frac{v_x'}{v_\perp}\frac{\partial f_0}
+{\partial v_\perp} = \cos\left[{\Omega}\,(t'-t)+\theta\,\right]
+\frac{\partial f_0}{\partial v_\perp},\\[0.5ex]
+\frac{\partial f_0}{\partial v_y'}& =& \frac{\partial v_\perp}{\partial v_y'}
+\frac{\partial f_0}{\partial v_\perp} = \frac{v_y'}{v_\perp}\frac{\partial f_0}
+{\partial v_\perp} = \sin\left[{\Omega}\,(t'-t)+\theta\,\right]
+\frac{\partial f_0}{\partial v_\perp},\\[0.5ex]
+\frac{\partial f_0}{\partial v_z'} &=& \frac{\partial f_0}{\partial v_z}.\label{e6.60c}
+\end{eqnarray}
+
+Let us assume an $\exp[\,{\rm i}\,({\bf k}\!\cdot\!{\bf r} -\omega\,t)]$
+dependence of all perturbed quantities, with ${\bf k}$ lying in the $x$-$z$ plane.
+Equation (\ref{e6.56}) yields
+\begin{eqnarray}\label{e6.61}
+f_1& =& -\frac{e}{m}\int_{-\infty}^t \left[ (E_x + v_y'\,B_z - v_z'\,B_y)\,
+\frac{\partial f_0}{\partial v_{x}'} +(E_y + v_z'\,B_x - v_x'\,B_z)\,
+\frac{\partial f_0}{\partial v_{y}'} \right.\nonumber\\[0.5ex]
+&&\left.+(E_z + v_x'\,B_y - v_y'\,B_x)\,
+\frac{\partial f_0}{\partial v_{z}'} \right]\exp\left[\,{\rm i}\,\{{\bf k}\!\cdot\!
+({\bf r}' -{\bf r})-\omega\,(t'-t)\}\right]\,dt'.\nonumber\\[0.5ex]&&
+\end{eqnarray}
+Making use of Eqs.~(\ref{e6.58})--(\ref{e6.60c}), and the identity
+\begin{equation}
+{\rm e}^{\,{\rm i}\,a\,\sin x} \equiv \sum_{n=-\infty}^{\infty}
+J_n(a)\,{\rm e}^{\,{\rm i}\,n\,x},
+\end{equation}
+Eq.~(\ref{e6.61}) gives 
+\begin{eqnarray}
+f_1& =& -\frac{e}{m}\int_{-\infty}^t \left[ (E_x - v_z\,B_y)\,\cos\chi\,\frac{\partial f_0}{\partial v_\perp} + (E_y + v_z\,B_x)\,\sin\chi\,\frac{\partial f_0}{\partial v_\perp}
+\right.\nonumber
+\\[0.5ex]
+&&\left.+(E_z+ v_\perp\,B_y\,\cos\chi - v_\perp\,B_x\,\sin\chi)\,\frac{\partial f_0}{\partial v_z} \right]\,\sum_{n,m=-\infty}^\infty J_n\!\left(\frac{k_\perp\,v_\perp}
+{{\Omega}}\right)J_m\!\left(\frac{k_\perp\,v_\perp}
+{{\Omega}}\right)\nonumber
+\\[0.5ex]
+&&\times \exp\left\{\,{\rm i}\left[(n\,{\Omega} + k_z\,v_z-\omega)
+\,(t'-t) + (m-n)\,\theta\,\right]\,\right\}\,dt',\label{e6.63}
+\end{eqnarray}
+where
+\begin{equation}
+\chi = {\Omega}\,(t-t') + \theta.
+\end{equation}
+
+Maxwell's equations yield
+\begin{eqnarray}
+{\bf k}\times {\bf E} &=& \omega\,{\bf B},\\[0.5ex]
+{\bf k}\times{\bf B} &=& -{\rm i}\,\mu_0\,{\bf j} - \frac{\omega}{c^2}\,{\bf E}
+=-\frac{\omega}{c^2}\,{\bf K}\!\cdot\!{\bf E},
+\end{eqnarray}
+where ${\bf j}$ is the perturbed current, and ${\bf K}$ is the dielectric
+permittivity tensor introduced in Sect.~\ref{s4.2}. It follows that
+\begin{equation}\label{e6.66}
+{\bf K}\!\cdot\!{\bf E} ={\bf E} + \frac{{\rm i}}{\omega\,\epsilon_0}
+\,{\bf j}= {\bf E} + \frac{{\rm i}}{\omega\,\epsilon_0}
+\sum_s e_s\int {\bf v}\,f_{1\,s}\,d^3{\bf v},
+\end{equation}
+where $f_{1\,s}$ is the species-$s$ perturbed distribution function.
+
+After a great deal of rather tedious analysis, Eqs.~(\ref{e6.63}) and (\ref{e6.66}) reduce to
+the following expression for the dielectric permittivity tensor:
+\begin{equation}\label{e6.67}
+K_{ij} = \delta_{ij} + \sum_s \frac{e_s^{~2}}{\omega^2\,\epsilon_0\,m_s}
+\sum_{n=-\infty}^\infty \int \frac{S_{ij}}{\omega - k_z \,v_z - n\,{\Omega}_s}
+\,\,d^3{\bf v},
+\end{equation}
+where
+\begin{equation}
+S_{ij} = \left(
+\begin{array}{ccc}
+v_\perp\,(n\,J_n/a_s)^2\,U & {\rm i}\,v_\perp\,(n/a_s)\,J_n\,J_n' \,U&
+v_\perp\,(n/a_s)\,J_n^{~2}\,U\\[0.5ex]
+-{\rm i}\,v_\perp\,(n/a_s)\,J_n\,J_n'\,U& v_\perp\,J_n'^{~2}\,U & -{\rm i}\,v_\perp\,J_n\,J_n'\,W\\[0.5ex]
+v_z\,(n/a_s)\,J_n^{~2}\,U & {\rm i}\,v_z\,J_n\,J_n'\,U & v_z\,J_n^{~2}\,W\end{array}
+ \right),
+\end{equation}
+and
+\begin{eqnarray}
+U&=& (\omega-k_z\,v_z)\,\frac{\partial f_{0\,s}}{\partial v_\perp}
++ k_z\,v_\perp\,\frac{\partial f_{0\,s}}{\partial v_z},\\[0.5ex]
+W&=& \frac{n\,{\Omega}_s\,v_z}{v_\perp} \,\frac{\partial f_{0\,s}}
+{\partial v_\perp} + (\omega -n\,{\Omega}_s)\,\frac{\partial f_{0\,s}}
+{\partial v_z},\\[0.5ex]
+a_s &=& \frac{k_\perp\,v_\perp}{{\Omega}_s}.
+\end{eqnarray}
+The argument of the Bessel functions is $a_s$. In the above, $'$ denotes
+differentiation with respect to argument.
+
+The dielectric tensor (\ref{e6.67}) can be used to investigate the properties of waves
+in just the same manner as the cold plasma dielectric tensor (\ref{e4.36x}) was used in 
+Sect.~\ref{s4}. Note that our expression for the dielectric tensor involves
+singular integrals of a type similar to those encountered in Sect.~\ref{s6.2}. In
+principle, this means that we ought to treat the problem as an initial
+value problem. Fortunately,  we can use the insights gained in our investigation of
+the simpler unmagnetized electrostatic wave problem to recognize that the
+appropriate way to treat the singular integrals is to evaluate them as
+written for ${\rm Im}(\omega)>0$, and by analytic continuation
+for ${\rm Im}(\omega)\leq 0$. 
+
+For Maxwellian distribution functions, we can explicitly perform the velocity
+space integral in Eq.~(\ref{e6.67}), making use of the identity
+\begin{equation}
+\int_0^\infty x\,J_n^{~2}(s\,x)\,{\rm e}^{-x^2}\,dx= \frac{{\rm e}^{-s^2/2}}{2}
+\,I_n(s^2/2),
+\end{equation}
+where $I_n$ is a modified Bessel function. We obtain
+\begin{equation}
+K_{ij} = \delta_{ij} + \sum_s\frac{\omega_{p\,s}^{~2}}{\omega}
+\left(\frac{m_s}{2\,T_s}\right)^{1/2} \frac{{\rm e}^{-\lambda_s}}{k_z}
+\sum_{n=-\infty}^\infty T_{ij},
+\end{equation}
+where
+\begin{equation}\label{e6.72}
+T_{ij} = \left( \begin{array}{ccc}
+{\scriptstyle n^2\,I_n\,Z/\lambda_s} & {\scriptstyle {\rm i}\,n\,(I_n'-I_n)\,Z} &
+{\scriptstyle  -n\,I_n\,Z'/(2\,\lambda_s)^{1/2}}
+\\[0.5ex]
+{\scriptstyle -{\rm i}\,n\,(I_n'-I_n)\,Z} & {\scriptstyle (n^2\,I_n/\lambda_s +2\,\lambda_s\,I_n -2\,\lambda_s\,
+I_n')\,Z} & {\scriptstyle {\rm i}\,\lambda_s^{1/2}\,(I_n'-I_n)\,Z'/2^{1/2}} \\[0.5ex]
+{\scriptstyle -n\,I_n\,Z'/(2\,\lambda_s)^{1/2}} &{\scriptstyle
+ -{\rm i}\,\lambda_s^{1/2}\,(I_n'-I_n)\,Z'/2^{1/2}}
+&{\scriptstyle  -I_n\,Z'\,\xi_n}
+\end{array}
+\right).
+\end{equation}
+Here, $\lambda_s$, which is the argument of the Bessel functions, is written
+\begin{equation}\label{e6.73}
+\lambda_s = \frac{T_s\,k_\perp^{~2}}{m_s\,{\Omega}_s^{~2}},
+\end{equation}
+whilst $Z$ and $Z'$ represent the plasma dispersion function and its derivative,
+both with argument
+\begin{equation}\label{e6.74}
+\xi_n = \frac{\omega - n\,{\Omega}_s}{k_z} \left(\frac{m_s}{2\,T_s}\right)^{1/2}.
+\end{equation}
+
+Let us consider the cold plasma limit, $T_s\rightarrow 0$. It follows from
+Eqs.~(\ref{e6.73}) and (\ref{e6.74}) that this limit corresponds to $\lambda_s\rightarrow 0$ and
+$\xi_n\rightarrow \infty$. From Eq.~(\ref{e6.46}), 
+\begin{eqnarray}\label{e6.75a}
+Z(\xi_n) &\rightarrow & -\frac{1}{\xi_n},\\[0.5ex]
+Z'(\xi_n) &\rightarrow & \frac{1}{\xi_n^{~2}}\label{e6.75b}
+\end{eqnarray}
+as $\xi_n\rightarrow\infty$. Moreover,
+\begin{equation}\label{e6.76}
+I_n(\lambda_s) \rightarrow \left(\frac{\lambda_s}{2}\right)^{|n|}
+\end{equation}
+as  $\lambda_s\rightarrow 0$. It can be demonstrated  that the
+only non-zero contributions to $K_{ij}$, in this limit, come from $n=0$ and
+$n=\pm 1$. In fact, 
+\begin{eqnarray}
+K_{11} &=& K_{22} = 1-\frac{1}{2}\sum_s\frac{\omega_{p\,s}^{~2}}{\omega^2}
+\left( \frac{\omega}{\omega-{\Omega}_s} + 
+\frac{\omega}{\omega + {\Omega}_s}\right),\\[0.5ex]
+K_{12} &=& -K_{21} = -\frac{{\rm i}}{2} \sum_s\frac{\omega_{p\,s}^{~2}}{\omega^2}
+\left( \frac{\omega}{\omega-{\Omega}_s} -
+\frac{\omega}{\omega + {\Omega}_s}\right),\\[0.5ex]
+K_{33} &=& 1-\sum_s\frac{\omega_{p\,s}^{~2}}{\omega^2},
+\end{eqnarray}
+and $K_{13} = K_{31} = K_{23}=K_{32}=0$. It is easily seen, from Sect.~\ref{s4.3}, that the above
+expressions are identical to those we obtained  using the cold-plasma fluid
+equations. Thus, in the zero temperature limit, the kinetic
+dispersion relation obtained in this section reverts to the fluid dispersion
+relation obtained in Sect.~\ref{s4}. 
+
+\section{Parallel Wave Propagation}
+Let us consider wave propagation, though a warm
+plasma,  {\em parallel}\/ to the equilibrium magnetic field. For parallel propagation,
+$k_\perp\rightarrow 0$, and, hence, from Eq.~(\ref{e6.73}), $\lambda_s\rightarrow 0$. 
+Making use of the asymptotic expansion (\ref{e6.76}), the matrix $T_{ij}$ 
+simplifies to 
+\begin{equation}
+T_{ij} = \left( \begin{array}{ccc}
+[Z(\xi_1)+Z(\xi_{-1})]/2 & {\rm i}\,[Z(\xi_1)
+-Z(\xi_{-1})]/2 &
+ 0
+\\[0.5ex]
+ -{\rm i}\,[Z(\xi_1)-Z(\xi_{-1})]/2 & 
+[Z(\xi_1)+Z(\xi_{-1})]/2 &  0 \\[0.5ex]
+0 & 0
+&-Z'(\xi_0)\,\xi_0
+\end{array}
+\right),
+\end{equation}
+where, again, the only non-zero contributions are from $n=0$ and $n=\pm 1$. 
+The dispersion relation can be written [see Eq.~(\ref{e4.9})]
+\begin{equation}\label{e6.79}
+{\bf M}\!\cdot\! {\bf E} = {\bf 0},
+\end{equation}
+where
+\begin{eqnarray}
+M_{11}&=& M_{22} = 1-\frac{k_z^{~2}\,c^2}{\omega^2} \nonumber\\[0.5ex]
+&&+\frac{1}{2}\sum_s 
+\frac{\omega_{p\,s}^{~2}}
+{\omega\,\,k_z v_s} \left[Z\!\left(\frac{\omega - {\Omega}_s}{k_z\,v_s}\right)
++ Z\!\left(\frac{\omega + {\Omega}_s}{k_z\,v_s}\right)\right],\\[0.5ex]
+M_{12} &=&-M_{21} = \frac{\rm i}{2}\sum_s\frac{\omega_{p\,s}^{~2}}
+{\omega\,k_z v_s} \left[Z\left(\frac{\omega - {\Omega}_s}{k_z\,v_s}\right)
+- Z\left(\frac{\omega + {\Omega}_s}{k_z\,v_s}\right)\right],\\[0.5ex]
+M_{33} &=& 1 - \sum_s \frac{\omega_{p\,s}^{~2}}
+{(k_z\,v_s)^2} \,\,Z'\!\left(\frac{\omega}{k_z\,v_s}\right),
+\end{eqnarray}
+and $M_{13} = M_{31} = M_{23}=M_{32}=0$. Here, $v_s= \sqrt{2\,T_s/m_s}$ is
+the species-$s$ thermal velocity.
+
+The first root of Eq.~(\ref{e6.79}) is
+\begin{equation}\label{e6.81}
+1 +\sum_s\frac{2\,\omega_{p\,s}^{~2}}
+{(k_z\,v_s)^2} \left[1+
+\frac{\omega}{k_z\,v_s}\,Z\!\left(\frac{\omega}{k_z\,v_s}\right)\right] =0,
+\end{equation}
+with the eigenvector $(0,0,E_z)$. 
+Here, use has been made of Eq.~(\ref{e6.40}).
+This root evidentially corresponds to
+a longitudinal, electrostatic plasma wave. In fact, it is easily
+demonstrated that Eq.~(\ref{e6.81}) is equivalent to the dispersion relation
+(\ref{e6.50}) that we found earlier for electrostatic
+plasma waves, for the special case in which the distribution
+functions are Maxwellians. Recall, from Sects.~6.3--6.5, that the
+electrostatic wave described by the above expression is subject to
+significant damping whenever the argument of the plasma dispersion
+function becomes less than or comparable with unity: {\em i.e.}, whenever
+$\omega\ltapp k_z\,v_s$. 
+
+The second and third roots of Eq.~(\ref{e6.79}) are
+\begin{equation}
+\frac{k_z^{~2}\,c^2}{\omega^2} = 1 +\sum_s \frac{\omega_{p\,s}^{~2}}{\omega\,
+\,k_z v_s}\,Z\!\left(\frac{\omega + {\Omega}_s}{k_z\,v_s}\right),
+\end{equation}
+with the eigenvector $(E_x, {\rm i}\,E_x, 0)$, and
+\begin{equation}
+\frac{k_z^{~2}\,c^2}{\omega^2} = 1 +\sum_s \frac{\omega_{p\,s}^{~2}}{\omega\,
+\,k_z v_s}\,Z\!\left(\frac{\omega - {\Omega}_s}{k_z\,v_s}\right),
+\end{equation}
+with the eigenvector $(E_x, -{\rm i}\,E_x, 0)$. The former root evidently
+corresponds to a right-handed circularly polarized wave, whereas the latter
+root corresponds to a left-handed circularly polarized wave. 
+The above two dispersion relations are essentially the same as the corresponding
+fluid dispersion relations, (\ref{e4.70}) and (\ref{e4.71}), except that they explicitly
+contain collisionless {\em damping}\/ at the cyclotron resonances. As before, the
+damping is significant whenever the arguments of the plasma dispersion functions
+are less than or of order unity. This corresponds to
+\begin{equation}
+\omega - |{\Omega}_e| \ltapp k_z\,v_e
+\end{equation}
+for the right-handed wave, and
+\begin{equation}
+\omega-{\Omega}_i\ltapp k_z\,v_i
+\end{equation}
+for the left-handed wave. 
+
+The collisionless cyclotron damping mechanism is very similar to the
+Landau damping mechanism for longitudinal waves discussed in Sect.~\ref{s6.3}. 
+In this case, the resonant particles are those which gyrate about the magnetic
+field with approximately the same angular frequency as the wave electric field.
+On average, particles which gyrate slightly faster than the wave lose energy, whereas those which gyrate slightly slower than the wave gain
+energy. In a Maxwellian distribution there are less particles in the former
+class  than the latter, so there is a net transfer of energy from
+the wave to the resonant particles. Note that in kinetic theory
+the cyclotron resonances
+possess a {\em finite}\/ width in frequency space ({\em i.e.}, the incident wave does
+not have to oscillate at exactly the cyclotron frequency in order for there
+to be an absorption of wave energy by the plasma), unlike in the cold plasma
+model, where the resonances possess {\em zero}\/ width. 
+
+\section{Perpendicular Wave Propagation}
+Let us now consider wave propagation, through a warm plasma, {\em perpendicular}\/ 
+to the equilibrium magnetic field. For perpendicular propagation, $k_z\rightarrow 0$,
+and, hence, from Eq.~(\ref{e6.74}), $\xi_n\rightarrow \infty$. Making use of
+the asymptotic expansions (\ref{e6.75a})--(\ref{e6.75b}), the matrix $T_{ij}$ simplifies
+considerably. The dispersion relation can again be written
+in the form (\ref{e6.79}), where
+\begin{eqnarray}\label{e6.86a}
+M_{11} &=& 1 - \sum_s\frac{\omega_{p\,s}^{~2}}{\omega}
+\frac{{\rm e}^{-\lambda_s}}{\lambda_s} \!\sum_{n=-\infty}^\infty \frac{n^2\,I_n(
+\lambda_s)}{\omega-n\,{\Omega}_s},\\[0.5ex]
+M_{12} &=& -M_{21} = {\rm i}\sum_s \frac{\omega_{p\,s}^{~2}}{\omega}
+\,\,{\rm e}^{-\lambda_s}\! \sum_{n=-\infty}^\infty \frac{n\,\left[I_n'(\lambda_s)
+-I_n(\lambda_s)\right]}{\omega-n\,{\Omega}_s},\\[0.5ex]
+M_{22} &=& 1 -\frac{k_\perp^{~2}\,c^2}{\omega^2} \\[0.5ex]
+&&
+- \sum_s \frac{\omega_{p\,s}^{~2}}{\omega} \frac{{\rm e}^{-\lambda_s}}{\lambda_s}\!
+\sum_{n=-\infty}^\infty \frac{\left[n^2\,I_n(\lambda_s) +2 \,\lambda_s^{~2}\,
+I_n(\lambda_s) - 2\,\lambda_s^{~2}\,I_n'(\lambda_s)\right]}{\omega-n\,{\Omega}_s},\nonumber
+\\[0.5ex]
+M_{33} &=& 1 - \frac{k_\perp^{~2}\,c^2}{\omega^2} - \!
+\sum_s \frac{\omega_{p\,s}^{~2}}{\omega}\,\,
+{\rm e}^{-\lambda_s} \!\sum_{n=-\infty}^\infty
+\frac{I_n(\lambda_s)}{\omega-n\,{\Omega}_s},\label{e6.86d}
+\end{eqnarray}
+and $M_{13} = M_{31} = M_{23}=M_{32}=0$.
+Here, 
+\begin{equation}\label{e6.87}
+\lambda_s = \frac{(k_\perp \rho_s)^2}{2},
+\end{equation}
+where $\rho_s=v_s/|{\Omega}_s|$ is the species-$s$ Larmor radius.
+
+The first root of the dispersion relation (\ref{e6.79}) is
+\begin{equation}\label{e6.88}
+n_\perp^{~2}=\frac{k_\perp^{~2}\,c^2}{\omega^2} = 1 - \!
+\sum_s \frac{\omega_{p\,s}^{~2}}{\omega}\,\,
+{\rm e}^{-\lambda_s} \!\sum_{n=-\infty}^\infty
+\frac{I_n(\lambda_s)}{\omega-n\,{\Omega}_s},
+\end{equation}
+with the eigenvector $(0,0,E_z)$. This dispersion relation obviously
+corresponds to the electromagnetic plasma wave, or {\em ordinary}\/ mode, discussed 
+in Sect.~\ref{s4.10}.
+Note, however, that in a warm plasma the dispersion relation for the ordinary mode
+is strongly modified by the introduction of {\em resonances}\/ (where the refractive
+ index, $n_\perp$,
+becomes infinite) at all the {\em harmonics}\/ of the cyclotron frequencies:
+\begin{equation}
+\omega_{n\,s} = n\,{\Omega}_s,
+\end{equation}
+where $n$ is a non-zero integer. These resonances are a {\em finite Larmor radius}\/ 
+effect. In fact, they originate from the variation of the wave phase 
+across a Larmor orbit. Thus, in the cold plasma limit, $\lambda_s\rightarrow 0$,
+in which the Larmor radii shrink to zero, all of the resonances disappear from
+the dispersion relation. In the limit in which the wave-length, $\lambda$, of
+the wave is much larger than a typical Larmor radius, $\rho_s$, the
+relative amplitude of the $n$th harmonic cyclotron resonance, as it
+appears in the dispersion
+relation (\ref{e6.88}), is approximately 
+$(\rho_s/\lambda)^{|n|}$ [see Eqs.~(\ref{e6.76}) and (\ref{e6.87})]. It is clear, therefore, that
+in this limit only low-order resonances [{\em i.e.}, $n\sim O(1)$] couple
+strongly into the dispersion relation, and high-order resonances
+({\em i.e.}, $|n| \gg 1$) can effectively be neglected. As $\lambda\rightarrow
+\rho_s$, the high-order resonances become increasigly important, until,
+when $\lambda\ltapp \rho_s$, all of the resonances are of approximately equal
+strength. Since the ion Larmor radius is generally much larger than the
+electron Larmor radius, it follows that the ion cyclotron harmonic resonances
+are generally more important than the electron cyclotron harmonic resonances.
+
+Note that the cyclotron harmonic resonances appearing in the dispersion
+relation (\ref{e6.88}) are of {\em zero width}\/  in frequency space: {\em i.e.}, they are
+just like the resonances which appear in the cold-plasma limit. 
+Actually, this is just an artifact of the fact that the waves we are studying
+propagate {\em exactly perpendicular}\/ to the equilibrium magnetic field. It is
+clear from an examination of Eqs.~(\ref{e6.72}) and (\ref{e6.74}) that the cyclotron
+harmonic resonances originate from the zeros of the plasma dispersion
+functions. Adopting the usual rule that substantial damping takes place
+whenever the arguments of the dispersion functions are less than or of
+order unity, it is clear that the cyclotron harmonic resonances lead to
+significant damping whenever
+\begin{equation}
+\omega - \omega_{n\,s} \ltapp k_z\,v_s.
+\end{equation}
+Thus, the cyclotron harmonic resonances possess a {\em finite}\/  width in frequency
+space provided that the parallel wave-number, $k_z$, is non-zero: {\em i.e.},
+provided that the wave does not propagate exactly perpendicular to the magnetic
+field.
+
+The appearance of the cyclotron harmonic resonances in a warm plasma
+ is  of great practical
+importance in plasma physics, since it greatly increases the number of
+resonant frequencies at which waves can transfer energy to the
+plasma. In magnetic fusion these resonances are routinely exploited to
+heat plasmas via  externally launched electromagnetic waves. Hence, in
+the fusion literature you will often come across references to
+``third harmonic ion cyclotron heating'' or ``second harmonic electron
+cyclotron heating.''
+
+The other roots of the dispersion relation (\ref{e6.79}) satisfy
+\begin{eqnarray}
+&&\left(1 - \sum_s\frac{\omega_{p\,s}^{~2}}{\omega}
+\frac{{\rm e}^{-\lambda_s}}{\lambda_s} \!\sum_{n=-\infty}^\infty \frac{n^2\,I_n(
+\lambda_s)}{\omega-n\,{\Omega}_s}
+\right) \left(1 -\frac{k_\perp^{~2}\,c^2}{\omega^2}\right.\nonumber\\[0.5ex]
+&&\left.- 
+\sum_s \frac{\omega_{p\,s}^{~2}}{\omega} \frac{{\rm e}^{-\lambda_s}}{\lambda_s}\!
+\sum_{n=-\infty}^\infty \frac{\left[n^2\,I_n(\lambda_s) +2 \,\lambda_s^{~2}\,
+I_n(\lambda_s) - 2\,\lambda_s^{~2}\,I_n'(\lambda_s)\right]}
+{\omega-n\,{\Omega}_s}
+\right)\nonumber\\[0.5ex]
+&&= \left(\sum_s \frac{\omega_{p\,s}^{~2}}{\omega}
+\,\,{\rm e}^{-\lambda_s}\! \sum_{n=-\infty}^\infty \frac{n\,\left[I_n'(\lambda_s)
+-I_n(\lambda_s)\right]}{\omega-n\,{\Omega}_s}\right)^2,\label{e6.91}
+\end{eqnarray}
+with the eigenvector $(E_x, E_y, 0)$. In the cold plasma limit, $\lambda_s\rightarrow
+0$, this dispersion relation reduces to that of the {\em extraordinary}\/  mode 
+discussed in Sect.~\ref{s4.10}. This mode, for which $\lambda_s\ll 1$, unless the
+plasma possesses a thermal velocity approaching the velocity of light, is little
+affected by thermal effects, except close to the cyclotron harmonic
+resonances, $\omega=\omega_{n\,s}$, where small thermal corrections are important
+because of the smallness of the denominators in the above dispersion relation.
+
+However, another mode also exists. In fact, if we look for a mode with a
+phase velocity much less than the velocity of light ({\em i.e.}, 
+$c^2\,k_\perp^2/\omega^2\gg 1$) then it is clear from (\ref{e6.86a})--(\ref{e6.86d})  that
+the dispersion relation is approximately
+\begin{equation}\label{e6.92}
+1 - \sum_s\frac{\omega_{p\,s}^{~2}}{\omega}
+\frac{{\rm e}^{-\lambda_s}}{\lambda_s} \!\sum_{n=-\infty}^\infty \frac{n^2\,I_n(
+\lambda_s)}{\omega-n\,{\Omega}_s} = 0,
+\end{equation}
+and the associated eigenvector is $(E_x, 0, 0)$. The new waves, which
+are called {\em Bernstein waves}\/ (after I.B.~Bernstein, who first
+discovered them), are clearly slowly propagating, 
+longitudinal, electrostatic waves.
+
+\begin{figure}
+\epsfysize=4in
+\centerline{\epsffile{Chapter06/bern1.eps}}
+\caption{\em Dispersion relation for electron Bernstein waves in a warm plasma.}\label{f37}
+\end{figure}
+
+Let us consider  electron Bernstein waves, for the sake of definiteness. 
+Neglecting the contribution of the ions, which is reasonable provided that
+the wave frequencies are sufficiently high, the dispersion relation (\ref{e6.92})
+reduces to 
+\begin{equation}
+1 - \frac{\omega_{p}^{~2}}{\omega}
+\frac{{\rm e}^{-\lambda}}{\lambda} \!\sum_{n=-\infty}^\infty \frac{n^2\,I_n(
+\lambda)}{\omega-n\,{\Omega}} = 0,
+\end{equation}
+where the subscript $s$ is dropped, since it is understood that all
+quantities relate to electrons. In the limit  $\lambda\rightarrow 0$ (with
+$\omega\neq n\,{\Omega}$), only the $n=\pm 1$ terms survive in the
+above expression. In fact, since $I_{\pm 1}(\lambda)/\lambda \rightarrow
+1/2$ as $\lambda\rightarrow 0$, the dispersion relation yields
+\begin{equation}
+\omega^2\rightarrow \omega_p^{~2} + {\Omega}^2.
+\end{equation}
+It follows that there is a Bernstein wave whose frequency asymptotes
+to the upper hybrid frequency [see Sect.~\ref{s4.10}] in the limit $k_\perp
+\rightarrow 0$. For other non-zero values of $n$, we have $I_n(\lambda)/\lambda
+\rightarrow 0$ as $\lambda\rightarrow 0$. However, a solution to Eq.~(\ref{e6.92}) can
+be obtained if $\omega\rightarrow n\,{\Omega}$ at the same time. Similarly,
+as $\lambda\rightarrow\infty$ we have ${\rm e}^{-\lambda}\,I_n(\lambda)\rightarrow
+0$. In this case, a solution can only be obtained if $\omega\rightarrow
+n\,{\Omega}$, for some $n$, at the same time. The complete solution to
+Eq.~(\ref{e6.92}) is sketched in Fig.~\ref{f37}, for the case where the upper
+hybrid frequency lies between $2\,|{\Omega}|$ and $3\,|{\Omega}|$. 
+In fact, wherever the upper hybrid frequency lies, the Bernstein modes above
+and below it behave like those in the diagram.
+
+At small values of $k_\perp$, the phase velocity becomes large, and
+it is no longer legitimate to neglect the extraordinary mode. A more detailed
+examination of the complete dispersion relation shows that the extraordinary mode
+and the Bernstein mode cross over near the harmonics of the cyclotron frequency
+to give the pattern shown in Fig.~\ref{f38}. Here, the dashed line shows the cold
+plasma extraordinary mode. 
+
+In a lower frequency range, a similar phenomena occurs at the
+harmonics of the ion cyclotron frequency, producing ion Bernstein waves, with
+somewhat similar properties to electron Bernstein waves. Note, however, that
+whilst the ion contribution to the dispersion relation can be neglected for
+high-frequency waves, the electron contribution cannot be neglected
+for low frequencies, so there is not a complete symmetry between the
+two types of Bernstein waves.
+
+\begin{figure}
+\epsfysize=4in
+\centerline{\epsffile{Chapter06/bern2.eps}}
+\caption{\em Dispersion relation for electron Bernstein waves in a warm plasma. The dashed
+line indicates the cold plasma extraordinary mode.}\label{f38}
+\end{figure}

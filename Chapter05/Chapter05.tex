@@ -1,0 +1,2840 @@
+\chapter {Magnetohydrodynamic Fluids}
+\section{Introduction}
+As we have seen in Sect.~\ref{s3}, the MHD equations take the form
+\begin{eqnarray}\label{e5.1a}
+\frac{d\rho}{dt} + \rho\,\nabla\cdot{\bf V} &=& 0,\\[0.5ex]\label{e5.1b}
+\rho\,\frac{d{\bf V}}{dt} + \nabla p - {\bf j}\times {\bf B} &=& {\bf 0},\\[0.5ex]
+{\bf E} + {\bf V} \times {\bf B} &=& {\bf 0},\\[0.5ex]
+\frac{d}{dt}\!\left(\frac{p}{\rho^{\Gamma}}\right) &=& 0,\label{e5.1d}
+\end{eqnarray}
+where $\rho\simeq m_i\,n$ is the plasma mass density, and ${\Gamma}=5/3$ is the
+ratio of specific heats. 
+
+It is often observed that the above set of equations
+are identical to the equations governing the motion of an inviscid, adiabatic,
+perfectly conducting, electrically neutral
+ liquid. Indeed, this observation is sometimes used as the
+sole justification for the MHD equations. After all, a hot, tenuous, quasi-neutral
+plasma is  highly conducting, and if the motion is sufficiently fast
+then both viscosity and heat conduction can be plausibly neglected. However,
+we can appreciate, from Sect.~\ref{s3}, that this is a highly 
+oversimplified and misleading argument. The problem is, of course, that
+a weakly coupled plasma is a far more complicated dynamical system than
+a conducting liquid. 
+
+According to the discussion in
+Sect.~\ref{s3}, the MHD equations are only valid when
+\begin{equation}
+\delta^{-1}\,v_t \gg V \gg \delta\,v_t.
+\end{equation}
+Here, $V$ is the typical velocity associated with the plasma
+dynamics  under investigation,
+$v_t$ is the typical thermal velocity, and $\delta$ is the typical magnetization
+parameter ({\em i.e.}, the typical ratio of a particle gyro-radius to
+the scale-length of the motion). Clearly, the above inequality is
+most likely to be satisfied in a {\em highly magnetized}\/ ({\em i.e.},
+$\delta\rightarrow 0$) plasma. 
+
+If the plasma dynamics  becomes too fast ({\em i.e.}, $V\sim \delta^{-1}\,v_t$)
+then resonances occur with the motions of individual particles 
+({\em e.g.}, the cyclotron resonances) which
+invalidate the MHD equations. Furthermore, effects, such as electron
+inertia and the Hall effect, which are not taken into account in the
+MHD equations, become important. 
+
+MHD is essentially a {\em single-fluid}\/ plasma theory. A single-fluid
+approach is justified because the perpendicular motion is dominated by
+${\bf E}\times{\bf B}$ drifts, which are the same for both
+plasma species. Furthermore, 
+the relative streaming velocity, $U_\parallel$, of
+both species parallel to the magnetic field is strongly constrained by the
+fundamental MHD ordering (see Sect.~\ref{s3.9})
+\begin{equation}
+U \sim \delta \,V.
+\end{equation}
+Note, however, that if the plasma dynamics  becomes too slow 
+({\em i.e.}, $V\sim \delta\,v_t$) then the motions of the electron
+and ion fluids become sufficiently different that a single-fluid
+approach is no longer tenable. This occurs whenever the diamagnetic
+velocities, which are quite different for different plasma species, become
+comparable to the ${\bf E}\times{\bf B}$ velocity (see Sect.~\ref{s3.12}).
+Furthermore, effects such as plasma resistivity, viscosity, and thermal
+conductivity, which are not taken into account in the MHD equations, become
+important in this limit. 
+
+Broadly speaking, the MHD equations describe relatively {\em violent}, 
+{\em large-scale}\/
+motions of highly {\em magnetized}\/ plasmas. 
+
+Strictly speaking, the MHD equations are only valid in  {\em collisional}\/
+plasmas ({\em i.e.},  plasmas in which the mean-free-path is much smaller
+than the typical variation scale-length). However, as discussed in Sect.~\ref{s3.13},
+the MHD equations also fairly well describe the {\em perpendicular}\/ (but not
+the {\em parallel}\,!)  motions of  collisionless
+plasmas.
+
+Assuming that the MHD equations are valid, let us now investigate their properties.
+
+\section{Magnetic Pressure}
+The MHD equations can be combined with Maxwell's equations,
+\begin{eqnarray}\label{e5.4a}
+\nabla\times{\bf B} &=& \mu_0\,{\bf j},\\[0.5ex]
+\nabla\times{\bf E} &=& - \frac{\partial{\bf B}}{\partial t},\label{e5.4b}
+\end{eqnarray}
+to form a closed set. The displacement current is neglected in
+Eq.~(\ref{e5.4a}) on the reasonable assumption that MHD motions are slow
+compared to the velocity of light. Note that Eq.~(\ref{e5.4b}) guarantees
+that $\nabla\cdot{\bf B}=0$, provided that this relation is
+presumed to hold initially. Similarly, the assumption of
+quasi-neutrality renders the Poisson-Maxwell equation,
+$\nabla\!\cdot\!{\bf E} = \rho_c/\epsilon_0$, irrelevant.
+
+Equations~(\ref{e5.1b}) and (\ref{e5.4a}) can be combined to give the MHD equation
+of motion:
+\begin{equation}
+\rho\,\frac{d{\bf V}}{dt} = -\nabla p + \nabla\!\cdot\!{\bf T},
+\end{equation}
+where
+\begin{equation}
+T_{ij} = \frac{B_i\,B_j- \delta_{ij} \,B^2/2}{\mu_0}.
+\end{equation}
+
+Suppose that the magnetic field is approximately uniform, and
+directed along the $z$-axis. In this case, the above equation of
+motion reduces to
+\begin{equation}
+\rho\,\frac{d{\bf V}}{dt} = -\nabla\!\cdot\!{\bf P},
+\end{equation}
+where
+\begin{equation}
+{\bf P} = \left(\begin{array}{ccc}
+p + B^2/2\mu_0 & 0\\[0.5ex]
+0 &p + B^2/2\mu_0& 0\\[0.5ex]
+0&0& p - B^2/2\mu_0\end{array}
+\right).
+\end{equation}
+Note that the magnetic field {\em increases}\/ the plasma pressure, by an
+amount $B^2/2\mu_0$, in directions {\em perpendicular}\/ to the magnetic field,
+and {\em decreases}\/ the plasma pressure, by the same amount, in the
+{\em parallel}\/ direction. Thus, the magnetic field gives rise to
+a {\em magnetic pressure}, $B^2/2\,\mu_0$, acting {\em perpendicular}\/ to field-lines,
+and a {\em magnetic tension}, $B^2/2\,\mu_0$, acting 
+{\em along}\/ field-lines. 
+Since, as we shall see presently, the plasma is tied to magnetic field-lines, 
+it follows that magnetic field-lines embedded in an
+MHD plasma  act rather like
+{\em mutually repulsive elastic bands}. 
+
+\section{Flux Freezing}\label{s5.3}
+The MHD Ohm's law,
+\begin{equation}\label{e5.9}
+{\bf E} + {\bf V}\times {\bf B} = {\bf 0},
+\end{equation}
+is sometimes referred to as the {\em perfect conductivity}\/ equation, for
+obvious reasons, and sometimes as the {\em flux freezing}\/ equation. 
+The latter nomenclature comes about because Eq.~(\ref{e5.9}) implies that the magnetic
+flux  through any closed contour in the plasma, each element of
+which moves with the local plasma velocity, is a {\em conserved quantity}. 
+
+In order to verify the above assertion, let us consider the
+magnetic flux, ${\Psi}$, through a contour, $C$, which is co-moving
+with the plasma:
+\begin{equation}
+{\Psi} = \int_{\bf S} {\bf B}\!\cdot\!d{\bf S}.
+\end{equation}
+Here, ${\bf S}$ is some surface which spans $C$. The time rate of
+change of ${\Psi}$ is made up of two parts. Firstly, there
+is the part due to the time variation of ${\bf B}$  over the
+surface ${\bf S}$. This can be written
+\begin{equation}
+\left(\frac{\partial{ \Psi}}{\partial t}\right)_1 = 
+\int_{\bf S} \frac{\partial{\bf B}}{\partial t}\!\cdot\!d{\bf S}.
+\end{equation}
+Using the Faraday-Maxwell equation, this reduces to
+\begin{equation}
+\left(\frac{\partial{ \Psi}}{\partial t}\right)_1 = -
+\int_{\bf S} \nabla \times{\bf E} \!\cdot\!d{\bf S}.
+\end{equation}
+Secondly, there is the part due to the motion of $C$. If $d{\bf l}$
+is an element of $C$ then ${\bf V}\times d{\bf l}$ is the area swept out
+by $d{\bf l}$ per unit time. Hence, the flux crossing this area is
+${\bf B} \!\cdot\!{\bf V}\times d{\bf l}$.
+It follows that 
+\begin{equation}
+\left(\frac{\partial{ \Psi}}{\partial t}\right)_2 = \int_C {\bf B} \!\cdot\!{\bf V}\times d{\bf l} = \int_C {\bf B}\times{\bf V} \!\cdot\!d{\bf l}.
+\end{equation}
+Using Stokes's theorem, we obtain
+\begin{equation}
+\left(\frac{\partial{ \Psi}}{\partial t}\right)_2= \int_{\bf S} \nabla\times
+({\bf B}\times
+{\bf V})\!\cdot\!d{\bf S}.
+\end{equation}
+Hence, the total time rate of change of ${\Psi}$ is given by
+\begin{equation}
+\frac{d{\Psi}}{dt} = - \int_{\bf S}\nabla\times\left({\bf E} + {\bf V}\times
+{\bf B}\right)\!\cdot\!d{\bf S}.
+\end{equation} The condition 
+\begin{equation}
+{\bf E} + {\bf V}\times{\bf B} ={\bf 0}
+\end{equation}
+clearly implies that ${\Psi}$ remains constant in time
+for any arbitrary contour.
+This, in turn, implies that magnetic field-lines must move with the
+plasma. In other words, the field-lines are {\em frozen}\/ into the plasma. 
+
+A {\em flux-tube}\/ is defined as a topologically   cylindrical volume whose
+sides are defined by magnetic field-lines. Suppose that, at some initial
+time, a flux-tube is embedded in the plasma. According to the flux-freezing
+constraint,
+\begin{equation}
+\frac{d{\Psi}}{dt} = 0,
+\end{equation}
+the subsequent motion of the plasma and the magnetic field is always
+such as to maintain the integrity of the flux-tube. Since magnetic
+field-lines can be regarded as infinitely thin flux-tubes, we conclude that
+MHD  plasma motion also maintains the integrity of field-lines. In other words,
+magnetic field-lines embedded in an MHD plasma can never break and reconnect:
+{\em i.e.}, MHD forbids any change in {\em topology}\/ of the field-lines. It turns
+out that this is an extremely restrictive constraint. Later on, we shall discuss
+situations in which this constraint is  relaxed. 
+
+\section{MHD Waves}\label{s5.4}
+Let us investigate the small amplitude waves which  propagate through
+a spatially uniform MHD plasma. We start by combining Eqs.~(\ref{e5.1a})--(\ref{e5.1d}) and (\ref{e5.4a})--(\ref{e5.4b}) to form a
+closed set of equations:
+\begin{eqnarray}
+\frac{d\rho}{dt} + \rho\,\nabla\cdot{\bf V} &=& 0,\\[0.5ex]
+\rho\,\frac{d{\bf V}}{dt} + \nabla p - \frac{(\nabla\times{\bf B})\times {\bf B}}{\mu_0} &=& {\bf 0},\\[0.5ex]
+-\frac{\partial{\bf B}}{\partial t}+ \nabla\times(
+{\bf V} \times {\bf B}) &=& {\bf 0},\\[0.5ex]
+\frac{d}{dt}\!\left(\frac{p}{\rho^{\Gamma}}\right) &=& 0.
+\end{eqnarray}
+Next, we linearize these equations (assuming, for the sake of
+simplicity, that the equilibrium
+flow velocity and equilibrium plasma current are both zero) to give
+\begin{eqnarray}\label{e5.19a}
+\frac{\partial\rho}{\partial t} + \rho_0\,\nabla\cdot{\bf V} &=& 0,\\[0.5ex]
+\rho_0\,\frac{\partial {\bf V}}{\partial t} + \nabla p - 
+\frac{(\nabla\times{\bf B})\times {\bf B}_0}{\mu_0} &=& {\bf 0},\\[0.5ex]
+-\frac{\partial{\bf B}}{\partial t}+ \nabla\times(
+{\bf V} \times {\bf B}_0) &=& {\bf 0},\\[0.5ex]
+\frac{\partial}{\partial t}\!\left(\frac{p}{p_0} - \frac{{\Gamma}\,\rho}{\rho_0}\right) &=& 0.\label{e5.19d}
+\end{eqnarray}
+Here, the subscript 0 denotes an equilibrium quantity. Perturbed quantities
+are written without subscripts. Of course, $\rho_0$, $p_0$,  and ${\bf B}_0$ are 
+constants in a spatially uniform plasma. 
+
+Let us search for wave-like solutions of Eqs.~(\ref{e5.19a})--(\ref{e5.19d}) in which perturbed
+quantities vary like $\exp[\,{\rm i}\,({\bf k}\!\cdot\!{\bf r} - \omega t)]$. 
+It follows that
+\begin{eqnarray}
+-\omega\,\rho + \rho_0\,{\bf k}\!\cdot\!{\bf V} &=& 0,\\[0.5ex]\label{e5.20b}
+-\omega\,\rho_0\,{\bf V} + {\bf k}\,p - \frac{ ({\bf k}\times{\bf B})\times
+{\bf B}_0}{\mu_0} &=& {\bf 0},\\[0.5ex]
+\omega\,{\bf B} + {\bf k}\times({\bf V}\times{\bf B}_0) &= &{\bf 0},\\[0.5ex]
+-\omega\left(\frac{p}{p_0} - \frac{{\Gamma}\,\rho}{\rho_0}\right) &=& 0.
+\end{eqnarray}
+Assuming that $\omega\neq 0$, the above equations yield
+\begin{eqnarray}\label{e5.21a}
+\rho &=& \rho_0\,\frac{{\bf k}\!\cdot\!{\bf V}}{\omega},\\[0.5ex]\label{e5.21b}
+p &=& {\Gamma}\,p_0\,\frac{{\bf k}\!\cdot\!{\bf V}}{\omega},\\[0.5ex]
+{\bf B} &=& \frac{ ({\bf k}\!\cdot\!{\bf V})\,{\bf B}_0
+- ({\bf k}\!\cdot\!{\bf B}_0)\,{\bf V}}{\omega}.\label{e5.21c}
+\end{eqnarray}
+Substitution of these expressions into the linearized equation of
+motion, Eq.~(\ref{e5.20b}), gives
+\begin{eqnarray}\label{e5.22}
+\left[ \omega^2 - \frac{({\bf k}\!\cdot\!{\bf B}_0)^2}{\mu_0\,\rho_0}
+\right] {\bf V} &=& \left\{ \left[ \frac{{\Gamma}\,p_0}{\rho_0} 
++ \frac{B_0^{~2}}{\mu_0\,\rho_0}\right] {\bf k}
+- \frac{({\bf k}\!\cdot\!{\bf B}_0)}{\mu_0\,\rho_0}\,{\bf B}_0
+\right\} ({\bf k}\!\cdot\!{\bf V})\nonumber
+\\[0.5ex]
+&& - \frac{({\bf k}\!\cdot\!{\bf B}_0)\,
+({\bf V}\!\cdot\!{\bf B}_0)}{\mu_0\,\rho_0} \,{\bf k}.
+\end{eqnarray}
+
+We can assume, without loss of generality, that the equilibrium magnetic
+field  ${\bf B}_0$ 
+is directed along the $z$-axis, and that the wave-vector ${\bf k}$ lies
+in the $x$-$z$ plane. Let $\theta$ be the angle subtended between ${\bf B}_0$ and
+${\bf k}$. Equation~(\ref{e5.22}) reduces to the eigenvalue
+equation
+\begin{equation}
+\left(
+\begin{array}{ccc}
+{\scriptstyle \omega^2 - k^2\,V_A^{~2} -k^2\,V_S^{~2}\,\sin^2\theta}&
+0& {\scriptstyle -k^2\,V_S^{~2}\,\sin\theta
+\cos\theta}\\[0.5ex]
+0&{\scriptstyle \omega^2-k^2\,V_A^{~2}\,\cos^2\theta} & 0\\[0.5ex]
+{\scriptstyle -k^2\,V_S^{~2}\,\sin\theta\,\cos\theta} &0& 
+{\scriptstyle \omega^2-k^2\,V_S^{~2}\,\cos^2\theta}
+\end{array}\right)\!\left(\begin{array}{c}V_x\\[0.5ex]
+V_y\\[0.5ex] V_z\end{array}\right) = {\bf 0}.\label{e5.23}
+\end{equation}
+Here,
+\begin{equation}\label{e5.24}
+V_A = \sqrt{\frac{B_0^{~2}}{\mu_0\,\rho_0}}
+\end{equation}
+is the {\em Alfv\'{e}n speed}, and 
+\begin{equation}\label{e5.25}
+V_S = \sqrt{\frac{{\Gamma}\,p_0}{\rho_0}}
+\end{equation}
+is the {\em sound speed}. The solubility condition for Eq.~(\ref{e5.23}) is that
+the determinant of the square matrix is zero. This yields the dispersion
+relation
+\begin{equation}\label{e5.26}
+(\omega^2 - k^2\,V_A^{~2}\,\cos^2\theta)\left[
+\omega^4 - \omega^2\,k^2\,(V_A^{~2}+V_S^{~2}) + k^4\,V_A^{~2}\,V_S^{~2}\,\cos^2\theta
+\right] = 0.
+\end{equation}
+
+There are {\em three}\/ independent roots of the above dispersion relation, 
+corresponding to the three different types of wave that can propagate through an
+MHD plasma. The first, and most obvious, root is
+\begin{equation}\label{e5.27}
+\omega = k\,V_A\,\cos\theta,
+\end{equation}
+which has the associated eigenvector $(0,V_y, 0)$. This
+root is characterized by both ${\bf k}\cdot{\bf V} =0$ and ${\bf V}\cdot
+{\bf B}_0=0$. It immediately follows from Eqs.~(\ref{e5.21a}) and (\ref{e5.21b}) that there is
+{\em zero}\/   perturbation of the plasma density or pressure
+associated with this root. In fact, this root can easily be
+identified as the {\em shear-Alfv\'{e}n wave}, which was
+introduced in Sect.~\ref{s4.8}. Note
+that the properties of the shear-Alfv\'{e}n wave in a warm ({\em i.e.}, non-zero
+pressure) plasma are unchanged from  those we found earlier in a cold plasma. 
+Note, finally, that since the shear-Alfv\'{e}n wave only involves plasma
+motion {\em perpendicular}\/ to the magnetic field, we can expect the
+dispersion relation (\ref{e5.27}) to hold good in a {\em collisionless}, as well as a
+collisional, plasma. 
+
+The remaining two roots of the dispersion relation (\ref{e5.26}) are written
+\begin{equation}\label{e5.28}
+\omega = k\,V_+,
+\end{equation}
+and
+\begin{equation}\label{e5.29}
+\omega = k\,V_-,
+\end{equation}
+respectively.
+Here,
+\begin{equation}
+V_\pm = \left\{\frac{1}{2}\left[V_A^{~2} + V_S^{~2} \pm \sqrt{
+(V_A^{~2} + V_S^{~2})^2 - 4\, V_A^{~2}\,V_S^{~2}\,\cos^2\theta}
+\right]\right\}^{1/2}.
+\end{equation}
+Note that $V_+\geq V_-$. The first root is generally termed the
+{\em fast magnetosonic wave}, or fast wave, for short, whereas
+the second root is usually called the {\em slow magnetosonic
+wave}, or slow wave. The eigenvectors for these waves are
+$(V_x,0,V_z)$. It follows that ${\bf k}\cdot{\bf V} \neq 0$ and ${\bf V}\cdot
+{\bf B}_0\neq0$. Hence, these waves are associated with non-zero perturbations
+in the plasma density and pressure, and also involve plasma motion parallel, as
+well as perpendicular, to the magnetic field. The latter observation suggests
+that the dispersion relations
+(\ref{e5.28}) and (\ref{e5.29}) are likely to undergo significant modification in
+collisionless plasmas.
+
+In order to better understand the nature of the fast and slow waves, let us
+consider the {\em cold-plasma}\/ limit, which is obtained by letting the sound
+speed $V_S$ tend to zero. In this limit, the slow wave ceases to exist (in fact,
+its phase velocity tends to zero) whereas the dispersion relation for
+the fast wave reduces to
+\begin{equation}
+\omega = k\,V_A.
+\end{equation}
+This can be identified as the dispersion relation for the 
+{\em compressional-Alfv\'{e}n wave}, which was introduced in Sect.~\ref{s4.8}.
+Thus, we can identify the fast wave as the compressional-Alfv\'{e}n wave
+modified by a non-zero plasma pressure. 
+
+In the limit $V_A\gg V_S$, which is appropriate to low-$\beta$ plasmas (see
+Sect.~\ref{s3.13}), the dispersion relation for the slow wave reduces to
+\begin{equation}
+\omega \simeq k\,V_S\,\cos\theta.
+\end{equation}
+This is actually the dispersion relation of a sound wave propagating
+{\em along}\/ magnetic field-lines. Thus, in low-$\beta$ plasmas the slow
+wave is a sound wave modified by the presence of the magnetic field.
+
+The distinction between the fast and slow waves can be further understood
+by comparing the signs of the wave induced fluctuations in the  plasma and magnetic
+pressures: $p$ and ${\bf B}_0\!\cdot\! {\bf B}/\mu_0$, respectively. 
+It follows from Eq.~(\ref{e5.21c}) that
+\begin{equation}\label{e5.33}
+\frac{{\bf B}_0\!\cdot\!{\bf B}}{\mu_0} = \frac{{\bf k}\!\cdot\!{\bf V}\,B_0^{~2}
+- ({\bf k}\!\cdot\!{\bf B}_0)\,({\bf B}_0\!\cdot\!{\bf V})}
+{\mu_0\,\omega}.
+\end{equation}
+Now, the $z$- component of Eq.~(\ref{e5.20b}) yields
+\begin{equation}\label{e5.34}
+\omega\,\rho_0\,V_z = k\,\cos\theta\,p.
+\end{equation}
+Combining Eqs.~(\ref{e5.21b}), (\ref{e5.24}), (\ref{e5.25}), (\ref{e5.33}), and (\ref{e5.34}), we obtain
+\begin{equation}
+\frac{{\bf B}_0\!\cdot\!{\bf B}}{\mu_0}
+ =\frac{V_A^{~2}}{V_S^{~2}} \left(1-\frac{k^2\,V_S^{~2}\,\cos^2\theta}
+{\omega^2}\right)p.
+\end{equation}
+Hence, $p$ and ${\bf B}_0\!\cdot\! {\bf B}/\mu_0$ have the same sign
+if $V>V_S \,\cos\theta$, and the opposite sign if
+$V<V_S\,\cos\theta$. Here, $V=\omega/k$ is the phase velocity. It is
+straightforward to show that $V_+> V_S\,\cos\theta$, and $V_-<V_S\,\cos\theta$.
+Thus, we conclude that in the fast magnetosonic wave the pressure and
+magnetic energy fluctuations reinforce one another, whereas  the
+fluctuations oppose one another in the slow magnetosonic wave.
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter05/mhdwave.eps}}
+\caption{\em Phase velocities of the three MHD waves in the $x$-$z$ plane.}\label{f18}
+\end{figure}
+
+Figure~\ref{f18} shows the phase velocities of the three MHD waves plotted in the
+$x$-$z$ plane for a low-$\beta$ plasma in which $V_S<V_A$. It can be
+seen that the slow wave always has a smaller phase velocity than the
+shear-Alfv\'{e}n wave, which, in turn, always has a smaller phase
+velocity than the fast wave.
+
+\section{The Solar Wind}
+The {\em solar wind}\/ is a high-speed particle stream continuously blown out from
+the Sun into interplanetary space. It extends  far beyond the orbit
+of the Earth, and terminates in a shock front, called the {\em heliopause},
+where it interfaces with the weakly ionized interstellar medium. The heliopause
+is predicted to lie between 110 and
+ 160 AU (1 Astronomical Unit is $1.5\times 10^{11}$\,m)
+from the centre of the Sun. Voyager 1 is expected to pass through the
+heliopause sometime in the next decade: hopefully, it will still be
+functional at that time\,!
+
+In the vicinity of the Earth, ({\em i.e.}, at about 1 AU from the
+Sun) the solar wind velocity typically
+ranges between 300 and 1400 ${\rm km}\,{\rm s}^{-1}$. The average value
+is approximately $500\,{\rm km}\,{\rm s}^{-1}$, which corresponds to about a
+4 day time of flight from the Sun. Note that the solar wind is
+both {\em super-sonic}\/ and {\em super-Alfv\'{e}nic}. 
+
+The solar wind is predominately composed of protons and electrons. 
+
+Amazingly enough, the solar wind was predicted
+theoretically by Eugine Parker\footnote{E.N.~Parker, Astrophys.\ J.\ {\bf 128},
+664 (1958).}
+ a number of years {\em before}\/ its
+existence 
+was confirmed using satellite data.\footnote{M.~Neugebauer, C.W.~Snyder, J.~Geophys.\
+Res.\ {\bf 71}, 4469 (1966).} Parker's prediction of a super-sonic
+outflow of gas from the Sun  is a
+fascinating scientific detective story, as well as a wonderful application
+of plasma physics. 
+
+The solar wind originates from the {\em solar corona}. The solar corona
+is a hot, tenuous plasma surrounding the Sun, with characteristic temperatures and
+particle densities of about $10^6$\,K and $10^{14}\,{\rm m}^{-3}$,
+respectively. Note that the corona is far hotter than the solar
+atmosphere, or {\em photosphere}. In fact, the
+temperature of the photosphere is  only about $6000$\,K. It is
+thought that the corona is heated by Alfv\'{e}n waves emanating from the
+photosphere. The solar corona is most easily observed during a total
+solar eclipse, when it is visible as a white filamentary region
+immediately surrounding the Sun. 
+
+Let us start, following Chapman,\footnote{S.~Chapman, Smithsonian Contrib.\
+Astrophys.\ {\bf 2}, 1 (1957).} by attempting
+to construct a model for a {\em static}\/ solar corona. The equation
+of hydrostatic equilibrium for the corona takes the form 
+\begin{equation}\label{e5.36}
+\frac{dp}{dr} = - \rho\,\frac{G\,M_\odot}{r^2},
+\end{equation}
+where $G= 6.67\times 10^{-11}\,{\rm m}^{3}\,{\rm s}^{-2}\,{\rm kg}^{-1}$
+is the gravitational constant, and $M_\odot=2\times 10^{30}\,{\rm kg}$ is
+the solar mass. 
+The plasma density is written 
+\begin{equation}\label{e5.37}
+\rho\simeq n\,m_p, 
+\end{equation}
+where $n$ is the number
+density of protons. If both protons and electrons are assumed
+to possess a common temperature, $T(r)$, then the coronal pressure is
+given by
+\begin{equation}\label{e5.38}
+p = 2\,n\,T.
+\end{equation}
+
+The thermal conductivity of the corona is dominated by the electron thermal
+conductivity, and takes the form [see Eqs.~(\ref{e3.74}) and (\ref{e3.87a})]
+\begin{equation}
+\kappa = \kappa_0\,T^{5/2},
+\end{equation}
+where $\kappa_0$ is a relatively weak function of density and
+temperature. For typical coronal conditions this conductivity is
+extremely high: {\em i.e.}, it is about twenty times the thermal
+conductivity of copper at room temperature. The coronal heat flux density
+is written
+\begin{equation}
+{\bf q} = - \kappa\,\nabla T.
+\end{equation}
+For a static corona, in the absence of energy sources or sinks, we require
+\begin{equation}
+\nabla\!\cdot\!{\bf q} = 0.
+\end{equation}
+Assuming spherical symmetry, this expression reduces to
+\begin{equation}
+\frac{1}{r^2}\frac{d}{dr}\!\left(r^2\,\kappa_0\,T^{5/2}\,\frac{dT}{dr}\right) =0.
+\end{equation}
+Adopting the sensible boundary condition that the coronal temperature must
+tend to zero at large distances from the Sun, we obtain
+\begin{equation}\label{e5.43}
+T(r) = T(a)\left(\frac{a}{r}\right)^{2/7}.
+\end{equation}
+The reference level $r=a$ is conveniently taken to be the
+base of the corona, where $a\sim 7\times 10^5\,{\rm km}$, $n\sim
+2\times 10^{14}\,{\rm m}^{-3}$, and $T\sim 2\times 10^{6}$\,K. 
+
+Equations (\ref{e5.36}), (\ref{e5.37}), (\ref{e5.38}), and (\ref{e5.43}) can be combined and
+integrated to give
+\begin{equation}
+p(r) = p(a) \exp\left\{\frac{7}{5}\,\frac{G\,M_\odot\,m_p}{2\,T(a)\,a}
+\left[\left(\frac{a}{r}\right)^{5/7}-1\right]\right\}.
+\end{equation}
+Note that as $r\rightarrow\infty$ the coronal pressure tends towards a finite
+constant value:
+\begin{equation}
+p(\infty) = p(a)\,\exp\left\{-\frac{7}{5}\,\frac{G\,M_\odot\,m_p}{2\,T(a)\,a}
+\right\}.
+\end{equation}
+There is, of course, nothing at large distances from the Sun which could
+contain such a pressure (the pressure of the interstellar medium is
+negligibly small). Thus, we conclude, with Parker, that the
+static coronal model is {\em unphysical}. 
+
+Since we have just demonstrated that a static model of the solar corona is
+unsatisfactory, let us now attempt to construct a {\em dynamic}\/ model
+in which material flows outward from the Sun. 
+
+\section{Parker Model of  Solar Wind}
+By symmetry, we expect a purely radial coronal outflow.
+The radial momentum conservation equation for the corona takes the form
+\begin{equation}\label{e5.46}
+\rho\,u\,\frac{du}{dr} = -\frac{dp}{dr} - \rho\,\frac{G\,M_\odot}{r^2},
+\end{equation}
+where $u$ is the radial expansion speed. 
+The continuity equation reduces to
+\begin{equation}\label{e5.47}
+\frac{1}{r^2}\frac{d(r^2\,\rho\,u)}{dr} = 0.
+\end{equation}
+In order to obtain a closed set of equations, we now need to adopt an equation
+of state for the corona, relating the pressure, $p$, and the density, $\rho$. For
+the  sake of simplicity, we adopt the simplest conceivable equation
+of state, which corresponds to an {\em isothermal}\/ corona. Thus,
+we have
+\begin{equation}\label{e5.48}
+p = \frac{2\,\rho\,T}{m_p},
+\end{equation}
+where $T$ is a constant. Note that more realistic
+equations of state complicate the analysis, but do not significantly modify
+any of the physics results.
+
+Equation (\ref{e5.47}) can be integrated to give
+\begin{equation}\label{e5.49}
+r^2\,\rho\,u = I,
+\end{equation}
+where $I$ is a constant. The above expression simply states that the mass flux per
+unit solid angle, which takes the value $I$, is independent of the radius, $r$.
+Equations~(\ref{e5.46}), (\ref{e5.48}), and (\ref{e5.49}) can be combined together to give
+\begin{equation}\label{e5.50}
+\frac{1}{u} \,\frac{du}{dr}\left(u^2 - \frac{2\,T}{m_p}\right)
+= \frac{4\,T}{m_p\,r} - \frac{G\,M_\odot}{r^2}.
+\end{equation}
+Let us restrict our attention to coronal temperatures which satisfy
+\begin{equation}\label{e5.51}
+T < T_c \equiv \frac{G\,M_\odot\,m_p}{4\,a},
+\end{equation}
+where $a$ is the radius of the base of the corona. For typical
+coronal parameters (see above), $T_c\simeq 5.8\times 10^6$\,K, which
+is certainly greater than the temperature of the corona at $r=a$. For
+$T<T_c$, the right-hand side of Eq.~(\ref{e5.50}) is negative for
+$a<r<r_c$, where
+\begin{equation}\label{e5.52}
+\frac{r_c}{a} = \frac{T_c}{T},
+\end{equation}
+and positive for $r_c<r<\infty$. The right-hand side of (\ref{e5.50}) is zero at
+$r=r_c$, implying that the left-hand side is also zero
+at this radius, which is usually termed the ``critical radius.''
+There are two ways in which the left-hand side of (\ref{e5.50}) can be zero at the critical
+radius. Either
+\begin{equation}\label{e5.53}
+u^2(r_c) = u_c^{~2} \equiv \frac{2\,T}{m_p},
+\end{equation}
+or
+\begin{equation}\label{e5.54}
+\frac{du(r_c)}{dr} = 0.
+\end{equation}
+Note that $u_c$ is the coronal {\em sound speed}. 
+
+As is easily demonstrated, if Eq.~(\ref{e5.53}) is satisfied then $du/dr$ has the
+same sign for all $r$, and $u(r)$ is either a monotonically
+increasing, or a monotonically decreasing, function of $r$. On the other
+hand, if Eq.~(\ref{e5.54}) is satisfied then $u^2-u_c^{~2}$ has the same
+sign for all $r$, and $u(r)$ has an extremum close to $r=r_c$. The flow
+is either super-sonic for all $r$, or sub-sonic for all $r$. These
+possibilities lead to the existence of {\em four}\/ classes of solutions
+to Eq.~(\ref{e5.50}), with the 
+following properties:
+\begin{enumerate}
+\item $u(r)$ is sub-sonic throughout the domain $a<r<\infty$. $u(r)$
+increases with $r$, attains a maximum value around $r=r_c$, and then
+decreases with $r$. 
+\item a unique solution for which $u(r)$ increases monotonically 
+with $r$, and $u(r_c) = u_c$. 
+\item a unique solution for which $u(r)$ decreases monotonically 
+with $r$, and $u(r_c) = u_c$. 
+\item $u(r)$ is super-sonic throughout the domain $a<r<\infty$. 
+ $u(r)$
+decreases with $r$, attains a minimum value around $r=r_c$, and then
+increases with $r$. 
+\end{enumerate}
+These four classes of solutions are illustrated in Fig.~\ref{f19}.
+
+\begin{figure}
+\epsfysize=4in
+\centerline{\epsffile{Chapter05/class1.eps}}
+\caption{\em The four classes of Parker outflow solutions for the solar wind.}\label{f19}
+\end{figure}
+
+Each of the classes of solutions described above fits a different
+set of boundary conditions at $r=a$ and $r\rightarrow \infty$. The
+{\em physical}\/ acceptability of these solutions depends on these
+boundary conditions. For example, both Class~3 and Class~4 solutions can
+be ruled out as plausible models for the solar corona since they predict
+{\em super-sonic}\/ flow at the base of the corona, which is not observed, and is
+also not consistent with a static solar photosphere. Class~1 and Class~2 solutions
+remain acceptable models for the solar corona on the basis of their
+properties around $r=a$, since they both predict sub-sonic flow in this region.
+However, the Class~1 and Class~2 solutions behave quite differently
+ as $r\rightarrow\infty$, and the physical acceptability of these two
+classes hinges on this difference.
+
+Equation~(\ref{e5.50}) can be rearranged to give
+\begin{equation}
+\frac{du^2}{dr}\left(1-\frac{u_c^{~2}}{u^2}\right) = \frac{4\,u_c^{~2}}{r}
+\left(1-\frac{r_c}{r}\right),
+\end{equation}
+where use has been made of Eqs.~(\ref{e5.51}) and (\ref{e5.52}). 
+The above expression can be integrated to give
+\begin{equation}\label{e5.56}
+\left(\frac{u}{u_c}\right)^2 -\ln\!\left(\frac{u}{u_c}\right)^2 = 4\,\ln r
++ 4\,\frac{r_c}{r} + C,
+\end{equation}
+where $C$ is a constant of integration. 
+
+Let us consider the behaviour
+of Class~1 solutions in the limit $r\rightarrow\infty$. It is
+clear from Fig.~\ref{f19} that, for Class~1 solutions, $u/u_c$ is less than unity and monotonically
+decreasing as $r\rightarrow\infty$. In the large-$r$ limit, Eq.~(\ref{e5.56})
+reduces to
+\begin{equation}
+\ln\frac{u}{u_c} \simeq -2\,\ln r,
+\end{equation}
+so that
+\begin{equation}
+u\propto \frac{1}{r^2}.
+\end{equation}
+It follows from Eq.~(\ref{e5.49}) that the coronal density, $\rho$, approaches
+a finite, constant value, $\rho_\infty$, as $r\rightarrow\infty$. Thus,
+the Class~1 solutions yield a finite pressure,
+\begin{equation}
+p_\infty= \frac{2\,\rho_\infty\,T}{m_p},
+\end{equation}
+at large $r$, which cannot be matched to the much smaller pressure of the
+interstellar medium. Clearly, Class~1 solutions are unphysical.
+
+Let us consider the behaviour of the Class~2 solution
+in the limit $r\rightarrow\infty$. It is
+clear from Fig.~\ref{f19} that, for the Class~2 solution, $u/u_c$ is greater than unity and monotonically
+increasing as $r\rightarrow\infty$. In the large-$r$ limit,
+Eq.~(\ref{e5.56}) reduces to
+\begin{equation}
+\left(\frac{u}{u_c}\right)^2 \simeq 4\,\ln r,
+\end{equation}
+so that
+\begin{equation}
+u \simeq 2\,u_c\,(\ln r)^{1/2}.
+\end{equation}
+It follows from Eq.~(\ref{e5.49}) that $\rho\rightarrow 0$ and 
+$r\rightarrow\infty$. Thus, the Class~2 solution yields
+$p\rightarrow 0$ at large $r$, and  can, therefore,  be matched to the low
+pressure interstellar medium. 
+
+We conclude that the only solution to Eq.~(\ref{e5.50}) which is consistent
+with physical boundary conditions at $r=a$ and $r\rightarrow\infty$ is
+the Class~2 solution. This solution predicts that the
+solar corona expands radially outward at
+relatively modest, sub-sonic velocities close to the Sun,
+ and gradually accelerates
+to super-sonic velocities as it moves further away from the Sun.
+Parker termed this continuous, super-sonic expansion of the corona
+the {\em solar wind}. 
+
+Equation~(\ref{e5.56}) can be rewritten
+\begin{equation}\label{e5.62}
+\left[\frac{u^2}{u_c^{~2}}-1\right] -\ln\frac{u^2}{u_c^{~2}}
+= 4\,\ln\frac{r}{r_c} + 4\left[\frac{r_c}{r}-1\right],
+\end{equation}
+where the constant $C$ is determined  by demanding that
+$u=u_c$ when $r=r_c$. Note that both $u_c$ and $r_c$ can be evaluated
+in terms of the coronal temperature $T$ via Eqs.~(\ref{e5.52}) and (\ref{e5.53}).
+Figure~\ref{f20} shows $u(r)$ calculated  from Eq.~(\ref{e5.62}) for various values
+of the coronal temperature. It can be seen that plausible
+values of $T$ ({\em i.e.}, $T\sim 1$--$2\times 10^6$\,K) yield
+expansion speeds of several hundreds of kilometers per second
+at 1~AU, which  accords well with satellite observations. The critical
+surface  at which the solar wind makes the transition from sub-sonic to
+super-sonic flow is predicted to lie a few solar radii away from the Sun
+({\em i.e.}, $r_c\sim 5\,R_\odot$). Unfortunately, the Parker model's
+prediction for the density of the solar wind at the Earth is significantly
+too high compared to satellite observations. Consequently, there have
+been many further developments of this model. In particular, the
+unrealistic assumption that the solar wind plasma is isothermal has been relaxed, and
+two-fluid effects have been incorporated into the analysis.\footnote{{\em Solar Magnetohydrodynamics}, E.R.~Priest, (D.~Reidel
+Publishing Co., Dordrecht, Netherlands, 1987).}
+
+\begin{figure}
+\epsfysize=4in
+\centerline{\epsffile{Chapter05/parker1.eps}}
+\caption{\em Parker outflow solutions for the solar wind.}\label{f20}
+\end{figure}
+
+\section{Interplanetary  Magnetic Field}\label{s5.7}
+Let us now investigate how the solar wind and  the interplanetary magnetic
+field affect one another. 
+
+The hot coronal plasma making up the
+solar wind possesses an extremely high electrical conductivity. In such a
+plasma, we expect the concept of ``frozen-in'' magnetic field-lines, discussed
+in Sect.~\ref{s5.3}, to be applicable. The continuous flow of coronal material into
+interplanetary space must, therefore, result in the transport of the solar
+magnetic field into the interplanetary region. If the Sun did not rotate,
+the resulting magnetic configuration would be very simple. The radial
+coronal expansion considered above (with the neglect of any magnetic forces)
+would produce magnetic field-lines extending radially outward from the Sun.
+
+Of course, the Sun does rotate, with a (latitude dependent) period of
+about 25 days.\footnote{To an observer orbiting with the Earth, the
+rotation period appears to be about 27 days.} Since the solar photosphere is an
+excellent electrical conductor, the magnetic field at the base of the
+corona is frozen into the rotating frame of reference of the Sun.
+A magnetic field-line starting from a given location on the surface of the Sun is
+drawn out along the path followed by the element of the solar
+wind emanating from that location. As before, let us suppose that the coronal expansion is
+purely radial in a stationary frame of reference.
+Consider a spherical
+polar coordinate system $(r,\theta,\phi)$ which {\em co-rotates}\/ with the Sun.
+Of course, the symmetry axis of the coordinate system is assumed to coincide
+with the axis of the Sun's rotation. In the rotating coordinate system,
+the velocity components of the solar wind are written
+\begin{eqnarray}
+u_r &=& u,\\[0.5ex]
+u_\theta &=& 0,\\[0.5ex]
+u_\phi &=& - {\Omega}\,r\,\sin\theta,
+\end{eqnarray}
+where ${\Omega}= 2.7\times 10^{-6}\,{\rm rad\,sec}^{-1}$ is the angular
+velocity of solar rotation. The azimuthal velocity $u_\phi$ is entirely
+due to the transformation to the rotating frame of reference. The stream-lines
+of the flow satisfy the differential equation
+\begin{equation}\label{e5.64}
+\frac{1}{r\,\sin\theta}\frac{dr}{d\phi} \simeq \frac{u_r}{u_\phi} = -\frac{u}{
+{\Omega}\,r\,\sin\theta}
+\end{equation}
+at constant $\theta$. The stream-lines are also magnetic field-lines,
+so Eq.~(\ref{e5.64}) can also
+be regarded as the differential equation of
+a magnetic field-line. For radii $r$ greater than several times the
+critical radius, $r_c$, the solar wind solution (\ref{e5.62}) predicts that $u(r)$
+is almost constant (see Fig.~\ref{f20}). Thus, for $r\gg r_c$ it is reasonable
+to write $u(r) = u_s$, where $u_s$ is a constant. Equation~(\ref{e5.64})
+can then be integrated to give the equation of a magnetic field-line:
+\begin{equation}
+r-r_0 = -\frac{u_s}{{\Omega}}\,(\phi-\phi_0),
+\end{equation}
+where the field-line is assumed to pass through the point $(r_0,\theta,\phi_0)$.
+Maxwell's equation $\nabla\!\cdot\!{\bf B} =0$, plus the assumption of a spherically
+symmetric magnetic field, easily yields the following expressions for the
+components of the interplanetary magnetic field:
+\begin{eqnarray}\label{e5.66a}
+B_r(r,\theta,\phi) &=& B(r_0,\theta,\phi_0)\left(\frac{r_0}{r}\right)^2,\\[0.5ex]
+B_\theta(r,\theta,\phi) &=& 0,\\[0.5ex]
+B_\phi(r,\theta,\phi)&=& - B(r_0,\theta,\phi_0)\,\frac{{\Omega}\,r_0}{u_s}
+\,\frac{r_0}{r}\,\sin\theta.
+\end{eqnarray}
+
+Figure~\ref{f21} illustrates the interplanetary magnetic field close to the
+ecliptic plane. The magnetic field-lines of the Sun are drawn into spirals
+(Archemedian spirals, to be more exact) by the solar rotation. Transformation
+to a stationary frame of reference give the same magnetic field configuration,
+with the addition of an electric field
+\begin{equation}
+{\bf E} = - {\bf u} \times {\bf B} = -u_s\,B_\phi\,\hat{\btheta}.
+\end{equation}
+The latter field arises because the radial plasma flow is no longer parallel to
+magnetic field-lines in the stationary frame. 
+
+\begin{figure}
+\epsfysize=4in
+\centerline{\epsffile{Chapter05/spiral1.eps}}
+\caption{\em The interplanetary magnetic field.}\label{f21}
+\end{figure}
+
+The interplanetary magnetic field at 1 AU is observed to lie in the
+ecliptic plane, and is directed at an angle of approximately $45^\circ$ from
+the radial direction to the Sun. This is in basic agreement with the spiral
+configuration predicted above.
+
+The analysis presented above is premised on the assumption that the
+interplanetary magnetic field is too weak to affect the coronal outflow, and
+is, therefore, passively convected  by the solar wind. In fact, this is only
+likely to be the case if the interplanetary 
+magnetic energy density, $B^2/2\,\mu_0$, is
+much less that the kinetic energy density, $\rho \,u^2/2$, of the solar wind.
+Rearrangement yields the condition
+\begin{equation}
+u > V_A,
+\end{equation}
+where $V_A$ is the Alfv\'{e}n speed. It turns out that $u\sim 10\,V_A$ at
+1 AU. On the other hand, $u\ll V_A$ close to the base of the
+corona. In fact, the solar wind becomes super-Alfv\'{e}nic at a radius,
+denoted $r_A$, which is typically $50\,R_\odot$, or $1/4$ of an
+astronomical unit. We conclude that the previous analysis is only
+valid well outside the Alfv\'{e}n radius: {\em i.e.}, in the region $r\gg r_A$.
+
+Well inside the Alfv\'{e}n radius ({\em i.e.}, in the region $r\ll r_A$),
+the solar wind is too weak to modify the structure of the solar magnetic field.
+In fact, in this region we expect the solar  magnetic field to
+force  the solar wind to
+{\em co-rotate}\/ with the Sun. Note that flux-freezing is a two-way-street:
+if the energy density of the flow greatly exceeds that of the magnetic field
+then the magnetic field is passively convected by the flow, but if
+the energy density of the magnetic field greatly exceeds that of the flow
+then the flow is forced to conform to the magnetic field.
+
+The above discussion leads us to the following rather crude picture of the
+interaction of the solar wind and the interplanetary magnetic field.
+We expect the interplanetary 
+magnetic field to be simply the undistorted continuation of
+the Sun's magnetic field for $r<r_A$. On the other hand, we
+expect the interplanetary field to be dragged out into a spiral
+pattern for $r>r_A$. Furthermore, we expect the Sun's magnetic field
+to impart   a non-zero  azimuthal velocity $u_\phi(r)$ to the solar
+wind. In the ecliptic plane, we expect
+\begin{equation}
+u_\phi = {\Omega}\,r
+\end{equation}
+for $r<r_A$, and
+\begin{equation}
+u_\phi = {\Omega}\,r_A\left(\frac{r_A}{r}\right)
+\end{equation}
+for $r>r_A$.
+This corresponds to co-rotation with the Sun inside the Alfv\'{e}n radius,
+and outflow at constant angular velocity outside the Alfv\'{e}n radius.
+We, therefore, expect the solar wind at 1 AU to possess a small azimuthal
+velocity component. This is indeed the case. In fact, the direction
+of the solar wind at 1~AU
+deviates from purely radial outflow by about $1.5^\circ$. 
+
+\section{Mass and Angular Momentum Loss}
+Since the Sun is the best observed of any star, it is interesting to
+ask what impact the solar wind has as far as solar, and stellar, evolution
+are concerned. The most obvious question is whether the mass loss due
+to the wind is significant, or not. Using typical measured values ({\em i.e.},
+a typical solar wind velocity and particle density at 1 AU of 
+$500\,{\rm km}\,{\rm s}^{-1}$ and $7\times 10^6\,\,{\rm m}^{-3}$, respectively),
+the Sun is apparently losing mass at a rate of $3\times 10^{-14}\,M_\odot$
+per year, implying a time-scale for significant mass loss of $3\times 10^{13}$
+years, or some $6,000$ times longer than the estimated $5\times 10^9$ year
+age of the Sun. Clearly, the mass carried off by the solar wind has a negligible
+effect on the Sun's evolution. Note, however, that many other stars in the Galaxy
+exhibit significant mass loss via stellar winds. This is particularly
+the case for late-type stars.
+
+Let us now consider the angular momentum carried off by the solar wind.
+Angular momentum loss is a crucially important topic in astrophysics, since
+only by losing angular momentum can large, diffuse objects, such as
+interstellar gas clouds, collapse under the influence of gravity to produce
+small, compact objects, such as stars and proto-stars. Magnetic fields
+generally play a crucial role in angular momentum loss. This is certainly
+the case for the solar wind, where the solar magnetic field enforces
+co-rotation with the Sun out to the Alfv\'{e}n radius, $r_A$. Thus, the
+angular momentum carried away by a particle of mass $m$ is ${\Omega}\,r_A^{~2}\,
+m$, rather than ${\Omega}\,R_\odot^{~2}\,m$. The angular momentum
+loss time-scale is, therefore, shorter than the mass loss time-scale by a factor
+$(R_\odot/r_A)^2\simeq 1/2500$, making the angular momentum loss time-scale
+comparable to the solar lifetime. It is clear that magnetized stellar
+winds represent a very important vehicle for angular momentum loss in the
+Universe. Let us investigate angular momentum loss via
+stellar winds in more detail.
+
+Under the assumption of spherical symmetry and steady flow, the azimuthal
+momentum evolution equation for the solar wind, taking into account the
+influence of the interplanetary magnetic field, is written
+\begin{equation}
+\rho\,\frac{u_r}{r}\frac{d(r\,u_\phi)}{dr} = ({\bf j}\times{\bf B})_\phi
+= \frac{B_r}{\mu_0\,r}\frac{d(rB_\phi)}{dr}.
+\end{equation}
+The constancy of the mass flux [see Eq.~(\ref{e5.49})] and the $1/r^2$ dependence
+of $B_r$ [see Eq.~(\ref{e5.66a})] permit the immediate integration of the
+above equation to give
+\begin{equation}\label{e5.72}
+r\,u_\phi -\frac{r\,B_r\,B_\phi}{\mu_0\,\rho\,u_r} = L,
+\end{equation}
+where $L$ is the angular momentum per unit mass carried off by the solar wind.
+In the presence of an azimuthal wind velocity,  the magnetic field and
+velocity components are related by an expression similar to Eq.~(\ref{e5.64}):
+\begin{equation}\label{e5.73}
+\frac{B_r}{B_\phi} = \frac{u_r}{u_\phi - {\Omega}\,r\,\sin\theta}.
+\end{equation}
+The fundamental physics assumption underlying the above expression is
+the absence of an electric field in the frame of reference co-rotating
+with the Sun. Using Eq.~(\ref{e5.73}) to eliminate $B_\phi$ from Eq.~(\ref{e5.72}), we obtain
+(in the ecliptic plane, where $\sin\theta=1$)
+\begin{equation}\label{e5.74}
+r\,u_\phi = \frac{L\,M_A^{~2} - {\Omega}\,r^2}{M_A^{~2} - 1},
+\end{equation}
+where
+\begin{equation}
+M_A = \sqrt{\frac{u_r^{~2}}{B_r^{~2}/\mu_0\,\rho}}
+\end{equation}
+is the {\em radial Alfv\'{e}n Mach number}. The radial Alfv\'{e}n Mach number
+is small near the base of the corona, and about 10 at 1~AU: it passes through
+unity at the Alfv\'{e}n radius, $r_A$, which is about $0.25$\,AU from the Sun.
+The zero denominator on the right-hand side
+of Eq.~(\ref{e5.74}) at $r=r_A$ implies that $u_\phi$ is
+finite and continuous only if the numerator is also zero at the Alfv\'{e}n radius.
+This condition then determines the angular momentum content of the outflow
+via
+\begin{equation}\label{e5.76}
+L = {\Omega}\,r_A^{~2}.
+\end{equation}
+Note that the angular momentum carried off by the solar wind is indeed
+equivalent to that which would be carried off were coronal plasma to
+co-rotate with the Sun out to the Alfv\'{e}n radius, and subsequently outflow
+at constant angular velocity. Of course, the solar wind does not actually
+rotate rigidly with the Sun in the region $r<r_A$: much of the angular
+momentum in this region is carried in the form of electromagnetic stresses. 
+
+It is easily demonstrated that the quantity $M_A^{~2}/u_r\,r^2$ is a constant,
+and can, therefore, be evaluated at $r=r_A$ to give
+\begin{equation}\label{e5.77}
+M_A^{~2} = \frac{u_r\,r^2}{u_{rA}\,r_A^{~2}},
+\end{equation}
+where $u_{rA} \equiv u_r(r_A)$. Equations~(\ref{e5.74}), (\ref{e5.76}), and (\ref{e5.77}) can
+be combined to give 
+\begin{equation}
+u_\phi = \frac{{\Omega}\,r}{u_{rA}} \frac{u_{rA} - u_r}{1-M_A^{~2}}.
+\end{equation}
+In the limit $r\rightarrow\infty$, we have $M_A\gg 1$, so the above
+expression yields
+\begin{equation}\label{e5.79}
+u_\phi \rightarrow {\Omega}\,r_A\left(\frac{r_A}{r}\right)\left(1-\frac{u_{rA}}
+{u_r}\right)
+\end{equation}
+at large distances from the Sun. Recall, from Sect.~\ref{s5.7}, that if the coronal
+plasma were to simply co-rotate with the Sun out to $r=r_A$, and experience
+no torque beyond this radius, then we would expect
+\begin{equation}
+u_\phi \rightarrow {\Omega}\,r_A\left(\frac{r_A}{r}\right)
+\end{equation}
+at large distances from the Sun.
+The difference between the above two expressions is the factor $1-u_{rA}/u_r$,
+which is a correction for the angular momentum retained by the magnetic
+field at large $r$. 
+
+The analysis presented above was first incorporated into a quantitative
+coronal expansion model by Weber and Davis.\footnote{E.J.~Weber, and L.~Davis
+Jr., Astrophys.\ J.\ {\bf 148}, 217 (1967).} The model of Weber and Davis is
+very complicated. For instance, the solar wind is required to flow smoothly
+through no less than {\em three}\/ critical points. These are associated
+with the sound speed (as in Parker's original model), the radial Alfv\'{e}n
+speed, $B_r/\sqrt{\mu_0\,\rho}$, (as described above), and the total
+Alfv\'{e}n speed, $B/\sqrt{\mu_0\,\rho}$. 
+Nevertheless, the simplified analysis
+outlined above captures most of the essential features of the outflow. 
+For instance, Fig.~\ref{f22} shows a comparison between the large-$r$ asymptotic
+form for the azimuthal flow velocity predicted above [see Eq.~(\ref{e5.79})] and
+that calculated by Weber and Davis, showing the close agreement between 
+the two.
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter05/asym1.eps}}
+\caption{\em Comparison of asymptotic form for azimuthal flow velocity
+of solar wind with Weber-Davis solution.}\label{f22}
+\end{figure}
+
+\section{MHD Dynamo Theory}
+Many stars, planets, and galaxies possess magnetic fields whose origins
+are not easily explained. Even the ``solid'' planets could not possibly
+be sufficiently ferromagnetic to account for their magnetism, since the bulk
+of their interiors are above the Curie temperature at which permanent magnetism 
+disappears. It goes without saying that stars and galaxies cannot
+be ferromagnetic at all. Magnetic fields cannot be dismissed as transient
+phenomena which just happen to be present today. For instance, 
+{\em paleomagnetism}, the study of magnetic fields ``fossilized'' in rocks
+at the time of their formation in the remote geological past, shows
+that the Earth's magnetic field has existed at much its present
+strength for at least the past $3\times 10^9$ years. The problem is that,
+in the absence of an internal  source of electric currents, magnetic fields contained in a
+conducting body {\em decay}\/ ohmically on a time-scale
+\begin{equation}
+\tau_{\rm ohm} = \mu_0\,\sigma\,L^2,
+\end{equation}
+where $\sigma$ is the typical electrical conductivity, and $L$ is the
+typical length-scale of the body, and  this decay time-scale is generally
+very {\em small}\/  compared to the inferred  lifetimes of astronomical magnetic fields. For instance,
+the Earth contains a highly conducting region, namely, its molten core, of
+radius $L\sim 3.5\times 10^6$\,m, and conductivity $\sigma\sim 4\times 10^5\,
+{\rm S}\,{\rm m}^{-1}$. This yields an ohmic decay time for the terrestrial
+magnetic field of only $\tau_{\rm ohm}\sim 2\times 10^5$ years, which is
+obviously far shorter than the inferred lifetime of this field.
+Clearly, some process inside the Earth must be actively maintaining the
+terrestrial magnetic field. Such a process is conventionally termed a
+{\em dynamo}. Similar considerations lead us to postulate the existence
+of 
+dynamos acting inside stars and galaxies, in order to account for the persistence
+of stellar and galactic magnetic fields over cosmological time-scales. 
+
+The basic premise of dynamo theory is that all astrophysical bodies which
+contain anomalously long-lived magnetic fields also contain  highly conducting
+fluids ({\em e.g.}, the Earth's molten core, the ionized gas which makes
+up the Sun), and it is the electric currents
+associated with the motions of these fluids which maintain the
+observed magnetic fields. At first sight, this proposal, first
+made by Larmor in 1919,\footnote{J.~Larmor, Brit.\ Assoc.\ Reports, {\bf 159}
+(1919).} sounds suspiciously like
+pulling yourself up by your own shoelaces. However, there is really
+no conflict with the demands of energy conservation. The 
+magnetic  energy irreversibly
+lost via ohmic heating is replenished at the rate
+(per unit volume) ${\bf V}\cdot
+({\bf j}\times{\bf B})$: {\em i.e.}, by the rate of work done against the
+Lorentz force. The flow  field, ${\bf V}$, is assumed to be driven via thermal
+convention. If the flow is sufficiently vigorous then it is, at least,
+plausible that the energy input to the magnetic field can overcome the losses
+due to ohmic heating, thus permitting the field to persist over time-scales
+far longer than the characteristic ohmic decay time.
+
+Dynamo theory  involves two vector fields, 
+${\bf V}$ and ${\bf B}$, coupled by a rather complicated force: {\em i.e.},
+the Lorentz force. 
+It is not surprising, therefore, that dynamo theory tends to be extremely
+complicated, and is, at present,  far from completely understood. 
+Fig.~\ref{f23} shows paleomagnetic data illustrating  the variation of the polarity of the Earth's
+magnetic field over the last few  million years, as
+deduced from marine sediment cores. It can be seen that the Earth's magnetic
+field is quite variable, and actually reversed polarity about $700,000$ years
+ago. In fact, more extensive data shows that the Earth's magnetic field
+reverses polarity about once every ohmic decay time-scale ({\em i.e.}, a few
+times every million years). The Sun's magnetic field exhibits similar
+behaviour, reversing polarity about once every 11 years. It is clear from
+examining this type of data that dynamo magnetic fields (and velocity fields) are 
+essentially {\em chaotic}\/
+in nature, 
+exhibiting strong random variability superimposed on more regular quasi-periodic
+oscillations.
+
+\begin{figure}
+\epsfysize=5in
+\centerline{\epsffile{Chapter05/timescale.eps}}
+\caption{\em Polarity of the Earth's magnetic field as a function of time, as deduced from
+marine sediment cores.}\label{f23}
+\end{figure}
+
+Obviously, we are not going to attempt to tackle full-blown dynamo
+theory in this course: that would be far too difficult. Instead, we shall examine a
+far simpler theory, known as {\em kinematic dynamo theory}, in which
+the velocity field, ${\bf V}$, is {\em prescribed}.
+In order for this approach to be self-consistent, the magnetic field must be
+assumed to be sufficiently small that it does not affect the velocity field.
+Let us start from the MHD Ohm's law, modified by resistivity:
+\begin{equation}
+{\bf E} + {\bf V} \times{\bf B} = \eta\,{\bf j}.
+\end{equation}
+Here, the resistivity $\eta$ is assumed to be a constant, for the sake
+of simplicity. Taking the curl of the above equation, and making use
+of Maxwell's equations, we obtain
+\begin{equation}
+\frac{\partial {\bf B}}{\partial t} - \nabla\times({\bf V}\times{\bf B})
+=  \frac{\eta}{\mu_0}\nabla^2{\bf B}.
+\end{equation}
+If the velocity field, ${\bf V}$, is prescribed, and unaffected by the
+presence of the magnetic field, then the above equation is
+essentially a {\em linear eigenvalue}\/ equation for the magnetic field, ${\bf B}$.
+The question we wish to address is as follows: for what sort
+of velocity fields, if any, does the above equation possess solutions
+where the magnetic field grows exponentially? In trying to answer this question,
+we hope to learn what type of motion of an MHD fluid is capable of
+self-generating 
+a magnetic field. 
+
+\section{Homopolar Generators}
+Some of the peculiarities of dynamo theory are well illustrated
+by the prototype example of self-excited dynamo action, which is the
+{\em homopolar disk dynamo}. As illustrated in Fig.~\ref{f24}, this device
+consists of a conducting disk which rotates at angular
+frequency ${\Omega}$  about its axis under the
+action of an applied torque. A wire, twisted about the axis in the
+manner shown, makes sliding contact with the disc at $A$, and with
+the axis at $B$, and carries a current $I(t)$. The magnetic field
+${\bf B}$ associated with this current has a flux ${\Phi} = M\,I$
+across the disc, where $M$ is the mutual inductance between the wire and the
+rim of the disc. The rotation of the disc in the
+presence of this flux generates a radial electromotive
+force
+\begin{equation}
+\frac{{\Omega}}{2\pi}\,{\Phi} = \frac{{\Omega}}{2\pi}\,M\,I,
+\end{equation}
+since a radius of the disc cuts the magnetic flux ${\Phi}$ once
+every $2\pi/{\Omega}$ seconds. According to this simplistic
+description, the equation for $I$ is written
+\begin{equation}\label{e5.85}
+L\,\frac{dI}{dt} + R\,I = \frac{M}{2\pi}\,{\Omega}\,I,
+\end{equation}
+where $R$ is the total resistance of the circuit, and $L$ is its
+self-inductance. 
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter05/homopolar1.eps}}
+\caption{\em The homopolar generator.}\label{f24}
+\end{figure}
+
+Suppose that the angular velocity ${\Omega}$ is maintained by suitable adjustment
+of the driving torque. It follows that Eq.~(\ref{e5.85}) possesses an
+exponential solution $I(t) = I(0)\,\exp(\gamma\,t)$, where
+\begin{equation}\label{e5.86}
+\gamma = L^{-1}\left[\frac{M}{2\pi}\,{\Omega} - R\right].
+\end{equation}
+Clearly, we have exponential growth of $I(t)$, and, hence, of the magnetic
+field to which it gives rise ({\em i.e.}, we have dynamo action),
+provided that
+\begin{equation}
+{\Omega} > \frac{2\pi\,R}{M}:
+\end{equation}
+{\em i.e.}, provided that the disk rotates rapidly enough. Note that
+the homopolar generator depends for its success on its built-in
+axial  {\em asymmetry}. If the disk rotates in the opposite
+direction to that shown in Fig.~\ref{f24} then ${\Omega}<0$, and the
+electromotive force generated by the rotation of the disk always acts
+to reduce $I$. In this case, dynamo action is impossible ({\em i.e.}, $\gamma$
+is always negative). This is a troubling observation,
+since most astrophysical objects, such as stars and planets, possess very
+good axial symmetry. We conclude that if such bodies are to act
+as dynamos then the asymmetry of their internal motions must somehow
+compensate for their lack of built-in asymmetry. It is far from obvious
+how this is going to happen.
+
+Incidentally, although the above analysis of a homopolar generator 
+(which is the standard analysis found in most textbooks) is
+very appealing in its simplicity, it cannot be entirely correct. 
+Consider the limiting situation of a {\em perfectly
+conducting}\/ disk and wire, in which $R=0$. On the one hand,
+Eq.~(\ref{e5.86}) yields $\gamma= M\,{\Omega}/2\pi\,L$, so that
+we still have dynamo action. But, on the other hand, the rim of the disk
+is a closed circuit embedded in a perfectly conducting medium, so the
+flux freezing constraint requires that the flux, ${\Phi}$,
+through this circuit must remain a constant. There is
+an obvious contradiction. 
+The problem is that we have neglected the currents
+that flow azimuthally in the disc: {\em i.e.}, the very currents
+which control the diffusion of magnetic flux across the rim of
+the disk. These currents become particularly important
+in the limit $R\rightarrow\infty$. 
+
+The above paradox can be resolved by supposing that the azimuthal current
+$J(t)$ is constrained to flow around the rim of the disk ({\em e.g.},
+by a suitable distribution of radial insulating strips). In this
+case, the fluxes through the $I$ and $J$ circuits are
+\begin{eqnarray}
+{\Phi}_1 &=& L\,I + M\, J,\\[0.5ex]
+{\Phi}_2 &=& M\,I + L'\,J,
+\end{eqnarray}
+and the equations governing the current flow are
+
+\begin{eqnarray}
+\frac{d{\Phi}_1}{dt} &=& \frac{{\Omega}}{2\pi}\,{\Phi}_2 - R\,I,\\[0.5ex]
+\frac{d{\Phi}_2}{dt} &=& - R'\,J,
+\end{eqnarray}
+where $R'$, and $L'$ refer to the $J$ circuit. Let us search
+for exponential solutions, $(I,J)\propto \exp(\gamma\,t)$, of the
+above system of equations. It is easily
+demonstrated that
+
+\begin{equation}
+\gamma = \frac{ -[L\,R'+L'\,R] \pm \sqrt{[L\,R'+L'\,R]^2 + 4\,R'\,[L\,L'-M^2]\,
+[M{\Omega}/2\pi -R]}}{2\,[L\,L'-M^2]}.
+\end{equation}
+Recall the standard result in electromagnetic theory that $L\,L'>M^2$ for two
+non-coincident circuits. It is clear, from the above expression, that the
+condition for dynamo action ({\em i.e.}, $\gamma>0$) is
+\begin{equation}
+{\Omega} > \frac{ 2\pi\,R}{M},
+\end{equation}
+as before. Note, however, that $\gamma\rightarrow 0$ as $R'\rightarrow 0$.
+In other words, if the rotating disk is a perfect conductor then dynamo
+action is impossible. The above system of equations can transformed
+into the well-known Lorenz system, which exhibits {\em chaotic}\/ behaviour
+in certain parameter regimes.\footnote{E.~Knobloch, Phys.\ Lett.\ {\bf 82A},
+439 (1981).} It is noteworthy that this simplest prototype
+dynamo system already contains the seeds of chaos (provided that
+the formulation is self-consistent). 
+
+It is clear from the above discussion that, whilst dynamo action requires the
+resistance of the circuit, $R$, to be low, we lose dynamo action 
+altogether if we go to the
+perfectly conducting limit, $R\rightarrow 0$, because magnetic fields are unable to diffuse
+into the region in which magnetic induction is operating. Thus, an efficient
+dynamo requires a conductivity that is large, but not too large. 
+
+\section{Slow  and Fast Dynamos}
+Let us search for solutions of the MHD kinematic dynamo equation,
+\begin{equation}\label{e5.92}
+\frac{\partial {\bf B}}{\partial t} = \nabla\times({\bf V}\times{\bf B})
++ \frac{\eta}{\mu_0}\nabla^2{\bf B},
+\end{equation}
+for a prescribed {\em steady-state} velocity field, ${\bf V}({\bf r})$, 
+subject to certain practical constraints. Firstly, we require a
+{\em self-contained} solution: {\em i.e.}, a solution in which the
+magnetic field is maintained by the motion of the MHD fluid, rather than 
+by currents at infinity. This suggests that $V, B\rightarrow 0$ as $r\rightarrow
+\infty$. Secondly, we require an exponentially growing solution:
+{\em i.e.}, a solution for which ${\bf B}\propto \exp(\gamma\,t)$, where
+$\gamma>0$. 
+
+In most  MHD fluids occurring in astrophysics, the resistivity, $\eta$, is extremely
+small. Let us consider the perfectly conducting limit, $\eta\rightarrow 0$. 
+In this limit, Vainshtein and Zel'dovich, in 1978, introduced an important 
+distinction
+between two fundamentally different classes of dynamo 
+solutions.\footnote{S.~Vainshtein, and Ya.~B.~Zel'dovich, Sov.\ Phys.\
+ Usp.\ {\bf 15}, 159 (1978).}
+Suppose that we solve the eigenvalue equation (\ref{e5.92}) to obtain the
+growth-rate, $\gamma$, of the magnetic field in the limit $\eta\rightarrow 0$.
+We expect that
+\begin{equation}
+\lim_{\eta\rightarrow 0}\gamma \propto \eta^\alpha,
+\end{equation}
+where $0\leq \alpha\leq 1$. There are two possibilities. Either $\alpha>0$,
+in which case the growth-rate depends on the resistivity, or $\alpha=0$,
+in which case the growth-rate is independent of the resistivity. The
+former case is termed a {\em slow dynamo}, whereas the latter case is termed
+a {\em fast dynamo}. By definition, slow dynamos are unable to operate
+in the perfectly conducting limit, since $\gamma\rightarrow 0$ as 
+$\eta\rightarrow 0$.
+On the other hand, fast dynamos can, in principle, operate when $\eta=0$. 
+
+It is clear, from the above discussion, that a homopolar disk generator is
+an example of a slow dynamo. In fact, it is easily seen that any
+dynamo which depends on the motion of a {\em rigid} conductor for its
+operation is bound to be a slow dynamo: in the perfectly conducting
+limit, the magnetic flux linking the conductor could never change, so there
+would be no magnetic induction. So, why do we believe that fast dynamo
+action is even a possibility for an MHD fluid? The answer is, of course, that
+an MHD fluid is a {\em non-rigid} body, and, thus, its motion possesses
+degrees of freedom not accessible to rigid conductors. 
+
+We know that in the perfectly conducting limit ($\eta\rightarrow 0$) magnetic
+field-lines are frozen into an MHD fluid. If the motion is
+incompressible ({\em i.e.}, $\nabla\!\cdot\!{\bf V} = 0$) then the stretching
+of field-lines implies a proportionate intensification of the field-strength.
+The simplest heuristic fast dynamo, first described by Vainshtein and Zel'dovich, 
+ is based on this effect. As illustrated in Fig.~\ref{f25}, a magnetic
+flux-tube can be {\em doubled} in intensity by taking it around a
+stretch-twist-fold cycle. The doubling time for this
+process clearly does not depend on the resistivity: in this sense, the
+dynamo is a fast dynamo. However, under repeated application of this
+cycle the magnetic field develops increasingly fine-scale structure.
+In fact, in the limit $\eta\rightarrow 0$ both the ${\bf V}$ and
+${\bf B}$ fields eventually become chaotic and non-differentiable.
+A little resistivity is always required to smooth out the fields on
+small length-scales: even in this case the fields remain {\em chaotic}.
+
+\begin{figure}
+\epsfysize=1.75in
+\centerline{\epsffile{Chapter05/stretch1.eps}}
+\caption{\em The stretch-twist-fold cycle of a fast dynamo.}\label{f25}
+\end{figure}
+
+At present, the physical existence of fast dynamos  has not been
+conclusively  established, since most of the literature on this
+subject is based on mathematical paradigms rather than actual solutions
+of the dynamo equation. It should be noted, however, that the
+need for fast dynamo solutions is fairly acute, especially in stellar
+dynamo theory. For instance, consider the Sun. The ohmic decay time for the
+Sun is about $10^{12}$ years, whereas the reversal time for the solar magnetic
+field is only 11 years. It is obviously a little difficult to believe that resistivity
+is playing any significant role in the solar dynamo.  
+
+In the following, we shall restrict our analysis to slow dynamos, which
+undoubtably exist in nature, and which are characterized by {\em non-chaotic}
+${\bf V}$ and ${\bf B}$ fields.
+
+\section{Cowling Anti-Dynamo Theorem}
+One of the most important results in slow, kinematic dynamo theory
+is credited to Cowling.\footnote{T.G.~Cowling, Mon.\ Not.\ Roy.\ Astr.\ Soc.\
+{\bf 94}, 39 (1934); T.G.~Cowling, Quart.\ J.\ Mech.\ Appl.\ Math.\
+{\bf 10}, 129 (1957).} The so-called {\em Cowling anti-dynamo theorem}
+states that:
+\begin{quote}
+{\sf An axisymmetric magnetic field cannot be maintained via dynamo action.}
+\end{quote}
+Let us attempt to prove this proposition.
+
+We adopt standard cylindrical polar coordinates: $(\varpi,\theta,z)$. The
+system is assumed to possess axial symmetry, so that $\partial/\partial\theta
+\equiv 0$. For the sake of simplicity, the plasma flow is assumed to be 
+incompressible, which implies that $\nabla\!\cdot\!{\bf V}=0$. 
+
+It is convenient to split the magnetic and velocity fields into {\em poloidal}
+and {\em toroidal} components:
+\begin{eqnarray}
+{\bf B} &=& {\bf B}_p + {\bf B}_t,\\[0.5ex]
+{\bf V} &=& {\bf V}_p + {\bf V}_t.
+\end{eqnarray}
+Note that a poloidal vector only possesses non-zero $\varpi$- and $z$-components,
+whereas a toroidal vector only possesses a non-zero $\theta$-component.
+
+
+The poloidal components of the magnetic and velocity fields are
+written:
+\begin{eqnarray}
+{\bf B}_p = \nabla\times\left(\frac{\psi}{\varpi}\,\,\hat{\btheta}\right)
+\equiv \frac{\nabla\psi\times\hat{\btheta}}{\varpi},\\[0.5ex]
+{\bf V}_p = \nabla\times\left(\frac{\phi}{\varpi}\,\,\hat{\btheta}\right)
+\equiv \frac{\nabla\phi\times\hat{\btheta}}{\varpi},
+\end{eqnarray}
+where $\psi=\psi(\varpi,z,t)$ and $\phi=\phi(\varpi,z,t)$. The
+toroidal components are given by
+\begin{eqnarray}
+{\bf B}_t &=& B_t(\varpi,z,t)\,\hat{\btheta},\\[0.5ex]
+{\bf V}_t &=& V_t(\varpi,z,t)\,\hat{\btheta}.
+\end{eqnarray}
+Note that by writing the ${\bf B}$ and ${\bf V}$ fields in the above form
+we ensure that the constraints $\nabla\!\cdot\!{\bf B} =0$ and
+$\nabla\!\cdot\!{\bf V} =0$ are {\em automatically} satisfied. Note, further,
+that since ${\bf B}\!\cdot\!\nabla\psi=0$ and ${\bf V}\!\cdot\!\nabla\phi=0$,
+we can regard $\psi$ and $\phi$ as {\em stream-functions} for the magnetic and
+velocity fields, respectively.
+
+The condition for the magnetic field to be maintained by dynamo currents,
+rather than by currents at infinity, is
+\begin{equation}\label{e5.97}
+\psi\rightarrow \frac{1}{r}\mbox{\hspace{1cm}as $r\rightarrow\infty$},
+\end{equation}
+where $r=\sqrt{\varpi^2+z^2}$. We also require  the flow stream-function,
+$\phi$, to remain bounded as $r\rightarrow\infty$.
+
+
+Consider the MHD Ohm's law for a resistive plasma:
+\begin{equation}\label{e5.98}
+{\bf E} + {\bf V}\times{\bf B} =\eta\,{\bf j}.
+\end{equation}
+Taking the toroidal component of this equation, we obtain
+\begin{equation}\label{e5.99}
+E_t + ({\bf V}_p\times{\bf B}_p)\!\cdot \hat{\btheta}=\eta\, j_t.
+\end{equation}
+It is easily demonstrated that
+\begin{equation}
+E_t =-\frac{1}{\varpi}\frac{\partial\psi}{\partial t}.
+\end{equation}
+Furthermore,
+\begin{equation}
+({\bf V}_p\times{\bf B}_p)\!\cdot\hat{\btheta} =\frac{(\nabla\phi\times
+\nabla\psi)\!\cdot \hat{\btheta}}{\varpi^2}=\frac{1}{\varpi^2}
+\left(\frac{\partial\psi}{\partial\varpi}\frac{\partial\phi}{\partial z}
+-\frac{\partial\phi}{\partial\varpi}\frac{\partial\psi}{\partial z}\right),
+\end{equation}
+and
+\begin{equation}
+\mu_0\,j_t = \nabla\times {\bf B}_p\!\cdot \hat{\btheta} =
+-\left[\nabla^2\!\left(\frac{\psi}{\varpi}\right) -\frac{\psi}{\varpi^3}\right]
+= -\frac{1}{\varpi}\left(\frac{\partial^2\psi}{\partial\varpi^2}-\frac{1}{\varpi}
+\frac{\partial\psi}{\partial\varpi}+\frac{\partial^2\psi}{\partial z^2}\right).
+\end{equation}
+Thus,
+Eq.~(\ref{e5.99}) reduces to
+\begin{equation}
+\frac{\partial\psi}{\partial t} - \frac{1}{\varpi}\left(\frac{\partial\psi}{\partial\varpi}\frac{\partial\phi}{\partial z}
+-\frac{\partial\phi}{\partial\varpi}\frac{\partial\psi}{\partial z}\right)
+= \frac{\eta}{\mu_0}\left(\frac{\partial^2\psi}{\partial\varpi^2}
+-\frac{1}{\varpi}\frac{\partial\psi}{\partial\varpi}
++\frac{\partial^2\psi}{\partial z^2}\right).
+\end{equation}
+
+Multiplying the above equation by $\psi$ and integrating over all space,
+we obtain
+\begin{eqnarray}\label{e5.104}
+\frac{1}{2}\frac{d}{dt}\!\int\psi^2\,dV& -&\int\!\!\int 2\pi\,\psi\left(\frac{\partial\psi}{\partial\varpi}\frac{\partial\phi}{\partial z}
+-\frac{\partial\phi}{\partial\varpi}\frac{\partial\psi}{\partial z}\right) d\varpi
+\,dz\\[0.5ex]
+ &=&\frac{\eta}{\mu_0}\int\!\!\int2\pi\,\varpi\,\psi\left(\frac{\partial^2\psi}{\partial\varpi^2}
+-\frac{1}{\varpi}\frac{\partial\psi}{\partial\varpi}
++\frac{\partial^2\psi}{\partial z^2}\right)d\varpi\,dz.\nonumber
+\end{eqnarray}
+The second term on the left-hand side of the above expression
+can be integrated by parts to give
+\begin{equation}
+-\int\!\!\int 2\pi\left[-\phi\,\frac{\partial}{\partial z}\!
+\left(\psi\,\frac{\partial\psi}{\partial\varpi}\right)
++\phi\,\frac{\partial}{\partial \varpi}\!\left(\psi\,\frac{\partial\psi}{\partial z}
+\right)\right] d\varpi\,dz=0,
+\end{equation}
+where surface terms have been neglected, in  accordance with Eq.~(\ref{e5.97}).
+Likewise, the term on the right-hand side of Eq.~(\ref{e5.104}) can be integrated by
+parts to give
+\begin{eqnarray}
+\frac{\eta}{\mu_0}\int\!\!\int 2\pi\left[-\frac{\partial(\varpi\,\psi)}{\partial\varpi}
+\,\frac{\partial\psi}{\partial\varpi} - \varpi\left(\frac{\partial\psi}
+{\partial z}\right)^2\right]\,d\varpi\,d z=&&\nonumber\\[0.5ex]
+\mbox{\hspace{2cm}}-\frac{\eta}{\mu_0}\int\!\!\int 2\pi\,
+\varpi\left[\left(\frac{\partial\psi}{\partial\varpi}\right)^2
++\left(\frac{\partial\psi}{\partial z}\right)^2\right]\,d\varpi\,dz.&&
+\end{eqnarray}
+Thus, Eq.~(\ref{e5.104}) reduces to
+\begin{equation}
+\frac{d}{dt}\!\int\psi^2\,dV = -2\,\frac{\eta}{\mu_0}\int |\nabla\psi|^2\,dV.
+\end{equation}
+It is clear from the above expression that the poloidal stream-function, $\psi$,
+and, hence, the poloidal magnetic field, ${\bf B}_p$, decays to zero
+under the influence of resistivity. We conclude that the poloidal magnetic
+field {\em cannot} be maintained via dynamo action.
+
+Of course, we have not ruled out the possibility that the toroidal magnetic
+field can be maintained via dynamo action. In the absence of a poloidal
+field, the curl of the poloidal component of Eq.~(\ref{e5.98}) yields
+\begin{equation}
+-\frac{\partial {\bf B}_t}{\partial t} +\nabla\times({\bf V}_p\times
+{\bf B}_t) = \eta\,\nabla\times {\bf j}_p,
+\end{equation}
+which reduces to
+\begin{equation}\label{e5.109}
+-\frac{\partial B_t}{\partial t} +
+\nabla\times({\bf V}_p\times {\bf B}_t) 
+\cdot\hat{\btheta}=-
+\frac{\eta}{\mu_0}\,\nabla^2(B_t\,\hat{\btheta})\cdot\hat{\btheta}.
+\end{equation}
+Now
+\begin{equation}
+\nabla^2(B_t\,\hat{\btheta})\cdot\hat{\btheta}
+=\frac{\partial^2 B_t}{\partial\varpi^2} +\frac{1}{\varpi}
+\frac{\partial B_t}{\partial\varpi} + \frac{\partial^2 B_t}{\partial z^2}
+-\frac{B_t}{\varpi^2},
+\end{equation}
+and
+\begin{equation}
+\nabla\times({\bf V}_p\times {\bf B}_t)
+\cdot\hat{\btheta}=
+\frac{\partial}{\partial\varpi}\!\left(\frac{B_t}{\varpi}\right)
+\frac{\partial\phi}{\partial z} -\frac{\partial}{\partial z}\!
+\left(\frac{B_t}{\varpi}\right) \frac{\partial\phi}{\partial\varpi}.
+\end{equation}
+Thus, Eq.~(\ref{e5.109}) yields
+\begin{equation}\label{e5.112}
+\frac{\partial\chi}{\partial t} -\frac{1}{\varpi}\left(\frac{\partial\chi}{\partial\varpi}
+\frac{\partial\phi}{\partial z} -\frac{\partial
+\phi}{\partial \varpi}\frac{\partial\chi}{\partial z}\right)=\frac{\eta}{\mu_0}\left(
+\frac{\partial^2\chi}{\partial\varpi^2} +\frac{3}{\varpi}\frac{\partial\chi}
+{\partial\varpi} +\frac{\partial^2\chi}{\partial z^2}\right),
+\end{equation}
+where 
+\begin{equation}
+B_t = \varpi\,\chi.
+\end{equation}
+
+Multiply  Eq.~(\ref{e5.112}) by $\chi$, integrating over all space, and
+then integrating by parts, we obtain
+\begin{equation}
+\frac{d}{dt}\!\int\chi^2\,dV = -2\,\frac{\eta}{\mu_0}\int|\nabla\chi|^2\,dV.
+\end{equation}
+It is clear from this formula that $\chi$, and, hence, the toroidal magnetic
+field, ${\bf B}_t$, decay to zero under the influence of resistivity.
+We conclude that no axisymmetric magnetic field, either poloidal
+or toroidal, can be maintained by
+dynamo action, which proves Cowling's theorem.
+
+Cowling's theorem is the earliest and most significant of a number of
+{\em anti-dynamo theorems} which severely restrict the types of magnetic
+fields which can be maintained via dynamo action. For instance, it is
+possible to prove that a two-dimensional magnetic field cannot be maintained
+by dynamo action. Here, ``two-dimensional'' implies that in some
+Cartesian coordinate system, $(x,y,z)$, the magnetic field is independent of
+$z$. The suite of anti-dynamo theorems can be summed up
+by saying that successful dynamos possess a rather low degree of symmetry.
+
+\section{Ponomarenko Dynamos}
+The simplest known kinematic dynamo is that
+of Ponomarenko.\footnote{Yu.~B.~Ponomarenko, J.~Appl.\ Mech.\
+Tech.\ Phys.\ {\bf 14}, 775 (1973).} Consider a conducting fluid
+of resistivity $\eta$ which fills all space. The motion of the fluid
+is confined to a cylinder of radius $a$. Adopting cylindrical polar coordinates
+$(r,\theta,z)$ aligned with this cylinder, the flow field is written
+\begin{equation}
+{\bf V} =\left\{
+\begin{array}{lll}
+(0,r\,{\Omega}, U)&\mbox{\hspace{1cm}}& \mbox{for $r\leq a$}\\[0.5ex]
+{\bf 0} && \mbox{for $r>a$}
+\end{array}
+\right.,
+\end{equation}
+where ${\Omega}$ and $U$ are constants. Note that the flow is {\em 
+incompressible}:
+{\em i.e.}, $\nabla\cdot{\bf V} =0$. 
+
+The dynamo equation can be written
+\begin{equation}\label{e5.116}
+\frac{\partial{\bf B}}{\partial t} = ({\bf B}\cdot\nabla){\bf V}
+-({\bf V}\cdot\nabla){\bf B} + \frac{\eta}{\mu_0}\,\nabla^2{\bf B}.
+\end{equation}
+Let us search for solutions to this equation of the form
+\begin{equation}
+{\bf B}(r,\theta,z,t) = {\bf B}(r)\,\exp[\,{\rm i}\,(m\,\theta -k\, z)+\gamma\,t].
+\end{equation}
+The $r$- and $\theta$- components of Eq.~(\ref{e5.116}) are written
+\begin{eqnarray}\label{e5.118}
+\gamma\,B_r &=& -{\rm i}\,(m\,{\Omega}-k \,U)\,B_r \\[0.5ex]
+&&+ \frac{\eta}{\mu_0}
+\left[\frac{d^2 B_r}{dr^2} + \frac{1}{r}\frac{dB_r}{dr} - \frac{(m^2+k^2 r^2
++1)\,B_r}{r^2}- \frac{{\rm i}\,2\,m\,B_\theta}{r^2}\right],\nonumber
+\end{eqnarray}
+and
+\begin{eqnarray}\label{e5.119}
+\gamma\,B_\theta& = &r\,\frac{d{\Omega}}{dr}\,B_r
+-{\rm i}\,(m\,{\Omega}-k\, U)\,B_\theta\\[0.5ex]
+&&+ \frac{\eta}{\mu_0}
+\left[\frac{d^2 B_\theta}{dr^2} + \frac{1}{r}\frac{dB_\theta}{dr} -
+ \frac{(m^2+k^2 r^2
++1)\,B_\theta}{r^2}+ \frac{{\rm i}\,2\,m\,B_r}{r^2}\right],\nonumber
+\end{eqnarray}
+respectively. In general, the term involving $d{\Omega}/dr$
+is zero. In fact, this term is only included in the analysis to enable 
+us to evaluate the correct matching conditions at $r=a$. Note that we do not need to
+write the $z$-component of Eq.~(\ref{e5.116}), since $B_z$ can be obtained 
+more directly from $B_r$
+and $B_\theta$ via the constraint $\nabla\!\cdot\!{\bf B} = 0$.  
+
+Let
+\begin{eqnarray}
+B_\pm &=& B_r \pm {\rm i}\,B_\theta,\\[0.5ex]
+y &=& \frac{r}{a},\\[0.5ex]
+\tau_R &=& \frac{\mu_0\,a^2}{\eta},\\[0.5ex]
+q^2 &=& k^2 a^2 + \gamma\tau_R + {\rm i}\,(m\,{\Omega} - k\,U)\,\tau_R,\\[0.5ex]
+s^2 &=& k^2 a^2 + \gamma\tau_R.\label{e5.120e}
+\end{eqnarray}
+Here, $\tau_R$ is the typical time for magnetic flux to diffuse a distance $a$
+under the action of resistivity. Equations~(\ref{e5.118})--(\ref{e5.120e}) can be
+combined to give
+\begin{equation}\label{e5.121}
+y^2\,\frac{d^2 B_\pm}{dy^2} + y\,\frac{d B_\pm}{dy} -\left[(m\pm 1)^2 + q^2\,y^2\right]B_\pm = 0
+\end{equation}
+for $y\leq 1$, and
+\begin{equation}\label{e5.122}
+y^2\,\frac{d^2 B_\pm}{dy^2} + y\,\frac{d B_\pm}{dy} -\left[(m\pm 1)^2 + s^2\,y^2\right]B_\pm = 0
+\end{equation}
+for $y>1$. The above equations are immediately recognized as modified
+Bessel's equations of order $m\pm 1$.\footnote{M.~Abramowitz, and I.A.~Stegun, {\em Handbook of Mathematical Functions} (Dover, New York NY, 1964), p.~374.} 
+Thus, the physical solutions of Eqs.~(\ref{e5.121}) and (\ref{e5.122}), which are well behaved
+as $y\rightarrow 0$ and $y\rightarrow\infty$, can be written
+\begin{equation}\label{e5.123}
+B_\pm = C_\pm\,\frac{I_{m\pm 1}(q\,y)}{I_{m\pm 1}(q)}
+\end{equation}
+for $y\leq 1$, and
+\begin{equation}
+B_\pm = D_\pm \, \frac{K_{m\pm 1}(s\,y)}{K_{m\pm 1}(s)}
+\end{equation}
+for $y>1$. Here, $C_\pm$ and $D_\pm$ are arbitrary constants.
+Note that the arguments of $q$ and $s$ are both constrained to lie in the
+range $-\pi/2$ to $+\pi/2$. 
+
+The first set of matching conditions at $y=1$ are, obviously, that $B_\pm$ are
+continuous, which yields
+\begin{equation}
+C_\pm = D_\pm.
+\end{equation}
+The second set of matching conditions are obtained by integrating Eq.~(\ref{e5.119})
+from $r=a-\delta$ to $r=a-\delta$, where $\delta$ is an infinitesimal
+ quantity, and making use of the fact that the angular velocity ${\Omega}$
+jumps discontinuously to zero at $r=a$. It follows that
+\begin{equation}
+a\,{\Omega}\,B_r = \frac{\eta}{\mu_0}
+\left[\frac{d B_\theta}{dr}\right]_{r=a_-}^{r=a_+}.
+\end{equation}
+Furthermore, integration of Eq.~(\ref{e5.118}) tells us that $dB_r/dr$ is continuous
+at $r=a$. We can combine this information to give the matching
+condition
+\begin{equation}\label{e5.127}
+\left[\frac{d B_\pm}{dy}\right]_{y=1_-}^{y=1_+} =\pm{\rm i}\,{\Omega}\,\tau_R\,
+\frac{B_+ +B_-}{2}.
+\end{equation}
+
+Equations~(\ref{e5.123})--(\ref{e5.127}) can be combined to give the dispersion relation
+\begin{equation}\label{e5.128}
+G_+\,G_- = \frac{{\rm i}}{2}\,{\Omega}\,\tau_R\,(G_+-G_-),
+\end{equation}
+where
+\begin{equation}
+G_\pm = q\,\frac{I_{m\pm 1}'(q)}{I_{m\pm 1}(q)} - s\,\frac{K_{m\pm 1}'(s)}
+{K_{m\pm 1}(s)}.
+\end{equation}
+Here, $'$ denotes a derivative.
+
+Unfortunately, despite the fact that we are investigating the simplest known dynamo,
+the dispersion relation (\ref{e5.128}) is sufficiently complicated that it can only
+be solved numerically. We can simplify matters considerably
+taking the limit $|q|, |s| \gg 1$, which corresponds either
+to that of small wave-length ({\em i.e.}, $k\,a\gg 1$), or small
+resistivity ({\em i.e.}, ${\Omega}\,\tau_R\gg 1$). 
+The large argument asymptotic behaviour of the Bessel functions is
+specified by\,\footnote{M.~Abramowitz, and I.A.~Stegun, {\em Handbook of Mathematical Functions} (Dover, New York NY, 1964), p.~377.} 
+\begin{eqnarray}
+\sqrt{\frac{2\,z}{\pi}}\,K_m(z) &=& {\rm e}^{-z}\left(1+\frac{4\,m^2-1}{8\,z} +\cdots\right),\\[0.5ex]
+\sqrt{2\,z\,\pi}\,I_m(z)&=& {\rm e}^{+z}\left(1-\frac{4\,m^2-1}{8\,z} +\cdots\right),
+\end{eqnarray}
+where $|\arg(z)|<\pi/2$.
+It follows that
+\begin{equation}
+G_\pm = q + s + (m^2/2\pm m + 3/8)(q^{-1} + s^{-1}) + O(q^{-2}+s^{-2}).
+\end{equation}
+Thus, the dispersion relation (\ref{e5.128}) reduces to
+\begin{equation}\label{e5.133}
+(q+s)\,q\,s = {\rm i}\,m\,{\Omega}\,\tau_R,
+\end{equation}
+where $|\arg(q)|$, $|\arg(s)|<\pi/2$. 
+
+In the limit  $\mu\rightarrow 0$, where
+\begin{equation}
+\mu= (m\,{\Omega}-k\,U)\,\tau_R,
+\end{equation}
+which corresponds to $({\bf V}\cdot\nabla){\bf B} \rightarrow 0$, the simplified dispersion
+relation (\ref{e5.133}) can be solved to give
+\begin{equation}\label{e5.135}
+\gamma\,\tau_R \simeq {\rm e}^{\,{\rm i}\,\pi/3}\left(\frac{m\,{\Omega}\,\tau_R}
+{2}\right)^{2/3} - k^2\,a^2 - {\rm i}\,\frac{\mu}{2}.
+\end{equation}
+Dynamo behaviour [{\em i.e.}, ${\rm Re}(\gamma)>0$] takes place
+when
+\begin{equation}\label{e5.136}
+{\Omega}\,\tau_R > \frac{2^{5/2}\,(ka)^3}{m}.
+\end{equation}
+Note that ${\rm Im}(\gamma)\neq 0$, implying that the
+dynamo mode {\em oscillates}, or rotates, as well as growing exponentially in time.
+The dynamo generated magnetic field is both non-axisymmetric [note that
+dynamo activity is impossible, according to Eq.~(\ref{e5.135}), if $m=0$] and
+three-dimensional, and is, thus, not subject to either of the anti-dynamo
+theorems mentioned in the preceding section.
+
+It is clear from Eq.~(\ref{e5.136}) that dynamo action occurs whenever the flow
+is made sufficiently rapid. But, what is the minimum amount of flow
+which gives rise to dynamo action? 
+In order to answer this question we 
+have to solve the full dispersion relation, (\ref{e5.128}), for various values
+of $m$ and $k$ in order to find the dynamo mode which grows exponentially in time
+for the smallest values of ${\Omega}$ and $U$. It is conventional
+to parameterize the flow in terms of the {\em magnetic Reynolds number}
+\begin{equation}
+S = \frac{\tau_R}{\tau_H},
+\end{equation}
+where
+\begin{equation}
+\tau_H = \frac{L}{V}
+\end{equation}
+is the typical time-scale for convective motion across the system. Here,
+$V$ is a typical flow velocity, and $L$ is the scale-length of the system.
+Taking $V=|{\bf V}(a)|= \sqrt{{\Omega}^2\,a^2+U^2}$, and $L=a$, we 
+have
+\begin{equation}
+S = \frac{\tau_R\,\sqrt{{\Omega}^2\,a^2+U^2}}{a}
+\end{equation}
+for the Ponomarenko dynamo. The critical value of the Reynolds number above
+which dynamo action occurs is found to be 
+\begin{equation}
+S_c = 17.7.
+\end{equation}
+The most unstable dynamo mode is characterized by
+ $m=1$, $U/{\Omega}\,a=1.3$, $k\,a=0.39$,
+and ${\rm Im}(\gamma)\,\tau_R = 0.41$. As the magnetic Reynolds number, $S$, 
+ is increased above
+the critical value, $S_c$,  other  dynamo modes are eventually destabilized.
+
+Interestingly enough, an attempt was made in the late 1980's to construct a
+Ponomarenko dynamo by rapidly pumping liquid sodium through a cylindrical
+pipe equipped with a set of twisted vanes at one end to induce helical
+flow. Unfortunately, the experiment failed due to mechanical vibrations,
+after achieving  a Reynolds number which was $80\%$ of the critical value required
+for self-excitation of the magnetic field, and was not repaired due to budgetary
+problems.\footnote{A.~Gailitis, {\em Topological Fluid Dynamics}, edited
+by H.K.~Moffatt, and A.~Tsinober (Cambridge University Press,
+Cambridge UK, 1990), p.~147.} More recently, there has been renewed
+interest worldwide in the idea of
+ constructing a liquid metal dynamo, and two such experiments (one in Riga, and one in Karlsruhe) have demonstrated
+self-excited dynamo action in a controlled
+laboratory setting. 
+
+\section{Magnetic Reconnection}
+Magnetic reconnection is a phenomenon which is of particular importance in solar
+system plasmas. In the solar corona, it results in the rapid release to the
+plasma of energy stored in the large-scale structure of the coronal magnetic
+field, an effect which is thought to give rise to {\em solar flares}. Small-scale
+reconnection may play a role in heating the corona, and, thereby, driving
+the outflow of the solar wind. In the Earth's magnetosphere, magnetic
+reconnection in the magnetotail is thought to be
+the precursor for {\em auroral sub-storms}.
+
+The evolution of the magnetic field in a resistive-MHD plasma is
+governed by the following well-known equation:
+\begin{equation}\label{e5.141}
+\frac{\partial{\bf B}}{\partial t} = \nabla\times({\bf V}\times{\bf B})+
+\frac{\eta}{\mu_0}\,\nabla^2{\bf B}.
+\end{equation}
+The first term on the right-hand side of this equation describes the
+{\em convection}\/ of the magnetic field by the plasma flow. The second
+term describes the resistive {\em diffusion}\/ of the field through the plasma.
+If the first term dominates then magnetic flux is frozen into the plasma,
+and the topology of the magnetic field cannot change. On the other hand,
+if the second term dominates then there is little coupling between the
+field and the plasma flow, and 
+the topology of the magnetic field
+is free to change. 
+
+The relative magnitude of the two terms on the right-hand side of Eq.~(\ref{e5.141})
+is conventionally measured in terms of {\em magnetic Reynolds number}, or {\em Lundquist
+number}:
+\begin{equation}
+S = \frac{\mu_0\,V\,L}{\eta} \simeq \frac{|\nabla\times({\bf V}\times {\bf B})|}
+{|(\eta/\mu_0)\,\nabla^2{\bf B}|},
+\end{equation}
+where $V$ is the characteristic flow speed, and $L$  the characteristic
+length-scale of the plasma. If $S$ is much larger than unity then
+convection dominates, and the {\em frozen flux} constraint prevails, whilst
+if $S$ is much less than unity then diffusion dominates, and the coupling between
+the plasma flow and the magnetic field is relatively weak.
+
+It turns out that in the solar system  very large $S$-values are virtually guaranteed by the
+the extremely large scale-lengths of solar system plasmas. For instance,
+$S\sim 10^8$ for solar flares, whilst $S\sim 10^{11}$ is appropriate for
+the solar wind and the Earth's magnetosphere. Of course, in calculating 
+these values we have identified the scale-length $L$ with the overall
+size of the plasma under investigation. 
+
+On the basis of the above discussion, it seems reasonable to neglect diffusive
+processes altogether in solar system plasmas. Of course, this leads to
+very strong constraints on the behaviour of such plasmas, since all
+cross-field mixing of plasma elements is suppressed in this limit. Particles
+may freely mix along field-lines (within limitations imposed by magnetic
+mirroring, {\em etc.}), but are completely ordered perpendicular to the field,
+since they always remain tied to the same field-lines as they convect in the
+plasma flow.
+
+Let us consider what happens when two initially separate plasma regions
+come into contact with one another, as occurs, for example, in the
+interaction between the solar wind and the Earth's magnetic field.
+Assuming that each plasma is frozen to its own magnetic field, and that cross-field
+diffusion  is absent, we conclude that the two plasmas
+will not mix, but, instead, that a thin {\em boundary layer} will form
+between them, separating the two plasmas and their respective magnetic fields.
+In equilibrium, the location of the boundary layer will be determined
+by pressure balance. Since, in general, the frozen fields on either side of
+the boundary will have differing strengths, and orientations tangential
+to the boundary, the layer must also constitute a {\em current sheet}. 
+Thus, flux freezing leads inevitably to the prediction that in plasma
+systems space becomes divided into separate cells, wholly containing the 
+plasma and magnetic field  from individual sources, and separated from
+each other by thin current sheets. 
+
+The ``separate cell'' picture constitutes an excellent zeroth-order approximation to
+the interaction of solar system plasmas, as witnessed, for example, by
+the well defined planetary magnetospheres. It must be noted, however, that
+the large $S$-values upon which the applicability of the frozen flux constraint
+was justified were derived using the {\em large} overall spatial scales of the
+systems involved. However, strict application of this constraint to the
+problem of the interaction of separate plasma systems leads to the 
+inevitable conclusion
+that structures will form having {\em small} spatial scales, at least in
+one dimension: {\em i.e.}, the thin current sheets constituting the cell
+boundaries. It is certainly not guaranteed, from the above discussion,  that
+the effects of diffusion can be neglected in 
+ these boundary layers.  In fact, we shall demonstrate that 
+the localized breakdown of the flux freezing constraint in the boundary
+regions, due to diffusion, not only has an impact on the
+properties of the boundary regions themselves, but can also have a decisive
+impact on the large length-scale plasma regions where the flux freezing 
+constraint remains valid. This observation illustrates both the subtlety and the
+significance of the magnetic reconnection process. 
+
+\section{Linear Tearing Mode Theory}
+Consider the interface between two plasmas  containing magnetic fields of
+different orientations. The simplest imaginable field configuration is that
+illustrated in Fig.~\ref{f26}. Here, the field varies only in the $x$-direction, and 
+points only in the $y$-direction. The field is directed in the
+$-y$-direction for $x<0$, and in the $+y$-direction for $x>0$. The interface
+is situated at $x=0$. The sudden reversal of the field direction across the
+interface gives rise to a $z$-directed current sheet at $x=0$. 
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter05/tear.eps}}
+\caption{\em A reconnecting magnetic field configuration.}\label{f26}
+\end{figure}
+
+With the neglect of plasma resistivity, the field configuration shown in Fig.~\ref{f26}
+represents a {\em  stable} equilibrium state, assuming, of course,
+ that we have normal pressure balance
+across the interface. But, does the field configuration remain stable when we take
+resistivity into account? If not, we expect an instability to develop which relaxes the
+configuration to one possessing  lower magnetic energy. As we shall see, this
+type of relaxation process inevitably entails the breaking and reconnection of magnetic
+field lines, and is, therefore, termed {\em magnetic reconnection}. The
+magnetic energy released during the reconnection process eventually appears as 
+plasma thermal
+energy. Thus, magnetic reconnection also involves plasma heating.
+
+In the following, we shall outline the standard method for determining the
+{\em linear} stability of the type of magnetic field configuration
+shown in Fig.~26, taking into account the effect of plasma resistivity.
+We are particularly
+interested in plasma instabilities which are stable in the absence of resistivity,
+and only grow when the resistivity is non-zero. Such instabilities are
+conventionally termed {\em tearing modes}. 
+Since magnetic reconnection is, in fact, a {\em nonlinear} process, we shall
+then proceed to  investigate the nonlinear development of tearing modes.
+
+The equilibrium magnetic field is written
+\begin{equation}
+{\bf B}_0 = B_{0\,y}(x)\,\hat{\bf y},
+\end{equation}
+where $B_{0\,y}(-x)=-B_{0\,y}(x)$. 
+There is assumed to be no equilibrium plasma flow. The linearized
+equations of resistive-MHD, assuming incompressible flow, take the form
+\begin{eqnarray}\label{e5.144a}
+\frac{\partial {\bf B}}{\partial t} &=& \nabla\times({\bf V}\times{\bf B}_0)
++ \frac{\eta}{\mu_0}\,\nabla^2{\bf B},\\[0.5ex]\label{e5.144b}
+\rho_0\,\frac{\partial{\bf V}}{\partial t} &=& -\nabla p + 
+\frac{(\nabla\times{\bf B})\times{\bf B}_0}{\mu_0} + 
+\frac{(\nabla\times{\bf B}_0)\times{\bf B}}{\mu_0}\\[0.5ex]\label{e5.144c}
+\nabla\cdot{\bf B} &=& 0,\\[0.5ex]
+\nabla\cdot{\bf V} &=& 0.\label{e5.144d}
+\end{eqnarray}
+Here, $\rho_0$ is the equilibrium plasma density, ${\bf B}$  the
+perturbed magnetic field, ${\bf V}$  the perturbed plasma velocity, and
+$p$  the perturbed plasma pressure. The assumption of incompressible
+plasma flow is valid provided that the plasma velocity associated with the
+instability remains significantly
+smaller than both the Alfv\'{e}n velocity and the sonic velocity. 
+
+Suppose that all perturbed quantities vary like
+\begin{equation}
+A(x,y,z,t) = A(x)\,{\rm e}^{\,{\rm i}\,k\,y +\gamma\,t},
+\end{equation}
+where $\gamma$ is the instability growth-rate. The $x$-component of
+Eq.~(\ref{e5.144a}) and the $z$-component of the curl of Eq.~(\ref{e5.144b})
+reduce to
+\begin{eqnarray}\label{e5.146a}
+\gamma\,B_x &=& {\rm i}\,kB_{0\,y} \,V_x + \frac{\eta}{\mu_0}
+\left(\frac{d^2}{dx^2} - k^2\right) B_x,\\[0.5ex]\label{e5.146b}
+\gamma\,\rho_0\,\left(\frac{d^2}{dx^2}-k^2\right) V_x
+&=& \frac{{\rm i}\,kB_{0\,y}}{\mu_0}\left(
+\frac{d^2}{dx^2} - k^2 - \frac{B_{0\,y}''}{B_{0\,y}}\right) B_x,
+\end{eqnarray}
+respectively, where use has been made of Eqs.~(\ref{e5.144c}) and (\ref{e5.144d}).
+Here, $'$ denotes $d/dx$.
+
+It is convenient to normalize Eqs.~(\ref{e5.146a})--(\ref{e5.146b}) using a typical magnetic
+field-strength, $B_0$, and a typical scale-length, $a$. Let us define the 
+{\em Alfv\'{e}n time-scale}
+\begin{equation}
+\tau_A = \frac{a}{V_A},
+\end{equation}
+ where $V_A = B_0/\sqrt{\mu_0\,\rho_0}$
+is the Alfv\'{e}n velocity, and the {\em resistive diffusion} time-scale
+\begin{equation}\label{e5.148}
+\tau_R = \frac{\mu_0\,a^2}{\eta}.
+\end{equation}
+The ratio of these two time-scales is the Lundquist number:
+\begin{equation}
+S = \frac{\tau_R}{\tau_A}.
+\end{equation}
+Let
+$\psi= B_x/B_0$, $\phi = {\rm i}\,k\,V_y/\gamma$, $\bar{x}=x/a$, 
+$F=B_{0\,y}/B_0$, $F'\equiv dF/d\bar{x}$, $\bar{\gamma} = \gamma\,\tau_A$,
+and $\bar{k} = k\,a$. It follows that
+\begin{eqnarray}\label{e5.150a}
+\bar{\gamma}\,(\psi-F\,\phi) &=& S^{-1}\left(\frac{d^2}{d\bar{x}^2}-\bar{k}^2\right)
+\psi,\\[0.5ex]\label{e5.150b}
+\bar{\gamma}^2\left(\frac{d^2}{d\bar{x}^2} -\bar{k}^2\right)\phi
+&=& -\bar{k}^2\,
+F \left( \frac{d^2}{d\bar{x}^2} -\bar{k}^2 - \frac{F''}{F}\right) \psi.
+\end{eqnarray}
+The term on the right-hand side of Eq.~(\ref{e5.150a}) represents plasma
+{\em resistivity}, whilst the term on the left-hand side of Eq.~(\ref{e5.150b})
+represents plasma {\em inertia}.
+
+It is assumed that the tearing instability  grows on a {\em hybrid} time-scale 
+which is much less than $\tau_R$ but much greater than $\tau_A$. It follows
+that 
+\begin{equation}
+\bar{\gamma} \ll 1 \ll S\,\bar{\gamma}.
+\end{equation}
+Thus, throughout most of the plasma we can neglect the right-hand side of
+Eq.~(\ref{e5.150a}) and the left-hand side of Eq.~(\ref{e5.150b}), which is equivalent to
+the neglect of plasma resistivity and inertia. In this case, Eqs.~(\ref{e5.150a})--(\ref{e5.150b})
+reduce to
+\begin{eqnarray}\label{e5.152a}
+\phi &=& \frac{\psi}{F},\\[0.5ex]\label{e5.152b}
+\frac{d^2\psi}{d\bar{x}^2} - \bar{k}^2\,\psi - \frac{F''}{F}\,\psi &=& 0.
+\end{eqnarray}
+Equation~(\ref{e5.152a}) is simply the flux freezing constraint, which requires the
+plasma to move with the magnetic field. Equation~(\ref{e5.152b}) is the linearized,
+static 
+force balance criterion: $\nabla\times({\bf j}\times{\bf B}) = {\bf0}$.
+Equations~(\ref{e5.152a})--(\ref{e5.152b}) are known collectively as the equations of {\em ideal-MHD}, and are valid
+throughout virtually the whole plasma. However, it is clear that these
+equations {\em break down} in the immediate vicinity of the interface, where $F=0$
+({\em i.e.}, where the magnetic field reverses direction). Witness, for instance,
+the fact that the normalized ``radial'' velocity, $\phi$, becomes infinite as
+$F\rightarrow 0$, according to Eq.~(\ref{e5.152a}). 
+
+The ideal-MHD equations break down close to the interface because the neglect
+of plasma resistivity and inertia becomes untenable as $F\rightarrow 0$.
+Thus, there is a thin layer, in the immediate vicinity
+of the interface, $\bar{x}=0$, where the behaviour of the plasma is governed
+by the full MHD equations, (\ref{e5.150a})--(\ref{e5.150b}). We can simplify these equations,
+making use of the fact that $\bar{x}\ll 1$ and $d/d\bar{x} \gg 1$ in a
+thin layer, to obtain the following layer equations:
+\begin{eqnarray}\label{e5.153a}
+\bar{\gamma}\,(\psi - \bar{x}\,\phi) &=& S^{-1}\frac{d^2\psi}{d\bar{x}^2},\\[0.5ex]
+\bar{\gamma}^2\,\frac{d^2\phi}{d\bar{x}^2} &=& - \bar{x}\,\frac{d^2\psi}{d\bar{x}^2}.\label{e5.153b}
+\end{eqnarray}
+Note that we have redefined the variables $\phi$, $\bar{\gamma}$, and $S$, such
+that $\phi\rightarrow F'(0)\,\phi$, $\bar{\gamma}\rightarrow \gamma\,\tau_H$,
+and $S\rightarrow \tau_R/\tau_H$. Here,
+\begin{equation}
+\tau_H = \frac{\tau_A}{k\,a\,F'(0)}
+\end{equation}
+is the {\em hydromagnetic time-scale}.
+
+The tearing mode stability problem reduces to solving the non-ideal-MHD layer equations,
+(\ref{e5.153a})--(\ref{e5.153b}), in the immediate vicinity of the interface, $\bar{x}=0$, solving
+the ideal-MHD equations, (\ref{e5.152a})--(\ref{e5.152b}), everywhere else in the plasma, matching
+the two solutions at the edge of the layer, and applying physical
+boundary conditions as $|\bar{x}|\rightarrow\infty$. This method
+of solution was first described in a classic paper by Furth, Killeen, and
+Rosenbluth.\footnote{H.P.~Furth, J.~Killeen, and M.N.~Rosenbluth,
+Phys.\ Fluids {\bf 6}, 459 (1963).}
+
+Let us consider the solution of the ideal-MHD equation (\ref{e5.152b}) throughout
+the bulk of the plasma. We could imagine launching a solution $\psi(\bar{x})$
+ at large positive
+$\bar{x}$, which satisfies physical boundary conditions as $\bar{x}\rightarrow
+\infty$, and integrating this solution to the right-hand boundary of
+the non-ideal-MHD layer at $\bar{x}=0_+$. Likewise, we could also launch
+a solution at large negative $\bar{x}$, which satisfies physical boundary
+conditions as $\bar{x}\rightarrow-\infty$, and integrate this solution to
+the left-hand boundary of the non-ideal-MHD layer at $\bar{x}=0_-$. 
+Maxwell's equations demand that $\psi$ must be continuous on either side
+of the layer.
+Hence, we can multiply our two solutions by appropriate factors, so as to ensure that
+$\psi$ matches to the left and right of the layer. This leaves
+the function  $\psi(\bar{x})$ undetermined
+to an overall arbitrary multiplicative constant, just  as we would expect in a
+linear problem. In general, $d\psi/d\bar{x}$ is {\em not} continuous to the left and
+right of the layer. Thus, the ideal solution can be characterized by the
+real number
+\begin{equation}
+{\Delta}' =
+\left[\frac{1}{\psi}\frac{d\psi}{d\bar{x}}\right]_{\bar{x}=0_-}^{\bar{x}=0_+}:
+\end{equation}
+{\em i.e.}, by the jump in the logarithmic derivative of $\psi$ to the left and
+right of the layer.
+This parameter is known as the {\em tearing stability index}, and is solely
+a property
+of the plasma equilibrium, the wave-number, $k$, 
+ and the boundary conditions imposed at infinity.
+
+The layer equations (\ref{e5.153a})--(\ref{e5.153b}) possess a trivial solution ($\phi=\phi_0$,
+$\psi=\bar{x}\,\phi_0$, where $\phi_0$ is independent of $\bar{x}$), and
+a nontrivial solution for which $\psi(-\bar{x})=\psi(\bar{x})$ and $\phi(-\bar{x})
+=-\phi(\bar{x})$.
+The asymptotic behaviour of the nontrivial solution at the
+edge of the layer is
+\begin{eqnarray}\label{e5.192x}
+\psi(x) &\rightarrow & \left(\frac{\Delta}{2}\,|\bar{x}| + 1\right)\,
+{\Psi},\\[0.5ex]
+\phi(x) &\rightarrow & \frac{\psi}{\bar{x}},\label{e5.193x}
+\end{eqnarray}
+where the parameter ${\Delta}(\bar{\gamma}, S)$ is determined by solving the
+layer equations, subject to the above boundary
+conditions. Finally, the growth-rate, $\gamma$, of the tearing instability is determined
+by the matching criterion
+\begin{equation}\label{e5.157}
+{\Delta}(\bar{\gamma}, S) = {\Delta}'.
+\end{equation}
+
+The layer equations (\ref{e5.153a})--(\ref{e5.153b}) can be solved in a fairly straightforward manner
+in Fourier transform space. Let
+\begin{eqnarray}\label{e5.158a}
+\phi(\bar{x}) &=& \int_{-\infty}^{\infty}
+\hat{\phi}(t) \,{\rm e}^{\,{\rm i}\,S^{1/3}\, \bar{x}\,t}\,
+dt,\\[0.5ex]
+\psi(\bar{x}) &=& \int_{-\infty}^{\infty} \hat{\psi}(t)\, 
+{\rm e}^{\,{\rm i}\,S^{1/3}\,\bar{x}\,t}\,dt,\label{e5.158b}
+\end{eqnarray}
+where $\hat{\phi}(-t)=-\hat{\phi}(t)$.
+Equations~(\ref{e5.153a})--(\ref{e5.153b}) can be Fourier transformed, and the results combined, to
+give
+\begin{equation}\label{e5.159}
+\frac{d}{dt}\!\left(\frac{t^2}{Q+t^2}\frac{d\hat{\phi}}{dt}\right)
+-Q\,t^2\,\hat{\phi} = 0,
+\end{equation}
+where
+\begin{equation}
+Q = \gamma\,\tau_H^{2/3}\,\tau_R^{1/3}.
+\end{equation}
+
+The most general small-$t$ asymptotic solution of Eq.~(\ref{e5.159}) is written
+\begin{equation}\label{e5.161}
+\hat{\phi}(t) \rightarrow \frac{a_{-1}}{t} + a_0 + O(t),
+\end{equation}
+where $a_{-1}$ and $a_0$ are independent of $t$, and it is assumed that $t>0$. 
+When inverse Fourier transformed, the above expression leads to the
+following expression for the asymptotic behaviour of
+$\phi$ at the edge of
+the non-ideal-MHD layer:
+\begin{equation}
+\phi(\bar{x})\rightarrow a_{-1}\,\frac{\pi}{2}\,S^{1/3}\,{\rm sgn}(x) + \frac{a_0}{\bar{x}}
++O(|\bar{x}|^{-2}).
+\end{equation}
+It follows from a comparison with Eqs.~(\ref{e5.192x})--(\ref{e5.193x}) that
+\begin{equation}\label{e5.163}
+{\Delta} = \pi\,\frac{a_{-1}}{a_0}\,S^{1/3}.
+\end{equation}
+Thus, the matching parameter ${\Delta}$ is determined from  the
+small-$t$ asymptotic behaviour of the Fourier transformed layer solution.
+
+Let us search for an unstable tearing mode, characterized by $Q>0$. It is
+convenient to assume that
+\begin{equation}\label{e5.164}
+Q\ll 1.
+\end{equation}
+This ordering, which is known as the {\em constant-$\psi$ approximation} [since
+it implies that $\psi(\bar{x})$ is approximately constant across the layer]
+will be justified later on. 
+
+In the limit $t\gg Q^{1/2}$, Eq.~(\ref{e5.159})
+reduces to
+\begin{equation}\label{e5.165}
+\frac{d^2\hat{\phi}}{d t^2} - Q\,t^2\,\hat{\phi} = 0.
+\end{equation}
+The solution to this equation which is well behaved in the limit
+$t\rightarrow \infty$ is written $U(0,\sqrt{2}\,Q^{1/4}\,t)$, where
+$U(a,x)$ is a standard parabolic cylinder function.\footnote{M.~Abramowitz, and I.A.~Stegun, {\em Handbook of Mathematical Functions} (Dover, New York NY, 1964),
+ p.~686.}  In the limit
+\begin{equation}\label{e5.166}
+Q^{1/2} \ll t \ll Q^{-1/4}
+\end{equation}
+we can make use of the standard small argument asymptotic expansion
+of $U(a,x)$ to write the most general solution to Eq.~(\ref{e5.159}) in the
+form
+\begin{equation}\label{e5.167}
+\hat{\phi}(t) = A\left[ 1-  2 \,\frac{{\Gamma}(3/4)}{{\Gamma}(1/4)}
+\, Q^{1/4}\,t + O(t^2)\right].
+\end{equation} 
+Here, $A$ is an arbitrary constant.
+
+In the limit
+\begin{equation}
+t \ll Q^{-1/4},
+\end{equation}
+Eq.~(\ref{e5.159}) reduces to
+\begin{equation}
+\frac{d}{dt}\!\left(\frac{t^2}{Q+t^2}\,\frac{d\hat{\phi}}{dt} \right) = 0.
+\end{equation}
+The most general solution to this equation is written
+\begin{equation}\label{e5.170}
+\hat{\phi}(t) = B\!\left(-\frac{Q}{t} + t\right) + C +O(t^2),
+\end{equation}
+where $B$ and $C$ are arbitrary constants. 
+Matching coefficients between Eqs.~(\ref{e5.167}) and (\ref{e5.170}) in the range of $t$
+satisfying the inequality (\ref{e5.166}) yields the following expression
+for the most general solution to Eq.~(\ref{e5.159}) in the limit  $t\ll Q^{1/2}$:
+\begin{equation}\label{e5.171}
+\hat{\phi} = A\,\left[ 2\,\frac{{\Gamma}(3/4)}{{\Gamma}(1/4)}
+\, \frac{Q^{5/4}}{t} + 1 + O(t)\right].
+\end{equation}
+Finally, a comparison of Eqs.~(\ref{e5.161}), (\ref{e5.163}), and (\ref{e5.171})
+yields the result
+\begin{equation}\label{e5.172}
+{\Delta} = 2\pi\,\frac{{\Gamma}(3/4)}{{\Gamma}(1/4)}\,S^{1/3}\,
+Q^{5/4}.
+\end{equation}
+
+The asymptotic matching condition (\ref{e5.157}) can be combined with the above
+expression for ${\Delta}$ to give the tearing mode dispersion relation
+\begin{equation}\label{e5.173}
+\gamma = \left[\frac{{\Gamma}(1/4)}{2\pi\,{\Gamma}(3/4)}\right]^{4/5}\,
+\frac{({\Delta}')^{4/5}}{\tau_H^{2/5}\,\tau_R^{3/5}}.
+\end{equation}
+Here, use has been made of the definitions of $S$ and $Q$. According
+to the above dispersion relation, the tearing mode is unstable whenever ${\Delta}'>0$, and grows on the hybrid time-scale $\tau_H^{2/5}\,\tau_R^{3/5}$. 
+It is easily demonstrated that the tearing mode is stable whenever ${\Delta}'<0$.
+According to Eqs.~(\ref{e5.157}), (\ref{e5.164}), and (\ref{e5.172}), the constant-$\psi$
+approximation holds provided that
+\begin{equation}
+{\Delta}' \ll S^{1/3}:
+\end{equation}
+{\em i.e.}, provided that the tearing mode does not become too
+unstable.
+
+From  Eq.~(\ref{e5.165}), the thickness of the non-ideal-MHD layer in $t$-space
+is
+\begin{equation}
+\delta_t \sim \frac{1}{Q^{1/4}}.
+\end{equation}
+It follows from Eqs.~(\ref{e5.158a})--(\ref{e5.158b}) that the thickness of the layer in $\bar{x}$-space
+is
+\begin{equation}\label{e5.176}
+\bar{\delta} \sim \frac{1}{S^{1/3}\,\delta_t} \sim \left(
+\frac{\bar{\gamma}}{S}\right)^{1/4}.
+\end{equation}
+When ${\Delta}'\sim 0(1)$ then $\bar{\gamma}\sim S^{-3/5}$, according to
+Eq.~(\ref{e5.173}), giving $\bar{\delta}\sim S^{-2/5}$. It is clear, therefore, that if
+the Lundquist number, $S$, is very large then the non-ideal-MHD layer centred
+on the interface, $\bar{x}=0$,  is {\em extremely narrow}.
+
+The time-scale for magnetic flux to diffuse across a layer of thickness
+$\bar{\delta}$ (in $\bar{x}$-space) is [{\em cf.}, Eq.~(\ref{e5.148})]
+\begin{equation}\label{e5.177}
+\tau \sim \tau_R\,\bar{\delta}^{~2}.
+\end{equation}
+If 
+\begin{equation}
+\gamma\,\tau\ll 1,
+\end{equation}
+then the tearing mode grows on a time-scale which is far longer than the
+time-scale on which magnetic flux diffuses across the non-ideal layer. In this case,
+we would expect the normalized ``radial'' magnetic field, $\psi$, to be approximately
+{\em constant} across the layer, since any non-uniformities in $\psi$ would be
+smoothed out via resistive diffusion. It follows from Eqs.~(\ref{e5.176}) and (\ref{e5.177})
+that the constant-$\psi$ approximation holds provided that
+\begin{equation}
+\bar{\gamma} \ll S^{-1/3}
+\end{equation}
+({\em i.e.}, $Q\ll 1$), which is in agreement with Eq.~(\ref{e5.164}).
+
+\section{Nonlinear Tearing Mode Theory}
+We have seen that if ${\Delta}'>0$ then a magnetic field configuration
+of the type shown in Fig.~\ref{f26} is unstable to a tearing mode.
+Let us now investigate how a tearing instability affects the field
+configuration as it develops.
+
+It is convenient to write the magnetic field in terms of a flux-function:
+\begin{equation}
+{\bf B} = B_0\,a\,\nabla\psi\times\hat{\bf z}.
+\end{equation}
+Note that ${\bf B}\!\cdot\!\nabla\psi=0$. It follows that magnetic field-lines
+run along contours of $\psi(x,y)$. 
+
+We can write
+\begin{equation}
+\psi(\bar{x},\bar{y}) \simeq \psi_0(\bar{x}) + \psi_1(\bar{x},\bar{y}),
+\end{equation}
+where $\psi_0$ generates the equilibrium magnetic field, and $\psi_1$ generates
+the perturbed magnetic field associated with the tearing mode. 
+Here, $\bar{y}= y/a$. 
+In the vicinity of the interface, we have
+\begin{equation}
+\psi \simeq - \frac{F'(0)}{2}\,\bar{x}^{~2} + {\Psi}\,\cos \bar{k}\, \bar{y},
+\end{equation}
+where ${\Psi}$ is a constant. Here, we have made use of the
+fact that $\psi_1(\bar{x},\bar{y})\simeq \psi_1(\bar{y})$ if the
+constant-$\psi$ approximation holds good (which is assumed to be the case). 
+
+Let   $\chi = -\psi/{\Psi}$ and $\theta=\bar{k}\, \bar{y}$. 
+It follows that the normalized perturbed magnetic flux function, $\chi$, 
+in the vicinity of the interface takes the form
+\begin{equation}
+\chi = 8\,X^2 - \cos\theta,
+\end{equation}
+where $X = \bar{x}/\bar{W}$, and
+\begin{equation}
+\bar{W} = 4\sqrt{\frac{{\Psi}}{F'(0)}}.
+\end{equation}
+Figure~\ref{f27} shows the contours of $\chi$ plotted in $X$-$\theta$ space. It can
+be seen that the tearing mode 	gives rise to
+the formation of a {\em magnetic island} centred on the interface, $X=0$. 
+Magnetic field-lines situated outside the separatrix are displaced by the
+tearing mode, but still retain their original topology. By contrast, field-lines
+inside the separatrix have been broken and reconnected, and now possess
+quite different topology. The reconnection obviously takes place at the ``X-points,''
+which are located at $X=0$ and $\theta = j\,2\pi$, where $j$ is an integer.
+The maximum width of the reconnected region (in $\bar{x}$-space) is given by
+the {\em island width}, $a\,\bar{W}$. Note that the island width is proportional
+to the square root of the perturbed ``radial'' magnetic field at the interface
+({\em i.e.}, $\bar{W}\propto \sqrt{\Psi}$).
+
+\begin{figure}
+\epsfysize=3in
+\centerline{\epsffile{Chapter05/island.eps}}
+\caption{\em Magnetic field-lines in the vicinity of a magnetic island.}\label{f27}
+\end{figure}
+
+According to a result first established in a very elegant paper by 
+Rutherford,\footnote{P.H.~Rutherford, Phys.\ Fluids {\bf 16}, 1903 (1973).}
+the nonlinear evolution of the island width is governed by
+\begin{equation}
+0.823\,\tau_R\,\frac{d\bar{W}}{dt} = {\Delta}'(\bar{W}),
+\end{equation}
+where
+\begin{equation}
+{\Delta}'(\bar{W}) =
+ \left[\frac{1}{\psi}\frac{d\psi}{d\bar{x}}\right]_{-\bar{W}/2}^{+\bar{W}/2}
+\end{equation}
+is the jump in the logarithmic derivative of $\psi$ {\em taken across the island}.
+It is clear that once the tearing mode enters the nonlinear regime ({\em i.e.},
+once the normalized island width, $\bar{W}$, exceeds the normalized linear layer width, $S^{-2/5}$), 
+the growth-rate of the instability slows down considerably, until the mode
+eventually ends up growing on the extremely slow resistive time-scale, $\tau_R$. 
+The tearing mode stops growing when it has attained a saturated island width
+$\bar{W}_0$, satisfying
+\begin{equation}
+{\Delta}'(\bar{W}_0) = 0.
+\end{equation}
+The saturated width is a function of the original 
+plasma equilibrium, but is independent
+of the resistivity. Note that there is no particular reason why $\bar{W}_0$ should
+be small: {\em i.e.}, in general, the saturated island width is comparable
+with the scale-length of the  magnetic field configuration.
+We conclude that, although ideal-MHD only breaks down in a narrow region of
+width $S^{-2/5}$, centered on the interface, $\bar{x}=0$, the reconnection of
+magnetic field-lines which takes place
+in this region is capable of significantly
+modifying the whole magnetic field configuration. 
+
+\section{Fast Magnetic Reconnection}
+Up to now, we have only considered {\em spontaneous magnetic reconnection}, which
+develops from an instability of the plasma. As we have seen, such reconnection
+takes place at a fairly leisurely pace. Let us now consider {\em forced
+magnetic reconnection}\/ in which the reconnection takes place as a consequence
+of an externally imposed flow or magnetic perturbation, rather than
+developing spontaneously. The principle difference between forced
+and spontaneous reconnection is the development of extremely large, positive
+${\Delta}'$ values in the former case. Generally speaking, we expect ${\Delta}'$
+to be $O(1)$ for spontaneous reconnection.  By analogy with the previous
+analysis, we would expect forced reconnection to proceed {\em faster} than
+spontaneous reconnection (since the reconnection rate increases with
+increasing ${\Delta}'$). The question is, how much faster? To be more
+exact, if we take the limit ${\Delta}'\rightarrow \infty$, which
+corresponds to the limit of extreme forced reconnection, just  how fast can we
+make the magnetic field reconnect? At present, this is a {\em very controversial}
+question, which is far from being completely
+resolved. In the following, we shall content
+ourselves with a discussion of  the two ``classic''  fast reconnection
+models. These models form the starting point of virtually all recent research on this
+subject.
+
+Let us first consider the {\em Sweet-Parker} model, which was first proposed
+ by Sweet\footnote{P.A.~Sweet, {\em Electromagnetic Phenomena in Cosmical Physics},
+(Cambridge University Press, Cambridge UK, 1958).} and
+ Parker.\footnote{E.N.~Parker, J.~Geophys.\ Res.\ {\bf 62}, 509 (1957).} The
+main features of the envisioned magnetic and plasma flow
+fields  are illustrated in Fig.~\ref{f28}. The system is two
+dimensional and steady-state ({\em i.e.}, $\partial/\partial z\equiv 0$ and
+$\partial/\partial t\equiv 0$). The reconnecting magnetic fields are anti-parallel,
+and of equal strength, $B_\ast$. We imagine that these fields are 
+being forcibly
+pushed together via the action of some external agency. 
+We expect a strong current sheet to form at the boundary between the
+two fields, where the direction of ${\bf B}$ suddenly changes.
+This current sheet is assumed to be of thickness
+$\delta$ and length $L$. 
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter05/sp.eps}}
+\caption{\em The Sweet-Parker magnetic reconnection scenario.}\label{f28}
+\end{figure}
+
+Plasma is assumed to diffuse into the current layer, along its whole length,
+at some relatively small inflow velocity, $v_0$. The plasma is accelerated
+along the layer, and eventually expelled from its two ends at some
+relatively large exit velocity, $v_\ast$. The inflow velocity
+is simply an ${\bf E}\times{\bf B}$ velocity, so
+\begin{equation}
+v_0 \sim \frac{E_z}{B_\ast}.
+\end{equation}
+The $z$-component of Ohm's law yields
+\begin{equation}
+E_z \sim \frac{\eta\,B_\ast}{\mu_0\,\delta}.
+\end{equation}
+Continuity of plasma flow inside the layer gives
+\begin{equation}
+L\,v_0 \sim \delta\,v_\ast,
+\end{equation}
+assuming incompressible flow.
+Finally, pressure balance along the length of the layer yields
+\begin{equation}
+\frac{B_\ast^{~2}}{\mu_0} \sim \rho\,v_\ast^{~2}.
+\end{equation}
+Here, we have balanced the magnetic pressure at the centre of the layer
+against the dynamic pressure of the outflowing plasma at the  ends of the
+layer. Note that $\eta$ and $\rho$ are the plasma resistivity and density,
+respectively.
+
+We can measure the rate of reconnection via
+the inflow velocity, $v_0$, since all of the magnetic field-lines which are
+convected into the layer, with the plasma, are eventually reconnected.
+The Alfv\'{e}n velocity is written
+\begin{equation}
+V_A = \frac{B_\ast}{\sqrt{\mu_0\,\rho}}.
+\end{equation}
+Likewise, we can write the Lundquist number of the plasma as
+\begin{equation}
+S = \frac{\mu_0\,L\,V_A}{\eta},
+\end{equation}
+where we have assumed that the length of the reconnecting layer, $L$,
+is commensurate with the macroscopic length-scale of the system.
+The reconnection rate is parameterized via the Alfv\'{e}nic Mach number of
+the inflowing plasma, which is defined
+\begin{equation}
+M_0  = \frac{v_0}{V_A}.
+\end{equation}
+
+The above equations can be rearranged to give
+\begin{equation}
+v_\ast \sim V_A:
+\end{equation}
+{\em i.e.}, the plasma is squirted out of the ends of the
+reconnecting layer at the Alfv\'{e}n velocity. Furthermore,
+\begin{equation}
+\delta \sim M_0\,L,
+\end{equation}
+and
+\begin{equation}
+M_0 \sim S^{-1/2}.
+\end{equation}
+We conclude that the reconnecting layer is extremely
+narrow, assuming that the Lundquist number of the plasma is
+very large. The magnetic reconnection
+takes place on the hybrid time-scale $\tau_A^{1/2}\,\tau_R^{1/2}$,
+where $\tau_A$ is the Alfv\'{e}n transit time-scale across the
+plasma, and $\tau_R$ is the resistive diffusion time-scale across the
+plasma. 
+
+The Sweet-Parker reconnection ansatz  is undoubtedly correct.
+It has been simulated numerically innumerable times, and was recently
+confirmed experimentally in the Magnetic Reconnection Experiment (MRX)
+operated by Princeton Plasma Physics Laboratory.\footnote{
+H.~Ji, M.~Yamada, S.~Hsu, and R.~Kulsrud,  Phys.\ Rev.\ Lett.\ {\bf 80},
+ 3256 (1998).}  The problem is that
+Sweet-Parker reconnection takes place {\em far too slowly} to account for
+many reconnection processes which are thought to take place in the
+solar system. For instance, in solar flares $S\sim 10^8$, $V_A\sim 100\,{\rm km}\,{\rm s}^{-1}$, and $L\sim 10^4\,{\rm km}$. According to the
+Sweet-Parker model, magnetic energy is released to the plasma via
+reconnection on a typical time-scale of a few tens of days. In reality,
+the energy is released in a few minutes to an hour. Clearly, we can only hope to
+account for solar flares using a reconnection mechanism which operates
+{\em far faster} than the Sweet-Parker mechanism.
+
+One, admittedly rather controversial, resolution of this problem was suggested by
+Petschek.\footnote{H.E.~Petschek, {\em AAS-NASA Symposium on the Physics
+of Solar Flares} (NASA Spec.\ Publ.\ Sp-50, 1964), p.~425.} He pointed
+out that magnetic energy can be converted into plasma thermal energy as a
+result of shock waves being set up in the plasma, in addition to the
+conversion due to the action of resistive
+diffusion. The configuration envisaged by Petschek is sketched in Fig.~\ref{f29}.
+Two waves (slow mode shocks) stand in the flow on either side of the
+interface, where the direction of ${\bf B}$ reverses, marking the
+boundaries of the plasma outflow regions. A small diffusion region still
+exists on the interface, but now constitutes a miniature (in length)
+Sweet-Parker system. The width of the reconnecting layer is
+given by 
+\begin{equation}
+\delta = \frac{L}{M_0\,S},
+\end{equation}
+just as in the Sweet-Parker model. However, we do not now assume that the
+length, $L_\ast$, of the layer is comparable to the scale-size, $L$, 
+of the system. Rather, the length may be considerably smaller than $L$, and
+is determined self-consistently from the continuity condition
+\begin{equation}
+L_\ast = \frac{\delta}{M_0},
+\end{equation}
+where we have assumed incompressible flow, and an outflow speed of
+order the Alfv\'{e}n speed, as before. Thus, if the inflow speed, $v_0$, is
+much less than $V_A$ then the length of the reconnecting layer
+is much larger than its width, as assumed by Sweet and Parker. On the
+other hand, if we allow the inflow velocity to
+approach the Alfv\'{e}n velocity then the layer shrinks in length, so that
+$L_\ast$ becomes comparable with $\delta$. 
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter05/pet.eps}}
+\caption{\em The Petschek magnetic reconnection scenario.}\label{f29}
+\end{figure}
+
+It follows that for reasonably large reconnection rates ({\em i.e.}, $M_0\rightarrow
+1$) the length of the diffusion region becomes much smaller than the scale-size
+of the system, $L$, so that most of the plasma flowing into the
+boundary region does so across the standing waves, rather than through the central
+diffusion region. The angle $\theta$ that the shock waves make with
+the interface is given approximately
+by
+\begin{equation}
+\tan\theta \sim M_0.
+\end{equation}
+Thus, for small inflow speeds the outflow is confined to a narrow
+wedge along the interface, but as the inflow speed increases the angle
+of the outflow wedges increases to accommodate the increased flow. 
+
+It turns out that there is a maximum inflow speed beyond which Petschek-type
+solutions cease to exist. The corresponding maximum Alfv\'{e}nic Mach number,
+\begin{equation}
+(M_0)_{\rm max} = \frac{\pi}{8 \ln S},
+\end{equation}
+can be regarded as specifying the maximum allowable rate of magnetic
+reconnection according to  the Petschek model. Clearly, since the maximum reconnection
+rate depends inversely on the logarithm of the Lundquist number, rather
+than its square root, it is much larger than that predicted by the
+Sweet-Parker model. 
+
+It must be pointed out that the Petschek model is {\em very} controversial. Many
+physicists think that it is completely wrong, and that the maximum 
+rate of magnetic reconnection allowed by  MHD is that predicted by the
+Sweet-Parker model. In particular, Biskamp\footnote{D.~Biskamp, Phys.\ Fluids
+{\bf 29}, 1520 (1986).} wrote an influential and widely quoted paper reporting the
+results of a numerical experiment which appeared to disprove the Petschek
+model. When the plasma inflow exceeded that allowed by
+the  Sweet-Parker model, there was no
+acceleration of the reconnection rate. Instead, magnetic flux ``piled up''
+in front of the reconnecting layer, and the rate of reconnection never deviated
+significantly from that predicted by the Sweet-Parker model. Priest and
+Forbes\footnote{E.R.~Priest, and T.G.~Forbes, J.\ Geophys.\ Res.\ {\bf 97}, 
+16757 (1992).} later argued that Biskamp imposed boundary conditions in
+his numerical experiment which precluded Petschek reconnection. Probably
+the most powerful argument against the validity of the Petschek model is
+the fact that, more than 30 years after it was first proposed, nobody has
+ever managed to simulate Petschek reconnection numerically (except by artificially
+increasing the resistivity in the reconnecting region---which is not a
+legitimate approach). 
+
+\section{MHD Shocks}
+Consider a subsonic disturbance moving through a conventional neutral fluid.
+As is well-known, {\em sound waves}\/ propagating ahead of the disturbance
+give advance warning of its arrival, and,
+thereby, allow the  response of the fluid to be both smooth  and adiabatic. Now, consider a supersonic  distrurbance. In this case, sound waves are
+unable to propagate ahead of the disturbance, and so there is no advance warning of its
+arrival, and, consequently,  the fluid response is sharp and non-adiabatic. This type of response is generally known as a {\em shock}. 
+
+ Let us investigate shocks in MHD fluids. Since information in such fluids is
+carried via three different waves---namely,  {\em fast}\/
+or compressional-Alfv\'{e}n waves, {\em intermediate}\/ or shear-Alfv\'{e}n waves, and  {\em slow}\/ or magnetosonic waves (see Sect.~\ref{s5.4})---we might expect MHD fluids to support
+three different types of shock, corresponding to disturbances traveling
+faster than each of the  aforementioned waves. This is indeed the case. 
+
+In general, a shock propagating through an MHD fluid produces a significant  difference in plasma properties on either side of the shock front.
+The thickness of the front is determined by a balance between convective
+and dissipative effects. However, dissipative effects in high temperature
+plasmas are only  comparable to convective effects when the spatial gradients
+in plasma variables become extremely large. Hence, MHD shocks in such plasmas tend to be {\em extremely narrow}, and are well-approximated
+as  {\em discontinuous}\/ changes in plasma parameters. The MHD equations,
+and Maxwell's equations, can be integrated across a shock
+to give a set of {\em jump conditions}\/ which   relate  plasma properties on
+each side of the shock front. If the shock is sufficiently narrow then these relations become {\em independent}\/ of its detailed structure. Let us derive the
+jump conditions for a narrow, planar, steady-state, MHD shock.
+
+Maxwell's equations, and the MHD equations, (\ref{e5.1a})--(\ref{e5.1d}),
+can be written in the following convenient form:
+\begin{eqnarray}\label{e5.239}
+\nabla\cdot{\bf B} &=& 0,\\[0.5ex]
+\frac{\partial {\bf B}}{\partial t} - \nabla\times ({\bf V}\times {\bf B}) &=& {\bf 0},\\[0.5ex]
+\frac{\partial\rho}{\partial t} + \nabla\cdot(\rho\,{\bf V}) &=& 0,\\[0.5ex]
+\frac{\partial (\rho\,{\bf V})}{\partial t} + \nabla\cdot{\bf T} &=&{\bf 0},\\[0.5ex]
+\frac{\partial U}{\partial t} + \nabla\cdot {\bf u}&=&0,\label{e5.243}
+\end{eqnarray}
+where 
+\begin{equation}
+{\bf T} = \rho\,{\bf V}\,{\bf V} + \left(p+ \frac{B^2}{2\mu_0}\right){\bf I}- \frac{{\bf B}\,{\bf B}}{\mu_0}
+\end{equation}
+is the total ({\em i.e.}, including electromagnetic, as well as plasma,
+contributions)
+{\em stress tensor}, ${\bf I}$ the identity tensor,
+\begin{equation}
+U = \frac{1}{2}\,\rho\,V^2 + \frac{p}{\Gamma-1} + \frac{B^2}{2\mu_0}
+\end{equation}
+the total {\em energy density}, and 
+\begin{equation}
+{\bf u} = \left(\frac{1}{2}\,\rho\,V^2+ \frac{\Gamma}{\Gamma-1}\,p\right){\bf V}
++ \frac{{\bf B}\times ({\bf V}\times {\bf B})}{\mu_0}
+\end{equation}
+the total {\em energy flux density}.
+
+Let us move into the {\em rest frame}\/ of the shock. Suppose that the
+shock front coincides with the $y$-$z$ plane.
+ Furthermore, let the regions
+of the plasma upstream and downstream of the shock, which are termed
+regions 1 and 2, respectively, be {\em spatially uniform}\/ and {\em non-time-varying}. It follows
+that $\partial/\partial t = \partial/\partial y =\partial/\partial z=0$. Moreover,
+$\partial/\partial x=0$, except in the immediate vicinity of the shock. 
+Finally,  let the velocity
+and magnetic fields  upstream and downstream of the shock
+all lie in the $x$-$y$ plane. The situation under discussion is illustrated in Fig.~\ref{f29a}. Here, $\rho_1$, $p_1$, ${\bf V}_1$, and ${\bf B}_1$ are
+the downstream mass density, pressure, velocity, and magnetic field,
+respectively, whereas $\rho_2$, $p_2$, ${\bf V}_2$, and ${\bf B}_2$
+are the corresponding upstream quantities.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter05/shock.eps}}
+\caption{\em A planar shock.}\label{f29a}
+\end{figure}
+
+In the immediate vicinity of the shock, Eqs.~(\ref{e5.239})--(\ref{e5.243})  reduce to
+\begin{eqnarray}
+\frac{dB_{x}}{dx} &=& 0,\\[0.5ex]
+\frac{d}{dx}(V_x\,B_y-V_y\,B_x)&=&0,\\[0.5ex]
+\frac{d (\rho\, V_x)}{dx} &=&0,\\[0.5ex]
+\frac{d T_{xx}}{dx} &=&0,\\[0.5ex]
+\frac{d T_{xy}}{dx} &=&0,\\[0.5ex]
+\frac{d u_x}{dx} &=& 0.
+\end{eqnarray}
+Integration  across the shock yields the desired jump conditions:
+\begin{eqnarray}\label{e5.253}
+[B_x]^2_1 &=&0,\\[0.5ex]
+[V_x\,B_y-V_y\,B_x]^2_1&=&0,\label{e5.254}\\[0.5ex]
+[\rho\,V_x]_1^2&=&0,\\[0.5ex]
+[\rho\,V_x^{\,2}+p + B_y^{\,2}/2\mu_0]_1^2&=&0,\\[0.5ex]
+[\rho\,V_x\,V_y - B_x\,B_y/\mu_0]^2_1&=&0,\\[0.5ex]
+\left[\frac{1}{2}\,\rho\,V^2\,V_x + \frac{\Gamma}{\Gamma-1}\,p\,V_x
++ \frac{B_y\,(V_x\,B_y-V_y\,B_x)}{\mu_0}\right]^2_1&=&0,\label{e5.258}
+\end{eqnarray}
+where $[A]_1^2\equiv A_2-A_1$. These relations are often called the {\em Rankine-Hugoniot}\/
+relations for MHD.  
+Assuming that all of the upstream plasma parameters
+are known, there are six unknown  parameters in the problem---namely,
+$B_{x\,2}$, $B_{y\,2}$, $V_{x\,2}$, $V_{y\,2}$, $\rho_2$, and $p_2$. These six
+unknowns are fully determined by the six jump conditions. Unfortunately, the
+general case is very complicated. So, before tackling it, let us examine
+a couple of relatively simple special cases.
+
+\section{Parallel Shocks}\label{shydro}
+The first special case is the so-called {\em parallel shock}\/ in which both the
+upstream and downstream plasma flows are  parallel to the magnetic field, as well as  perpendicular to the shock
+front. In other
+words,
+\begin{eqnarray}
+{\bf V}_1 = (V_1,\,0,\,0),&\mbox{\hspace{1cm}}&{\bf V}_2 = (V_2,\,0,\,0),\\[0.5ex]
+{\bf B}_1 = (B_1,\,0,\,0),&\mbox{\hspace{1cm}}&{\bf B}_2 = (B_2,\,0,\,0).
+\end{eqnarray}
+Substitution  into the general jump conditions (\ref{e5.253})--(\ref{e5.258}) yields
+\begin{eqnarray}\label{e5.261}
+\frac{B_2}{B_1} &=& 1,\\[0.5ex]
+\frac{\rho_2}{\rho_1} &=& r,\\[0.5ex]
+\frac{V_2}{V_1}&=& r^{-1},\\[0.5ex]
+\frac{p_2}{p_1} &=& R,\label{e5.264}
+\end{eqnarray}
+with
+\begin{eqnarray}\label{e5.265}
+r& =& \frac{(\Gamma+1)\,M_1^{\,2}}{2+(\Gamma-1)\,M_1^{\,2}},\\[0.5ex]
+R &=& 1+ \Gamma\,M_1^{\,2}\,(1-r^{-1})= \frac{(\Gamma+1)\,r-(\Gamma-1)}{(\Gamma+1)-(\Gamma-1)\,r}.\label{e5.266}
+\end{eqnarray}
+Here, $M_1= V_1/V_{S\,1}$, where $V_{S\,1}=(\Gamma\,p_1/\rho_1)^{1/2}$
+is the upstream sound speed. Thus, the upstream flow  is supersonic if $M_1>1$, and subsonic if $M_1<1$. Incidentally, as is clear from
+the above expressions, a
+parallel shock is {\em unaffected}\/ by the presence of a magnetic field. In fact, this
+type of shock is identical to that which occurs in neutral fluids, and is, 
+therefore, usually called a {\em hydrodynamic shock}. 
+
+It is easily seen from  Eqs.~(\ref{e5.261})--(\ref{e5.264}) that there is no shock ({\em i.e.}, no jump in plasma parameters across the shock front) when the upstream flow is exactly
+sonic: {\em i.e.}, when $M_1=1$. In other words, $r=R=1$ when $M_1=1$. 
+However, if $M_1\neq 1$ then the upstream
+and downstream plasma parameters become  different ({\em i.e.}, $r\neq 1$, $R\neq 1$) and a true shock develops. 
+In fact, it is easily demonstrated that
+\begin{eqnarray}\label{e5.267}
+\frac{\Gamma-1}{\Gamma+1} \leq & r &\leq \frac{\Gamma+1}{\Gamma-1},\\[0.5ex]
+0\leq &R &\leq \infty,\\[0.5ex]
+\frac{\Gamma-1}{2\,\Gamma}\leq  &M_1^{\,2}& \leq \infty.\label{e5.269}
+\end{eqnarray}
+Note that the upper and lower limits in the above inequalities are all attained simultaneously.
+
+The previous discussion seems to imply that a parallel shock can be either compressive ({\em i.e.}, $r>1$) or expansive ({\em i.e.}, $r<1$). However, there is one
+additional physics principle which needs to be factored into
+our analysis---namely, the {\em second law of thermodynamics}. This law states that  the {\em entropy}\/ of a closed system can spontaneously increase,
+but can never spontaneously decrease. Now, in general, the entropy per particle is different on either side of a hydrodynamic shock front. Accordingly, the second law of thermodynamics
+mandates that the downstream entropy  must {\em exceed}\/ the upstream
+entropy, so as to ensure that the shock generates a net increase, rather
+than a net decrease, in the overall entropy of the system, as the plasma flows through it.
+
+The (suitably normalized) entropy per particle of an ideal plasma takes the form [see Eq.~(\ref{entropy})]
+\begin{equation}
+S = \ln(p/\rho^{\Gamma}).
+\end{equation}
+Hence, the difference between the upstream and downstream entropies is
+\begin{equation}
+[S]^2_1 =\ln R - \Gamma\,\ln r.
+\end{equation}
+Now, using (\ref{e5.265}), 
+\begin{equation}
+r\,\frac{d[S]_1^2}{dr} = \frac{r}{R}\,\frac{dR}{dr}-\Gamma
+= \frac{\Gamma\,(\Gamma^2-1)\,(r-1)^2}{[(\Gamma+1)\,r-(\Gamma-1)]\,[(\Gamma+1)-(\Gamma-1)\,r]}.
+\end{equation}
+Furthermore, it is easily seen from  Eqs.~(\ref{e5.267})--(\ref{e5.269}) that $d[S]_1^2/dr\geq 0$ in all situations of physical interest. However, $[S]_1^2=0$
+when $r=1$, since, in this case, there is no discontinuity in plasma parameters across the shock front. We conclude that $[S]_1^2<0$ for $r<1$, and
+$[S]_1^2>0$ for $r>1$. It follows that  the second law of thermodynamics 
+requires hydrodynamic shocks to be {\em compressive}: {\em i.e.}, $r>1$. In other words, the
+plasma density must always {\em increase}\/ when a shock front
+is crossed in the direction of the relative plasma flow. It turns out that this
+is a general rule which applies to all three types of MHD shock.
+
+The upstream Mach number, $M_1$, is a good measure of shock strength:
+{\em i.e.}, if $M_1=1$ then there is no shock, if $M_1-1 \ll 1$ then the shock is
+weak, and if $M_1\gg 1$ then  the shock is strong. We can define an analogous downstream Mach number, $M_2=V_2/(\Gamma\,p_2/\rho_2)^{1/2}$. 
+It is easily demonstrated from  the jump conditions that if $M_1>1$ then $M_2 < 1$. In other
+words, in the shock rest frame, the shock is associated with an irreversible (since the
+entropy suddenly increases) transition from supersonic to subsonic flow. Note that $r\equiv \rho_2/\rho_1\rightarrow (\Gamma+1)/(\Gamma-1)$,
+whereas $R\equiv p_2/p_1\rightarrow\infty$, in the limit $M_1\rightarrow \infty$. In other words, as the shock strength increases, the compression ratio, $r$,
+asymptotes to a finite value,  whereas the
+pressure ratio, $P$, increases without limit. For a conventional
+plasma with $\Gamma=5/3$, the limiting value of the compression ratio is 4: {\em i.e.}, the downstream density can never be more than four times the upstream density. We conclude that, in the strong shock limit, 
+$M_1 \gg 1$, the
+large jump in  the plasma pressure across the shock front must be
+predominately  a consequence of a large jump in  the plasma {\em temperature}, rather than  the plasma density. In fact,  Eqs.~(\ref{e5.265})--(\ref{e5.266}) imply that
+\begin{equation}
+\frac{T_2}{T_1} \equiv \frac{R}{r}\rightarrow \frac{2\,\Gamma\,(\Gamma-1)\,M_1^{\,2}}{(\Gamma+1)^2}\gg 1
+\end{equation}
+as $M_1\rightarrow\infty$. Thus, a strong parallel, or hydrodynamic, shock
+is associated with intense plasma heating.
+
+As we have seen, the condition for the existence of a hydrodynamic
+shock is $M_1> 1$, or $V_1 > V_{S\,1}$. In other words, in the
+shock frame, the upstream plasma velocity, $V_1$, must be supersonic. 
+However, by Galilean invariance, $V_1$ can also be interpreted as the
+ {\em propagation velocity}\/ of the shock through an initially {\em stationary}\/ plasma. It follows that, in a stationary plasma, 
+a parallel, or hydrodynamic, shock propagates along the magnetic field with a {\em supersonic}\/ velocity. 
+
+\section{Perpendicular Shocks}\label{sperp}
+The second special case is the so-called {\em perpendicular shock}\/ in which both the
+upstream and downstream plasma flows are  perpendicular to the magnetic field, as well as   the shock
+front. In other
+words,
+\begin{eqnarray}\label{e5.274}
+{\bf V}_1 = (V_1,\,0,\,0),&\mbox{\hspace{1cm}}&{\bf V}_2 = (V_2,\,0,\,0),\\[0.5ex]\label{e5.275}
+{\bf B}_1 = (0,\,B_1,\,0),&\mbox{\hspace{1cm}}&{\bf B}_2 = (0,\,B_2,\,0).
+\end{eqnarray}
+Substitution  into the general jump conditions (\ref{e5.253})--(\ref{e5.258}) yields
+\begin{eqnarray}
+\frac{B_2}{B_1} &=& r,\label{e5.276}\\[0.5ex]
+\frac{\rho_2}{\rho_1} &=& r,\\[0.5ex]
+\frac{V_2}{V_1}&=& r^{-1},\\[0.5ex]
+\frac{p_2}{p_1} &=& R,
+\end{eqnarray}
+where
+\begin{equation}\label{e5.280}
+R = 1+ \Gamma\,M_1^{\,2}\,(1-r^{-1}) + \beta_1^{-1}\,(1-r^2),
+\end{equation}
+and $r$ is a real positive root of the quadratic
+\begin{equation}\label{e5.281}
+F(r) = 2\,(2-\Gamma)\,r^2+ \Gamma\,[2\,(1+\beta_1)+ (\Gamma-1)\,\beta_1\,M_1^{\,2}] \,r- \Gamma\,(\Gamma+1)\,\beta_1\,M_1^{\,2}=0.
+\end{equation}
+Here, $\beta_1= 2\mu_0\,p_1/B_1^{\,2}$. 
+
+Now, if $r_1$ and $r_2$ are the two roots of Eq.~(\ref{e5.281}) then
+\begin{equation}
+r_1\,r_2= -\frac{\Gamma\,(\Gamma+1)\,\beta_1\,M_1^{\,2}}{2\,(2-\Gamma)}.
+\end{equation}
+Assuming that $\Gamma < 2$, we conclude that one of the roots is negative,
+and, hence, that Eq.~(\ref{e5.281}) only possesses {\em one}\/ physical
+solution: {\em i.e.}, there is only one type of MHD shock which is
+consistent with Eqs.~(\ref{e5.274}) and (\ref{e5.275}). Now, it is easily
+demonstrated that $F(0)<0$ and $F(\Gamma+1/\Gamma-1)>0$. Hence, the
+physical root lies between $r=0$ and $r=(\Gamma+1)/(\Gamma-1)$. 
+
+Using similar analysis to that employed in the previous subsection, it
+is easily  demonstrated that the second law of thermodynamics requires a
+perpendicular shock to be compressive: {\em i.e.}, $r>1$. It follows that a physical solution
+is only obtained when $F(1)<0$, which reduces to
+\begin{equation}
+M_1^{\,2} > 1 + \frac{2}{\Gamma\,\beta_1}.
+\end{equation}
+This condition can also be written
+\begin{equation}
+V_1^{\,2} > V_{S\,1}^{\,2} + V_{A\,1}^{\,2},
+\end{equation}
+where $V_{A\,1}=B_1/(\mu_0\,\rho_1)^{1/2}$ is the upstream
+Alfv\'{e}n velocity. Now,  $V_{+\,1} = (V_{S\,1}^{\,2} + V_{A\,1}^{\,2})^{1/2}$ can be recognized as the velocity of a {\em fast wave}\/ propagating
+perpendicular to the magnetic field---see Sect.~\ref{s5.4}. Thus, the
+condition for the existence of a perpendicular shock is that the relative
+upstream plasma velocity must be {\em greater}\/  than  the upstream fast wave velocity. Incidentally, it is easily
+demonstrated that if this is the case then  the downstream plasma velocity is {\em less}\/ than the downstream
+fast wave velocity.    We can also deduce  that, in a stationary plasma, a
+perpendicular shock propagates across the magnetic field with
+a velocity which exceeds the fast wave velocity.
+
+In the strong shock limit, $M_1\gg 1$, Eqs.~(\ref{e5.280}) and (\ref{e5.281}) become identical to Eqs.~(\ref{e5.265}) and (\ref{e5.266}).
+Hence, a strong  perpendicular shock is very similar to a strong hydrodynamic shock (except that the former shock
+propagates perpendicular, whereas the latter
+shock propagates parallel,  to the magnetic field). In particular, just like a hydrodynamic shock, a
+perpendicular shock cannot
+compress the density by more than a factor $(\Gamma+1)/(\Gamma-1)$. However, according to
+Eq.~(\ref{e5.276}), a perpendicular shock compresses the magnetic field by the same
+factor that it compresses the plasma density. It follows that there is
+also an upper limit to the factor by which a perpendicular shock can compress the magnetic field.
+
+\section{Oblique Shocks}
+Let us now consider the general case in which the plasma velocities and
+the magnetic fields on each side of the shock are neither parallel nor
+perpendicular to the shock front. It is convenient to transform
+into the so-called {\em de Hoffmann-Teller}\/ frame in which $|{\bf V}_1\times {\bf B}_1|=0$, or 
+\begin{equation}\label{e2.285}
+V_{x\,1}\,B_{y\,1} - V_{y\,1}\,B_{x\,1} = 0.
+\end{equation}
+In other words, it is convenient to transform to a frame which moves at the local ${\bf E}\times {\bf B}$
+velocity of the plasma.
+It immediately follows from the jump condition (\ref{e5.254}) that
+\begin{equation}\label{e2.286}
+V_{x\,2}\,B_{y\,2} - V_{y\,2}\,B_{x\,2} = 0,
+\end{equation}
+or $|{\bf V}_2\times {\bf B}_2|=0$. Thus,  in the de Hoffmann-Teller frame,  the upstream plasma
+flow is {\em parallel}\/ to the upstream magnetic field, and the downstream plasma
+flow is also parallel to the downstream magnetic field. Furthermore, the magnetic contribution to the jump
+condition (\ref{e5.258}) becomes identically zero, which is a considerable simplification.
+
+Equations~(\ref{e2.285}) and (\ref{e2.286}) can be combined with the
+general jump conditions (\ref{e5.253})--(\ref{e5.258})
+to give
+\begin{eqnarray}
+\frac{\rho_2}{\rho_1}&=& r,\\[0.5ex]
+\frac{B_{x\,2}}{B_{x\,1}}&=& 1,\\[0.5ex]
+\frac{B_{y\,2}}{B_{y\,1}}&=& 
+r\left(\frac{v_{1}^{\,2} - \cos^2\theta_1\,V_{A\,1}^{\,2}}{v_{1}^{\,2}-r\,\cos^2\theta_1\,V_{A\,1}^{\,2}}\right),\label{e5.289}\\[0.5ex]
+\frac{V_{x\,2}}{V_{x\,1}}&=& \frac{1}{r},\\[0.5ex]
+\frac{V_{y\,2}}{V_{y\,1}}&=& 
+\frac{v_{1}^{\,2} -\cos^2\theta_1\, V_{A\,1}^{\,2}}{v_{1}^{\,2}-r\,\cos^2\theta_1\,V_{A\,1}^{\,2}},\label{e5.291}\\[0.5ex]
+\frac{p_2}{p_1}&=& 1  + \frac{\Gamma\,v_1^{\,2}\,(r-1)}{V_{S\,1}^{\,2}\,r}
+\left[1 - \frac{r\,V_{A\,1}^{\,2}\,[(r+1)\,v_1^{\,2}-2\,r\,V_{A\,1}^{\,2}\,\cos^2\theta_1]}
+{2\,(v_1^{\,2}-r\,V_{A\,1}^{\,2}\,\cos^2\theta_1)^2}\right].
+\end{eqnarray}
+where $v_1= V_{x\,1} = V_1\,\cos\theta_1$ is the component of the upstream velocity normal to the
+shock front, 
+and $\theta_1$ is the angle subtended between the upstream plasma flow and the
+shock front normal. Finally, given the compression ratio, $r$,  the square of the normal
+upstream velocity, $v_1^{\,2}$, is a real root of a cubic equation
+known as the {\em shock adiabatic}:
+\begin{eqnarray}
+0&=&(v_{1}^{\,2}-r\,\cos^2\theta_1\,V_{A\,1}^{\,2})^2\left\{
+\left[(\Gamma+1)-(\Gamma-1)\,r\right]
+v_{1}^{\,2}- 2\,r\,V_{S\,1}^{\,2}\right\}\\[0.5ex]
+&&-r\,\sin^2\theta_1\,v_{1}^{\,2}\,V_{A\,1}^{\,2}\left\{
+\left[\Gamma+ (2-\Gamma)\,r\right]v_{1}^{\,2}
+-\left[(\Gamma+1)-(\Gamma-1)\,r\right]r\,\cos^2\theta_1\,V_{A\,1}^{\,2}\right]\}.\nonumber
+\end{eqnarray}
+As before, the second law of thermodynamics mandates that $r>1$. 
+
+Let us first consider the weak shock limit $r\rightarrow 1$. In this case, it is easily seen that the three roots of the
+shock adiabatic reduce to
+\begin{eqnarray}
+v_1^{\,2} &=&V_{-\,1}^{\,2}\equiv \frac{V_{A\,1}^{\,2}+V_{S\,1}^{\,2}- [(V_{A\,1}+V_{S\,1})^2
+-4\,\cos^2\theta_1\,V_{S\,1}^{\,2}\,V_{A\,1}^{\,2}]^{1/2}}{2},\\[0.5ex]
+v_1^{\,2} &=& \cos^2\theta_1\,V_{A\,1}^{\,2},\\[0.5ex]
+v_1^{\,2} &=&V_{+\,1}^{\,2}\equiv \frac{V_{A\,1}^{\,2}+V_{S\,1}^{\,2} + [(V_{A\,1}+V_{S\,1})^2
+-4\,\cos^2\theta_1\,V_{S\,1}^{\,2}\,V_{A\,1}^{\,2}]^{1/2}}{2}.
+\end{eqnarray}
+However, from Sect.~\ref{s5.4}, we recognize these velocities as belonging to slow, intermediate
+(or Shear-Alfv\'{e}n), and fast waves, respectively, propagating in the normal direction to the
+shock front. We conclude that slow, intermediate, and fast MHD shocks degenerate into the
+associated MHD waves in the limit of small shock amplitude. Conversely, we can think of
+the various MHD shocks as {\em nonlinear}\/ versions of the associated MHD waves. Now it is easily demonstrated that
+\begin{equation}
+V_{+\,1}> \cos\theta_1\,V_{A\,1}> V_{-\,1}.
+\end{equation}
+In other words, a fast wave travels faster than an intermediate wave, which travels faster than a slow
+wave. It is reasonable to suppose that the same is true of the associated MHD
+shocks, at least at relatively low shock strength.
+It follows from Eq.~(\ref{e5.289}) that $B_{y\,2}>B_{y\,1}$ for a fast shock,
+whereas $B_{y\,2}<B_{y\,1}$ for a slow  shock. For the case of an intermediate shock, we
+can show, after a little algebra, that $B_{y\,2}\rightarrow -B_{y\,1}$ in the limit
+$r\rightarrow 1$.  We conclude that (in the de Hoffmann-Teller frame) {\em fast}\/ shocks refract the magnetic field and plasma
+flow (recall that they are parallel in our adopted frame of the reference) {\em away}\/ from
+the normal to the shock front, whereas {\em slow}\/ shocks refract these quantities {\em toward}\/
+the normal. Moreover, the tangential magnetic field and plasma flow generally {\em reverse}\/
+across an {\em intermediate}\/ shock front. This is illustrated in Fig.~\ref{f30a}.
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter05/shock3.eps}}
+\caption{\em Characteristic plasma flow patterns across the three different types of MHD shock
+in the shock rest frame.}\label{f30a}
+\end{figure}
+
+When $r$ is slightly larger than unity it is easily  demonstrated that the conditions for the
+existence of a  slow, intermediate, and fast shock are
+$v_1> V_{-\,1}$, $v_1> \cos\theta_1\,V_{A\,1}$,  and $v_1> V_{+\,1}$, respectively.
+
+Let us now consider the strong shock limit, $v_1^{\,2}\gg 1$. In this case, the shock
+adiabatic yields $r\rightarrow r_m=(\Gamma+1)/(\Gamma-1)$, and
+\begin{equation}
+v_1^{\,2} \simeq \frac{r_m}{\Gamma-1}\,\frac{2\,V_{S\,1}^{\,2}+\sin^2\theta_1\,[\Gamma
++ (2-\Gamma)\,r_m]\,V_{A\,1}^{\,2}}{r_m-r}.
+\end{equation}
+There are no other real roots. The above root is clearly a type of
+fast shock. The fact that there is only one real  root suggests that there exists a critical
+shock strength above which the slow and intermediate shock solutions  cease to exist. (In fact,
+they merge and annihilate one another.)
+In other words, there is a limit to the strength of a slow or an intermediate shock.
+ On the other hand, there is no limit to the strength of a fast shock. Note, however, that 
+  the plasma density and tangential
+ magnetic field cannot be compressed by more than a
+ factor $(\Gamma+1)/(\Gamma-1)$  by any type of MHD shock.
+ 
+Consider the special case $\theta_1=0$ in which both the plasma flow and the
+ magnetic field are normal to the shock front. In this case, the three roots of the shock adiabatic are
+ \begin{eqnarray}
+ v_1^{\,2} &=& \frac{2\,r\,V_{S\,1}^{\,2}}{(\Gamma+1)-(\Gamma-1)\,r},\\[0.5ex]
+ v_1^{\,2} &=& r\,V_{A\,1}^{\,2},\\[0.5ex]
+ v_1^{\,2} &=& r\,V_{A\,1}^{\,2}.
+ \end{eqnarray}
+ We recognize the first of these roots as the hydrodynamic shock discussed in Sect.~\ref{shydro}---{\em cf.} Eq.~(\ref{e5.265}).
+ This shock is classified as a slow shock when $V_{S\,1}<V_{A\,1}$, and as a fast shock
+ when $V_{S\,1}> V_{A\,1}$. The other two roots are identical, and correspond to
+ shocks which propagate at the velocity $v_1 =\sqrt{r}\, V_{A\,1}$ and  ``switch-on" the tangential
+ components of the plasma flow and the magnetic field: {\em i.e.}, it can be seen from
+ Eqs.~(\ref{e5.289}) and (\ref{e5.291}) that $V_{y\,1}=B_{y\,1} =0$ whilst
+ $V_{y\,2}\neq 0$ and $B_{y\,2}\neq 0$ for these types of shock. Incidentally, it is also
+ possible to have a ``switch-off'' shock which eliminates the tangential components
+ of the plasma flow and the magnetic field. According to Eqs.~(\ref{e5.289}) and (\ref{e5.291}),
+ such a shock propagates at the velocity $v_1=\cos\theta_1\,V_{A\,1}$. Switch-on and
+ switch-off shocks are illustrated in Fig.~\ref{f31a}.
+ 
+ \begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter05/onoff.eps}}
+\caption{\em Characteristic plasma flow patterns across switch-on and switch-off shocks
+in the shock rest frame.}\label{f31a}
+\end{figure}
+
+Let us, finally, consider the special case $\theta=\pi/2$. As is easily demonstrated, the three roots of the
+shock adiabatic are
+ \begin{eqnarray}
+ v_1^{\,2} &=& r \left(\frac{2\,V_{S\,1}^{\,2} + [\Gamma+(2-\Gamma)\,r]\,V_{A\,1}^{\,2}}
+ {(\Gamma+1)-(\Gamma-1)\,r}\right)
+ ,\\[0.5ex]
+ v_1^{\,2} &=& 0,\\[0.5ex]
+ v_1^{\,2} &=& 0.
+ \end{eqnarray}
+ The first of these roots is clearly  a fast shock, and is  identical to the perpendicular
+ shock discussed in Sect.~\ref{sperp}, except that there is no plasma flow across the shock
+ front in this case.  The fact that the two other  roots are zero indicates
+ that, like the corresponding MHD waves, slow and intermediate MHD shocks do
+ not propagate perpendicular to the magnetic field.
+ 
+ MHD shocks have been observed in a large variety of situations. For instance, shocks are
+ known to be formed by supernova explosions, by strong stellar winds, by solar flares, and
+ by the solar wind upstream of planetary magnetospheres.\footnote{D.A.~Gurnett, and
+ A.~Bhattacharjee, {\em Introduction to Plasma
+ Physics}, Cambridge University Press, Cambridge UK, 2005.}
+ 

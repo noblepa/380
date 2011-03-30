@@ -1,0 +1,1357 @@
+\chapter {Charged Particle Motion}\label{s2}
+\section{Introduction}
+All descriptions of plasma behaviour are based, ultimately, on the motions
+of the constituent particles. For the case of an unmagnetized plasma, the
+motions are fairly trivial, since the constituent particles move 
+essentially in
+straight lines between collisions. The motions are also trivial in
+a magnetized plasma where the collision frequency $\nu$ greatly exceeds the
+gyrofrequency ${\Omega}$: in this case, the  particles are scattered
+after executing only a small fraction  of a gyro-orbit, and, therefore, still move
+essentially in straight lines between collisions. The situation of primary
+interest in this section is that of a {\em collisionless}\/
+({\em i.e.}, $\nu\ll {\Omega}$), {\em magnetized}\/ plasma, where the gyroradius
+$\rho$ is much smaller than the typical variation length-scale $L$ of the 
+${\bf E}$ and ${\bf B}$ fields, and the gyroperiod ${\Omega}^{-1}$ is
+much less than the typical time-scale $\tau$ on which these fields change.
+In such a plasma, we expect the motion of the constituent particles to consist
+of a rapid  gyration perpendicular to
+ magnetic field-lines, combined with free-streaming parallel
+to the field-lines. We are particularly interested in calculating how
+this motion is affected by the spatial and temporal {\em gradients}\/ in the 
+${\bf E}$ and ${\bf B}$ fields. In general, the motion of charged particles
+in spatially and temporally {\em non-uniform}\/ electromagnetic
+fields is extremely complicated: however, 
+we hope to considerably simplify this motion by exploiting the
+assumed smallness of the parameters $\rho/L$ and $({\Omega}\,\tau)^{-1}$. 
+What we are really trying to understand, in this section, is how the
+{\em magnetic confinement}\/ of an essentially collisionless plasma works
+at an individual particle level. 
+Note that the type of collisionless, magnetized plasma considered in this
+section occurs primarily in magnetic fusion and space plasma physics
+contexts. In fact, in the following
+we shall be studying  methods of analysis first developed by fusion
+physicists, and 
+illustrating these methods primarily 
+by investigating problems of interest in magnetospheric physics. 
+
+\section{Motion in Uniform Fields}
+Let us, first of all, consider the motion of charged particles
+in spatially and temporally {\em uniform}\/ electromagnetic fields. 
+The equation of motion of an individual particle takes the form
+\begin{equation}\label{e2.1}
+m\,\frac{d{\bf v}}{dt} = e\,({\bf E} + {\bf v}\times {\bf B}).
+\end{equation}
+The component of this equation parallel to the magnetic field,
+\begin{equation}
+\frac{d v_\parallel} {dt} = \frac{e}{m} \,E_\parallel,
+\end{equation}
+predicts uniform acceleration along magnetic field-lines. Consequently,
+plasmas near equilibrium generally have either small or vanishing $E_\parallel$. 
+
+As can easily be verified by substitution, the perpendicular component of
+Eq. (\ref{e2.1}) yields
+\begin{equation}
+{\bf v}_\perp = \frac{{\bf E}\times{\bf B}}{B^2} + \rho\,{\Omega}
+\left[ {\bf e}_1 \,\sin({\Omega}\, t +\gamma_0) + {\bf e}_2\,
+ \cos({\Omega}\, t +\gamma_0)\right],
+\end{equation}
+where ${\Omega}=eB/m$ is the gyrofrequency, $\rho$ is the gyroradius, 
+${\bf e}_1$ and ${\bf e}_2$
+are unit vectors such that (${\bf e}_1$, ${\bf e}_2$, ${\bf B}$) form a
+right-handed, mutually orthogonal set, and $\gamma_0$ is the initial
+gyrophase of the particle. The motion consists of gyration around the
+magnetic field at frequency ${\Omega}$, superimposed on a
+steady drift at velocity
+\begin{equation}\label{e2.4}
+{\bf v}_E = \frac{{\bf E}\times{\bf B}}{B^2}.
+\end{equation}
+This drift, which is termed the {\em E-cross-B drift}\/ by plasma physicists,
+is {\em identical}\/ for all plasma species, and can be eliminated entirely by
+transforming to a new inertial frame in which ${\bf E}_\perp= {\bf 0}$. 
+This frame, which moves with
+velocity ${\bf v}_E$ with respect to the old frame, can properly be regarded as the {\em rest frame}\/ of the plasma. 
+
+We complete the solution by integrating the velocity to find the particle
+position:
+\begin{equation}
+{\bf r}(t) = {\bf R}(t) + \brho(t),
+\end{equation}
+where
+\begin{equation}
+\brho(t) = \rho \,[-{\bf e}_1\,\cos({\Omega}\, t+\gamma_0)
++{\bf e}_2\,\sin({\Omega}\,t + \gamma_0)],
+\end{equation}
+and
+\begin{equation}
+{\bf R}(t)=\left(v_{0\,\parallel } \,t + \frac{e}{m}\, E_\parallel \,\frac{t^2}{2}\right)
+{\bf b} + {\bf v}_E \,\,t.
+\end{equation}
+Here, ${\bf b} \equiv {\bf B}/B$. Of course, the trajectory of the particle
+describes a {\em spiral}. The gyrocentre ${\bf R}$ of this spiral, termed
+the {\em guiding centre}\/ by plasma physicists, drifts across the magnetic
+field with velocity ${\bf v}_E$, and also accelerates along the
+field at a rate determined by the parallel electric field.
+
+The concept of a guiding centre gives us a clue as to how to proceed. Perhaps,
+when analyzing charged particle motion  in 
+{\em non-uniform}\/  electromagnetic
+fields, we can somehow neglect the rapid, and relatively uninteresting, gyromotion,
+and focus, instead, on the far slower
+motion of the guiding centre? Clearly, what we
+need to do in order to achieve this goal is to somehow {\em average}\/ the equation of motion over gyrophase, so
+as to obtain a reduced equation of motion for the guiding centre. 
+
+\section{Method of Averaging}
+In many dynamical problems, the motion consists of a rapid oscillation superimposed on
+a slow secular drift. For such problems, the most efficient approach
+is to describe the evolution in terms of the average values of the dynamical
+variables. The method outlined below is adapted from a classic
+paper by Morozov and Solov'ev.\footnote{A.I.~Morozov, and L.S.~Solev'ev, 
+{\em Motion of Charged Particles in Electromagnetic Fields}, in
+{\em Reviews of Plasma Physics}, Vol.~2 (Consultants Bureau, New York NY, 1966).}
+
+Consider the equation of motion
+\begin{equation}\label{e2.8}
+\frac{d{\bf z}}{dt} = {\bf f}({\bf z}, t, \tau),
+\end{equation}
+where ${\bf f}$ is a periodic function of its last argument, with
+period $2\pi$, and
+\begin{equation}\label{e2.9}
+\tau = t/\epsilon.
+\end{equation}
+Here, the small parameter $\epsilon$ characterizes the separation between the
+short oscillation period $\tau$ and the time-scale $t$ for the slow secular evolution
+of the ``position'' ${\bf z}$.
+
+The basic idea of the averaging method is to treat $t$ and $\tau$ as {\em distinct}\/
+independent variables, and to look for solutions of the form ${\bf z}(t,\tau)$
+which are {\em periodic}\/ in $\tau$. Thus, we replace Eq.~(\ref{e2.8}) by
+\begin{equation}\label{e2.10}
+\frac{\partial{\bf z}}{\partial t} +\frac{1}{\epsilon}\frac{\partial {\bf z}}
+{\partial \tau} = {\bf f}({\bf z}, t, \tau),
+\end{equation}
+and reserve Eq.~(\ref{e2.9}) for substitution in the final result. The
+indeterminacy introduced by increasing the number of variables is lifted by
+the requirement of periodicity in $\tau$. All of the secular drifts
+are thereby attributed to the $t$-variable, whilst the oscillations are 
+described entirely by the $\tau$-variable. 
+
+Let us denote the $\tau$-average of ${\bf z}$ by ${\bf Z}$, and seek a
+change of variables of the form 
+\begin{equation}
+{\bf z}(t,\tau)  = {\bf Z}(t) +\epsilon\,\bzeta({\bf Z}, t, \tau).
+\end{equation}
+Here, $\bzeta$ is a periodic function of $\tau$ with vanishing mean.
+Thus,
+\begin{equation}
+\langle \bzeta({\bf Z}, t, \tau)\rangle\equiv
+\frac{1}{2\pi}\oint \bzeta({\bf Z}, t, \tau)\,d\tau = 0,
+\end{equation}
+where $\oint$ denotes the integral over a full period in $\tau$. 
+
+The evolution of ${\bf Z}$ is determined by substituting the
+expansions
+\begin{eqnarray}
+\bzeta &=& \bzeta_0({\bf Z}, t, \tau) + \epsilon\,
+\bzeta_1({\bf Z}, t, \tau) + \epsilon^2\,\bzeta_2({\bf Z}, t, \tau) +
+\cdots,\\[0.5ex]
+\frac{d{\bf Z}}{dt} &=& {\bf F}_0({\bf Z}, t) + \epsilon\,
+{\bf F}_1({\bf Z}, t) + \epsilon^2\,{\bf F}_2({\bf Z}, t) +
+\cdots,
+\end{eqnarray}
+into the equation of motion (\ref{e2.10}), and solving order by order in $\epsilon$. 
+
+To lowest order, we obtain
+\begin{equation}\label{e2.14}
+{\bf F}_0({\bf Z}, t) +\frac{\partial\bzeta_0}{\partial\tau}
+= {\bf f} ({\bf Z}, t, \tau).
+\end{equation}
+The solubility condition for this equation is
+\begin{equation}\label{e2.15}
+{\bf F}_0({\bf Z}, t) =\langle {\bf f}({\bf Z}, t,\tau)\rangle.
+\end{equation}
+Integrating the oscillating component of Eq.~(\ref{e2.14}) yields
+\begin{equation}
+\bzeta_0 ({\bf Z}, t,\tau) = \int_0^\tau\left(
+{\bf f} - \langle{\bf f}\rangle\right)\,d\tau'.
+\end{equation}
+
+To first order, we obtain
+\begin{equation}
+{\bf F}_1 +\frac{\partial\bzeta_0}{\partial t} +
+{\bf F}_0\cdot \nabla \bzeta_0 + \frac{\partial\zeta_1}{\partial\tau}
+ = \bzeta_0\cdot
+ \nabla {\bf f}.
+\end{equation}
+The solubility condition for this equation yields
+\begin{equation}\label{e2.18}
+{\bf F}_1 =\langle \bzeta_0\cdot\nabla{\bf f}\rangle.
+\end{equation}
+
+The final result is obtained by combining Eqs.~(\ref{e2.15}) and (\ref{e2.18}):
+\begin{equation}
+\frac{d{\bf Z}}{dt} = \langle {\bf f}\rangle + \epsilon\, \langle \bzeta_0\cdot
+\nabla {\bf f}\rangle + O(\epsilon^2).
+\end{equation}
+Note that ${\bf f} = {\bf f}({\bf Z},t)$ in the above equation. 
+Evidently, the secular motion of the ``guiding centre'' position ${\bf Z}$ 
+is determined to lowest order by the average of the  ``force'' ${\bf f}$, and to
+next order by the correlation between the oscillation in the ``position''
+${\bf z}$ and the
+oscillation in the spatial gradient of the ``force.'' 
+
+\section{Guiding Centre Motion}
+Consider the motion of a charged particle in the limit in which
+the electromagnetic fields experienced
+by the  particle do not vary much in a gyroperiod: {\em i.e.}, 
+\begin{eqnarray}
+\rho\,|\nabla{\bf B}| &\ll & B, \\[0.5ex]
+\frac{1}{{\Omega}}\frac{\partial B}{\partial t} & \ll & B.
+\end{eqnarray}
+The electric force is assumed to be comparable to the magnetic force. 
+To keep track of the order of the various quantities, we introduce the parameter
+$\epsilon$ as a book-keeping device, and make the substitution
+$\rho\rightarrow \epsilon\,\rho$, as well as $({\bf E}, {\bf B}, {\Omega})
+\rightarrow \epsilon^{-1}({\bf E}, {\bf B}, {\Omega})$. The parameter
+$\epsilon$ is set to unity in the final answer.
+
+
+In order to make use of the technique described in the previous section, we write the
+dynamical equations in first-order differential form,
+\begin{eqnarray}\label{e2.21a}
+\frac{d{\bf r}}{dt} &=& {\bf v},\\[0.5ex]
+\frac{d{\bf v}}{dt} &=& \frac{e}{\epsilon\,m} \,({\bf E} + {\bf v}\times
+{\bf B}),\label{e2.21b}
+\end{eqnarray}
+and seek a change of variables,
+\begin{eqnarray}\label{e2.22a}
+{\bf r} &=& {\bf R} + \epsilon\,\brho({\bf R}, {\bf U}, t, \gamma),
+\\[0.5ex]
+{\bf v} &=& {\bf U} + {\bf u} ({\bf R}, {\bf U}, t, \gamma),
+\end{eqnarray}
+such that the new guiding centre variables ${\bf R}$ and ${\bf U}$ are
+free of oscillations along the particle trajectory. Here, $\gamma$ is a
+new independent variable describing the phase of the gyrating particle. 
+The functions $\brho$ and ${\bf u}$ represent the gyration radius
+and velocity, respectively. We require periodicity of these functions
+with respect to their last argument, with period $2\pi$, and with vanishing mean:
+\begin{equation}\label{e2.23}
+\langle \brho \rangle = \langle {\bf u} \rangle = {\bf 0}.
+\end{equation}
+Here, the angular brackets refer to the average over a period in $\gamma$. 
+
+The equation of motion is used to determine the coefficients in the expansion
+of $\brho$ and ${\bf u}$:
+\begin{eqnarray}
+\brho &=& \brho_0({\bf R}, {\bf U}, t, \gamma) +
+\epsilon\,\brho_1({\bf R}, {\bf U}, t, \gamma) + \cdots, \\[0.5ex]
+{\bf u} &=& {\bf u}_0({\bf R}, {\bf U}, t, \gamma) +
+\epsilon\,{\bf u}_1({\bf R}, {\bf U}, t, \gamma) + \cdots.
+\end{eqnarray}
+The dynamical equation for the gyrophase is likewise expanded,
+assuming that $d\gamma/dt \simeq {\Omega} = O(\epsilon^{-1})$, 
+\begin{equation}
+\frac{d\gamma}{dt} = \epsilon^{-1}\,\omega_{-1}({\bf R}, {\bf U}, t) 
++ \omega_0({\bf R}, {\bf U}, t) + \cdots.
+\end{equation}
+In the following, we suppress the subscripts on all quantities except
+the guiding centre velocity ${\bf U}$, since this is the only quantity for
+which the first-order corrections are calculated.
+
+To each order in $\epsilon$, the evolution of the guiding centre position
+${\bf R}$ and velocity ${\bf U}$
+ are determined by
+the solubility conditions for the equations of motion (\ref{e2.21a})--(\ref{e2.21b}) when
+expanded to that order.
+The oscillating components of the equations of motion determine the
+evolution of the gyrophase. Note that the velocity equation
+(\ref{e2.21a}) is {\em linear}. It follows that, to all orders in $\epsilon$, its solubility condition is simply
+\begin{equation}
+\frac{d{\bf R}}{dt} = {\bf U}.
+\end{equation}
+
+To lowest order [{\em i.e.}, $O(\epsilon^{-1})$], the momentum equation
+(\ref{e2.21b}) yields
+\begin{equation}\label{e2.27}
+\omega\,\frac{\partial{\bf u}}{\partial\gamma} - {\Omega}\,{\bf u}\times{\bf 
+b} = \frac{e}{m}\,\left({\bf E} + {\bf U}_0\times{\bf B}\right).
+\end{equation}
+The solubility condition ({\em i.e.}, the gyrophase average) is
+\begin{equation}
+{\bf E} + {\bf U}_0\times {\bf B} = {\bf 0}.
+\end{equation}
+This immediately implies that
+\begin{equation}
+E_\parallel \equiv {\bf E}\cdot {\bf b} \sim \epsilon\,E.
+\end{equation}
+Clearly, the rapid acceleration caused by a large parallel electric
+field would invalidate the ordering assumptions used in this calculation. 
+Solving for ${\bf U}_0$, we obtain
+\begin{equation}\label{e2.30}
+{\bf U}_0 = U_{0\,\parallel} \,{\bf b} + {\bf v}_E,
+\end{equation}
+where all quantities are evaluated at the guiding-centre position ${\bf R}$. The
+perpendicular component of the velocity, ${\bf v}_E$, has the
+same form (\ref{e2.4}) as for uniform fields. Note that the parallel velocity is
+undetermined at this order.
+
+The integral of the oscillating component of Eq.~(\ref{e2.27}) yields
+\begin{equation}
+{\bf u} = {\bf c} + u_\perp \left[ {\bf e}_1\,\sin \,({\Omega}\,\gamma/\omega)
++{\bf e}_2\,\cos\,({\Omega}\,\gamma/\omega)\right],
+\end{equation}
+where ${\bf c}$ is a constant vector, and ${\bf e}_1$ and ${\bf e}_2$ are again
+mutually
+orthogonal unit vectors perpendicular to ${\bf b}$. All quantities in the
+above equation are functions of ${\bf R}$, ${\bf U}$, and $t$. 
+ The periodicity
+constraint, plus Eq.~(\ref{e2.23}), require that $\omega={\Omega}({\bf R}, t)$
+and ${\bf c} = {\bf 0}$. The gyration velocity is thus
+\begin{equation}
+{\bf u} = u_\perp \,\left({\bf e}_1\,\sin\gamma + {\bf e}_2\,\cos\gamma\right),
+\end{equation}
+and the gyrophase is given by
+\begin{equation}\label{e2.33}
+\gamma = \gamma_0 + {\Omega}\,t,
+\end{equation}
+where $\gamma_0$ is the initial phase. Note that the amplitude $u_\perp$
+of the gyration velocity is undetermined at this order.
+
+The lowest order oscillating component of the velocity equation (\ref{e2.21a}) yields
+\begin{equation}\label{e2.34}
+{\Omega}\,\frac{\partial\brho}{\partial \gamma} = {\bf u}.
+\end{equation}
+This is easily integrated to give
+\begin{equation}
+\brho = \rho\,(-{\bf e}_1\,\cos\gamma+{\bf e}_2\,\sin\gamma),
+\end{equation}
+where $\rho = u_\perp/{\Omega}$. It follows that
+\begin{equation}\label{e2.36}
+{\bf u} = {\Omega}\, \brho\times {\bf b}.
+\end{equation}
+
+The gyrophase average of the first-order [{\em i.e.}, $O(\epsilon^0)$]
+momentum equation (\ref{e2.21b}) reduces to
+\begin{equation}
+\frac{d{\bf U}_0}{dt} = \frac{e}{m}\,\left[ E_\parallel\,{\bf b}
++ {\bf U}_1\times {\bf B} +\langle{\bf u}\times(\brho\cdot\nabla)
+\,{\bf B}\rangle\right].
+\end{equation}
+Note that all quantities in the above equation are functions of the
+guiding centre position ${\bf R}$, rather than the instantaneous particle
+position ${\bf r}$. 
+In order to evaluate the last term, we make the substitution ${\bf u} = {\Omega}\, \brho\times {\bf b}$ and calculate
+\begin{eqnarray}
+\langle (\brho\times{\bf b})\times (\brho\cdot\nabla)\,{\bf B} \rangle
+&=& {\bf b}\,\langle \brho \cdot (\brho\cdot\nabla)\,{\bf B} \rangle
+- \langle \brho\,\,{\bf b}\cdot( \brho\cdot\nabla)\,{\bf B}\rangle\nonumber
+\\[0.5ex]
+&=& {\bf b}\,\langle \brho \cdot (\brho\cdot\nabla)\,{\bf B} \rangle
+- \langle \brho\,( \brho\cdot\nabla B)\rangle.
+\end{eqnarray}
+The averages are specified  by
+\begin{equation}
+\langle \brho\,\brho\rangle = \frac{u_\perp^{~2}}{2\,{\Omega}^2}
+\,({\bf I} - {\bf b}{\bf b}),
+\end{equation}
+where ${\bf I}$ is the identity tensor. Thus, making use of
+${\bf I}\!:\!\nabla{\bf B} = \nabla\!\cdot\!{\bf B} = 0$, it follows
+that
+\begin{equation}
+-e \,\langle {\bf u} \times (\brho\cdot\nabla )\,{\bf B}\rangle =
+\frac{m\,u_\perp^{~2}}{2\,B} \,\nabla B.
+\end{equation}
+This quantity is the secular component of the gyration induced fluctuations in the magnetic
+force acting on the particle. 
+
+The coefficient of $\nabla B$ in the above equation,
+\begin{equation}
+\mu = \frac{m\,u_\perp^{~2}}{2\,B},
+\end{equation}
+plays a central role in the theory of magnetized particle motion. We can
+interpret this coefficient as a {\em magnetic moment}\/ by drawing an analogy
+between a gyrating particle and a current loop. The (vector) magnetic moment of
+a current loop is simply
+\begin{equation}
+\bmu = I\,A\,{\bf n},
+\end{equation}
+where $I$ is the current, $A$ the area of the loop, and ${\bf n}$ the
+unit normal to the surface of the loop. For a circular loop of
+radius $\rho = u_\perp/{\Omega}$, lying in the
+plane perpendicular to ${\bf b}$, and carrying the current $e\,{\Omega}/2\pi$,
+we find
+\begin{equation}
+\bmu = I\,\pi\,\rho^2\,{\bf b} = \frac{m\,u_\perp^{~2}}{2\,B}\,{\bf b}.
+\end{equation}
+We shall  demonstrate later on that the (scalar) magnetic moment $\mu$ is a
+{\em constant}\/ of the particle motion. Thus, the guiding centre behaves
+exactly  like a particle with a conserved magnetic moment $\mu$ which
+is always aligned with the magnetic field. 
+
+The first-order guiding centre equation of motion reduces to
+\begin{equation}\label{e2.44}
+m \,\frac{d{\bf U}_0}{dt} = e\,E_\parallel\,{\bf b} + e\,{\bf U}_1\times {\bf B}
+-\mu\,\nabla B.
+\end{equation}
+The component of this equation along the magnetic field determines the evolution
+of the parallel guiding centre velocity:
+\begin{equation}\label{e2.45}
+m\,\frac{dU_{0\,\parallel}}{dt} = e\,E_\parallel - \bmu\cdot\nabla B
+- m\,{\bf b}\cdot\frac{d{\bf v}_E}{dt}.
+\end{equation}
+Here, use has been made of Eq.~(\ref{e2.30}) and ${\bf b}\cdot d{\bf b}/dt=0$. 
+The component of Eq.~(\ref{e2.44}) perpendicular to the magnetic field determines the
+first-order perpendicular drift velocity:
+\begin{equation}\label{e2.46}
+{\bf U}_{1\,\perp} = \frac{{\bf b}}{{\Omega}} \times\left[
+\frac{d{\bf U}_0}{dt} + \frac{\mu}{m}\,\nabla B\right].
+\end{equation}
+Note that the first-order correction to the parallel velocity, the parallel
+drift velocity, is undetermined to this order. This is not generally a problem,
+since the first-order parallel drift  is a small correction to a type of motion
+which already exists at zeroth-order, whereas the first-order perpendicular drift is
+a completely new type of motion. In particular, the first-order
+perpendicular drift differs
+fundamentally from the ${\bf E}\times{\bf B}$ drift, since it is
+not the same for different species, and, therefore, cannot be eliminated by transforming
+to a new inertial frame. 
+
+We can now understand the motion of a charged particle as it moves through
+slowly varying electric and magnetic fields. The particle always gyrates around
+the magnetic field at the local gyrofrequency ${\Omega}=eB/m$. 
+The local perpendicular gyration velocity $u_\perp$ is determined by the
+requirement that the magnetic moment $\mu=m\,u_\perp^{~2}/ 2\,B$ be a
+constant of the motion. This, in turn,  fixes the local gyroradius 
+$\rho = u_\perp/{\Omega}$.
+The parallel velocity of the particle is determined by Eq.~(\ref{e2.45}). 
+Finally, the perpendicular drift velocity is the sum  of the ${\bf E}\times{\bf B}$
+drift velocity ${\bf v}_E$ and the first-order drift velocity ${\bf U}_{1\,\perp}.$
+
+\section{Magnetic Drifts}
+Equations (\ref{e2.30}) and (\ref{e2.46}) can be combined to give
+\begin{equation}\label{e2.47}
+{\bf U}_{1\,\perp} = \frac{\mu}{m\,{\Omega}}\,
+{\bf b}\times \nabla B +
+\frac{U_{0\,\parallel}}{{\Omega}}\, {\bf b}\times\frac{d{\bf b}}{dt}
++ \frac{{\bf b}}{{\Omega}}\times \frac{d{\bf v}_E}{dt}.
+\end{equation}
+The three terms on the right-hand side of the above expression are conventionally
+called the {\em magnetic}, or {\em grad-B}, {\em drift}, the {\em inertial
+drift}, and the {\em polarization drift}, respectively. 
+
+The magnetic drift,
+\begin{equation}
+{\bf U}_{\rm mag} = \frac{\mu}{m\,{\Omega}}\,
+{\bf b}\times \nabla B,
+\end{equation}
+is caused by the slight variation of the gyroradius with gyrophase as a
+charged  particle
+rotates  in a non-uniform magnetic field. The gyroradius is reduced
+on the high-field side of the Larmor orbit, whereas it is increased on the
+low-field side. The net result is that the orbit does not quite
+close. In fact, the motion consists of the conventional  gyration around the magnetic
+field combined with a slow drift which is perpendicular to both the
+local direction of the magnetic field and the local gradient of the 
+field-strength.
+
+Given that
+\begin{equation}
+\frac{d{\bf b}}{dt} = \frac{\partial{\bf b}}{\partial t} + ({\bf v}_E\cdot
+\nabla) \,{\bf b} + U_{0\,\parallel} \,({\bf b}\cdot\nabla)\,{\bf b},
+\end{equation}
+the inertial drift can be written
+\begin{equation}
+{\bf U}_{\rm int} = \frac{U_{0\,\parallel}}{{\Omega}}\,
+{\bf b}\times\left[\frac{\partial{\bf b}}{\partial t} +
+({\bf v}_E\cdot\nabla)\,{\bf b}\right] + \frac{U_{0\,\parallel}^{~2}}{{\Omega}}\,
+{\bf b}\times ({\bf b}\cdot\nabla)\,{\bf b}.
+\end{equation}
+In the important limit of stationary magnetic fields and weak electric fields, the 
+above expression is dominated by the final term,
+\begin{equation}
+{\bf U}_{\rm curv} = \frac{U_{0\,\parallel}^{~2}}{{\Omega}}\,
+{\bf b}\times ({\bf b}\cdot\nabla)\,{\bf b},
+\end{equation}
+which is called the {\em curvature drift}. 
+As is easily demonstrated, the quantity $({\bf b}\cdot\nabla)\,{\bf b}$
+is a vector whose direction is  towards the centre of the circle which
+most closely approximates the magnetic field-line at a given point, and whose
+magnitude is the inverse of the radius of this circle. Thus, the
+centripetal acceleration imposed by the curvature of the magnetic field
+on a charged particle following a field-line gives rise to a slow drift which is
+perpendicular to both the local direction of the magnetic field and the
+ direction to the local centre of curvature of the field. 
+
+The polarization drift,
+\begin{equation}
+{\bf U}_{\rm polz} = \frac{{\bf b}}{{\Omega}}\times \frac{d{\bf v}_E}{dt},
+\end{equation}
+reduces to
+\begin{equation}\label{e2.53}
+{\bf U}_{\rm polz} = \frac{1}{{\Omega}} 
+\frac{d}{dt}\!\left(\frac{{\bf E}_\perp}
+{B}\right)
+\end{equation}
+in the limit in which the magnetic field is stationary but the electric
+field varies in time. This expression can be understood as a polarization drift
+by considering what happens when we suddenly impose an electric field on a
+particle at rest. The particle initially accelerates in the direction of
+the electric field, but is then deflected by the magnetic force. Thereafter,
+the particle undergoes conventional gyromotion combined with
+${\bf E}\times{\bf B}$ drift. The time
+between the switch-on of the field and the magnetic deflection is approximately
+${\Delta}t\sim {\Omega}^{-1}$. Note that there is no deflection if
+the electric field is directed parallel to the magnetic field,
+so this argument only applies to perpendicular electric fields. The initial
+displacement of the particle in the direction of the field is of order 
+\begin{equation}\label{e2.54}
+{\bf \delta} \sim
+\frac{e\,{\bf E}_{\perp}}{m}\,({\Delta} t)^2 \sim \frac{{\bf E}_\perp}{
+{\Omega}\,B}.
+\end{equation}
+Note that, because ${\Omega}\propto m^{-1}$, the displacement of the
+ions {\em greatly exceeds}\/ that of the electrons. 
+Thus, when an electric field
+is suddenly switched on in a plasma, there is an initial polarization of
+the plasma medium caused, predominately, by a displacement of the ions in the direction of the
+field. If the electric field, in fact, varies {\em continuously}\/
+in time, then there is a slow drift due to the constantly changing polarization of the
+plasma medium. This drift is essentially the time derivative of Eq.~(\ref{e2.54}) [{\em i.e.},
+Eq.~(\ref{e2.53})].
+
+\section{Invariance of  Magnetic Moment}
+Let us now demonstrate that the magnetic moment $\mu=m\, u_\perp^2 / 2\,B$
+is indeed a constant of the motion, at least to lowest order. The scalar
+product of the equation of motion (\ref{e2.21b}) with the velocity ${\bf v}$ yields
+\begin{equation}
+\frac{m}{2} \frac{d v^2}{dt} = e\,{\bf v}\cdot{\bf E}.
+\end{equation}
+This equation governs the evolution of the  particle energy during its
+motion. Let us make the substitution ${\bf v}  = {\bf U} + {\bf u}$,
+as before, and then average the above equation over gyrophase. To lowest order, we obtain
+\begin{equation}\label{e2.56}
+\frac{m}{2} \frac{d}{dt} (u_\perp^{~2} + U_0^{~2}) = e\,U_{0\,\parallel}
+\,E_\parallel + e\, {\bf U}_1\cdot {\bf E} + e\,\langle
+{\bf u}\cdot (\brho\cdot\nabla)\,{\bf E}\rangle.
+\end{equation}
+Here, use has been made of the result
+\begin{equation}
+\frac{d}{dt} \langle f\rangle = \langle \frac{df}{dt}\rangle,
+\end{equation}
+which is valid for any $f$. The final term on the right-hand side of
+Eq.~(\ref{e2.56}) can be written
+\begin{equation}
+e\,{\Omega} \,\langle (\brho\times{\bf b})\cdot (\brho\cdot\nabla)
+\,{\bf E}\rangle = - \mu\,{\bf b}\cdot\nabla\times{\bf E} = \bmu\cdot
+\frac{\partial {\bf B}}{\partial t}.
+\end{equation}
+Thus, Eq.~(\ref{e2.56}) reduces to
+\begin{equation}\label{e2.59}
+\frac{d K}{dt} = e\,{\bf U}\cdot{\bf E} + \bmu\cdot
+\frac{\partial {\bf B}}{\partial t} = e\,{\bf U}\cdot{\bf E} + \mu\,
+\frac{\partial B}{\partial t}.
+\end{equation}
+Here, ${\bf U}$ is the guiding centre velocity, evaluated to first order, and
+\begin{equation}
+K = \frac{m}{2} (U_{0\,\parallel}^{~2} + {\bf v}_E^{~2} + u_\perp^{~2})
+\end{equation}
+is the kinetic energy of the particle. Evidently, the kinetic energy can
+change in one of two ways. Either by motion of the guiding centre along the
+direction of the electric field, or by the acceleration of the gyration due
+to the electromotive force generated around the Larmor orbit by a
+changing magnetic field. 
+
+Equations~(\ref{e2.30}), (\ref{e2.45}), and (\ref{e2.46}) can be used to eliminate $U_{0\,\parallel}$
+and ${\bf U}_1$ from Eq.~(\ref{e2.59}). The final result is
+\begin{equation}
+\frac{d}{dt}\!\left(\frac{ m\,u_\perp^{~2}}{2\,B}\right) = \frac{d\mu}{dt} = 0.
+\end{equation}
+Thus, the magnetic moment $\mu$ is a constant of the motion to lowest order.
+Kruskal\footnote{M.~Kruskal, J.\ Math.\ Phys.\ {\bf 3}, 806
+(1962).} has shown that $m\,u_\perp^{~2}/2\,B$ is the lowest order 
+approximation to a quantity which is a constant of the motion to
+{\em all}\/ orders in the perturbation expansion. Such a quantity
+is called an {\em adiabatic invariant}.
+
+\section{Poincar\'{e} Invariants}
+An adiabatic invariant is an approximation to a more fundamental type of
+invariant known as a {\em Poincar\'{e} invariant}. A Poincar\'{e} invariant
+takes the form
+\begin{equation}
+{\cal I} = \oint_{C(t)} {\bf p}\cdot d{\bf q},
+\end{equation}
+where all points on the closed curve $C(t)$ in phase-space move
+according to the equations of motion. 
+
+In order to demonstrate that ${\cal I}$ is a constant of the motion, we
+introduce a periodic variable $s$ parameterizing the points on the curve $C$.
+The coordinates of a general point on $C$ are thus written $q_i = q_i(s,t)$
+and $p_i=p_i(s,t)$. The rate of change of ${\cal I}$ is then
+\begin{equation}
+\frac{d{\cal I}}{dt} =\oint\left(p_i\,\frac{\partial^2 q_i}{\partial t\,\partial s}
++\frac{\partial p_i}{\partial t} \frac{\partial q_i}{\partial s}\right)\,ds.
+\end{equation}
+We integrate the first term by parts, and then used Hamilton's
+equations of motion to simplify the result. We obtain
+\begin{equation}
+\frac{d{\cal I}}{dt} =\oint\left( -
+ \frac{\partial q_i}{\partial t}\frac{\partial p_i}{\partial s}
++\frac{\partial p_i}{\partial t} \frac{\partial q_i}{\partial s}\right)\,ds
+=-\oint\left(
+ \frac{\partial H}{\partial p_i}\frac{\partial p_i}{\partial s}+\frac{\partial H}{\partial q_i}
+ \frac{\partial q_i}{\partial s}\right)\,ds,
+\end{equation}
+where $H({\bf p}, {\bf q}, t)$ is the Hamiltonian for the motion.
+The integrand is now seen to be the total derivative of $H$ along $C$. 
+Since the Hamiltonian is a single-valued function, it follows that
+\begin{equation}
+\frac{d{\cal I}}{dt} =-\oint\frac{d H}{ds}\,ds =0.
+\end{equation}
+Thus, ${\cal I}$ is indeed a constant of the motion. 
+
+\section{Adiabatic Invariants}
+Poincar\'{e} invariants are generally of little practical interest
+unless the curve $C$ closely corresponds to the trajectories of 
+actual particles. Now, for the motion of magnetized particles
+it is clear from Eqs.~(\ref{e2.22a}) and (\ref{e2.33}) that points having the same
+guiding centre at a certain time will continue to have approximately
+the same guiding centre at a later time. An approximate Poincar\'{e}
+invariant may thus be obtained by choosing the curve $C$ to be a circle of points
+corresponding to a gyrophase period. In other words,
+\begin{equation}
+{\cal I} \simeq I = \oint {\bf p}\cdot \frac{\partial{\bf q}}{\partial\gamma}\,
+d\gamma.
+\end{equation}
+Here, $I$ is an {\em adiabatic invariant}.
+
+To evaluate $I$ for a magnetized plasma recall that the canonical momentum
+for charged particles is
+\begin{equation}
+{\bf p} = m\,{\bf v} +e\,{\bf A},
+\end{equation}
+where ${\bf A}$ is the vector potential. We express ${\bf A}$ in terms
+of its Taylor series about the guiding centre position:
+\begin{equation}
+{\bf A}({\bf r}) = {\bf A}({\bf R}) + (\brho\cdot\nabla)\,{\bf A}({\bf R})
++ O(\rho^2).
+\end{equation}
+The element of length along the curve $C(t)$ is [see Eq.~(\ref{e2.34})]
+\begin{equation}
+d{\bf r} = \frac{\partial\brho}{\partial \gamma}\,d\gamma = 
+\frac{{\bf u}}{{\Omega}}\,\,d\gamma.
+\end{equation}
+The adiabatic invariant is thus
+\begin{equation}
+I = \oint \frac{{\bf u}}{{\Omega}} \cdot \left\{
+m\,({\bf U} + {\bf u}) + e\,\left[{\bf A} + (\brho\cdot
+\nabla)\,{\bf A}\right]\right\}\,d\gamma + O(\epsilon),
+\end{equation}
+which reduces to
+\begin{equation}
+I = 2\pi\,m\,\frac{u_\perp^{~2}}{{\Omega}} + 2\pi\,\frac{e}{{\Omega}}\,
+\langle {\bf u}\cdot(\brho\cdot
+\nabla)\,{\bf A}\rangle + O(\epsilon).
+\end{equation}
+The final term on the right-hand side is written [see Eq.~(\ref{e2.36})]
+\begin{equation}
+2\pi\,e\,\langle (\brho\times{\bf b}) \cdot(\brho\cdot
+\nabla)\,{\bf A}\rangle = -2\pi\,e\,\frac{u_\perp^{~2}}{2\,{\Omega}^2}\,
+{\bf b}\cdot \nabla\times{\bf A} = -\pi\,m\,\frac{u_\perp^{~2}}{{\Omega}}.
+\end{equation}
+It follows that
+\begin{equation}
+I = 2\pi\, \frac{m}{e}\,\mu + O(\epsilon).
+\end{equation}
+Thus, to lowest order the adiabatic invariant is proportional to the magnetic moment $\mu$. 
+
+\section{Magnetic Mirrors}
+Consider the important case in which
+ the electromagnetic fields do not vary in time. It immediately follows from
+Eq.~(\ref{e2.59}) that
+\begin{equation}
+\frac{d{\cal E}}{dt} =0,
+\end{equation}
+where
+\begin{equation}\label{e2.75}
+{\cal E} = K + e\,\phi = \frac{m}{2}\,(U_\parallel^{~2} + {\bf v}_E^{~2}) +\mu\,B
++ e\,\phi
+\end{equation}
+is the total particle energy, and $\phi$ is the electrostatic potential.
+Not surprisingly, a charged particle neither gains nor loses energy as
+it moves around in non-time-varying electromagnetic fields. Since
+both ${\cal E}$ and $\mu$ are constants of the motion, we can rearrange
+Eq.~(\ref{e2.75}) to give
+\begin{equation}
+U_\parallel = \pm \sqrt{(2/m)[{\cal E} -\mu\,B-e\,\phi]-{\bf v}_E^{~2}}.
+\end{equation}
+Thus, in regions where ${\cal E} > \mu\,B +e\,\phi + m\,{\bf v}_E^{~2}/2$
+charged particles can drift in either direction along magnetic field-lines.
+However, particles are excluded from regions where
+${\cal E} < \mu\,B +e\,\phi + m\,{\bf v}_E^{~2}/2$ (since particles cannot have
+imaginary parallel velocities!). Evidently, charged particles must reverse direction
+at those points on magnetic field-lines where ${\cal E} = \mu\,B +e\,\phi + m\,{\bf v}_E^{~2}/2$:
+such points are termed ``bounce points'' or ``mirror points.''
+
+Let us now consider how we might construct a device to confine a 
+collisionless ({\em i.e.}, very hot) plasma. Obviously, we cannot use conventional
+solid walls, because they would melt. However, it is possible to confine a
+hot plasma using a magnetic field (fortunately, magnetic fields do not melt!): this 
+technique is
+called {\em magnetic confinement}.
+The electric field in confined plasmas is
+usually weak ({\em i.e.}, $E\ll B\,v$), so that the ${\bf E}\times {\bf B}$ drift
+is similar in magnitude to the magnetic and curvature drifts. In this
+case, the bounce point condition, $U_\parallel = 0$, reduces to
+\begin{equation}\label{e2.77}
+{\cal E} = \mu\,B.
+\end{equation}
+Consider the magnetic field configuration shown in Fig.~1. This is most easily
+ produced using two Helmholtz coils. Incidentally, this type of magnetic
+confinement device is called a {\em magnetic mirror machine}. 
+The magnetic field configuration obviously possesses
+axial symmetry. Let $z$ be a coordinate which measures distance along the
+axis of symmetry. Suppose that $z=0$ corresponds to the mid-plane of the device
+({\em i.e.}, halfway between the two field-coils). 
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter02/mirror.eps}}
+\caption{\em Motion of a trapped particle in a mirror machine.}\label{f1}
+\end{figure}
+
+It is clear from Fig.~\ref{f1} that the magnetic field-strength $B(z)$ 
+on a magnetic field-line situated close to the axis of the device attains a
+local minimum $B_{\rm min}$ at $z=0$,  increases symmetrically
+ as  $|z|$ increases until
+reaching a maximum value $B_{\rm max}$ at about the location of the two
+field-coils, and then decreases as $|z|$ is further increased. According to
+Eq.~(\ref{e2.77}), any particle which satisfies the inequality
+\begin{equation}\label{e2.78}
+\mu> \mu_{\rm trap}  = \frac{{\cal E}}{B_{\rm max}}
+\end{equation}
+is {\em trapped}\/ on such a  field-line. In fact, the particle undergoes
+periodic motion along the field-line between two symmetrically placed (in $z$)
+mirror points. The magnetic field-strength at the mirror points is
+\begin{equation}
+B_{\rm mirror} = \frac{\mu_{\rm trap}}{\mu}\,B_{\rm max} < B_{\rm max}.
+\end{equation}
+
+Now, on the mid-plane $\mu = m\, v_\perp^{~2}/2\, B_{\rm min}$ and
+${\cal E} = m\,(v_\parallel^{~2} + v_\perp^{~2})/2$. 
+({\em n.b.}\/ From now on, we shall write ${\bf v} = v_\parallel\,{\bf b} +
+{\bf v}_\perp$, for ease of notation.)  Thus, the trapping
+condition (\ref{e2.78}) reduces to
+\begin{equation}\label{e2.80}
+\frac{|v_\parallel|}{|v_\perp|} < (B_{\rm max}/B_{\rm min} - 1)^{1/2}.
+\end{equation}
+Particles on the mid-plane which satisfy this inequality are trapped: particles
+which do not satisfy this inequality escape along magnetic field-lines.
+Clearly, a magnetic mirror machine is incapable of trapping charged particles which
+are moving parallel, or nearly parallel, to the direction of the magnetic field.
+In fact, the above inequality defines a {\em loss cone}\/ in velocity space---see
+Fig.~\ref{f2}. 
+
+\begin{figure}
+\epsfysize=2.5in
+\centerline{\epsffile{Chapter02/loss_cone1.eps}}
+\caption{\em Loss cone in velocity space. The particles lying inside the cone are
+not reflected by the magnetic field.}\label{f2}
+\end{figure}
+
+It is clear that if  plasma is placed inside  a magnetic mirror machine then all
+of the particles whose velocities lie in the loss cone  promptly escape, but the
+remaining particles are confined. Unfortunately, that is not
+the end of the story. There is no such thing as an absolutely collisionless
+plasma. Collisions take place at a low rate even in very hot plasmas. 
+One important 
+effect of collisions is to cause {\em diffusion}\/ of particles in velocity space.
+Thus, in a mirror machine collisions continuously scatter trapped particles into
+the loss cone, giving rise to a slow leakage of plasma out of the device. 
+Even worse, plasmas whose distribution functions deviate strongly from an isotropic
+Maxwellian ({\em e.g.}, a plasma confined
+in a mirror machine) are prone to {\em velocity space instabilities}, which tend to
+relax the distribution function back to a Maxwellian. Clearly, such instabilities
+are likely to have a disastrous effect on plasma confinement in a mirror machine. 
+For these reasons, magnetic mirror machines are not particularly successful
+plasma confinement devices, and attempts to achieve nuclear fusion using
+this type of  device have mostly been abandoned.\footnote{This is not quite
+true. In fact, fusion scientists have developed advanced mirror concepts
+which do not suffer from the severe end-losses characteristic of
+standard mirror machines. Mirror research is still being carried out, 
+albeit at a
+comparatively low level, in Russia and Japan.}
+
+\section{Van Allen Radiation Belts}
+Plasma confinement via magnetic mirroring occurs in nature as
+well as in unsuccessful fusion devices. For instance, the Van Allen radiation belts,
+which surround the Earth, consist of energetic particles trapped 
+in the Earth's dipole-like magnetic field. These belts were discovered by 
+James A.~Van Allen and co-workers using data taken from Geiger counters
+which flew on the early U.S.\ satellites, Explorer~1 (which was, in fact, the
+first U.S.\ satellite), Explorer~4, and Pioneer~3. Van Allen was actually
+trying to measure the flux of cosmic rays (high energy particles whose origin is
+outside the Solar System) in outer space, to see if it
+was similar to that measured on Earth. However, the flux of energetic particles
+detected by his instruments so greatly exceeded the expected value that it
+prompted one of his co-workers to exclaim, ``My God, space is radioactive!''
+It was quickly realized that this flux was due to energetic
+particles trapped in the Earth's magnetic field, rather than to cosmic rays. 
+
+There are, in fact, two radiation belts surrounding the Earth. The {\em inner
+belt}, which extends from about 1--3 Earth radii in the equatorial plane
+is mostly populated by protons with energies exceeding $10$~MeV. The origin of
+these protons is thought to be the decay of neutrons which are emitted from
+the Earth's atmosphere as it is bombarded by cosmic rays. The inner belt is fairly
+quiescent. Particles eventually escape due to collisions with neutral atoms
+in the upper atmosphere above the Earth's poles. However, such collisions
+are sufficiently uncommon that the lifetime of particles in the belt  range
+from a few hours to 10 years. Clearly, with such long trapping
+times only a small input rate of energetic particles is required to produce a
+region of intense radiation. 
+
+The {\em outer belt}, which extends from about 3--9 Earth radii in the equatorial
+plane, consists mostly of electrons with energies below $10$~MeV. The origin
+of these electrons is via injection from the outer magnetosphere. Unlike the
+inner belt, the outer belt is very dynamic, changing on time-scales of a few
+hours in response to perturbations emanating from the outer magnetosphere. 
+
+In regions not too far distant 
+({\em i.e.}, less than 10 Earth radii) from the Earth, the geomagnetic field can be approximated
+as a dipole field,
+\begin{equation}\label{e2.81}
+{\bf B} = \frac{\mu_0}{4\pi} \frac{M_E}{r^3} (-2\cos\theta, -\sin\theta, \,0),
+\end{equation}
+where we have adopted conventional spherical polar coordinates $(r,\theta,\varphi)$ aligned
+with the Earth's dipole moment, whose magnitude is $M_E = 8.05\times 10^{22}~{\rm A\,m}^2$. It is usually convenient to work in terms of the {\em latitude}, $\vartheta
+= \pi/2 - \theta$, rather than the polar angle, $\theta$. 
+An individual magnetic  field-line satisfies the equation
+\begin{equation}\label{e2.82}
+r = r_{\rm eq}\,\cos^2\vartheta,
+\end{equation}
+where $r_{\rm eq}$ is the radial distance to the field-line in the equatorial
+plane ($\vartheta=0^\circ$). It is conventional to label field-lines
+using the {\em L-shell parameter}, $L=r_{\rm eq}/R_E$. Here, $R_E = 6.37\times 10^6\,{\rm m}$ is the Earth's radius. Thus, the variation of the
+ magnetic field-strength along a field-line characterized by a given $L$-value
+is
+\begin{equation}\label{e2.83}
+B = \frac{B_E}{L^3} \frac{(1+3\,\sin^2\vartheta)^{1/2}}{\cos^6\vartheta},
+\end{equation}
+where $B_E= \mu_0 M_E/(4\pi\, R_E^{~3}) = 3.11\times 10^{-5}\,{\rm T}$ is the
+equatorial magnetic field-strength on the Earth's surface.
+
+Consider, for the sake of simplicity, charged particles located
+ on the equatorial plane ($\vartheta=0^\circ$)
+whose velocities are predominately directed perpendicular to the magnetic
+field. The proton and electron gyrofrequencies are written\footnote{It
+is conventional to take account of the negative charge of electrons by
+making the electron gyrofrequency ${\Omega}_e$ negative. This approach is
+implicit in formulae such as Eq.~(\ref{e2.47}).}
+\begin{equation}
+{\Omega}_p = \frac{e\,B}{m_p} = 2.98\,L^{-3}\,\,{\rm kHz},
+\end{equation}
+and
+\begin{equation}
+|{\Omega}_e| = \frac{e\,B}{m_e} = 5.46\,L^{-3}\,\,{\rm MHz},
+\end{equation}
+respectively. The proton and electron gyroradii, expressed as fractions
+of the Earth's radius, take the form
+\begin{equation}
+\frac{\rho_p}{R_E} = \frac{\sqrt{2\,{\cal E}\,m_p}}{e\,B\,R_E} =
+\sqrt{{\cal E}({\rm MeV)}}\left( \frac{L}{11.1}\right)^3,
+\end{equation}
+and
+\begin{equation}
+\frac{\rho_e}{R_E} =  \frac{\sqrt{2\,{\cal E}\,m_e}}{e\,B\,R_E} =\sqrt{{\cal E}({\rm MeV)}}\left( 
+\frac{L}{38.9}\right)^3,
+\end{equation}
+respectively. It is clear that MeV energy charged particles in the inner
+magnetosphere ({\em i.e}, $L \ll 10$) gyrate at frequencies which are much
+greater than the typical  rate of change of the magnetic field (which changes on
+time-scales which are, at most, a few minutes). Likewise, the gyroradii of
+such  particles are much smaller than the typical variation length-scale
+of the magnetospheric magnetic field. 
+Under these circumstances, we expect the magnetic moment 
+to be a conserved quantity:
+{\em i.e.}, we expect the magnetic moment to be a good adiabatic invariant. 
+It immediately follows that any MeV energy protons and electrons in the inner magnetosphere
+which have a
+sufficiently large magnetic moment are {\em trapped}\/ on the dipolar field-lines of the Earth's magnetic
+field, bouncing back and forth between mirror points located just above
+the Earth's poles.
+
+It is helpful to define the {\em pitch-angle},
+\begin{equation}
+\alpha = \tan^{-1}(v_\perp/v_\parallel),
+\end{equation}
+of a charged particle in the magnetosphere. If the magnetic moment is
+a conserved quantity then a particle of fixed energy drifting along a  field-line
+satisfies
+\begin{equation}\label{e2.89}
+\frac{\sin^2\alpha}{\sin^2\alpha_{\rm eq}}=\frac{B}{B_{\rm eq}},
+\end{equation}
+where $\alpha_{\rm eq}$ is the {\em equatorial pitch-angle}\/ ({\em i.e.}, the
+pitch-angle on the equatorial plane) and $B_{\rm eq}=B_E/L^3$ is the magnetic
+field-strength on the equatorial plane. It is clear from Eq.~(\ref{e2.83}) that the
+pitch-angle increases ({\em i.e.}, the parallel component of the particle
+velocity decreases)
+as the particle drifts off the equatorial plane towards the Earth's
+poles.
+
+
+The mirror points correspond to $\alpha=90^\circ$ ({\em i.e.}, $v_\parallel=0$).
+It follows from Eqs.~(\ref{e2.83}) and (\ref{e2.89}) that 
+\begin{equation}\label{e2.90}
+\sin^2\alpha_{\rm eq} = \frac{B_{\rm eq}}{B_m} = \frac{\cos^6\vartheta_m}
+{(1+3\,\sin^2\vartheta_m)^{1/2}},
+\end{equation}
+where $B_m$ is the magnetic field-strength at the mirror points, and $\vartheta_m$
+is the latitude of the mirror points. Clearly, the latitude of a particle's
+mirror point depends only on its equatorial pitch-angle, and is independent
+of the $L$-value of the field-line on which it is trapped.
+
+Charged particles with large equatorial pitch-angles have small parallel
+velocities, and mirror points located at relatively low latitudes. Conversely,
+charged particles with small equatorial pitch-angles have large parallel velocities,
+and mirror points located at high latitudes. Of course, if the pitch-angle
+becomes too small then the mirror points enter the Earth's atmosphere, and
+the particles are lost via collisions with neutral particles.
+Neglecting the thickness of the atmosphere with respect to
+the radius of the Earth, we can say that all particles whose mirror points
+lie inside the Earth are lost via collisions. It follows from
+Eq.~(\ref{e2.90}) that the {\em equatorial loss cone}\/ is of approximate width
+\begin{equation}
+\sin^2\alpha_l = \frac{\cos^6\vartheta_E}{(1+3\sin^2\vartheta_E)^{1/2}},
+\end{equation}
+where $\vartheta_E$ is the latitude of the point where the magnetic field-line
+under investigation intersects the Earth. 
+Note that all particles with $|\alpha_{\rm eq}| < \alpha_l$ 
+and $|\pi-\alpha_{\rm eq}| < \alpha_l$ lie in the
+loss cone. 
+It is easily demonstrated from Eq.~(\ref{e2.82}) that
+\begin{equation}
+\cos^2\vartheta_E = L^{-1}.
+\end{equation}
+It follows that
+\begin{equation}
+\sin^2\alpha_l = (4\,L^6 - 3\,L^5)^{-1/2}.
+\end{equation}
+Thus, the width of the loss cone is independent of the charge, the mass, or
+the energy of the particles drifting along a given field-line, 
+and is a function only of the field-line radius
+on the equatorial plane. The loss cone is surprisingly small. For instance,
+at the radius of a geostationary orbit ($6.6\,R_E$), the loss cone is
+less than $3^\circ$ degrees wide. The smallness of the 
+ loss cone is a consequence of  the very strong variation of the magnetic field-strength along field-lines in a dipole field---see Eqs.~(\ref{e2.80}) and (\ref{e2.83}). 
+
+A dipole field is clearly a far more effective configuration for 
+confining a collisionless plasma via magnetic mirroring
+ than the more traditional linear configuration 
+ shown in Fig.~\ref{f1}. In fact, M.I.T.\ has recently constructed a dipole
+ mirror machine. The dipole field is generated by a
+superconducting current loop levitating in a vacuum chamber. 
+
+The {\em bounce period}, $\tau_b$, is the time it takes a particle to move
+from the equatorial plane to one mirror point, then to the other, and then return
+to the equatorial plane. It follows that
+\begin{equation}
+\tau_b = 4\int_0^{\vartheta_m} \frac{d\vartheta}{v_\parallel}\frac{ds}{d\vartheta},
+\end{equation}
+where $ds$ is an element of arc length along the field-line under investigation,
+and $v_\parallel = v\,(1-B/B_m)^{1/2}$. The above integral cannot
+be performed analytically. However, it can be solved numerically, and is
+conveniently  approximated as
+\begin{equation}
+\tau_b \simeq \frac{L\,R_E}{({\cal E}/m)^{1/2}} \,(3.7-1.6\sin\alpha_{\rm eq}).
+\end{equation}
+Thus, for protons 
+\begin{equation}
+(\tau_b)_p \simeq 2.41\,\frac{L}
+{\sqrt{{\cal E}({\rm MeV})}} \,(1- 0.43 \sin\alpha_{\rm eq})\,\,\,{\rm secs},
+\end{equation}
+whilst for electrons
+\begin{equation}
+(\tau_b)_e \simeq 5.62\times 10^{-2}\frac{L}{\sqrt{{\cal E}({\rm MeV})}} \,(1- 0.43 \sin\alpha_{\rm eq})\,\,\,{\rm secs}.
+\end{equation}
+It follows that  MeV electrons typically have bounce periods which are less than
+a second, whereas the bounce periods for MeV protons usually lie in the range 1 to
+10 seconds. The bounce period only depends weakly on equatorial
+pitch-angle, since particles with small pitch angles have relatively
+large parallel velocities but a comparatively long way to travel to their
+mirror points, and {\em vice versa}. Naturally, the bounce period
+is longer for longer field-lines ({\em i.e.}, for larger $L$). 
+
+\section{Ring Current}
+Up to now, we have only considered the lowest order motion ({\em i.e.}, 
+gyration combined with parallel drift) of charged particles in the
+magnetosphere. Let us now examine the higher order corrections to this
+motion. For the case of non-time-varying fields, and  a weak electric
+field, these corrections consist of a combination of ${\bf E}\times{\bf B}$ drift,
+grad-$B$ drift, and curvature drift:
+\begin{equation}
+{\bf v}_{1\perp} = \frac{{\bf E}\times{\bf B}}{B^2} + \frac{\mu}{m\,{\Omega}}
+\,\,{\bf b}\times\nabla B +\frac{ v_\parallel^{~2} }{{\Omega}}\,
+{\bf b}\times({\bf b}\cdot\nabla)\,{\bf b}.
+\end{equation}
+Let us neglect ${\bf E}\times{\bf B}$ drift, since this motion merely gives
+rise to the convection of plasma within the magnetosphere, without generating a
+current. By contrast, there is a net current associated with  grad-$B$ drift
+and curvature drift. In the limit in which this current does not strongly
+modify the ambient magnetic field ({\em i.e.},
+ $\nabla\times{\bf B} \simeq {\bf 0}$),
+which is certainly the situation in the Earth's magnetosphere, we can write
+\begin{equation}
+({\bf b}\cdot\nabla)\,{\bf b} =-{\bf b}\times(\nabla\times
+{\bf b})\simeq \frac{\nabla_\perp B}{B}.
+\end{equation}
+It follows that the higher order drifts can be combined to give
+\begin{equation}
+{\bf v}_{1\perp} = \frac{(v_\perp^{~2}/2+v_\parallel^{~2})}{{\Omega}\,B}\,
+{\bf b}\times\nabla B.
+\end{equation}
+For the dipole field (\ref{e2.81}), the above expression yields
+\begin{equation}
+{\bf v}_{1\perp} \simeq -{\rm sgn}({\Omega})\,\frac{6\,{\cal E}\,L^2}{e\,B_E\,R_E} \,\,
+(1-B/2B_m)\,\frac{\cos^5\vartheta\,(1+\sin^2\vartheta)}{(1+3\sin^2\vartheta)^2}\,\,
+\hat{\bvarphi}.\label{e2.101}
+\end{equation}
+Note that the drift is in the azimuthal direction. A positive drift velocity
+corresponds
+to eastward motion, whereas a negative velocity corresponds to westward motion.
+It is  clear that, in addition to their gyromotion and  periodic
+bouncing motion along field-lines, charged particles trapped
+in the magnetosphere also
+slowly {\em precess}\/ around the Earth. The ions drift westwards and the electrons
+drift eastwards, giving rise to a net westward current circulating around the
+Earth. This current is known as the {\em ring current}.
+
+Although the perturbations to the Earth's magnetic field induced by the ring
+current are small, they are still detectable. In fact, the ring current
+causes a slight {\em reduction}\/ in the Earth's magnetic field in equatorial
+regions. The size of this reduction is a good measure of the
+number of charged particles contained in the Van Allen belts. During
+the development of so-called {\em geomagnetic storms}, charged particles are
+injected into the Van Allen belts from the outer magnetosphere, giving rise
+to a sharp increase in the ring current, and a corresponding decrease in the
+Earth's equatorial magnetic field. These particles eventually precipitate
+out of the magnetosphere into the upper atmosphere
+at high latitudes, giving rise to intense
+auroral activity, serious interference in electromagnetic communications, and, in extreme
+cases,  disruption of electric
+power grids. The ring current induced reduction in the
+Earth's magnetic field is measured by the so-called
+{\em Dst index}, which is based on
+hourly averages of the northward horizontal component of the terrestrial
+magnetic 
+field recorded at four low-latitude observatories; Honolulu (Hawaii), 
+San Juan (Puerto Rico), Hermanus (South Africa),
+and Kakioka (Japan). Figure~\ref{f5} shows the Dst index for the month of March
+1989.\footnote{Dst data
+is freely availabel from the following web site in Kyoto (Japan): {\tt
+ http://swdcdb.kugi.kyoto-u.ac.jp/dstdir}}
+The very marked reduction in the index, centred about March 13th, corresponds
+to one of the most severe geomagnetic storms experienced in recent decades. 
+In fact, this particular storm was so severe that it tripped out the
+whole Hydro~Quebec electric distribution system, plunging more than 6 million
+customers into darkness. Most of Hydro~Quebec's neighbouring systems in the United
+States came uncomfortably close to experiencing the same cascading power
+outage scenario. Note that a reduction in the  Dst index by 600\,nT
+corresponds to a $2\%$ reduction in the terrestrial magnetic field at the equator.
+
+\begin{figure}
+\epsfysize=1.2in
+\centerline{\epsffile{Chapter02/dstfinal198903-1.ps}}
+\caption{\em Dst data for March 1989 showing an exceptionally
+severe geomagnetic storm on the 13th.}\label{f5}
+\end{figure}
+
+According to Eq.~(\ref{e2.101}), the precessional drift velocity of charged particles
+in the magnetosphere is a rapidly decreasing function of increasing latitude
+({\em i.e.}, most of the ring current is concentrated in the equatorial plane).
+Since particles typically complete many bounce orbits during a full rotation around
+the Earth, it is convenient to average Eq.~(\ref{e2.101}) over a bounce
+period to obtain the {\em average drift velocity}. This averaging can
+only be performed numerically. The final answer is well approximated by
+\begin{equation}\label{e2.102}
+\langle v_d\rangle \simeq \frac{6\,{\cal E}\,L^2}{e\,B_E\,R_E}
+\,(0.35 + 0.15\,\sin\alpha_{\rm eq}).
+\end{equation}
+The {\em average drift period}\/ ({\em i.e.}, the time required to
+perform a complete rotation around the Earth) is simply
+\begin{equation}
+\langle \tau_d\rangle = \frac{2\pi\,L\,R_E}{\langle v_d\rangle}
+\simeq \frac{\pi\,e\,B_E\,R_E^{~2}}{3\,{\cal E}\,L} \,
+(0.35 + 0.15\,\sin\alpha_{\rm eq})^{-1}.
+\end{equation}
+Thus, the drift period for protons and electrons is
+\begin{equation}
+\langle \tau_d\rangle_p=\langle \tau_d\rangle_e \simeq \frac{1.05}{{\cal E}({\rm MeV})\,L} \,(1+0.43\,\sin\alpha_{\rm eq})^{-1}\,\,\,{\rm hours}.
+\end{equation}
+Note that MeV energy electrons and ions  precess around the Earth with about the same
+velocity, only in opposite directions, because there is no explicit
+mass dependence in Eq.~(\ref{e2.102}). It typically takes an hour to perform a full
+rotation. 
+The drift period only depends weakly on
+the equatorial pitch angle, as is the case for the bounce period. 
+Somewhat paradoxically, the drift period is
+shorter on more distant $L$-shells. 
+Note, of course, that particles only get a chance to complete a 
+full rotation around the Earth if the inner magnetosphere remains quiescent
+on time-scales of order an hour, which is, by no means, always the case. 
+
+Note, finally, that, since the rest mass of an electron is $0.51$\,MeV, most
+of the above formulae require relativistic correction when applied to
+MeV energy electrons. 
+Fortunately, however, there is no such problem for protons, whose rest mass
+energy is $0.94$\,GeV.
+
+\section{Second Adiabatic Invariant}
+We have seen that there is an adiabatic invariant associated with the
+periodic gyration of a charged particle around magnetic field-lines.
+Thus, it is reasonable to suppose that there is a second adiabatic invariant
+associated with the periodic bouncing motion of a particle trapped 
+between two mirror points on
+a magnetic field-line. This is indeed the case. 
+
+Recall that an adiabatic invariant is the lowest order approximation
+to a Poincar\'{e} invariant:
+\begin{equation}
+{\cal J} = \oint_C {\bf p}\cdot d{\bf q}.
+\end{equation}
+In this case, let the curve $C$ correspond to the trajectory of
+a guiding centre  as a charged
+particle trapped in the
+Earth's magnetic field 
+executes a bounce orbit. Of course, this trajectory does not quite close,
+because of the slow azimuthal drift of particles around the Earth. However,
+it is easily demonstrated that 
+the azimuthal displacement of the end point of the trajectory, with respect to
+the beginning point, is of order the gyroradius. Thus, in the limit
+in which the ratio of the gyroradius, $\rho$, to the variation length-scale of the
+magnetic field,  $L$, tends to zero, the trajectory of the guiding centre
+can be regarded as being  approximately closed,
+ and the actual particle trajectory conforms very closely
+to that of the guiding centre. Thus, the adiabatic invariant associated with
+the bounce motion can be written
+\begin{equation}
+{\cal J} \simeq J = \oint p_\parallel\,ds,
+\end{equation}
+where the path of integration is along a field-line: from the equator to
+the upper mirror point, back along the field-line to the lower mirror point, and
+then back 
+to the equator. Furthermore, $ds$ is an element of arc-length along the
+field-line, and $p_\parallel\equiv {\bf p}\cdot{\bf b}$. 
+Using ${\bf p} = m\,{\bf v} + e\,{\bf A}$, the above
+expression yields
+\begin{equation}
+J = m\oint v_\parallel\,ds + e\,\oint {\bf A}_\parallel \,ds 
+= m\oint v_\parallel\,ds + e\,{\Phi}.
+\end{equation}
+Here, ${\Phi}$ is the total magnetic flux enclosed by the curve---which,
+in this case, is obviously zero. Thus, the so-called {\em second adiabatic
+invariant}\/ or {\em longitudinal adiabatic invariant}\/ takes the form
+\begin{equation}
+J = m\oint v_\parallel\,ds.
+\end{equation}
+In other words, the second invariant is proportional to the loop integral
+of the parallel (to the magnetic field) velocity taken over a bounce orbit.
+Actually,  the above ``proof'' is not particularly  rigorous: the rigorous proof
+that $J$ is an adiabatic invariant was first given by Northrop and Teller.\footnote{
+T.G.~Northrop, and E.~Teller, Phys.\ Rev.\ {\bf 117}, 215 (1960).} It should
+be noted, of course, that $J$ is only a constant of the motion
+for particles trapped in the inner magnetosphere  provided that the
+magnetospheric
+magnetic field  varies on time-scales much longer than the bounce time,
+$\tau_b$. Since the bounce time for MeV energy protons and electrons is,
+at most, a few seconds, this is not a particularly onerous constraint.
+
+\begin{figure}
+\epsfysize=2in
+\setbox0=\hbox{\epsffile{Chapter02/solarwind.ps}}
+\centerline{\rotu0}
+\caption{\em The distortion of the Earth's magnetic field by the solar wind.}\label{f6}
+\end{figure}
+
+The invariance of $J$ is of great importance for charged particle
+dynamics in the Earth's inner magnetosphere. It turns out that the
+Earth's magnetic field is distorted from pure axisymmetry by the action of
+the solar wind, as illustrated in Fig.~\ref{f6}. Because of this asymmetry, there 
+is no particular reason to believe that a particle will return to its
+earlier trajectory as it makes a full rotation around the Earth.  In other words,
+the particle may well end up on a different field-line when it returns to
+the same azimuthal angle. However, at a given azimuthal angle, each 
+field-line has a different length between mirror points, and a different
+variation of the field-strength $B$ between the mirror points, for a particle
+with given  energy ${\cal E}$ and magnetic moment $\mu$. Thus, each field-line
+represents a different value of $J$ for that particle. So, if $J$ is
+conserved, as well as ${\cal E}$ and $\mu$, then the particle
+{\em must}\/ return to the same field-line after precessing around the Earth. 
+In other words, the conservation of $J$ prevents charged particles from
+spiraling radially in or out of the Van Allen belts as they rotate around the Earth.
+This helps to explain the persistence of these belts. 
+
+\section{Third Adiabatic Invariant}
+It is clear, by now, that there is an adiabatic invariant associated
+with every periodic motion of a charged particle in 
+an electromagnetic field.
+Now, we have just demonstrated that, as a consequence of $J$-conservation,
+the drift orbit of a charged particle precessing around the Earth is approximately
+closed, despite the fact that the Earth's magnetic field is non-axisymmetric. 
+Thus, there must be a third adiabatic invariant associated with the
+precession of particles around the Earth. Just as we can define a
+guiding centre associated with a particle's gyromotion around field-lines,
+we can also define a {\em bounce centre}\/ associated with a particle's bouncing
+motion between mirror points. The bounce centre lies on the equatorial plane, and
+orbits the Earth once every drift period, $\tau_d$. 
+ We can write the third adiabatic invariant as
+\begin{equation}
+K \simeq \oint p_\phi\,ds,
+\end{equation}
+where the path of integration is the trajectory of the bounce centre around
+the Earth. Note that the drift trajectory
+effectively collapses onto the trajectory of the bounce centre 
+in the limit in which $\rho/L\rightarrow 0$---all
+of the particle's gyromotion and bounce motion  averages to zero.
+Now $p_\phi = m\,v_\phi + e\,A_\phi$ is dominated by its second term,
+since the drift velocity $v_\phi$ is very small. Thus,
+\begin{equation}
+K \simeq e\oint A_\phi\,ds = e\,{\Phi},
+\end{equation}
+where ${ \Phi}$ is the total {\em magnetic flux}\/ enclosed by the drift
+trajectory ({\em i.e.}, the flux enclosed by the orbit of the bounce centre
+around the Earth). The above ``proof'' is, again, not particularly rigorous---the invariance of ${\Phi}$ is demonstrated rigorously by Northrup.\footnote{
+T.G.~Northrup, {\em The Adiabatic Motion of Charged Particles} (Interscience,
+New York NY, 1963).} Note, of course, that ${\Phi}$ is only a constant
+of the motion for particles trapped in the inner magnetosphere provided that the
+magnetospheric magnetic field varies on time-scales much longer than
+the drift period, $\tau_d$. Since the drift period for MeV energy 
+protons and electrons is of order an hour, this is only likely
+to be the case when the magnetosphere is relatively quiescent ({\em i.e.},
+when there are no geomagnetic storms in progress). 
+
+The invariance of ${\Phi}$ has interesting consequences for charged
+particle dynamics in the Earth's inner magnetosphere. Suppose, for instance,  
+that the
+strength of the solar wind were to increase slowly ({\em i.e.}, on time-scales
+significantly longer than the drift period), thereby, compressing the Earth's
+magnetic field. The invariance of ${\Phi}$ would cause the charged particles
+which constitute the Van Allen belts 
+ to move radially inwards, towards the Earth, in order
+to conserve the magnetic flux enclosed by their drift orbits. Likewise, a
+slow decrease in the strength of the solar wind would cause an outward radial motion
+of the Van Allen belts.
+
+\section{Motion in Oscillating Fields}
+We have seen that charged particles can be confined by a static magnetic field.
+A somewhat more surprising fact is that charged
+particles can also be confined by a rapidly
+oscillating, inhomogeneous electromagnetic wave-field. In order to demonstrate this,
+we again make use of our averaging technique. To lowest order, a particle
+executes simple harmonic motion in response to an oscillating wave-field.
+However, to higher order, any weak inhomogeneity in the field causes the restoring force
+at one turning point to exceed that at the other. On average, this yields a net force
+which acts on the {\em centre of oscillation}\/ of the particle.
+
+Consider a spatially inhomogeneous electromagnetic wave-field oscillating at
+frequency $\omega$:
+\begin{equation}
+{\bf E}({\bf r}, t) = {\bf E}_0({\bf r})\,\cos\omega t.
+\end{equation}
+The equation of motion of a charged particle placed in this field is written
+\begin{equation}\label{e2.112}
+m\,\frac{d{\bf v}}{dt}= e\,\left[{\bf E}_0({\bf r})\,\cos\omega t
++{\bf v}
+\times {\bf B}_0({\bf r})\,\sin\omega t\right],
+\end{equation}
+where 
+\begin{equation}\label{e2.113}
+{\bf B}_0 = -\omega^{-1}\,\nabla\times{\bf E}_0,
+\end{equation}
+according to Faraday's law. 
+
+In order for our averaging technique to be applicable, the electric field
+${\bf E}_0$ experienced by the particle must remain approximately constant
+during an oscillation. Thus,
+\begin{equation}\label{e2.114}
+({\bf v}\cdot\nabla)\,{\bf E} \ll \omega\,{\bf E}.
+\end{equation}
+When this inequality is satisfied, Eq.~(\ref{e2.113}) implies that the magnetic
+force experienced by the particle
+is smaller than the electric force by one order in the
+expansion parameter. In fact, Eq.~(\ref{e2.114}) is equivalent to the requirement,
+${\Omega}\ll \omega$, that the particle be unmagnetized. 
+
+We now apply the averaging technique. We make the substitution $t\rightarrow\tau$
+in the oscillatory terms, and seek a change of variables,
+\begin{eqnarray}
+{\bf r} &=& {\bf R} + \bxi({\bf R}, {\bf U}\, t,\tau),\\[0.5ex]
+{\bf v} &=& {\bf U} + {\bf u}({\bf R}, {\bf U}\, t,\tau),
+\end{eqnarray}
+such that $\bxi$ and ${\bf u}$ are periodic functions of $\tau$
+with vanishing mean. Averaging $d{\bf r}/dt = {\bf v}$ again yields
+$d{\bf R}/dt = {\bf U}$ to all orders. To lowest order, the momentum evolution
+equation reduces to
+\begin{equation}
+\frac{\partial{\bf u}}{\partial \tau} = \frac{e}{m}\,{\bf E}_0({\bf R})\,\cos\omega\tau.
+\end{equation}
+The solution, taking into account the constraints $\langle {\bf u}\rangle
+=\langle\bxi\rangle = {\bf 0}$, is
+\begin{eqnarray}
+{\bf u} &=& \frac{e}{m\,\omega}\,{\bf E}_0\,\sin\omega\tau,\\[0.5ex]
+\bxi &=& -\frac{e}{m\,\omega^2}\,{\bf E}_0\,\cos\omega\tau.
+\end{eqnarray}
+Here, $\langle\cdots\rangle\equiv(2\pi)^{-2}\oint(\cdots)\,d(\omega\tau)$ represents
+an oscillation average. 
+
+Clearly, there is no motion of the centre of oscillation to lowest order.
+To first order, the oscillation average of Eq.~(\ref{e2.112}) yields
+\begin{equation}
+\frac{d{\bf U}}{dt} = \frac{e}{m} \left\langle (\bxi\cdot\nabla)
+{\bf E} + {\bf u}\times{\bf B}\right\rangle,
+\end{equation}
+which reduces to
+\begin{equation}\label{e2.120}
+\frac{d{\bf U}}{dt} = -\frac{e^2}{m^2\,\omega^2}
+\left[ ({\bf E}_0\cdot\nabla){\bf E}_0\,\langle\cos^2\omega\tau\rangle
++ {\bf E}_0\times(\nabla\times{\bf E}_0)\,\langle\sin^2\omega\tau\rangle
+\right].
+\end{equation}
+The oscillation averages of the trigonometric functions are both equal to $1/2$. 
+Furthermore, we have
+$\nabla(|{\bf E}_0|^2/2)\equiv  ({\bf E}_0\cdot\nabla){\bf E}_0
++{\bf E}_0\times(\nabla\times{\bf E}_0)$. Thus, the equation of motion for
+the centre of oscillation reduces to
+\begin{equation}
+m\,\frac {d{\bf U}}{dt} = -e\,\nabla{\Phi}_{\rm pond},
+\end{equation}
+where
+\begin{equation}
+{\Phi}_{\rm pond} = \frac{1}{4} \frac{e}{m\,\omega^2}\,|{\bf E}_0|^2.
+\end{equation}
+It is clear that the oscillation centre experiences a force, called the
+{\em ponderomotive force}, which is proportional to the gradient
+in the amplitude of the wave-field. The ponderomotive force is
+independent of the sign of the charge, so both electrons and
+ions can be confined in the same potential well. 
+
+The total energy of the oscillation centre,
+\begin{equation}
+{\cal E}_{\rm oc} = \frac{m}{2}\,U^2 +e\,{\Phi}_{\rm pond},
+\end{equation}
+is conserved by the equation of motion (\ref{e2.120}). Note that the ponderomotive
+potential energy is equal to the average kinetic energy of the
+oscillatory motion:
+\begin{equation}
+e\,{\Phi}_{\rm pond} = \frac{m}{2}\,\langle u^2\rangle.
+\end{equation}
+Thus, the force on the centre of oscillation originates in a transfer of
+energy from the oscillatory motion to the average motion.
+
+Most of the important applications of the ponderomotive force occur in laser
+plasma physics. 
+For instance, a laser beam can propagate in a plasma provided that
+its frequency exceeds the plasma frequency. If the beam is sufficiently
+intense then plasma particles are repulsed from the centre of the
+beam by the ponderomotive force. The resulting variation in the plasma
+density gives rise to a cylindrical well in the index of refraction
+which acts as a wave-guide for the laser beam.
